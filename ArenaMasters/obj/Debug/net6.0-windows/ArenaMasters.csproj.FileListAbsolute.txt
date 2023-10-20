@@ -21,12 +21,10 @@ C:\Users\ADM_DAM2B_10\materiales\ArenaMasters\ArenaMasters\bin\Debug\net6.0-wind
 C:\Users\ADM_DAM2B_10\materiales\ArenaMasters\ArenaMasters\bin\Debug\net6.0-windows\runtimes\win-x64\native\krbcc64.dll
 C:\Users\ADM_DAM2B_10\materiales\ArenaMasters\ArenaMasters\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 C:\Users\ADM_DAM2B_10\materiales\ArenaMasters\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters.csproj.AssemblyReference.cache
-C:\Users\ADM_DAM2B_10\materiales\ArenaMasters\ArenaMasters\obj\Debug\net6.0-windows\GameMenu.g.cs
 C:\Users\ADM_DAM2B_10\materiales\ArenaMasters\ArenaMasters\obj\Debug\net6.0-windows\MainWindow.g.cs
 C:\Users\ADM_DAM2B_10\materiales\ArenaMasters\ArenaMasters\obj\Debug\net6.0-windows\App.g.cs
 C:\Users\ADM_DAM2B_10\materiales\ArenaMasters\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters_MarkupCompile.cache
 C:\Users\ADM_DAM2B_10\materiales\ArenaMasters\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters_MarkupCompile.lref
-C:\Users\ADM_DAM2B_10\materiales\ArenaMasters\ArenaMasters\obj\Debug\net6.0-windows\GameMenu.baml
 C:\Users\ADM_DAM2B_10\materiales\ArenaMasters\ArenaMasters\obj\Debug\net6.0-windows\MainWindow.baml
 C:\Users\ADM_DAM2B_10\materiales\ArenaMasters\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters.g.resources
 C:\Users\ADM_DAM2B_10\materiales\ArenaMasters\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters.GeneratedMSBuildEditorConfig.editorconfig
@@ -39,3 +37,10 @@ C:\Users\ADM_DAM2B_10\materiales\ArenaMasters\ArenaMasters\obj\Debug\net6.0-wind
 C:\Users\ADM_DAM2B_10\materiales\ArenaMasters\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters.pdb
 C:\Users\ADM_DAM2B_10\materiales\ArenaMasters\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters.genruntimeconfig.cache
 C:\Users\ADM_DAM2B_10\materiales\ArenaMasters\ArenaMasters\obj\Debug\net6.0-windows\ref\ArenaMasters.dll
+C:\Users\ADM_DAM2B_10\materiales\ArenaMasters\ArenaMasters\bin\Debug\net6.0-windows\images\coin.png
+C:\Users\ADM_DAM2B_10\materiales\ArenaMasters\ArenaMasters\bin\Debug\net6.0-windows\images\inicio.png
+C:\Users\ADM_DAM2B_10\materiales\ArenaMasters\ArenaMasters\bin\Debug\net6.0-windows\images\map.jpg
+C:\Users\ADM_DAM2B_10\materiales\ArenaMasters\ArenaMasters\bin\Debug\net6.0-windows\images\persona.png
+C:\Users\ADM_DAM2B_10\materiales\ArenaMasters\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters_Content.g.cs
+C:\Users\ADM_DAM2B_10\materiales\ArenaMasters\ArenaMasters\obj\Debug\net6.0-windows\Window1.g.cs
+C:\Users\ADM_DAM2B_10\materiales\ArenaMasters\ArenaMasters\obj\Debug\net6.0-windows\Window1.baml

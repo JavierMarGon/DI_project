@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\ADM_DAM2B_10\materiales\ArenaMasters\ArenaMasters\App.xaml
-21940794329
+2814371620
 4-1771659695
-6-431654635
+71719280160
 202-8475462
-MainWindow.xaml;Window1.xaml;
+GameMenu.xaml;MainWindow.xaml;
 
-False
+True
 

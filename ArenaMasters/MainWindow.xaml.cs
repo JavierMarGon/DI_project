@@ -28,7 +28,7 @@ namespace ArenaMasters
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             
-            Window1 window1 = new Window1();
+            GameMenu window1 = new GameMenu();
             window1.Show();
             this.Close();
         }

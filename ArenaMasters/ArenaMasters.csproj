@@ -11,6 +11,7 @@
     <None Remove="images\coin.png" />
     <None Remove="images\inicio.png" />
     <None Remove="images\map.jpg" />
+    <None Remove="images\map1.png" />
     <None Remove="images\persona.png" />
     <None Remove="persona.png" />
   </ItemGroup>
@@ -23,6 +24,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="images\map.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\map1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="images\persona.png">

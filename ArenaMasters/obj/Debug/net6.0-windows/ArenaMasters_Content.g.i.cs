@@ -11,6 +11,7 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/coin.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/inicio.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/map.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/map1.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/persona.png")]
 
 

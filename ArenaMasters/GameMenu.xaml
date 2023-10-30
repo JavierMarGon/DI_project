@@ -15,9 +15,9 @@
         </Canvas.Background>
         <StackPanel Orientation="Horizontal" Height="40" VerticalAlignment="Top">
             <Image Source="/images/coin.png"/>
-            <TextBlock TextWrapping="Wrap" Text="000000" Foreground="White" Background="#97A99C0F" FontSize="22"/>
+            <TextBlock x:Name="currentMoney" TextWrapping="Wrap" Text="000000" Foreground="White" Background="#97A99C0F" FontSize="22"/>
             <Image Source="/images/persona.png"/>
-            <TextBlock TextWrapping="Wrap" Text="0/7" Foreground="White" Background="#AC2F8430" FontSize="22"/>
+            <TextBlock x:Name="currentUnits" TextWrapping="Wrap" Text="0/7" Foreground="White" Background="#AC2F8430" FontSize="22"/>
         </StackPanel>
 
         <Button x:Name="fDungeon" HorizontalAlignment="Left" Height="151" VerticalAlignment="Top" Width="186" Canvas.Left="858" Canvas.Top="106">
@@ -28,7 +28,7 @@
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate TargetType="{x:Type Button}">
-                                <Border Background="{TemplateBinding Background}">
+                                <Border Background="{TemplateBinding Background}" CornerRadius="20">
                                     <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                 </Border>
                             </ControlTemplate>
@@ -50,7 +50,7 @@
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate TargetType="{x:Type Button}">
-                                <Border Background="{TemplateBinding Background}">
+                                <Border Background="{TemplateBinding Background}" CornerRadius="20">
                                     <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                 </Border>
                             </ControlTemplate>
@@ -73,7 +73,7 @@
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate TargetType="{x:Type Button}">
-                                <Border Background="{TemplateBinding Background}">
+                                <Border Background="{TemplateBinding Background}" CornerRadius="20">
                                     <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                 </Border>
                             </ControlTemplate>
@@ -94,7 +94,7 @@
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate TargetType="{x:Type Button}">
-                                <Border Background="{TemplateBinding Background}">
+                                <Border Background="{TemplateBinding Background}" CornerRadius="20">
                                     <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                 </Border>
                             </ControlTemplate>
@@ -109,7 +109,7 @@
             </Button.Style>
         </Button>
 
-        <StackPanel x:Name="habShop" Visibility="Hidden" Canvas.Top="48" HorizontalAlignment="Left" Height="711" VerticalAlignment="Top" Width="1375" Background="#FF907000">
+        <StackPanel x:Name="habShop" Visibility="Collapsed" Canvas.Top="48" HorizontalAlignment="Left" Height="711" VerticalAlignment="Top" Width="1375" Background="#FF907000">
             <StackPanel Orientation="Horizontal">
                 <Button Content="Salir" Height="100" Width="135" Click="habShopHide"/>
                 <TextBlock Text="Taberna" Height="100" Width="1240" Background="#FF524939" Foreground="Beige" FontSize="90" FontFamily="Algerian" TextAlignment="Center"/>
@@ -121,6 +121,22 @@
                 <Button Content="Next" Height="50" Width="105" Click="habNextPj"/>
             </StackPanel>
 
+            <StackPanel Orientation="Horizontal" Margin="30,20,30,50">
+                <TextBlock x:Name="habpjSkill1" Height="50" Width="1005" Background="#FF524939" Foreground="Beige" FontSize="50" FontFamily="Algerian" TextAlignment="Center"/>
+                <Button Content="Change" Height="50" Width="105" Click="habChangeSkill1"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="30,20,30,50">
+                <TextBlock x:Name="habpjSkill2" Height="50" Width="1005" Background="#FF524939" Foreground="Beige" FontSize="50" FontFamily="Algerian" TextAlignment="Center"/>
+                <Button Content="Change" Height="50" Width="105" Click="habChangeSkill2"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="30,20,30,50">
+                <TextBlock x:Name="habpjSkill3" Height="50" Width="1005" Background="#FF524939" Foreground="Beige" FontSize="50" FontFamily="Algerian" TextAlignment="Center"/>
+                <Button Content="Change" Height="50" Width="105" Click="habChangeSkill3"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="30,20,30,50">
+                <TextBlock x:Name="habpjSkill4" Height="50" Width="1005" Background="#FF524939" Foreground="Beige" FontSize="50" FontFamily="Algerian" TextAlignment="Center"/>
+                <Button Content="Change" Height="50" Width="105" Click="habChangeSkill4"/>
+            </StackPanel>
 
         </StackPanel>
         <StackPanel x:Name="pjShop" Visibility="Hidden" Canvas.Top="48" HorizontalAlignment="Left" Height="711" VerticalAlignment="Top" Width="1375" Background="#FF003A6D">
@@ -135,37 +151,38 @@
                 <Button Content="Salir" Height="100" Width="135" Click="moneyDungeonHide"/>
                 <TextBlock Text="Saqueos" Height="100" Width="1240" Background="#FF524939" Foreground="Beige" FontSize="90" FontFamily="Algerian" TextAlignment="Center"/>
             </StackPanel>
+            
             <StackPanel Orientation="Vertical">
                 <TextBlock Text="Dificultad" FontSize="45" HorizontalAlignment="Center" Foreground="White"/>
-                <Button x:Name="moneyDungeon_1" Height="80" Width="1300" Margin="0,10,0,10">
+                <Button x:Name="moneyDungeon_1" Height="80" Width="1300" Margin="0,10,0,10" Click="levelSelected1">
                     <StackPanel Orientation="Horizontal"  Height="80" Width="1300">
                         <TextBlock Text="Lv. 1" FontSize="40" Width="300" TextAlignment="Left" VerticalAlignment="Center"/>
 
                         <TextBlock Text="Recompensa: 500" FontSize="40" Width="950" TextAlignment="Right" VerticalAlignment="Center" Padding="50,0,0,0" />
                     </StackPanel>
                 </Button>
-                <Button x:Name="moneyDungeon_2" Height="80" Width="1300" Margin="0,10,0,10">
+                <Button x:Name="moneyDungeon_2" Height="80" Width="1300" Margin="0,10,0,10" Click="levelSelected2">
                     <StackPanel Orientation="Horizontal"  Height="80" Width="1300">
                         <TextBlock Text="Lv. 2" FontSize="40" Width="300" TextAlignment="Left" VerticalAlignment="Center"/>
 
                         <TextBlock Text="Recompensa: 1500" FontSize="40" Width="950" TextAlignment="Right" VerticalAlignment="Center" Padding="50,0,0,0" />
                     </StackPanel>
                 </Button>
-                <Button x:Name="moneyDungeon_3" Height="80" Width="1300" Margin="0,10,0,10">
+                <Button x:Name="moneyDungeon_3" Height="80" Width="1300" Margin="0,10,0,10" Click="levelSelected3">
                     <StackPanel Orientation="Horizontal"  Height="80" Width="1300">
                         <TextBlock Text="Lv. 3" FontSize="40" Width="300" TextAlignment="Left" VerticalAlignment="Center"/>
 
                         <TextBlock Text="Recompensa: 2750" FontSize="40" Width="950" TextAlignment="Right" VerticalAlignment="Center" Padding="50,0,0,0" />
                     </StackPanel>
                 </Button>
-                <Button x:Name="moneyDungeon_4" Height="80" Width="1300" Margin="0,10,0,10">
+                <Button x:Name="moneyDungeon_4" Height="80" Width="1300" Margin="0,10,0,10" Click="levelSelected4">
                     <StackPanel Orientation="Horizontal"  Height="80" Width="1300">
                         <TextBlock Text="Lv. 4" FontSize="40" Width="300" TextAlignment="Left" VerticalAlignment="Center"/>
 
                         <TextBlock Text="Recompensa: 4000" FontSize="40" Width="950" TextAlignment="Right" VerticalAlignment="Center" Padding="50,0,0,0" />
                     </StackPanel>
                 </Button>
-                <Button x:Name="moneyDungeon_5" Height="80" Width="1300" Margin="0,10,0,10">
+                <Button x:Name="moneyDungeon_5" Height="80" Width="1300" Margin="0,10,0,10" Click="levelSelected5">
                     <StackPanel Orientation="Horizontal"  Height="80" Width="1300">
                         <TextBlock Text="Lv. 5" FontSize="40" Width="300" TextAlignment="Left" VerticalAlignment="Center"/>
 

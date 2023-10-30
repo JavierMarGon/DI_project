@@ -10,12 +10,18 @@
     <Compile Update="GameMenu.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="MoneyDungeon.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="GameMenu.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MoneyDungeon.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

@@ -26,6 +26,7 @@ namespace ArenaMasters
         {
             InitializeComponent();
             initializeUnits();
+            habpjName.Text = units[0].getName();
         }
         public void initializeUnits()
         {
@@ -43,6 +44,7 @@ namespace ArenaMasters
         }
         public void habShopHide(object sender, RoutedEventArgs e)
         {
+            habpjName.Text = units[0].getName();
             habShop.Visibility = Visibility.Hidden;
         }
         public void pjShopShow(object sender, RoutedEventArgs e)
@@ -50,31 +52,32 @@ namespace ArenaMasters
             space = 0;
             habpjName.Text = units[space].getName();
             pjShop.Visibility = Visibility.Visible;
+            
         }
         public void habAntPj(object sender, RoutedEventArgs e)
         {
-            if (space == 0)
-            {
-                space = 4;
-            }
-            else
-            {
-                space--;
-            }
+            if (space == 0) { space = 4; }
+            else { space--; }
             habpjName.Text = units[space].getName();
         }
         public void habNextPj(object sender, RoutedEventArgs e)
         {
-            if (space == 4)
-            {
-                space = 0;
-            }
+            if (space == 4) { space = 0; }
             else { space++; }
             habpjName.Text = units[space].getName();
         }
         public void pjShopHide(object sender, RoutedEventArgs e)
         {
             pjShop.Visibility = Visibility.Hidden;
+        }
+
+        private void moneyDungeonShow(object sender, RoutedEventArgs e)
+        {
+            moneyDungeonLvSelector.Visibility = Visibility.Visible;
+        }
+        private void moneyDungeonHide(object sender, RoutedEventArgs e)
+        {
+            moneyDungeonLvSelector.Visibility = Visibility.Hidden;
         }
     }
 }

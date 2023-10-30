@@ -43,7 +43,7 @@
             </Button.Style>
 
         </Button>
-        <Button x:Name="moneyD" HorizontalAlignment="Left" Height="118" VerticalAlignment="Top" Width="127" Canvas.Left="576" Canvas.Top="341">
+        <Button x:Name="moneyD" HorizontalAlignment="Left" Height="118" VerticalAlignment="Top" Width="127" Canvas.Left="576" Canvas.Top="341" Click="moneyDungeonShow">
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="Background" Value="#003ADA3A"/>
@@ -117,7 +117,7 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="30,20,30,50">
                 <Button Content="Ant" Height="50" Width="105" Click="habAntPj"/>
-                <TextBlock x:Name="habpjName" Text="pj" Height="50" Width="1005" Background="#FF524939" Foreground="Beige" FontSize="50" FontFamily="Algerian" TextAlignment="Center"/>
+                <TextBlock x:Name="habpjName" Height="50" Width="1005" Background="#FF524939" Foreground="Beige" FontSize="50" FontFamily="Algerian" TextAlignment="Center"/>
                 <Button Content="Next" Height="50" Width="105" Click="habNextPj"/>
             </StackPanel>
 
@@ -128,6 +128,50 @@
                 <Button Content="Salir" Height="100" Width="135" Click="pjShopHide"/>
                 <TextBlock Text="La encrucijada" Height="100" Width="1240" Background="#FF524939" Foreground="Beige" FontSize="90" FontFamily="Algerian" TextAlignment="Center"/>
 
+            </StackPanel>
+        </StackPanel>
+        <StackPanel x:Name="moneyDungeonLvSelector" Orientation="Vertical" Visibility="Hidden" Canvas.Top="48" HorizontalAlignment="Left" Height="711" VerticalAlignment="Top" Width="1375" Background="#FF133C04">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Salir" Height="100" Width="135" Click="moneyDungeonHide"/>
+                <TextBlock Text="Saqueos" Height="100" Width="1240" Background="#FF524939" Foreground="Beige" FontSize="90" FontFamily="Algerian" TextAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Dificultad" FontSize="45" HorizontalAlignment="Center" Foreground="White"/>
+                <Button x:Name="moneyDungeon_1" Height="80" Width="1300" Margin="0,10,0,10">
+                    <StackPanel Orientation="Horizontal"  Height="80" Width="1300">
+                        <TextBlock Text="Lv. 1" FontSize="40" Width="300" TextAlignment="Left" VerticalAlignment="Center"/>
+
+                        <TextBlock Text="Recompensa: 500" FontSize="40" Width="950" TextAlignment="Right" VerticalAlignment="Center" Padding="50,0,0,0" />
+                    </StackPanel>
+                </Button>
+                <Button x:Name="moneyDungeon_2" Height="80" Width="1300" Margin="0,10,0,10">
+                    <StackPanel Orientation="Horizontal"  Height="80" Width="1300">
+                        <TextBlock Text="Lv. 2" FontSize="40" Width="300" TextAlignment="Left" VerticalAlignment="Center"/>
+
+                        <TextBlock Text="Recompensa: 1500" FontSize="40" Width="950" TextAlignment="Right" VerticalAlignment="Center" Padding="50,0,0,0" />
+                    </StackPanel>
+                </Button>
+                <Button x:Name="moneyDungeon_3" Height="80" Width="1300" Margin="0,10,0,10">
+                    <StackPanel Orientation="Horizontal"  Height="80" Width="1300">
+                        <TextBlock Text="Lv. 3" FontSize="40" Width="300" TextAlignment="Left" VerticalAlignment="Center"/>
+
+                        <TextBlock Text="Recompensa: 2750" FontSize="40" Width="950" TextAlignment="Right" VerticalAlignment="Center" Padding="50,0,0,0" />
+                    </StackPanel>
+                </Button>
+                <Button x:Name="moneyDungeon_4" Height="80" Width="1300" Margin="0,10,0,10">
+                    <StackPanel Orientation="Horizontal"  Height="80" Width="1300">
+                        <TextBlock Text="Lv. 4" FontSize="40" Width="300" TextAlignment="Left" VerticalAlignment="Center"/>
+
+                        <TextBlock Text="Recompensa: 4000" FontSize="40" Width="950" TextAlignment="Right" VerticalAlignment="Center" Padding="50,0,0,0" />
+                    </StackPanel>
+                </Button>
+                <Button x:Name="moneyDungeon_5" Height="80" Width="1300" Margin="0,10,0,10">
+                    <StackPanel Orientation="Horizontal"  Height="80" Width="1300">
+                        <TextBlock Text="Lv. 5" FontSize="40" Width="300" TextAlignment="Left" VerticalAlignment="Center"/>
+
+                        <TextBlock Text="Recompensa: 10000" FontSize="40" Width="950" TextAlignment="Right" VerticalAlignment="Center" Padding="50,0,0,0" />
+                    </StackPanel>
+                </Button>
             </StackPanel>
         </StackPanel>
     </Canvas>

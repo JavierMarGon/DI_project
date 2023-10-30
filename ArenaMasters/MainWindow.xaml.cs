@@ -25,12 +25,39 @@ namespace ArenaMasters
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void click_register(object sender, RoutedEventArgs e)
         {
-            
-            GameMenu window1 = new GameMenu();
-            window1.Show();
+            limpiarCampos();
+            menu_login.Visibility = Visibility.Hidden;
+            menu_register.Visibility = Visibility.Visible;
+
+
+        }
+        private void click_create_register(object sender, RoutedEventArgs e)
+        {
+            menu_login.Visibility = Visibility.Visible;
+            menu_register.Visibility = Visibility.Hidden;
+            limpiarCampos();
+        }
+
+        private void click_login(object sender, RoutedEventArgs e)
+        {
+            limpiarCampos();
+            GameMenu menu = new GameMenu();
             this.Close();
+            menu.Show();
+        }
+
+        private void click_cerrarVentana(object sender, RoutedEventArgs e)
+        {
+            menu_login.Visibility = Visibility.Visible;
+            menu_register.Visibility = Visibility.Hidden;
+        }
+
+        private void limpiarCampos()
+        {
+            tb_user.Text = "";
+            psw_user.Password = "";
         }
     }
 }

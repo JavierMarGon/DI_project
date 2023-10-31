@@ -69,7 +69,8 @@ namespace ArenaMasters
         }
         public void habShopShow(object sender, RoutedEventArgs e)
         {
-            space=0;
+            settingsPanel.Visibility = Visibility.Collapsed;
+            space =0;
             habpjName.Text = units[space].getName();
             habpjSkill1.Text = units[space].getSkill1().ToString();
             habpjSkill2.Text = units[space].getSkill2().ToString();
@@ -84,6 +85,7 @@ namespace ArenaMasters
         }
         public void pjShopShow(object sender, RoutedEventArgs e)
         {
+            settingsPanel.Visibility = Visibility.Collapsed;
             space = 0;
             habpjName.Text = units[space].getName();
             habpjSkill1.Text = units[space].getSkill1().ToString();
@@ -120,6 +122,7 @@ namespace ArenaMasters
 
         private void moneyDungeonShow(object sender, RoutedEventArgs e)
         {
+            settingsPanel.Visibility = Visibility.Collapsed;
             moneyDungeonLvSelector.Visibility = Visibility.Visible;
         }
         private void moneyDungeonHide(object sender, RoutedEventArgs e)
@@ -193,6 +196,11 @@ namespace ArenaMasters
             int val = random.Next(0, 5);
             units[space].setSkill1(val);
             habpjSkill4.Text = units[space].getSkill1().ToString();
+        }
+
+        private void settingsPanelShow(object sender, RoutedEventArgs e)
+        {
+            settingsPanel.Visibility = Visibility.Visible;
         }
     }
 }

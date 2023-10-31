@@ -13,5 +13,6 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/map.jpg")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/map1.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/persona.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/settings.png")]
 
 

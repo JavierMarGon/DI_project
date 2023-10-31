@@ -13,6 +13,7 @@
     <None Remove="images\map.jpg" />
     <None Remove="images\map1.png" />
     <None Remove="images\persona.png" />
+    <None Remove="images\settings.png" />
     <None Remove="persona.png" />
   </ItemGroup>
 
@@ -30,6 +31,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="images\persona.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\settings.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

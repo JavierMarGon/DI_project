@@ -42,10 +42,13 @@ namespace ArenaMasters
 
         private void click_login(object sender, RoutedEventArgs e)
         {
+            if (true)
+            {
+                menu_login.Visibility = Visibility.Collapsed;
+                menu_user.Visibility = Visibility.Visible;
+            }
             limpiarCampos();
-            GameMenu menu = new GameMenu();
-            this.Close();
-            menu.Show();
+
         }
 
         private void click_cerrarVentana(object sender, RoutedEventArgs e)
@@ -58,6 +61,26 @@ namespace ArenaMasters
         {
             tb_user.Text = "";
             psw_user.Password = "";
+        }
+
+        private void click_continue(object sender, RoutedEventArgs e)
+        {
+            GameMenu menu = new GameMenu(0);
+            this.Close();
+            menu.Show();
+        }
+        private void click_newGame(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void click_loadGame(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void click_close(object sender, RoutedEventArgs e)
+        {
+            menu_user.Visibility = Visibility.Collapsed;
+            menu_login.Visibility = Visibility.Visible;
         }
     }
 }

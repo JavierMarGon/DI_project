@@ -8,17 +8,38 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="images\back.png" />
+    <None Remove="images\castle.jpg" />
     <None Remove="images\coin.png" />
+    <None Remove="images\crossroad.jpg" />
+    <None Remove="images\goldmine.jpg" />
     <None Remove="images\inicio.png" />
     <None Remove="images\map.jpg" />
     <None Remove="images\map1.png" />
+    <None Remove="images\map2.png" />
+    <None Remove="images\map3.png" />
+    <None Remove="images\map4.png" />
     <None Remove="images\persona.png" />
+    <None Remove="images\personaje.png" />
     <None Remove="images\settings.png" />
+    <None Remove="images\tavern.jpg" />
     <None Remove="persona.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="images\back.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\castle.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="images\coin.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\crossroad.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\goldmine.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="images\inicio.png">
@@ -30,16 +51,32 @@
     <Content Include="images\map1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="images\map2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\map3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\map4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="images\persona.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="images\personaje.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="images\settings.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\tavern.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MySql.Data" Version="8.1.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
 </Project>

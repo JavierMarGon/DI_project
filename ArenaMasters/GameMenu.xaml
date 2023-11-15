@@ -114,51 +114,62 @@
 
 
         <StackPanel x:Name="settingsPanel" Visibility="Collapsed" Canvas.Top="48" Width="310" Height="711" Background="#FF8C8C8C">
-            <Button Content="A la taberna" Click="habShopShow"/>
-            <Button Content="A la encrucijada" Click="pjShopShow"/>
-            <Button Content="A los saqueos" Click="moneyDungeonShow"/>
+            <Button Content="A la taberna" FontSize="20" Click="habShopShow" Margin="0,34,0,20"/>
+            <Button Content="A la encrucijada" FontSize="20" Click="pjShopShow" Margin="0,20,0,20"/>
+            <Button Content="A los saqueos" FontSize="20" Click="moneyDungeonShow" Margin="0,20,0,20"/>
+            <Button Content="A los saqueos" FontSize="20" Click="moneyDungeonShow" Margin="0,20,0,20"/>
+            <Button Content="Salir de la partida" FontSize="20" Click="exitGame" Margin="0,350,0,0"/>
         </StackPanel>
-        <StackPanel x:Name="habShop" Visibility="Collapsed" Canvas.Top="48" HorizontalAlignment="Left" Height="711" VerticalAlignment="Top" Width="1375" Background="#FF907000">
+        <StackPanel x:Name="habShop" Visibility="Collapsed" Canvas.Top="48" HorizontalAlignment="Left" Height="711" VerticalAlignment="Top" Width="1375">
+            <StackPanel.Background>
+                <ImageBrush ImageSource="/images/tavern.jpg"/>
+            </StackPanel.Background>
             <StackPanel Orientation="Horizontal">
                 <Button Content="Salir" Height="100" Width="135" Click="habShopHide"/>
-                <TextBlock Text="Taberna" Height="100" Width="1240" Background="#FF524939" Foreground="Beige" FontSize="90" FontFamily="Algerian" TextAlignment="Center"/>
+                <TextBlock Text="Taberna" Height="100" Width="1240" Background="#BF524939" Foreground="Beige" FontSize="90" FontFamily="Algerian" TextAlignment="Center"/>
 
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="30,20,30,50">
                 <Button Content="Ant" Height="50" Width="105" Click="habAntPj"/>
-                <TextBlock x:Name="habpjName" Height="50" Width="1005" Background="#FF524939" Foreground="Beige" FontSize="50" FontFamily="Algerian" TextAlignment="Center"/>
+                <TextBlock x:Name="habpjName" Height="50" Width="1005" Background="#BF524939" Foreground="Beige" FontSize="50" FontFamily="Algerian" TextAlignment="Center"/>
                 <Button Content="Next" Height="50" Width="105" Click="habNextPj"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="30,20,30,50">
-                <TextBlock x:Name="habpjSkill1" Height="50" Width="1005" Background="#FF524939" Foreground="Beige" FontSize="50" FontFamily="Algerian" TextAlignment="Center"/>
+                <TextBlock x:Name="habpjSkill1" Height="50" Width="1005" Background="#BF524939" Foreground="Beige" FontSize="50" FontFamily="Algerian" TextAlignment="Center"/>
                 <Button Content="Change" Height="50" Width="105" Click="habChangeSkill1"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="30,20,30,50">
-                <TextBlock x:Name="habpjSkill2" Height="50" Width="1005" Background="#FF524939" Foreground="Beige" FontSize="50" FontFamily="Algerian" TextAlignment="Center"/>
+                <TextBlock x:Name="habpjSkill2" Height="50" Width="1005" Background="#BF524939" Foreground="Beige" FontSize="50" FontFamily="Algerian" TextAlignment="Center"/>
                 <Button Content="Change" Height="50" Width="105" Click="habChangeSkill2"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="30,20,30,50">
-                <TextBlock x:Name="habpjSkill3" Height="50" Width="1005" Background="#FF524939" Foreground="Beige" FontSize="50" FontFamily="Algerian" TextAlignment="Center"/>
+                <TextBlock x:Name="habpjSkill3" Height="50" Width="1005" Background="#BF524939" Foreground="Beige" FontSize="50" FontFamily="Algerian" TextAlignment="Center"/>
                 <Button Content="Change" Height="50" Width="105" Click="habChangeSkill3"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="30,20,30,50">
-                <TextBlock x:Name="habpjSkill4" Height="50" Width="1005" Background="#FF524939" Foreground="Beige" FontSize="50" FontFamily="Algerian" TextAlignment="Center"/>
+                <TextBlock x:Name="habpjSkill4" Height="50" Width="1005" Background="#BF524939" Foreground="Beige" FontSize="50" FontFamily="Algerian" TextAlignment="Center"/>
                 <Button Content="Change" Height="50" Width="105" Click="habChangeSkill4"/>
             </StackPanel>
 
         </StackPanel>
-        <StackPanel x:Name="pjShop" Visibility="Hidden" Canvas.Top="48" HorizontalAlignment="Left" Height="711" VerticalAlignment="Top" Width="1375" Background="#FF003A6D">
+        <StackPanel x:Name="pjShop" Visibility="Hidden" Canvas.Top="48" HorizontalAlignment="Left" Height="711" VerticalAlignment="Top" Width="1375" >
+            <StackPanel.Background>
+                <ImageBrush ImageSource="/images/crossroad.jpg"/>
+            </StackPanel.Background>
             <StackPanel Orientation="Horizontal">
                 <Button Content="Salir" Height="100" Width="135" Click="pjShopHide"/>
-                <TextBlock Text="La encrucijada" Height="100" Width="1240" Background="#FF524939" Foreground="Beige" FontSize="90" FontFamily="Algerian" TextAlignment="Center"/>
+                <TextBlock Text="La encrucijada" Height="100" Width="1240" Background="#BF524939" Foreground="Beige" FontSize="90" FontFamily="Algerian" TextAlignment="Center"/>
 
             </StackPanel>
         </StackPanel>
-        <StackPanel x:Name="moneyDungeonLvSelector" Orientation="Vertical" Visibility="Hidden" Canvas.Top="48" HorizontalAlignment="Left" Height="711" VerticalAlignment="Top" Width="1375" Background="#FF133C04">
+        <StackPanel x:Name="moneyDungeonLvSelector" Orientation="Vertical" Visibility="Hidden" Canvas.Top="48" HorizontalAlignment="Left" Height="711" VerticalAlignment="Top" Width="1375" >
+            <StackPanel.Background>
+                <ImageBrush ImageSource="/images/goldmine.jpg"/>
+            </StackPanel.Background>
             <StackPanel Orientation="Horizontal">
                 <Button Content="Salir" Height="100" Width="135" Click="moneyDungeonHide"/>
-                <TextBlock Text="Saqueos" Height="100" Width="1240" Background="#FF524939" Foreground="Beige" FontSize="90" FontFamily="Algerian" TextAlignment="Center"/>
+                <TextBlock Text="Saqueos" Height="100" Width="1240" Background="#BF524939" Foreground="Beige" FontSize="90" FontFamily="Algerian" TextAlignment="Center"/>
             </StackPanel>
 
             <StackPanel Orientation="Vertical">

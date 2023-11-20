@@ -24,6 +24,10 @@ namespace ArenaMasters
         {
             InitializeComponent();
         }
+        public MainWindow(int user)
+        {
+            InitializeComponent();
+        }
 
         private void click_register(object sender, RoutedEventArgs e)
         {

@@ -7,10 +7,10 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="GameMenu.xaml.cs">
+    <Compile Update="view\GameMenu.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="MoneyDungeon.xaml.cs">
+    <Compile Update="view\MoneyDungeon.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -18,10 +18,10 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="GameMenu.xaml">
+    <Page Update="view\GameMenu.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MoneyDungeon.xaml">
+    <Page Update="view\MoneyDungeon.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

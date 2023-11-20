@@ -26,7 +26,7 @@
 
         <!--Menú de Login-->
 
-        <Grid x:Name="menu_login" Visibility="Hidden" Grid.Column="1" Grid.RowSpan="12" Background="#66808080" >
+        <Grid x:Name="menu_login" Visibility="Visible" Grid.Column="1" Grid.RowSpan="12" Background="#66808080" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
@@ -103,7 +103,7 @@
         </Grid>
 
         <!--Menu usuario-->
-        <Grid x:Name="menu_user" Visibility="Visible" Grid.Column="1" Grid.RowSpan="12" Background="#66808080" >
+        <Grid x:Name="menu_user" Visibility="Collapsed" Grid.Column="1" Grid.RowSpan="12" Background="#66808080" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>

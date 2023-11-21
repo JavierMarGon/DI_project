@@ -14,14 +14,13 @@ namespace ArenaMasters.model
 
     class ArenaMastersManager : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler? PropertyChanged;
-    }
-    PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged;
+    
 
-        private AccesoDatos _ad = new AccesoDatos();
+        private DataAccess _ad = new DataAccess();
     //Campos privados
     private int _numeroPeliculas;
-    ObservableCollection<Pelicula> _catalogo;
+    ObservableCollection<Units> _unitList;
     private int _sumador;
     private int _resX;
     private int _resY;
@@ -36,46 +35,19 @@ namespace ArenaMasters.model
             OnPropertyChanged("NumeroPeliculas");
         }
     }
-    public ObservableCollection<Pelicula> Catalogo
+    public ObservableCollection<Units> UnitList
     {
-        get { return _catalogo; }
+        get { return _unitList; }
     }
 
 
-    public int Sumador
-    {
-        get { return _sumador; }
-        set
-        {
-            _sumador = value;
-            OnPropertyChanged("Sumador");
-        }
-    }
-    public int ResX
-    {
-        get { return _resX; }
-        set
-        {
-            _resX = value;
-            OnPropertyChanged("ResX");
-        }
-    }
-    public int ResY
-    {
-        get { return _resY; }
-        set
-        {
-            _resY = value;
-            OnPropertyChanged("ResY");
-        }
-    }
 
 
     //Constructor(es)
-    public SakilaManager()
+    public ArenaMastersManager()
     {
         _numeroPeliculas = 0;
-        _catalogo = new ObservableCollection<Pelicula>();
+        _unitList = new ObservableCollection<Units>();
         _sumador = 0;
         _resX = 1024;
         _resY = 768;
@@ -85,7 +57,22 @@ namespace ArenaMasters.model
     {
         //Comprobaciones previas
 
-        if (_ad.PA_Login(usuario, pass) == 0)
+        if (_ad.PA_Login(usuario, pass)>0)
+        {
+            MessageBox.Show("Bienvenid@");
+            return _ad.PA_Login(usuario, pass);
+        }
+        else
+        {
+            MessageBox.Show("Error de Login");
+            return -1;
+        }
+    }
+    public int Register(string nombre,  string pass)
+    {
+        //Comprobaciones previas
+
+        if (_ad.PA_Register(nombre, pass) == 1)
         {
             MessageBox.Show("Bienvenid@");
             return 1;
@@ -95,46 +82,32 @@ namespace ArenaMasters.model
             MessageBox.Show("Error de Login");
             return -1;
         }
-    }
-    public void Registrar(string nombre, string apellido, string mail, int id_tienda,
-                            string usuario, string pass)
-    {
-        //Comprobaciones previas
-
-        if (_ad.PA_AltaEmpleado(nombre, apellido, mail, id_tienda, usuario, pass) == 0)
-        {
-            MessageBox.Show("Bienvenid@");
-        }
-        else
-        {
-            MessageBox.Show("Error de Login");
-        }
 
 
     }
 
-    public void AbrirCatalogo()
-    {
-        _catalogo = new ObservableCollection<Pelicula>();
+    //public void AbrirCatalogo()
+    //{
+    //    _catalogo = new ObservableCollection<Units>();
 
-        DataSet datosCatalogo = new DataSet();
-        datosCatalogo = _ad.PA_LlamarCatalogo();
-        Pelicula p;
+    //    DataSet datosCatalogo = new DataSet();
+    //    datosCatalogo = _ad.PA_LlamarCatalogo();
+    //    Pelicula p;
 
-        foreach (DataRow dr in datosCatalogo.Tables[0].Rows)
-        {
-            p = new Pelicula(dr.ItemArray[0].ToString(),
-                             dr.ItemArray[1].ToString(),
-                             int.Parse(dr.ItemArray[2].ToString()));
-            _catalogo.Add(p);
-        }
-        OnPropertyChanged("Catalogo");
-    }
+    //    foreach (DataRow dr in datosCatalogo.Tables[0].Rows)
+    //    {
+    //        p = new Pelicula(dr.ItemArray[0].ToString(),
+    //                         dr.ItemArray[1].ToString(),
+    //                         int.Parse(dr.ItemArray[2].ToString()));
+    //        _catalogo.Add(p);
+    //    }
+    //    OnPropertyChanged("Catalogo");
+    //}
 
-    public void ActualizarNumeroPeliculas()
-    {
-        NumeroPeliculas = _ad.DameNumeroPeliculas();
-    }
+    //public void ActualizarNumeroPeliculas()
+    //{
+    //    NumeroPeliculas = _ad.DameNumeroPeliculas();
+    //}
 
     // Create the OnPropertyChanged method to raise the event
     // The calling member's name will be used as the parameter.

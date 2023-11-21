@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ArenaMasters.model
 {
@@ -15,7 +16,7 @@ namespace ArenaMasters.model
 
         string _conectionString = "server=localhost;" +
                                   "user=root;" +
-                                  "database=arenamaster;" +
+                                  "database=arenamasters;" +
                                   "port=3306;" +
                                   "password=1234";
 
@@ -58,15 +59,49 @@ namespace ArenaMasters.model
                 _cmd = new MySqlCommand();
                 _cmd.Connection = _conn;
                 _cmd.CommandType = CommandType.StoredProcedure;
-                _cmd.CommandText = "Login";
+                _cmd.CommandText = "findUser";
 
-                _cmd.Parameters.AddWithValue("_username", usuario);
-                _cmd.Parameters["_username"].Direction = ParameterDirection.Input;
+                _cmd.Parameters.AddWithValue("_name", usuario);
+                _cmd.Parameters["_name"].Direction = ParameterDirection.Input;
 
                 string paswordHash = CreateMD5(pass).Substring(0, 20);
 
-                _cmd.Parameters.AddWithValue("_password", paswordHash);
-                _cmd.Parameters["_password"].Direction = ParameterDirection.Input;
+                _cmd.Parameters.AddWithValue("_pass", paswordHash);
+                _cmd.Parameters["_pass"].Direction = ParameterDirection.Input;
+
+                _cmd.Parameters.Add(new MySqlParameter("_res", MySqlDbType.Int32));
+                _cmd.Parameters["_res"].Direction = ParameterDirection.Output;
+
+                _cmd.ExecuteNonQuery();
+
+                resultado = (int)_cmd.Parameters["_res"].Value;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return resultado;
+            }
+            return resultado;
+
+        }
+        public int PA_Register(string usuario, string pass)
+        {
+            int resultado = -99;
+
+            try
+            {
+                _cmd = new MySqlCommand();
+                _cmd.Connection = _conn;
+                _cmd.CommandType = CommandType.StoredProcedure;
+                _cmd.CommandText = "addUser";
+
+                _cmd.Parameters.AddWithValue("_name", usuario);
+                _cmd.Parameters["_name"].Direction = ParameterDirection.Input;
+
+                string paswordHash = CreateMD5(pass).Substring(0, 20);
+
+                _cmd.Parameters.AddWithValue("_pass", paswordHash);
+                _cmd.Parameters["_pass"].Direction = ParameterDirection.Input;
 
                 _cmd.Parameters.Add(new MySqlParameter("_res", MySqlDbType.Int32));
                 _cmd.Parameters["_res"].Direction = ParameterDirection.Output;

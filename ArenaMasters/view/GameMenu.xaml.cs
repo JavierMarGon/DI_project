@@ -1,4 +1,5 @@
-﻿using Org.BouncyCastle.Tls;
+﻿using ArenaMasters.model;
+using Org.BouncyCastle.Tls;
 using Org.BouncyCastle.Utilities;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,7 @@ namespace ArenaMasters
         int space = 0;
         int level = 0;
         int rewards = 0;
+        ArenaMastersManager manager=new ArenaMastersManager();
         Units[] units;
         Random random = new Random();
         public GameMenu(int gameId)

@@ -230,19 +230,19 @@
                 <TextBlock Text="Usuario" FontSize="25" Foreground="#FFD6BFBF"/>
             </StackPanel>
             <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20">
-                <TextBox MinWidth="200" FontSize="25" Background="#4CFFFFFF"/>
+                <TextBox x:Name="reg_username" MinWidth="200" FontSize="25" Background="#4CFFFFFF"/>
             </StackPanel>
             <StackPanel Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="20">
                 <TextBlock Text="Password" FontSize="25" Foreground="#FFD6BFBF"/>
             </StackPanel>
             <StackPanel Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20">
-                <TextBox MinWidth="200" FontSize="25" Background="#4CFFFFFF"/>
+                <TextBox x:Name="reg_password" MinWidth="200" FontSize="25" Background="#4CFFFFFF"/>
             </StackPanel>
             <StackPanel Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="20">
                 <TextBlock Text="Confirmar Password" FontSize="25" Foreground="#FFD6BFBF"/>
             </StackPanel>
             <StackPanel Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20">
-                <TextBox MinWidth="200" FontSize="25" Background="#4CFFFFFF"/>
+                <TextBox x:Name="reg_password_check" MinWidth="200" FontSize="25" Background="#4CFFFFFF"/>
             </StackPanel>
             <StackPanel Grid.Row="4" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" >
                 <Button Click="click_create_register" MinWidth="200" Content="Crear Cuenta" FontSize="25" Foreground="White">

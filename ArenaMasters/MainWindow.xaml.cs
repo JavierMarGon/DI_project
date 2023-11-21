@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ArenaMasters.model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,8 +21,10 @@ namespace ArenaMasters
     /// </summary>
     public partial class MainWindow : Window
     {
+        ArenaMastersManager manager = new ArenaMastersManager();
         public MainWindow()
         {
+            
             InitializeComponent();
         }
         public MainWindow(int user)
@@ -39,14 +42,20 @@ namespace ArenaMasters
         }
         private void click_create_register(object sender, RoutedEventArgs e)
         {
-            menu_login.Visibility = Visibility.Visible;
-            menu_register.Visibility = Visibility.Hidden;
+            if (reg_password.Text.ToString() == reg_password_check.Text.ToString()) {
+                if (manager.Register(reg_username.Text.ToString(),reg_password.Text.ToString()) == 1)
+                {
+                    menu_login.Visibility = Visibility.Visible;
+                    menu_register.Visibility = Visibility.Hidden;
+                }
+               
+            }
             limpiarCampos();
         }
 
         private void click_login(object sender, RoutedEventArgs e)
         {
-            if (true)
+            if (manager.Login(tb_user.Text.ToString(),psw_user.Password.ToString()) >0)
             {
                 menu_login.Visibility = Visibility.Collapsed;
                 menu_user.Visibility = Visibility.Visible;

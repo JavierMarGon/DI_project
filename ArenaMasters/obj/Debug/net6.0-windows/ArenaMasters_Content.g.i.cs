@@ -8,10 +8,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/actualizar.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/back.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/castle.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/cementerio.jpg")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/coin.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/comprar.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/crossroad.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/dragon.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/eliminar.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/flecha_derecha.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/flecha_izquierda.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/goldmine.jpg")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/inicio.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/map.jpg")]
@@ -20,7 +27,9 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/map3.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/map4.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/persona.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/personaje.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/personajeright.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/personajeleft.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/salir.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/settings.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/tavern.jpg")]
 

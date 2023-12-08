@@ -21,9 +21,10 @@ namespace ArenaMasters
     public partial class MoneyDungeon : Window
     {
         int gameId = 0;
-        int lv;
+        int lvl;
         int profit;
-
+        private ImageBrush personajeLeft;
+        private ImageBrush personajeRight;
         //Clase con los datos de movimiento del pj
         PlayableDungeonMovement pj = new PlayableDungeonMovement(349, 108);
 
@@ -33,11 +34,13 @@ namespace ArenaMasters
         public MoneyDungeon(int level, int rewards, int gameId)
         {
             InitializeComponent();
+            personajeLeft = new ImageBrush();
+            personajeRight = new ImageBrush();
+            lvl = level;
             paintImage();
-            lv = level;
             profit = rewards;
             this.gameId = gameId;
-            AgregarRectangulos();
+            AgregarRectangulos(lvl);
             
         }
 
@@ -72,9 +75,11 @@ namespace ArenaMasters
             {
                 case Key.Left: // Izquierda
                     pj.MarginLeft -= stepSize;
+                    image.Fill = personajeLeft;
                     break;
                 case Key.Right: // Derecha
                     pj.MarginLeft += stepSize;
+                    image.Fill = personajeRight;
                     break;
                 case Key.Down: // Abajo
                     pj.MarginTop += stepSize;
@@ -121,10 +126,10 @@ namespace ArenaMasters
             return false;
         }
 
-        private void AgregarRectangulos(/*int map */)
+        private void AgregarRectangulos(int lvl)
         {
             Collisions collisions = new Collisions();
-            List<ColisionMapa> mapaSeleccionado = collisions.ObtenerMapa(4);
+            List<ColisionMapa> mapaSeleccionado = collisions.ObtenerMapa(lvl);
             //Generamos las colisiones dependiendo del mapa
             foreach (var data in mapaSeleccionado)
             {
@@ -177,10 +182,31 @@ namespace ArenaMasters
             image.Width = 60; // Ancho del rectángulo
             image.Height = 60; // Alto del rectángulo
 
+            backgroundImage.ImageSource = new BitmapImage(new Uri(@"pack://application:,,,/images/map1.png", UriKind.Absolute));
+            if (lvl == 1)
+            {
+                backgroundImage.ImageSource = new BitmapImage(new Uri(@"pack://application:,,,/images/map1.png", UriKind.Absolute));
+            }
+            else if (lvl == 2)
+            {
+                backgroundImage.ImageSource = new BitmapImage(new Uri(@"pack://application:,,,/images/map2.png", UriKind.Absolute));
+            }
+            else if (lvl == 3)
+            {
+                backgroundImage.ImageSource = new BitmapImage(new Uri(@"pack://application:,,,/images/map3.png", UriKind.Absolute));
+            }
+            else if (lvl == 4)
+            {
+                backgroundImage.ImageSource = new BitmapImage(new Uri(@"pack://application:,,,/images/map4.png", UriKind.Absolute));
+            }
+
             // Establecer un color sólido como fondo
-            ImageBrush imageBrush = new ImageBrush();
-            imageBrush.ImageSource = new BitmapImage(new Uri(@"pack://application:,,,/images/personaje.png", UriKind.Absolute));
-            image.Fill = imageBrush; // Color de relleno del rectángulo
+            personajeLeft = new ImageBrush();
+            personajeLeft.ImageSource = new BitmapImage(new Uri(@"pack://application:,,,/images/personajeLeft.png", UriKind.Absolute));
+
+            personajeRight = new ImageBrush();
+            personajeRight.ImageSource = new BitmapImage(new Uri(@"pack://application:,,,/images/personajeRight.png", UriKind.Absolute));
+            image.Fill = personajeRight; // Color de relleno del rectángulo
             image.Name = "player";
 
             Canvas.SetLeft(image, pj.MarginLeft); // Posición izquierda de la imagen

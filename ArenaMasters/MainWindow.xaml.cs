@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,14 +23,35 @@ namespace ArenaMasters
     public partial class MainWindow : Window
     {
         ArenaMastersManager manager = new ArenaMastersManager();
+        MediaPlayer mediaPlayer = new MediaPlayer();
         public MainWindow()
         {
             
             InitializeComponent();
+            playSimpleSound();
         }
         public MainWindow(int user)
         {
             InitializeComponent();
+        }
+
+        private void MediaPlayer_MediaEnded(object sender, EventArgs e)
+        {
+            // Cierra la ventana cuando la reproducción ha terminado
+            Close();
+        }
+
+        private void playSimpleSound()
+        {
+            try
+            {
+                mediaPlayer.Open(new Uri("music/InicioSesion.mp3", UriKind.Relative));
+                mediaPlayer.Play();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void click_register(object sender, RoutedEventArgs e)
@@ -42,13 +64,12 @@ namespace ArenaMasters
         }
         private void click_create_register(object sender, RoutedEventArgs e)
         {
-            if (reg_password.Text.ToString() == reg_password_check.Text.ToString()) {
-                if (manager.Register(reg_username.Text.ToString(),reg_password.Text.ToString()) == 1)
+            if (reg_password.Password.ToString() == reg_password_check.Password.ToString()) {
+                if (manager.Register(reg_username.Text.ToString(),reg_password.Password.ToString()) == 1)
                 {
                     menu_login.Visibility = Visibility.Visible;
                     menu_register.Visibility = Visibility.Hidden;
                 }
-               
             }
             limpiarCampos();
         }
@@ -68,16 +89,21 @@ namespace ArenaMasters
         {
             menu_login.Visibility = Visibility.Visible;
             menu_register.Visibility = Visibility.Hidden;
+            limpiarCampos();
         }
 
         private void limpiarCampos()
         {
             tb_user.Text = "";
             psw_user.Password = "";
+            reg_username.Text = "";
+            reg_password.Password = "";
+            reg_password_check.Password = "";
         }
 
         private void click_continue(object sender, RoutedEventArgs e)
         {
+            mediaPlayer.Close();
             GameMenu menu = new GameMenu(0);
             this.Close();
             menu.Show();

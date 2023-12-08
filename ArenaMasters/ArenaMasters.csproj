@@ -8,10 +8,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="music\**" />
+    <EmbeddedResource Remove="music\**" />
+    <None Remove="music\**" />
+    <Page Remove="music\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="images\actualizar.png" />
     <None Remove="images\back.png" />
     <None Remove="images\castle.jpg" />
+    <None Remove="images\cementerio.jpg" />
     <None Remove="images\coin.png" />
+    <None Remove="images\comprar.png" />
     <None Remove="images\crossroad.jpg" />
+    <None Remove="images\dragon.png" />
+    <None Remove="images\eliminar.png" />
+    <None Remove="images\flecha_derecha.png" />
+    <None Remove="images\flecha_izquierda.png" />
     <None Remove="images\goldmine.jpg" />
     <None Remove="images\inicio.png" />
     <None Remove="images\map.jpg" />
@@ -20,23 +34,46 @@
     <None Remove="images\map3.png" />
     <None Remove="images\map4.png" />
     <None Remove="images\persona.png" />
-    <None Remove="images\personaje.png" />
+    <None Remove="images\personajeLeft.png" />
+    <None Remove="images\personajeRight.png" />
+    <None Remove="images\salir.png" />
     <None Remove="images\settings.png" />
     <None Remove="images\tavern.jpg" />
     <None Remove="persona.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="images\actualizar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="images\back.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="images\castle.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="images\cementerio.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="images\coin.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="images\comprar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="images\crossroad.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\dragon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\eliminar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\flecha_derecha.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\flecha_izquierda.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="images\goldmine.jpg">
@@ -63,7 +100,13 @@
     <Content Include="images\persona.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="images\personaje.png">
+    <Content Include="images\personajeRight.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\personajeLeft.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\salir.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="images\settings.png">

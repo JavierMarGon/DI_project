@@ -267,3 +267,139 @@ C:\Users\ADM_DAM2B_10\materiales\Di_proyect10\ArenaMasters\obj\Debug\net6.0-wind
 C:\Users\ADM_DAM2B_10\materiales\Di_proyect10\ArenaMasters\obj\Debug\net6.0-windows\view\GameMenu.baml
 C:\Users\ADM_DAM2B_10\materiales\Di_proyect10\ArenaMasters\obj\Debug\net6.0-windows\view\MoneyDungeon.baml
 C:\Users\ADM_DAM2B_10\materiales\Di_proyect10\ArenaMasters\bin\Debug\net6.0-windows\BouncyCastle.Cryptography.dll
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\ArenaMasters.exe
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\back.png
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\castle.jpg
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\coin.png
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\crossroad.jpg
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\goldmine.jpg
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\inicio.png
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\map.jpg
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\map1.png
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\map2.png
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\map3.png
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\map4.png
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\persona.png
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\personaje.png
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\settings.png
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\tavern.jpg
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\ArenaMasters.deps.json
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\ArenaMasters.runtimeconfig.json
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\ArenaMasters.dll
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\ArenaMasters.pdb
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\BouncyCastle.Cryptography.dll
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\Google.Protobuf.dll
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\K4os.Compression.LZ4.dll
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\K4os.Compression.LZ4.Streams.dll
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\K4os.Hash.xxHash.dll
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\MySql.Data.dll
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\System.IO.Pipelines.dll
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\System.Text.Encodings.Web.dll
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\System.Text.Json.dll
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\ZstdSharp.dll
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\runtimes\win-x64\native\comerr64.dll
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\runtimes\win-x64\native\gssapi64.dll
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\runtimes\win-x64\native\k5sprt64.dll
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\runtimes\win-x64\native\krb5_64.dll
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\runtimes\win-x64\native\krbcc64.dll
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters.csproj.AssemblyReference.cache
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\view\GameMenu.g.cs
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\view\MoneyDungeon.g.cs
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters_Content.g.cs
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters_MarkupCompile.cache
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters_MarkupCompile.lref
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\view\GameMenu.baml
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\view\MoneyDungeon.baml
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters.g.resources
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters.AssemblyInfoInputs.cache
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters.AssemblyInfo.cs
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters.csproj.CoreCompileInputs.cache
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters.csproj.CopyComplete
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters.dll
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\refint\ArenaMasters.dll
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters.pdb
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters.genruntimeconfig.cache
+C:\Users\ADM_DAM2B_09\Desktop\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ref\ArenaMasters.dll
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\ArenaMasters.exe
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\back.png
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\castle.jpg
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\coin.png
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\crossroad.jpg
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\goldmine.jpg
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\inicio.png
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\map.jpg
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\map1.png
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\map2.png
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\map3.png
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\map4.png
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\persona.png
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\settings.png
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\tavern.jpg
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\ArenaMasters.deps.json
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\ArenaMasters.runtimeconfig.json
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\ArenaMasters.dll
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\ArenaMasters.pdb
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\BouncyCastle.Cryptography.dll
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\Google.Protobuf.dll
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\K4os.Compression.LZ4.dll
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\K4os.Compression.LZ4.Streams.dll
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\K4os.Hash.xxHash.dll
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\MySql.Data.dll
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\System.Diagnostics.DiagnosticSource.dll
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\System.IO.Pipelines.dll
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\System.Text.Encodings.Web.dll
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\System.Text.Json.dll
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\ZstdSharp.dll
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\runtimes\win-x64\native\comerr64.dll
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\runtimes\win-x64\native\gssapi64.dll
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\runtimes\win-x64\native\k5sprt64.dll
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\runtimes\win-x64\native\krb5_64.dll
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\runtimes\win-x64\native\krbcc64.dll
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters.csproj.AssemblyReference.cache
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\MainWindow.g.cs
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\view\GameMenu.g.cs
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\view\MoneyDungeon.g.cs
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\App.g.cs
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters_Content.g.cs
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters_MarkupCompile.cache
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters_MarkupCompile.lref
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\MainWindow.baml
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\view\GameMenu.baml
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\view\MoneyDungeon.baml
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters.g.resources
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters.GeneratedMSBuildEditorConfig.editorconfig
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters.AssemblyInfoInputs.cache
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters.AssemblyInfo.cs
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters.csproj.CoreCompileInputs.cache
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters.csproj.CopyComplete
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters.dll
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\refint\ArenaMasters.dll
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters.pdb
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters.genruntimeconfig.cache
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ref\ArenaMasters.dll
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\recursos\Estilos.baml
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\music\InicioSesion.mp3
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\music\PantallaPrincipal.mp3
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\music\Taberna.mp3
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\music\Encrucijada.mp3
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\salir.png
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\flecha_derecha.png
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\flecha_izquierda.png
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\dragon.png
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\actualizar.png
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\comprar.png
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\cementerio.jpg
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\personajeRight.png
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\personajeLeft.png
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\music\Cementerio.mp3
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\music\sonido_mouseEnter.mp3
+G:\Otros ordenadores\Mi PC (1)\ProyectoDI\DI_project\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\eliminar.png

@@ -1836,19 +1836,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ADM_DAM2B_10\\.nuget\\packages\\": {}
+    "C:\\Users\\franl\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ADM_DAM2B_10\\materiales\\Di_proyect10\\ArenaMasters\\ArenaMasters.csproj",
+      "projectUniqueName": "C:\\Users\\franl\\OneDrive\\Escritorio\\ProyectoDI\\DI_project\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
       "projectName": "ArenaMasters",
-      "projectPath": "C:\\Users\\ADM_DAM2B_10\\materiales\\Di_proyect10\\ArenaMasters\\ArenaMasters.csproj",
-      "packagesPath": "C:\\Users\\ADM_DAM2B_10\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ADM_DAM2B_10\\materiales\\Di_proyect10\\ArenaMasters\\obj\\",
+      "projectPath": "C:\\Users\\franl\\OneDrive\\Escritorio\\ProyectoDI\\DI_project\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
+      "packagesPath": "C:\\Users\\franl\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\franl\\OneDrive\\Escritorio\\ProyectoDI\\DI_project\\DI_project\\ArenaMasters\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ADM_DAM2B_10\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\franl\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

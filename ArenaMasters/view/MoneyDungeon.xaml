@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MoneyDungeon" Height="775" Width="1375" Focusable="True" PreviewKeyDown="Window_PreviewKeyDown">
     <Window.Background>
-        <ImageBrush ImageSource="/images/map4.png" />
+        <ImageBrush x:Name="backgroundImage" ImageSource="/images/map4.png" />
     </Window.Background>
     <Grid>
         <StackPanel Orientation="Horizontal" Height="30" VerticalAlignment="Top">

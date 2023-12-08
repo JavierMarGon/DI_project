@@ -1,0 +1,407 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="MouseOverBackgroundBtnRegister" Color="#FFCC8970"/>
+    <SolidColorBrush x:Key="MouseOverBackgroundBtnLogin" Color="#FF5F6EC3"/>
+    <SolidColorBrush x:Key="MouseOverBackgroundBtnCreate" Color="#CC422323"/>
+    <SolidColorBrush x:Key="MouseOverBackgroundBtnCerrarSesion" Color="#D36161"/>
+	<BitmapImage x:Key="ImgSalirPrincipal" UriSource="/images/salir.png"/>
+    
+    <Style x:Key="miBoton" TargetType="Button">
+       <Setter Property="BorderThickness" Value="1"/>
+       <Setter Property="VerticalAlignment" Value="Stretch"/>
+       <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--Botones inicio sesion-->
+    
+    <Style x:Key="btnRegister" BasedOn="{StaticResource miBoton}" TargetType="Button">
+        <Setter Property="Background" Value="#FFCC8951"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource MouseOverBackgroundBtnRegister}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+    <Style x:Key="btnLogin" BasedOn="{StaticResource miBoton}" TargetType="Button">
+        <Setter Property="Background" Value="#FF5F6EA1"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource MouseOverBackgroundBtnLogin}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="btnCreate" BasedOn="{StaticResource miBoton}" TargetType="Button">
+        <Setter Property="Background" Value="#99422323"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource MouseOverBackgroundBtnCreate}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="btnMenuUsuario" BasedOn="{StaticResource miBoton}" TargetType="Button">
+        <Setter Property="Background" Value="#FFCC8951"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource MouseOverBackgroundBtnRegister}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="btnMenuCerrarSesion" BasedOn="{StaticResource miBoton}" TargetType="Button">
+        <Setter Property="Background" Value="#D57777"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource MouseOverBackgroundBtnCerrarSesion}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="btnMenuCerrarVentana" BasedOn="{StaticResource miBoton}" TargetType="Button">
+        <Setter Property="Foreground" Value="Red"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="Black"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--Botones ajustes-->
+    
+    <Style x:Key="btnAjustes" BasedOn="{StaticResource miBoton}" TargetType="Button">
+        <Setter Property="Height" Value="60"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Height" Value="50"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="btnTaberna" BasedOn="{StaticResource miBoton}" TargetType="Button">
+        <Setter Property="Background" Value="#33A800B1"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#33B94ABF"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="btnEncrucijada" BasedOn="{StaticResource miBoton}" TargetType="Button">
+        <Setter Property="Background" Value="#330084FF"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#332B99FF"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+    <Style x:Key="btnSaqueos" BasedOn="{StaticResource miBoton}" TargetType="Button">
+        <Setter Property="Background" Value="#33FDFF03"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#33C9CA22"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="btnCementerio" BasedOn="{StaticResource miBoton}" TargetType="Button">
+        <Setter Property="Background" Value="#33FF7603"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#33FFAA63"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="btnDungeon" BasedOn="{StaticResource miBoton}" TargetType="Button">
+        <Setter Property="Background" Value="#33FF0303"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#33FF4444"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+    <!--Botones pantalla principal-->
+
+	<Style x:Key="btnShopHabPrincipal" BasedOn="{StaticResource miBoton}" TargetType="Button">
+		<Setter Property="Background" Value="Transparent"/>
+		<Setter Property="Foreground" Value="Transparent"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<Border Background="{TemplateBinding Background}" CornerRadius="100">
+						<ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" TextElement.Foreground="{TemplateBinding Foreground}"/>
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		<Style.Triggers>
+			<Trigger Property="IsMouseOver" Value="True">
+				<Setter Property="Background" Value="#4CAA00D2"/>
+				<Setter Property="Foreground" Value="White"/>
+			</Trigger>
+		</Style.Triggers>
+	</Style>
+
+	<Style x:Key="btnShopPjPrincipal" BasedOn="{StaticResource miBoton}" TargetType="Button">
+		<Setter Property="Background" Value="Transparent"/>
+		<Setter Property="Foreground" Value="Transparent"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<Border Background="{TemplateBinding Background}" CornerRadius="100">
+						<ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" TextElement.Foreground="{TemplateBinding Foreground}"/>
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		<Style.Triggers>
+			<Trigger Property="IsMouseOver" Value="True">
+				<Setter Property="Background" Value="#330090FF"/>
+				<Setter Property="Foreground" Value="White"/>
+			</Trigger>
+		</Style.Triggers>
+	</Style>
+
+	<Style x:Key="btnSaqueosPrincipal" BasedOn="{StaticResource miBoton}" TargetType="Button">
+		<Setter Property="Background" Value="#003ADA3A"/>
+		<Setter Property="Foreground" Value="Transparent"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<Border Background="{TemplateBinding Background}" CornerRadius="70">
+						<ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		<Style.Triggers>
+			<Trigger Property="IsMouseOver" Value="True">
+				<Setter Property="Background" Value="#33FDFF03"/>
+				<Setter Property="Foreground" Value="White" />
+			</Trigger>
+		</Style.Triggers>
+	</Style>
+
+	<Style x:Key="btnCementerioPrincipal" BasedOn="{StaticResource miBoton}" TargetType="Button">
+		<Setter Property="Background" Value="#003ADA3A"/>
+		<Setter Property="Foreground" Value="Transparent"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<Border Background="{TemplateBinding Background}" CornerRadius="70">
+						<ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		<Style.Triggers>
+			<Trigger Property="IsMouseOver" Value="True">
+				<Setter Property="Background" Value="#33FF0303"/>
+				<Setter Property="Foreground" Value="White" />
+			</Trigger>
+		</Style.Triggers>
+	</Style>
+
+	<Style x:Key="btnDungeonPrincipal" BasedOn="{StaticResource miBoton}" TargetType="Button">
+		<Setter Property="Background" Value="#003ADA3A"/>
+		<Setter Property="Foreground" Value="Transparent"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<Border Background="{TemplateBinding Background}" CornerRadius="90">
+						<ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		<Style.Triggers>
+			<Trigger Property="IsMouseOver" Value="True">
+				<Setter Property="Background" Value="#33FF7603"/>
+				<Setter Property="Foreground" Value="White" />
+			</Trigger>
+		</Style.Triggers>
+	</Style>
+
+	<Style x:Key="btnSalirPrincipal" BasedOn="{StaticResource miBoton}" TargetType="Button">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="Button">
+					<Grid>
+						<Image x:Name="imgSalir" Source="/images/salir.png">
+							<Image.Style>
+								<Style TargetType="Image">
+									<Setter Property="Height" Value="53"/>
+									<Style.Triggers>
+										<DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=IsMouseOver}" Value="True">
+											<Setter Property="Height" Value="70"/>
+										</DataTrigger>
+									</Style.Triggers>
+								</Style>
+							</Image.Style>
+						</Image>
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style x:Key="btnIzquierda" BasedOn="{StaticResource miBoton}" TargetType="Button">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="Button">
+					<Grid>
+						<Image x:Name="imgSalir" Source="/images/flecha_izquierda.png">
+							<Image.Style>
+								<Style TargetType="Image">
+									<Setter Property="Height" Value="53"/>
+									<Style.Triggers>
+										<DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=IsMouseOver}" Value="True">
+											<Setter Property="Height" Value="56"/>
+										</DataTrigger>
+									</Style.Triggers>
+								</Style>
+							</Image.Style>
+						</Image>
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style x:Key="btnDerecha" BasedOn="{StaticResource miBoton}" TargetType="Button">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="Button">
+					<Grid>
+						<Image x:Name="imgSalir" Source="/images/flecha_derecha.png">
+							<Image.Style>
+								<Style TargetType="Image">
+									<Setter Property="Height" Value="53"/>
+									<Style.Triggers>
+										<DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=IsMouseOver}" Value="True">
+											<Setter Property="Height" Value="56"/>
+										</DataTrigger>
+									</Style.Triggers>
+								</Style>
+							</Image.Style>
+						</Image>
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style x:Key="btnActualizar" BasedOn="{StaticResource miBoton}" TargetType="Button">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="Button">
+					<Grid>
+						<Image x:Name="imgSalir" Source="/images/actualizar.png">
+							<Image.Style>
+								<Style TargetType="Image">
+									<Setter Property="Height" Value="53"/>
+									<Style.Triggers>
+										<DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=IsMouseOver}" Value="True">
+											<Setter Property="Height" Value="56"/>
+										</DataTrigger>
+									</Style.Triggers>
+								</Style>
+							</Image.Style>
+						</Image>
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style x:Key="btnComprar" BasedOn="{StaticResource miBoton}" TargetType="Button">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="Button">
+					<Grid>
+						<Image x:Name="imgSalir" Source="/images/comprar.png">
+							<Image.Style>
+								<Style TargetType="Image">
+									<Setter Property="Height" Value="53"/>
+									<Style.Triggers>
+										<DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=IsMouseOver}" Value="True">
+											<Setter Property="Height" Value="56"/>
+										</DataTrigger>
+									</Style.Triggers>
+								</Style>
+							</Image.Style>
+						</Image>
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+    <Style x:Key="btnEliminar" BasedOn="{StaticResource miBoton}" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Image x:Name="imgSalir" Source="/images/eliminar.png">
+                            <Image.Style>
+                                <Style TargetType="Image">
+                                    <Setter Property="Height" Value="53"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=IsMouseOver}" Value="True">
+                                            <Setter Property="Height" Value="56"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="btnsSaqueos" BasedOn="{StaticResource miBoton}" TargetType="Button">
+        <Setter Property="Background" Value="#BFFDE3B3"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#BFFFCC71"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="btnSi" BasedOn="{StaticResource miBoton}" TargetType="Button">
+        <Setter Property="Background" Value="#BFFDE3B3"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#BFFFCC71"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="btnNo" BasedOn="{StaticResource miBoton}" TargetType="Button">
+        <Setter Property="Background" Value="#FFFF8E8E"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#FFFF5454"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+
+
+</ResourceDictionary>

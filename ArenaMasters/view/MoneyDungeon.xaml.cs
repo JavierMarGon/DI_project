@@ -26,7 +26,7 @@ namespace ArenaMasters
         private ImageBrush personajeLeft;
         private ImageBrush personajeRight;
         //Clase con los datos de movimiento del pj
-        PlayableDungeonMovement pj = new PlayableDungeonMovement(349, 108);
+        PlayableDungeonMovement pj;
 
         //Instancia de rectangulo para generar el pj
         public System.Windows.Shapes.Rectangle image = new System.Windows.Shapes.Rectangle();
@@ -37,6 +37,7 @@ namespace ArenaMasters
             personajeLeft = new ImageBrush();
             personajeRight = new ImageBrush();
             lvl = level;
+            pj = new PlayableDungeonMovement(lvl);
             paintImage();
             profit = rewards;
             this.gameId = gameId;

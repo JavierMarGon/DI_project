@@ -15,7 +15,6 @@ namespace ArenaMasters
     internal class Collisions
     {
         private MapasContainer mapasContainer;
-        
 
         public List<ColisionMapa> ObtenerMapa(int map)
         {

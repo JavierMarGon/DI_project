@@ -6,31 +6,40 @@
         xmlns:local="clr-namespace:ArenaMasters"
         mc:Ignorable="d"
         Title="MoneyDungeon" Height="775" Width="1375" Focusable="True" PreviewKeyDown="Window_PreviewKeyDown">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/recursos/Estilos.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
     <Window.Background>
         <ImageBrush x:Name="backgroundImage" ImageSource="/images/map4.png" />
     </Window.Background>
     <Grid>
-        <StackPanel Orientation="Horizontal" Height="30" VerticalAlignment="Top">
-            <Button Foreground="#00000000" Background="#00000000" BorderBrush="#00000000" Click="exitClick">
+        <StackPanel Orientation="Horizontal" Height="40" VerticalAlignment="Top">
+            <Button Style="{StaticResource miBoton}" Margin="20,0,0,0" Foreground="#00000000" Background="#00000000" BorderBrush="#00000000" Click="exitClick">
                 <Image Source="/images/back.png"/>
             </Button>
-            <Image Source="/images/coin.png"/>
-            <TextBlock x:Name="currentMoney" TextWrapping="Wrap" Text="000000" Foreground="White" Background="#97A99C0F" FontSize="22"/>
-            <Image Source="/images/persona.png"/>
-            <TextBlock x:Name="currentUnits" TextWrapping="Wrap" Text="0/7" Foreground="White" Background="#AC2F8430" FontSize="22"/>
+            <StackPanel Orientation="Horizontal" Height="40" Width="1300">
+                <Image Source="/images/coin.png" Height="40" Margin="400,0,0,0"/>
+                <TextBlock x:Name="currentMoney" Margin="10,0,240,0" VerticalAlignment="center" TextWrapping="Wrap" Text="1230$" Foreground="Beige"  FontSize="22"/>
+                <Image Source="/images/persona.png" Height="40"/>
+                <TextBlock x:Name="currentUnits" Margin="10,0,0,0" VerticalAlignment="center" TextWrapping="Wrap" Text="0/7" Foreground="Beige"  FontSize="22"/>
+            </StackPanel>
         </StackPanel>
-        <StackPanel x:Name="CautionMessage" Orientation="Vertical" Visibility="Collapsed" Background="LightGray" Height="286" VerticalAlignment="Top" Margin="374,186,408,0">
+        <StackPanel x:Name="CautionMessage" Orientation="Vertical" Visibility="Collapsed" Background="LightGray" Height="286" VerticalAlignment="Top" Margin="374,186,408,0" Panel.ZIndex="1">
             <TextBlock Text="¡¡¡Atención!!!" Foreground="Red" HorizontalAlignment="Center" FontSize="40" TextWrapping="Wrap"></TextBlock>
             <TextBlock Text="Si elige salir de la partida en su estado actual no se guardaran las recompensas obtenidad y se perderá el dinero de la entrada" TextWrapping="Wrap" FontSize="22" Margin="10,10,10,10"/>
             <TextBlock  Text="¿Quiere salir de la partida?" TextWrapping="Wrap" FontSize="22" HorizontalAlignment="Center"/>
             <StackPanel Orientation="Horizontal" Margin="30,0,10,0" Height="73" Width="372">
-                <Button Content="Salir" FontSize="20" Margin="10,0,30,0" Height="72" Width="153" Click="gameExitTrue"/>
-                <Button Content="Seguir Jugando" FontSize="20" Height="69" Width="170" Click="gameExitFalse"/>
+                <Button Content="Salir" Style="{StaticResource btnNo}" FontSize="20" Margin="10,0,30,0" Height="72" Width="153" Click="gameExitTrue"/>
+                <Button Content="Seguir Jugando" Style="{StaticResource btnSi}" FontSize="20" Height="69" Width="170" Click="gameExitFalse"/>
             </StackPanel>
         </StackPanel>
         <Canvas x:Name="container_pj">
 
         </Canvas>
     </Grid>
-    
+
 </Window>

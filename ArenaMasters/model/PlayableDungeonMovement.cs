@@ -19,11 +19,10 @@ namespace ArenaMasters
         private double marginRight;
         
 
-        public PlayableDungeonMovement(double _marginTop, double _marginLeft)
+        public PlayableDungeonMovement(int lvl)
         {
-            
-            marginLeft = _marginLeft;  
-            marginTop = _marginTop;
+
+            InitializeParametersForLevel(lvl);
 
         }
 
@@ -50,6 +49,29 @@ namespace ArenaMasters
         {
             get { return marginRight; }
             set { marginRight = value; }
+        }
+
+        private void InitializeParametersForLevel(int level)
+        {
+            switch (level)
+            {
+                case 1:
+                    marginLeft = 94;
+                    marginTop = 364;
+                    break;
+                case 2:
+                    marginLeft = 1189;
+                    marginTop = 95;
+                    break;
+                case 3:
+                    marginLeft = 166;
+                    marginTop = 108;
+                    break;
+                case 4:
+                    marginLeft = 1168;
+                    marginTop = 465;
+                    break;
+            }
         }
     }
 }

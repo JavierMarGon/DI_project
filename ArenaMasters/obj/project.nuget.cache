@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7FUoPrUtUo+BR3Ehs/hwaapHlfLT03W4yVCyz42LA7qrEFdiTopFP3puCBvJMsCEEpvjfw7553bWgdhDOcU7LA==",
+  "dgSpecHash": "XJRnYs8aumU7HfJzMhXC6HzySwLT/wO+2aCBF2GFvP2ITFiQ78yfIA2UcaAH5TVMv6swO2mwxZLL3s2cDHbX/A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\franl\\OneDrive\\Escritorio\\ProyectoDI\\DI_project\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
+  "projectFilePath": "C:\\Users\\franl\\OneDrive\\Escritorio\\ProyectDI\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\franl\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "C:\\Users\\franl\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",

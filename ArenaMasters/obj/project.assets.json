@@ -1836,19 +1836,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\franl\\.nuget\\packages\\": {}
+    "C:\\Users\\javier.martin.gonzal\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\franl\\OneDrive\\Escritorio\\ProyectDI\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
+      "projectUniqueName": "C:\\Users\\javier.martin.gonzal\\Source\\Repos\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
       "projectName": "ArenaMasters",
-      "projectPath": "C:\\Users\\franl\\OneDrive\\Escritorio\\ProyectDI\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
-      "packagesPath": "C:\\Users\\franl\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\franl\\OneDrive\\Escritorio\\ProyectDI\\DI_project\\ArenaMasters\\obj\\",
+      "projectPath": "C:\\Users\\javier.martin.gonzal\\Source\\Repos\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
+      "packagesPath": "C:\\Users\\javier.martin.gonzal\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\javier.martin.gonzal\\Source\\Repos\\DI_project\\ArenaMasters\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\franl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\javier.martin.gonzal\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1894,6 +1894,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.25, 6.0.25]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[6.0.25, 6.0.25]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.25, 6.0.25]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[6.0.25, 6.0.25]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
@@ -1902,7 +1920,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

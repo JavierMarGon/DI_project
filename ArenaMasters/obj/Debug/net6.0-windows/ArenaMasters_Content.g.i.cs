@@ -32,5 +32,11 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/salir.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/settings.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/tavern.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("music/cementerio.mp3")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("music/encrucijada.mp3")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("music/iniciosesion.mp3")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("music/pantallaprincipal.mp3")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("music/sonido_mouseenter.mp3")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("music/taberna.mp3")]
 
 

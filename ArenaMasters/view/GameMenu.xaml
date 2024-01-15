@@ -68,8 +68,8 @@
         </StackPanel>
 
         <!--TABERNA-->
-        
-        <StackPanel x:Name="habShop" Visibility="Hidden" Canvas.Top="60" HorizontalAlignment="Left" Height="699" VerticalAlignment="Top" Width="1375">
+
+        <StackPanel x:Name="habShop" Visibility="Collapsed" Canvas.Top="60" HorizontalAlignment="Left" Height="699" VerticalAlignment="Top" Width="1375">
             <StackPanel.Background>
                 <ImageBrush ImageSource="/images/tavern.jpg"/>
             </StackPanel.Background>
@@ -104,19 +104,27 @@
                     </Border>
                 </StackPanel>
 
-                <StackPanel Width="250" Height="160" Grid.Row="3" Grid.RowSpan="4" Grid.Column="0" Background="#BF524939">
-                    <Grid>
+                <StackPanel Grid.Row="3" Background="#BF524939" Orientation="Vertical" Margin="104,0,149,64">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock  Text="Avaricia: " Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock x:Name="greedLvl" Text="1" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/images/coin.png" Height="40" Margin="10,0,20,0"/>
+                        <TextBlock x:Name="newHabPrice" Text="100$" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
+                    </StackPanel>
+
+                    <!--<Grid>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                     </Grid>
                     <Border BorderBrush="Black" Height="40" BorderThickness="2">
-                        <TextBlock Grid.Row="0" Foreground="Beige" Text="ATTACK 1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25"/>
+                        <TextBlock Grid.Row="0" Foreground="Beige" Text="Avaricia" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25"/>
                     </Border>
                     <Border BorderBrush="Black" Height="40" BorderThickness="2">
+                        
                         <TextBlock Grid.Row="1" Foreground="Beige" Text="ATTACK 2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25"/>
                     </Border>
                     <Border BorderBrush="Black" Height="40" BorderThickness="2">
@@ -124,7 +132,7 @@
                     </Border>
                     <Border BorderBrush="Black" Height="40" BorderThickness="2">
                         <TextBlock Grid.Row="3" Foreground="Beige" Text="ATTACK 4" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25"/>
-                    </Border>
+                    </Border>-->
                 </StackPanel>
 
 
@@ -138,8 +146,6 @@
                         <TextBlock Grid.Column="0" Text="asdfasdf" x:Name="habpjSkill1" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
                         <TextBlock Grid.Column="1" Text="Tipo:" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
                         <StackPanel Orientation="Horizontal" Grid.Column="2">
-                            <Image Source="/images/coin.png" Height="40" Margin="10,0,20,0"/>
-                            <TextBlock  Text="100$" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
                             <Button Style="{StaticResource btnComprar}"  Margin="30,0,0,0"/>
                         </StackPanel>
                     </Grid>
@@ -156,8 +162,6 @@
                         <TextBlock Grid.Column="0" Text="asdfasdf" x:Name="habpjSkill2" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
                         <TextBlock Grid.Column="1" Text="Tipo:" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
                         <StackPanel Orientation="Horizontal" Grid.Column="2">
-                            <Image Source="/images/coin.png" Height="40" Margin="10,0,20,0"/>
-                            <TextBlock  Text="100$" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
                             <Button Style="{StaticResource btnComprar}" Margin="30,0,0,0"/>
                         </StackPanel>
                     </Grid>
@@ -174,8 +178,6 @@
                         <TextBlock Grid.Column="0" Text="asdfasdf" x:Name="habpjSkill3" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
                         <TextBlock Grid.Column="1" Text="Tipo:" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
                         <StackPanel Orientation="Horizontal" Grid.Column="2">
-                            <Image Source="/images/coin.png" Height="40" Margin="10,0,20,0"/>
-                            <TextBlock  Text="100$" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
                             <Button Style="{StaticResource btnComprar}" Margin="30,0,0,0"/>
                         </StackPanel>
                     </Grid>
@@ -192,8 +194,6 @@
                         <TextBlock Grid.Column="0" Text="asdfasdf" x:Name="habpjSkill4" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
                         <TextBlock Grid.Column="1" Text="Tipo:" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
                         <StackPanel Orientation="Horizontal" Grid.Column="2">
-                            <Image Source="/images/coin.png" Height="40" Margin="10,0,20,0"/>
-                            <TextBlock  Text="100$" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
                             <Button Style="{StaticResource btnComprar}"  Margin="30,0,0,0"/>
                         </StackPanel>
                     </Grid>
@@ -203,10 +203,10 @@
 
 
         </StackPanel>
-        
+
         <!--ENCRUCIJADA-->
-        
-        <StackPanel x:Name="pjShop" Visibility="Hidden" Canvas.Top="60" HorizontalAlignment="Left" Height="699" VerticalAlignment="Top" Width="1375" >
+
+        <StackPanel x:Name="pjShop" Visibility="Visible" Canvas.Top="60" HorizontalAlignment="Left" Height="699" VerticalAlignment="Top" Width="1375" >
             <StackPanel.Background>
                 <ImageBrush ImageSource="/images/crossroad.jpg"/>
             </StackPanel.Background>
@@ -227,19 +227,14 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <StackPanel Orientation="Horizontal" Margin="30" Grid.Row="0" Grid.Column="0">
-                    <Button Style="{StaticResource btnIzquierda}" Content="Ant" Height="50" Width="105" Click="habAntPj"/>
-                    <TextBlock x:Name="pjName" Height="50" Width="185" Background="#BF524939" Foreground="Beige" FontSize="35" FontFamily="Algerian" TextAlignment="Center"/>
-                    <Button Style="{StaticResource btnDerecha}" Content="Next" Height="50" Width="105" Click="habNextPj"/>
-                </StackPanel>
 
-                <StackPanel Width="250" Height="170" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" Background="#BF524939">
+                <StackPanel Width="250" Height="170" Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Background="#BF524939">
                     <Border BorderBrush="#BF524939" BorderThickness="2">
                         <Image Height="170" Source="/images/dragon.png"/>
                     </Border>
                 </StackPanel>
 
-                <StackPanel Width="250" Height="160" Grid.Row="3" Grid.RowSpan="4" Grid.Column="0" Background="#BF524939">
+                <StackPanel Width="250" Height="160" Grid.Row="1" Grid.RowSpan="4" Grid.Column="0" Background="#BF524939">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
@@ -338,7 +333,7 @@
         </StackPanel>
 
         <!--CEMENTERIO-->
-        
+
         <StackPanel x:Name="cementery" Visibility="Hidden" Canvas.Top="60" HorizontalAlignment="Left" Height="699" VerticalAlignment="Top" Width="1375">
             <StackPanel.Background>
                 <ImageBrush ImageSource="/images/cementerio.jpg"/>
@@ -356,7 +351,7 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                
+
                 <StackPanel Orientation="Horizontal" Height="90" Width="1300" Margin="20" Grid.Row="0">
                     <Grid Width="1210" Background="#BF524939">
                         <Grid.ColumnDefinitions>
@@ -375,7 +370,7 @@
                         <Button Style="{StaticResource btnEliminar}" Height="90" Width="105" Click="cautionMessageDeletShow"/>
                     </StackPanel>
                 </StackPanel>
-                
+
                 <StackPanel Orientation="Horizontal" Height="90" Width="1300" Margin="20" Grid.Row="1">
                     <Grid Width="1210" Background="#BF524939">
                         <Grid.ColumnDefinitions>
@@ -394,7 +389,7 @@
                         <Button Style="{StaticResource btnEliminar}" Height="90" Width="105" Click="cautionMessageDeletShow"/>
                     </StackPanel>
                 </StackPanel>
-                
+
                 <StackPanel Orientation="Horizontal" Height="90" Width="1300" Margin="20" Grid.Row="2">
                     <Grid Width="1210" Background="#BF524939">
                         <Grid.ColumnDefinitions>
@@ -413,7 +408,7 @@
                         <Button Style="{StaticResource btnEliminar}" Height="90" Width="105" Click="cautionMessageDeletShow"/>
                     </StackPanel>
                 </StackPanel>
-                
+
                 <StackPanel Orientation="Horizontal" Height="90" Width="1300" Margin="20" Grid.Row="3">
                     <Grid Width="1210" Background="#BF524939">
                         <Grid.ColumnDefinitions>
@@ -432,10 +427,10 @@
                         <Button Style="{StaticResource btnEliminar}" Height="90" Width="105" Click="cautionMessageDeletShow"/>
                     </StackPanel>
                 </StackPanel>
-                
+
 
             </Grid>
-            
+
 
         </StackPanel>
         <StackPanel x:Name="CautionMessage" Orientation="Vertical" Visibility="Hidden" Background="LightGray" Height="286" Width="600" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="374,186,408,0">
@@ -447,11 +442,11 @@
                     <Button Content="No" Style="{StaticResource btnNo}" FontSize="20" Height="69" Width="170" Click="cautionMessageDeletHide"/>
                 </StackPanel>
             </StackPanel>
-            
+
         </StackPanel>
 
         <!--SAQUEOS-->
-        
+
         <StackPanel x:Name="moneyDungeonLvSelector" Orientation="Vertical" Visibility="Hidden" Canvas.Top="60" HorizontalAlignment="Left" Height="699" VerticalAlignment="Top" Width="1375" >
             <StackPanel.Background>
                 <ImageBrush ImageSource="/images/goldmine.jpg"/>

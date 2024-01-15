@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ArenaMasters",
+    "\\ArenaMasters\\view"
   ],
-  "SelectedNode": "\\ArenaMasters.sln",
+  "SelectedNode": "\\ArenaMasters\\view\\GameMenu.xaml",
   "PreviewInSolutionExplorer": false
 }

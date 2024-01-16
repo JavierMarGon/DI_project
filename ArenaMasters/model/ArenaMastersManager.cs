@@ -66,9 +66,21 @@ namespace ArenaMasters.model
             MessageBox.Show("Error de Login");
             return -1;
         }
-
-
     }
+
+    public int GetGame(int id_game, int money, int round, int refresh, int id_user)
+    {
+        if(_ad.PA_GetGame(id_game, money, round, refresh, id_user) == 1)
+        {
+            return 1;
+        }
+        else
+        {
+            MessageBox.Show("Error de Login");
+            return -1;
+        }
+    }
+
     protected void OnPropertyChanged([CallerMemberName] string name = null)
     {
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));

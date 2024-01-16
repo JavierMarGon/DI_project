@@ -206,7 +206,7 @@
 
         <!--ENCRUCIJADA-->
 
-        <StackPanel x:Name="pjShop" Visibility="Visible" Canvas.Top="60" HorizontalAlignment="Left" Height="699" VerticalAlignment="Top" Width="1375" >
+        <StackPanel x:Name="pjShop" Visibility="Collapsed" Canvas.Top="60" HorizontalAlignment="Left" Height="699" VerticalAlignment="Top" Width="1375" >
             <StackPanel.Background>
                 <ImageBrush ImageSource="/images/crossroad.jpg"/>
             </StackPanel.Background>

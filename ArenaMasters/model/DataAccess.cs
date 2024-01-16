@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.RightsManagement;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -117,6 +118,26 @@ namespace ArenaMasters.model
             }
             return resultado;
 
+        }
+
+        public int PA_GetGame(int id_game, int money, int round, int refresh, int id_user)
+        {
+            int resultado = -99;
+            try
+            {
+                _cmd = new MySqlCommand(); 
+                _cmd.Connection = _conn;    
+                _cmd.CommandType = CommandType.StoredProcedure;
+                _cmd.CommandText = "GetGame";
+
+                resultado = (int)_cmd.Parameters["_res"].Value;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return resultado;
+            }
+            return resultado;
         }
     }
 }

@@ -27,7 +27,7 @@ namespace ArenaMasters
         int space = 0;
         int level = 0;
         int rewards = 0;
-        ArenaMastersManager manager=new ArenaMastersManager();
+        ArenaMastersManager manager = new ArenaMastersManager();
         Units[] units;
         Random random = new Random();
         MediaPlayer mediaPlayer = new MediaPlayer();
@@ -85,36 +85,67 @@ namespace ArenaMasters
 
         private void playSimpleSound()
         {
-            
-            mediaPlayer.Open(new Uri("music/PantallaPrincipal.mp3", UriKind.Relative));
-            mediaPlayer.Play();
-            
+            try
+            {
+                mediaPlayer.Open(new Uri("music/PantallaPrincipal.mp3", UriKind.Relative));
+                mediaPlayer.Play();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+
         }
 
         public void cementeryHide(object sender, RoutedEventArgs e)
         {
             setting.Visibility = Visibility.Visible;
-            mediaPlayer.Close();
-            playSimpleSound();
+            try
+            {
+                mediaPlayer.Close();
+                playSimpleSound();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
             cementery.Visibility = Visibility.Hidden;
         }
 
         public void cementeryShow(object sender, RoutedEventArgs e)
         {
-            mediaPlayer.Close();
-            mediaPlayer.Open(new Uri("music/Cementerio.mp3", UriKind.Relative));
-            mediaPlayer.Play();
+            try
+            {
+                mediaPlayer.Close();
+                mediaPlayer.Open(new Uri("music/Cementerio.mp3", UriKind.Relative));
+                mediaPlayer.Play();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
             settingsPanel.Visibility = Visibility.Collapsed;
             setting.Visibility = Visibility.Collapsed;
-            cementery.Visibility= Visibility.Visible;
+            cementery.Visibility = Visibility.Visible;
         }
 
 
         public void habShopShow(object sender, RoutedEventArgs e)
         {
-            mediaPlayer.Close();
-            mediaPlayer.Open(new Uri("music/Taberna.mp3", UriKind.Relative));
-            mediaPlayer.Play();
+            try
+            {
+                mediaPlayer.Close();
+                mediaPlayer.Open(new Uri("music/Taberna.mp3", UriKind.Relative));
+                mediaPlayer.Play();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
             settingsPanel.Visibility = Visibility.Collapsed;
             setting.Visibility = Visibility.Collapsed;
             space = 0;
@@ -127,9 +158,17 @@ namespace ArenaMasters
         }
         public void habShopHide(object sender, RoutedEventArgs e)
         {
-            setting.Visibility= Visibility.Visible;
-            mediaPlayer.Close();
-            playSimpleSound();
+            setting.Visibility = Visibility.Visible;
+            try
+            {
+                mediaPlayer.Close();
+                playSimpleSound();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
             habShop.Visibility = Visibility.Hidden;
         }
 
@@ -139,9 +178,17 @@ namespace ArenaMasters
         }
         public void pjShopShow(object sender, RoutedEventArgs e)
         {
-            mediaPlayer.Close();
-            mediaPlayer.Open(new Uri("music/Encrucijada.mp3", UriKind.Relative));
-            mediaPlayer.Play();
+            try
+            {
+                mediaPlayer.Close();
+                mediaPlayer.Open(new Uri("music/Encrucijada.mp3", UriKind.Relative));
+                mediaPlayer.Play();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
             setting.Visibility = Visibility.Collapsed;
             settingsPanel.Visibility = Visibility.Collapsed;
             space = 0;
@@ -176,8 +223,15 @@ namespace ArenaMasters
         public void pjShopHide(object sender, RoutedEventArgs e)
         {
             setting.Visibility = Visibility.Visible;
-            mediaPlayer.Close();
-            playSimpleSound();
+            try
+            {
+                mediaPlayer.Close();
+                playSimpleSound();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
             pjShop.Visibility = Visibility.Hidden;
         }
 
@@ -286,7 +340,7 @@ namespace ArenaMasters
             habShopHide(sender);
             pjShopHide(sender);
             moneyDungeonHide(sender, e);
-            if(settingsPanel.Visibility == Visibility.Visible)
+            if (settingsPanel.Visibility == Visibility.Visible)
             {
                 settingsPanel.Visibility = Visibility.Collapsed;
             }
@@ -294,7 +348,7 @@ namespace ArenaMasters
             {
                 settingsPanel.Visibility = Visibility.Visible;
             }
-            
+
         }
         public void exitGame(object sender, RoutedEventArgs e)
         {

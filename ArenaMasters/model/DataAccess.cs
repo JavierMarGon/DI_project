@@ -120,7 +120,7 @@ namespace ArenaMasters.model
 
         }
 
-        public int PA_GetGame(int id_game, int money, int round, int refresh, int id_user)
+        public int PA_GetGame(int id_game)
         {
             int resultado = -99;
             try
@@ -128,7 +128,33 @@ namespace ArenaMasters.model
                 _cmd = new MySqlCommand(); 
                 _cmd.Connection = _conn;    
                 _cmd.CommandType = CommandType.StoredProcedure;
-                _cmd.CommandText = "GetGame";
+                _cmd.CommandText = "getGame";
+
+                _cmd.Parameters.AddWithValue("_id_game", id_game);
+                _cmd.Parameters["_id_game"].Direction = ParameterDirection.Input;
+
+                _cmd.Parameters.Add(new MySqlParameter("_res", MySqlDbType.Int32));
+                _cmd.Parameters["_res"].Direction = ParameterDirection.Output;
+
+                _cmd.Parameters.Add(new MySqlParameter("__id_game", MySqlDbType.Int32));
+                _cmd.Parameters["__id_game"].Direction = ParameterDirection.Output;
+
+                _cmd.Parameters.Add(new MySqlParameter("_money", MySqlDbType.Int32));
+                _cmd.Parameters["_money"].Direction = ParameterDirection.Output;
+
+                _cmd.Parameters.Add(new MySqlParameter("_round", MySqlDbType.Int32));
+                _cmd.Parameters["_round"].Direction = ParameterDirection.Output;
+
+                _cmd.Parameters.Add(new MySqlParameter("_refresh", MySqlDbType.Int32));
+                _cmd.Parameters["_refresh"].Direction = ParameterDirection.Output;
+
+                _cmd.Parameters.Add(new MySqlParameter("_id_user", MySqlDbType.Int32));
+                _cmd.Parameters["_id_user"].Direction = ParameterDirection.Output;
+
+                _cmd.Parameters.Add(new MySqlParameter("_last_played", MySqlDbType.Int32));
+                _cmd.Parameters["_last_played"].Direction = ParameterDirection.Output;
+
+                _cmd.ExecuteNonQuery();
 
                 resultado = (int)_cmd.Parameters["_res"].Value;
             }

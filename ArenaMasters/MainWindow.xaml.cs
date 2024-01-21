@@ -23,6 +23,8 @@ namespace ArenaMasters
     public partial class MainWindow : Window
     {
         ArenaMastersManager manager = new ArenaMastersManager();
+        Game game;
+        int id_user;
         MediaPlayer mediaPlayer = new MediaPlayer();
         public MainWindow()
         {
@@ -78,6 +80,7 @@ namespace ArenaMasters
         {
             if (manager.Login(tb_user.Text.ToString(),psw_user.Password.ToString()) >0)
             {
+                game = manager.GetGame(tb_user.Text.ToString());
                 menu_login.Visibility = Visibility.Collapsed;
                 menu_user.Visibility = Visibility.Visible;
             }
@@ -104,7 +107,7 @@ namespace ArenaMasters
         private void click_continue(object sender, RoutedEventArgs e)
         {
             mediaPlayer.Close();
-            GameMenu menu = new GameMenu(0);
+            GameMenu menu = new GameMenu(game);
             this.Close();
             menu.Show();
         }

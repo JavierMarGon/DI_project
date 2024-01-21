@@ -120,9 +120,67 @@ namespace ArenaMasters.model
 
         }
 
-        public int PA_GetGame(int id_game)
+        public int PA_GetUser(string name)
         {
-            int resultado = -99;
+            int resultado = -96;
+            try
+            {
+                _cmd = new MySqlCommand();
+                _cmd.Connection = _conn;
+                _cmd.CommandType = CommandType.StoredProcedure;
+                _cmd.CommandText = "GetUser";
+
+                _cmd.Parameters.AddWithValue("_name", name);
+                _cmd.Parameters["_name"].Direction = ParameterDirection.Input;
+
+                _cmd.Parameters.Add(new MySqlParameter("_id_user", MySqlDbType.Int32));
+                _cmd.Parameters["_id_user"].Direction = ParameterDirection.Output;
+
+                _cmd.ExecuteNonQuery();
+
+                resultado = (int)_cmd.Parameters["_id_user"].Value;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return resultado;
+            }
+            return resultado;
+        }
+
+
+        public int PA_ContinueGame(int id_user)
+        {
+            int resultado = -96;
+            try
+            {
+                _cmd = new MySqlCommand();
+                _cmd.Connection = _conn;
+                _cmd.CommandType = CommandType.StoredProcedure;
+                _cmd.CommandText = "ContinueGame";
+
+                _cmd.Parameters.AddWithValue("_id_user", id_user);
+                _cmd.Parameters["_id_user"].Direction = ParameterDirection.Input;
+
+                _cmd.Parameters.Add(new MySqlParameter("_id_game", MySqlDbType.Int32));
+                _cmd.Parameters["_id_game"].Direction = ParameterDirection.Output;
+
+                _cmd.ExecuteNonQuery();
+
+                resultado = (int)_cmd.Parameters["_id_game"].Value;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return resultado;
+            }
+            return resultado;
+        }
+
+        public DataSet PA_GetGame(int id_game)
+        {
+            //int resultado = -99;
+            DataSet ds = new DataSet();
             try
             {
                 _cmd = new MySqlCommand(); 
@@ -133,37 +191,20 @@ namespace ArenaMasters.model
                 _cmd.Parameters.AddWithValue("_id_game", id_game);
                 _cmd.Parameters["_id_game"].Direction = ParameterDirection.Input;
 
-                _cmd.Parameters.Add(new MySqlParameter("_res", MySqlDbType.Int32));
-                _cmd.Parameters["_res"].Direction = ParameterDirection.Output;
-
-                _cmd.Parameters.Add(new MySqlParameter("__id_game", MySqlDbType.Int32));
-                _cmd.Parameters["__id_game"].Direction = ParameterDirection.Output;
-
-                _cmd.Parameters.Add(new MySqlParameter("_money", MySqlDbType.Int32));
-                _cmd.Parameters["_money"].Direction = ParameterDirection.Output;
-
-                _cmd.Parameters.Add(new MySqlParameter("_round", MySqlDbType.Int32));
-                _cmd.Parameters["_round"].Direction = ParameterDirection.Output;
-
-                _cmd.Parameters.Add(new MySqlParameter("_refresh", MySqlDbType.Int32));
-                _cmd.Parameters["_refresh"].Direction = ParameterDirection.Output;
-
-                _cmd.Parameters.Add(new MySqlParameter("_id_user", MySqlDbType.Int32));
-                _cmd.Parameters["_id_user"].Direction = ParameterDirection.Output;
-
-                _cmd.Parameters.Add(new MySqlParameter("_last_played", MySqlDbType.Int32));
-                _cmd.Parameters["_last_played"].Direction = ParameterDirection.Output;
-
                 _cmd.ExecuteNonQuery();
+                IDataAdapter adapter = new MySqlDataAdapter(_cmd);
+                adapter.Fill(ds);
 
-                resultado = (int)_cmd.Parameters["_res"].Value;
+                return ds;
+
+                //resultado = (int)_cmd.Parameters["_res"].Value;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                return resultado;
+                return ds;
             }
-            return resultado;
+            return ds;
         }
     }
 }

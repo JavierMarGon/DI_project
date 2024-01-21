@@ -68,17 +68,58 @@ namespace ArenaMasters.model
         }
     }
 
-    public int GetGame(int id_game, int money, int round, int refresh, int id_user)
+    public int GetUser(string name)
     {
-        if(_ad.PA_GetGame(id_game, money, round, refresh, id_user) == 1)
+        int id_user = _ad.PA_GetUser(name);
+        if (id_user > 0)
         {
-            return 1;
+            return id_user;
         }
         else
         {
-            MessageBox.Show("Error de Login");
+            MessageBox.Show("Error GetUser");
             return -1;
         }
+    }
+
+    public int ContinueGame(int id_user)
+    {
+        int id_game = _ad.PA_ContinueGame(id_user);
+        if (id_game > 0)
+        {
+            return id_game;
+        }
+        else
+        {
+            MessageBox.Show("Error ContinueGame");
+            return -1;
+        }
+    }
+
+    public Game GetGame(string name)
+    {
+        int id_user = _ad.PA_GetUser(name); //Obtengo el id_user
+        int id_game = _ad.PA_ContinueGame(id_user); //Obtengo la última partida
+        DataSet ds = _ad.PA_GetGame(id_game);   //Obtengo los datos de la partida
+        
+        if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+        {
+
+            // Crear una instancia de Game con los valores de la ultima partida
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                    return new Game(
+                id_game,                               //ID GAME
+                id_user,                               //ID USER
+                name,                                  //NAME
+                int.Parse(dr.ItemArray[1].ToString()), //ROUND
+                int.Parse(dr.ItemArray[0].ToString()), //REFRESH
+                int.Parse(dr.ItemArray[2].ToString())  //MONEY
+                );
+                }
+            
+        }
+        return null;
     }
 
     protected void OnPropertyChanged([CallerMemberName] string name = null)

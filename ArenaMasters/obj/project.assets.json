@@ -1841,11 +1841,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\franl\\OneDrive\\Escritorio\\proyectDi\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
+      "projectUniqueName": "C:\\Users\\franl\\OneDrive\\Escritorio\\proyectoDI\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
       "projectName": "ArenaMasters",
-      "projectPath": "C:\\Users\\franl\\OneDrive\\Escritorio\\proyectDi\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
+      "projectPath": "C:\\Users\\franl\\OneDrive\\Escritorio\\proyectoDI\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
       "packagesPath": "C:\\Users\\franl\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\franl\\OneDrive\\Escritorio\\proyectDi\\DI_project\\ArenaMasters\\obj\\",
+      "outputPath": "C:\\Users\\franl\\OneDrive\\Escritorio\\proyectoDI\\DI_project\\ArenaMasters\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\franl\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1894,24 +1894,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.25, 6.0.25]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[6.0.25, 6.0.25]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.25, 6.0.25]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.25, 6.0.25]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ArenaMasters.model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,7 +21,7 @@ namespace ArenaMasters
     /// </summary>
     public partial class MoneyDungeon : Window
     {
-        int gameId = 0;
+        Game game;
         int lvl;
         int profit;
         private ImageBrush personajeLeft;
@@ -31,7 +32,7 @@ namespace ArenaMasters
         //Instancia de rectangulo para generar el pj
         public System.Windows.Shapes.Rectangle image = new System.Windows.Shapes.Rectangle();
 
-        public MoneyDungeon(int level, int rewards, int gameId)
+        public MoneyDungeon(int level, int rewards, Game _game)
         {
             InitializeComponent();
             personajeLeft = new ImageBrush();
@@ -40,7 +41,7 @@ namespace ArenaMasters
             pj = new PlayableDungeonMovement(lvl);
             paintImage();
             profit = rewards;
-            this.gameId = gameId;
+            game = _game;
             AgregarRectangulos(lvl);
             
         }
@@ -52,7 +53,7 @@ namespace ArenaMasters
 
         private void gameExitTrue(object sender, RoutedEventArgs e)
         {
-            GameMenu gameMenu = new GameMenu(gameId);
+            GameMenu gameMenu = new GameMenu(game);
             gameMenu.Show();
             this.Close();
 

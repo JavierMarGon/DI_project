@@ -8,6 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="music\**" />
+    <EmbeddedResource Remove="music\**" />
+    <None Remove="music\**" />
+    <Page Remove="music\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="images\actualizar.png" />
     <None Remove="images\back.png" />
     <None Remove="images\castle.jpg" />
@@ -32,12 +39,6 @@
     <None Remove="images\salir.png" />
     <None Remove="images\settings.png" />
     <None Remove="images\tavern.jpg" />
-    <None Remove="music\Cementerio.mp3" />
-    <None Remove="music\Encrucijada.mp3" />
-    <None Remove="music\InicioSesion.mp3" />
-    <None Remove="music\PantallaPrincipal.mp3" />
-    <None Remove="music\sonido_mouseEnter.mp3" />
-    <None Remove="music\Taberna.mp3" />
     <None Remove="persona.png" />
   </ItemGroup>
 
@@ -112,24 +113,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="images\tavern.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="music\Cementerio.mp3">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="music\Encrucijada.mp3">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="music\InicioSesion.mp3">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="music\PantallaPrincipal.mp3">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="music\sonido_mouseEnter.mp3">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="music\Taberna.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

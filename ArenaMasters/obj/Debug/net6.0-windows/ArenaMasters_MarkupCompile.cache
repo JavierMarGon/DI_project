@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\javier.martin.gonzal\source\repos\DI_project\ArenaMasters\obj\Debug\net6.0-windows\
+C:\Users\franl\OneDrive\Escritorio\proyectoDI\DI_project\ArenaMasters\obj\Debug\net6.0-windows\
 ArenaMasters
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\javier.martin.gonzal\source\repos\DI_project\ArenaMasters\App.xaml
+C:\Users\franl\OneDrive\Escritorio\proyectoDI\DI_project\ArenaMasters\App.xaml
 41053258045
-30773083933
-101622277558
-203-2053315229
+24951377342
+11617731205
+2031830476552
 MainWindow.xaml;recursos\Estilos.xaml;view\GameMenu.xaml;view\MoneyDungeon.xaml;
 
-True
+False
 

@@ -28,19 +28,25 @@ namespace ArenaMasters
         int level = 0;
         int rewards = 0;
         ArenaMastersManager manager = new ArenaMastersManager();
+        Game game;
         Units[] units;
         Random random = new Random();
         MediaPlayer mediaPlayer = new MediaPlayer();
-        public GameMenu(int gameId)
+        public GameMenu(Game _game)
         {
             InitializeComponent();
+            game = _game;
             initializeUnits();
             currentUnits.Text = maxUnits.ToString() + "/7";
-            _gameId = gameId;
+            
         }
+
+
         public void initializeUnits()
         {
             playSimpleSound();
+            namePj.Text = game.Name.ToString();
+            currentMoney.Text = game.Money.ToString();
             String name;
             int val = 0;
             maxUnits = 7; //esto sere el count de las unidades de la partida
@@ -272,7 +278,7 @@ namespace ArenaMasters
         {
             level = 1;
             rewards = 500;
-            MoneyDungeon moneyDungeon = new MoneyDungeon(level, rewards, _gameId);
+            MoneyDungeon moneyDungeon = new MoneyDungeon(level, rewards, game);
             moneyDungeon.Show();
             this.Close();
 
@@ -281,7 +287,7 @@ namespace ArenaMasters
         {
             level = 2;
             rewards = 1500;
-            MoneyDungeon moneyDungeon = new MoneyDungeon(level, rewards, _gameId);
+            MoneyDungeon moneyDungeon = new MoneyDungeon(level, rewards, game);
             this.Close();
             moneyDungeon.Show();
         }
@@ -289,7 +295,7 @@ namespace ArenaMasters
         {
             level = 3;
             rewards = 2750;
-            MoneyDungeon moneyDungeon = new MoneyDungeon(level, rewards, _gameId);
+            MoneyDungeon moneyDungeon = new MoneyDungeon(level, rewards, game);
             this.Close();
             moneyDungeon.Show();
         }
@@ -297,7 +303,7 @@ namespace ArenaMasters
         {
             level = 4;
             rewards = 4000;
-            MoneyDungeon moneyDungeon = new MoneyDungeon(level, rewards, _gameId);
+            MoneyDungeon moneyDungeon = new MoneyDungeon(level, rewards, game);
             this.Close();
             moneyDungeon.Show();
         }

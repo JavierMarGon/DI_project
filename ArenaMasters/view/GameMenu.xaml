@@ -25,7 +25,7 @@
                 <TextBlock  Margin="10,0,0,0" VerticalAlignment="center" TextWrapping="Wrap" Text="Usuario: " Foreground="Beige" FontWeight="DemiBold" FontSize="24"/>
                 <TextBlock x:Name="namePj" Margin="10,0,240,0" VerticalAlignment="center" TextWrapping="Wrap" Text="Admin" Foreground="Beige"  FontSize="22"/>
                 <Image Source="/images/coin.png" Height="40" Margin="10,0,0,0"/>
-                <TextBlock x:Name="currentMoney" Margin="10,0,240,0" VerticalAlignment="center" TextWrapping="Wrap" Text="1230$" Foreground="Beige"  FontSize="22"/>
+                <TextBlock x:Name="currentMoney" Margin="10,0,240,0" Width="100" VerticalAlignment="center" TextWrapping="Wrap" Text="1230$" Foreground="Beige"  FontSize="22"/>
                 <Image Source="/images/persona.png" Height="40"/>
                 <TextBlock x:Name="currentUnits" Margin="10,0,0,0" VerticalAlignment="center" TextWrapping="Wrap" Text="0/7" Foreground="Beige"  FontSize="22"/>
             </StackPanel>

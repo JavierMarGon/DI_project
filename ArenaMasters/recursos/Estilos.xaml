@@ -401,7 +401,22 @@
         </Style.Triggers>
     </Style>
 
-
-
+    <DataTemplate x:Key="Plantilla_partidas">
+        
+        <Button Style="{StaticResource btnMenuUsuario}" BorderBrush="Black" Height="100" BorderThickness="2" Margin="10">
+            <Grid Width="400" Height="90">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock FontSize="25" Text="Ultima vez jugada"/>
+                    <TextBlock FontSize="25" Text="2024/05/12"/>
+                </StackPanel>
+                <Button Style="{StaticResource btnEliminar}" Grid.Column="2" Foreground="Beige" Content="EIMINAR" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25"/>
+            </Grid>
+        </Button>
+        
+    </DataTemplate>
 
 </ResourceDictionary>

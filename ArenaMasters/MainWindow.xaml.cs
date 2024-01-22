@@ -33,9 +33,14 @@ namespace ArenaMasters
             InitializeComponent();
             playSimpleSound();
         }
-        public MainWindow(int user)
+        public MainWindow(int user, string username)
         {
             InitializeComponent();
+            id_user = user;
+            userName = username;
+            menu_login.Visibility = Visibility.Collapsed;
+            menu_user.Visibility = Visibility.Visible;
+            playSimpleSound();
         }
 
         private void MediaPlayer_MediaEnded(object sender, EventArgs e)
@@ -110,7 +115,7 @@ namespace ArenaMasters
         {
             mediaPlayer.Close();
             int id_game = manager.ContinueGame(id_user);
-            game = manager.GetGame(id_game, userName);
+            game = manager.GetGame(id_game, userName, id_user);
             GameMenu menu = new GameMenu(game);
             this.Close();
             menu.Show();
@@ -121,12 +126,15 @@ namespace ArenaMasters
         }
         private void click_loadGame(object sender, RoutedEventArgs e)
         {
-
+            menu_loadGames.Visibility = Visibility.Visible;
+            sp_loadGames.Visibility = Visibility.Visible;
+            manager.GetAllGames(id_user);
         }
         private void click_close(object sender, RoutedEventArgs e)
         {
             menu_user.Visibility = Visibility.Collapsed;
             menu_login.Visibility = Visibility.Visible;
         }
+
     }
 }

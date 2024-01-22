@@ -22,20 +22,25 @@ namespace ArenaMasters.model
 
     //Campos privados
     ObservableCollection<Units> _unitList;
+    ObservableCollection<Partida> _gameList;
 
-    //Propiedades (campos publicos)
+        //Propiedades (campos publicos)
     public ObservableCollection<Units> UnitList
     {
         get { return _unitList; }
     }
 
-
-
+    public ObservableCollection<Partida> GameList
+    {
+        get { return _gameList; }
+    
+    }
 
     //Constructor(es)
     public ArenaMastersManager()
     {
         _unitList = new ObservableCollection<Units>();
+        _gameList = new ObservableCollection<Partida>();    
     }
     //Metodos (de Negocio)
     public int Login(string usuario, string pass)
@@ -97,7 +102,7 @@ namespace ArenaMasters.model
         }
     }
 
-    public Game GetGame(int id_game, string name)
+    public Game GetGame(int id_game, string name, int id_user)
     {
         string jsonResult = _ad.PA_GetGameData(id_game);   //Obtengo los datos de la partida
         var gameData = JsonConvert.DeserializeAnonymousType(jsonResult, new
@@ -112,8 +117,8 @@ namespace ArenaMasters.model
             {
                 return new Game(
                                 id_game,                               //ID GAME
-                                //id_user,                               //ID USER
                                 name,                                  //NAME
+                                id_user,                               //ID USER
                                 gameData.Round, //ROUND
                                 gameData.Refresh, //REFRESH
                                 gameData.Money  //MONEY
@@ -123,7 +128,27 @@ namespace ArenaMasters.model
         return null;
     }
 
-    protected void OnPropertyChanged([CallerMemberName] string name = null)
+    public void GetAllGames(int id_user)
+    {
+        _gameList = new ObservableCollection<Partida>();
+
+        DataSet dataGames = new DataSet();
+        dataGames = _ad.PA_GetAllGames(id_user);
+        
+        foreach (DataRow dr in dataGames.Tables[0].Rows)
+        {
+                Partida p;
+                p = new Partida( int.Parse(dr.ItemArray[0].ToString()),
+                             int.Parse(dr.ItemArray[1].ToString()),
+                             int.Parse(dr.ItemArray[2].ToString()),
+                             DateTime.Parse(dr.ItemArray[3].ToString())
+                                );
+            _gameList.Add(p);
+        }
+        OnPropertyChanged("GameList");
+    }
+
+        protected void OnPropertyChanged([CallerMemberName] string name = null)
     {
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
     }

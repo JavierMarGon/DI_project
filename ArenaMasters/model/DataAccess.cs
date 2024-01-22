@@ -228,5 +228,40 @@ namespace ArenaMasters.model
                 return ex.Message;
             }
         }
+
+        public DataSet PA_GetAllGames(int id_user)
+        {
+            DataSet ds = new DataSet();
+            int res = -99;
+            try
+            {
+                _cmd = new MySqlCommand();
+                _cmd.Connection = _conn;
+                _cmd.CommandType = CommandType.StoredProcedure;
+                _cmd.CommandText = "getAllGames";
+
+                _cmd.Parameters.AddWithValue("_id_user", id_user);
+                _cmd.Parameters["_id_user"].Direction = ParameterDirection.Input;
+
+                _cmd.Parameters.Add(new MySqlParameter("_res", MySqlDbType.Int32));
+                _cmd.Parameters["_res"].Direction = ParameterDirection.Output;
+
+                _cmd.ExecuteNonQuery();
+                IDataAdapter adapter = new MySqlDataAdapter(_cmd);
+
+                // construct DataSet to store result
+                adapter.Fill(ds);
+
+                return ds;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return ds;
+            }
+
+        }
+
     }
 }

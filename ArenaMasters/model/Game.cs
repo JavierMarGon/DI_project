@@ -11,16 +11,16 @@ namespace ArenaMasters.model
     {
         ArenaMastersManager manager = new ArenaMastersManager();
         public int IdGame { get; set; }
-        //public int IdUser { get; set; }
+        public int IdUser { get; set; }
         public string Name { get; set; }
         public int Round { get; set; }
         public int Refresh { get; set; }
         public int Money { get; set; }
 
-        public Game(int _idGame, string _name, int _round, int _money, int _refresh)
+        public Game(int _idGame, string _name, int _idUser, int _round, int _money, int _refresh)
         {
             IdGame = _idGame;
-            //IdUser = _idUser;
+            IdUser = _idUser;
             Name = _name;
             Round = _round;
             Refresh = _refresh;

@@ -32,10 +32,13 @@ namespace ArenaMasters
         Units[] units;
         Random random = new Random();
         MediaPlayer mediaPlayer = new MediaPlayer();
+
         public GameMenu(Game _game)
         {
             InitializeComponent();
             game = _game;
+            namePj.Text = game.Name.ToString();
+            currentMoney.Text = game.Money.ToString();
             initializeUnits();
             currentUnits.Text = maxUnits.ToString() + "/7";
             
@@ -45,8 +48,7 @@ namespace ArenaMasters
         public void initializeUnits()
         {
             playSimpleSound();
-            namePj.Text = game.Name.ToString();
-            currentMoney.Text = game.Money.ToString();
+            
             String name;
             int val = 0;
             maxUnits = 7; //esto sere el count de las unidades de la partida

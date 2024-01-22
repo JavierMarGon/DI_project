@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -39,12 +40,12 @@ namespace ArenaMasters.model
     //Metodos (de Negocio)
     public int Login(string usuario, string pass)
     {
-        //Comprobaciones previas
-
-        if (_ad.PA_Login(usuario, pass)>0)
+            //Comprobaciones previas
+        int id_user = _ad.PA_Login(usuario, pass);
+        if (id_user > 0)
         {
             MessageBox.Show("Bienvenid@ ", usuario);
-            return _ad.PA_Login(usuario, pass);
+            return id_user;
         }
         else
         {
@@ -68,9 +69,9 @@ namespace ArenaMasters.model
         }
     }
 
-    public int GetUser(string name)
+    public int GetUser(string name, string psw)
     {
-        int id_user = _ad.PA_GetUser(name);
+        int id_user = _ad.PA_FindUser(name, psw);
         if (id_user > 0)
         {
             return id_user;
@@ -96,29 +97,29 @@ namespace ArenaMasters.model
         }
     }
 
-    public Game GetGame(string name)
+    public Game GetGame(int id_game, string name)
     {
-        int id_user = _ad.PA_GetUser(name); //Obtengo el id_user
-        int id_game = _ad.PA_ContinueGame(id_user); //Obtengo la última partida
-        DataSet ds = _ad.PA_GetGame(id_game);   //Obtengo los datos de la partida
-        
-        if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+        string jsonResult = _ad.PA_GetGameData(id_game);   //Obtengo los datos de la partida
+        var gameData = JsonConvert.DeserializeAnonymousType(jsonResult, new
         {
+            Res = 0,
+            Money = 0,
+            Round = 0,
+            Refresh = 0
+        });
 
-            // Crear una instancia de Game con los valores de la ultima partida
-            foreach (DataRow dr in ds.Tables[0].Rows)
+        if(gameData != null)
             {
-                    return new Game(
-                id_game,                               //ID GAME
-                id_user,                               //ID USER
-                name,                                  //NAME
-                int.Parse(dr.ItemArray[1].ToString()), //ROUND
-                int.Parse(dr.ItemArray[0].ToString()), //REFRESH
-                int.Parse(dr.ItemArray[2].ToString())  //MONEY
-                );
-                }
-            
-        }
+                return new Game(
+                                id_game,                               //ID GAME
+                                //id_user,                               //ID USER
+                                name,                                  //NAME
+                                gameData.Round, //ROUND
+                                gameData.Refresh, //REFRESH
+                                gameData.Money  //MONEY
+                                );
+            }
+        
         return null;
     }
 

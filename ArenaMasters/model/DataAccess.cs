@@ -1,10 +1,12 @@
 ﻿using MySql.Data.MySqlClient;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Security.RightsManagement;
 using System.Text;
+using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -18,8 +20,8 @@ namespace ArenaMasters.model
         string _conectionString = "server=localhost;" +
                                   "user=root;" +
                                   "database=arenamasters;" +
-                                  "port=3306;" +
-                                  "password=1234";
+                                  "port=3309;" +
+                                  "password=joyfe";
 
 
 
@@ -120,7 +122,7 @@ namespace ArenaMasters.model
 
         }
 
-        public int PA_GetUser(string name)
+        public int PA_FindUser(string name, string psw)
         {
             int resultado = -96;
             try
@@ -128,17 +130,20 @@ namespace ArenaMasters.model
                 _cmd = new MySqlCommand();
                 _cmd.Connection = _conn;
                 _cmd.CommandType = CommandType.StoredProcedure;
-                _cmd.CommandText = "GetUser";
+                _cmd.CommandText = "findUser";
 
                 _cmd.Parameters.AddWithValue("_name", name);
                 _cmd.Parameters["_name"].Direction = ParameterDirection.Input;
 
-                _cmd.Parameters.Add(new MySqlParameter("_id_user", MySqlDbType.Int32));
-                _cmd.Parameters["_id_user"].Direction = ParameterDirection.Output;
+                _cmd.Parameters.AddWithValue("_pass", psw);
+                _cmd.Parameters["_pass"].Direction = ParameterDirection.Input;
+
+                _cmd.Parameters.Add(new MySqlParameter("_res", MySqlDbType.Int32));
+                _cmd.Parameters["_res"].Direction = ParameterDirection.Output;
 
                 _cmd.ExecuteNonQuery();
 
-                resultado = (int)_cmd.Parameters["_id_user"].Value;
+                resultado = (int)_cmd.Parameters["_res"].Value;
             }
             catch (Exception ex)
             {
@@ -157,17 +162,17 @@ namespace ArenaMasters.model
                 _cmd = new MySqlCommand();
                 _cmd.Connection = _conn;
                 _cmd.CommandType = CommandType.StoredProcedure;
-                _cmd.CommandText = "ContinueGame";
+                _cmd.CommandText = "continueGame";
 
                 _cmd.Parameters.AddWithValue("_id_user", id_user);
                 _cmd.Parameters["_id_user"].Direction = ParameterDirection.Input;
 
-                _cmd.Parameters.Add(new MySqlParameter("_id_game", MySqlDbType.Int32));
-                _cmd.Parameters["_id_game"].Direction = ParameterDirection.Output;
+                _cmd.Parameters.Add(new MySqlParameter("_res", MySqlDbType.Int32));
+                _cmd.Parameters["_res"].Direction = ParameterDirection.Output;
 
                 _cmd.ExecuteNonQuery();
 
-                resultado = (int)_cmd.Parameters["_id_game"].Value;
+                resultado = (int)_cmd.Parameters["_res"].Value;
             }
             catch (Exception ex)
             {
@@ -177,7 +182,7 @@ namespace ArenaMasters.model
             return resultado;
         }
 
-        public DataSet PA_GetGame(int id_game)
+        public string PA_GetGameData(int id_game)
         {
             //int resultado = -99;
             DataSet ds = new DataSet();
@@ -186,25 +191,42 @@ namespace ArenaMasters.model
                 _cmd = new MySqlCommand(); 
                 _cmd.Connection = _conn;    
                 _cmd.CommandType = CommandType.StoredProcedure;
-                _cmd.CommandText = "getGame";
+                _cmd.CommandText = "getGameData";
 
                 _cmd.Parameters.AddWithValue("_id_game", id_game);
                 _cmd.Parameters["_id_game"].Direction = ParameterDirection.Input;
 
+                _cmd.Parameters.Add(new MySqlParameter("_res", MySqlDbType.Int32));
+                _cmd.Parameters["_res"].Direction = ParameterDirection.Output;
+
+                _cmd.Parameters.Add(new MySqlParameter("_money", MySqlDbType.Int32));
+                _cmd.Parameters["_money"].Direction = ParameterDirection.Output;
+
+                _cmd.Parameters.Add(new MySqlParameter("_round", MySqlDbType.Int32));
+                _cmd.Parameters["_round"].Direction = ParameterDirection.Output;
+                
+                _cmd.Parameters.Add(new MySqlParameter("_refresh", MySqlDbType.Int32));
+                _cmd.Parameters["_refresh"].Direction = ParameterDirection.Output;
+
                 _cmd.ExecuteNonQuery();
-                IDataAdapter adapter = new MySqlDataAdapter(_cmd);
-                adapter.Fill(ds);
 
-                return ds;
+                var resultJson = new
+                {
+                    Res = _cmd.Parameters["_res"].Value,
+                    Money = _cmd.Parameters["_money"].Value,
+                    Round = _cmd.Parameters["_round"].Value,
+                    Refresh = _cmd.Parameters["_refresh"].Value
+                };
+                string jsonResult = JsonConvert.SerializeObject(resultJson);
 
-                //resultado = (int)_cmd.Parameters["_res"].Value;
+                return jsonResult;
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                return ds;
+                return ex.Message;
             }
-            return ds;
         }
     }
 }

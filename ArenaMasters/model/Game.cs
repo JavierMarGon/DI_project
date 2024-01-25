@@ -17,7 +17,7 @@ namespace ArenaMasters.model
         public int Refresh { get; set; }
         public int Money { get; set; }
 
-        public Game(int _idGame, string _name, int _idUser, int _round, int _money, int _refresh)
+        public Game(int _idGame, int _idUser, string _name, int _round, int _refresh, int _money)
         {
             IdGame = _idGame;
             IdUser = _idUser;

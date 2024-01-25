@@ -24,20 +24,23 @@ namespace ArenaMasters
     {
         ArenaMastersManager manager = new ArenaMastersManager();
         Game game;
-        int id_user;
-        string userName;
         MediaPlayer mediaPlayer = new MediaPlayer();
         public MainWindow()
         {
             
             InitializeComponent();
             playSimpleSound();
+            if (manager.id_User > 0)
+            {
+                menu_login.Visibility = Visibility.Collapsed;
+                menu_user.Visibility = Visibility.Visible;
+            }
         }
         public MainWindow(int user, string username)
         {
             InitializeComponent();
-            id_user = user;
-            userName = username;
+            manager.id_User = user;
+            manager.userName = username;
             menu_login.Visibility = Visibility.Collapsed;
             menu_user.Visibility = Visibility.Visible;
             playSimpleSound();
@@ -84,10 +87,10 @@ namespace ArenaMasters
 
         private void click_login(object sender, RoutedEventArgs e)
         {
-            id_user = manager.Login(tb_user.Text.ToString(), psw_user.Password.ToString());
-            if (id_user > 0)
+            manager.id_User = manager.Login(tb_user.Text.ToString(), psw_user.Password.ToString());
+            if (manager.id_User > 0)
             {
-                userName = tb_user.Text.ToString();
+                manager.userName = tb_user.Text.ToString();
                 menu_login.Visibility = Visibility.Collapsed;
                 menu_user.Visibility = Visibility.Visible;
             }
@@ -114,8 +117,8 @@ namespace ArenaMasters
         private void click_continue(object sender, RoutedEventArgs e)
         {
             mediaPlayer.Close();
-            int id_game = manager.ContinueGame(id_user);
-            game = manager.GetGame(id_game, userName, id_user);
+            int id_game = manager.ContinueGame(manager.id_User);
+            game = manager.GetGame(id_game, manager.userName, manager.id_User);
             GameMenu menu = new GameMenu(game);
             this.Close();
             menu.Show();
@@ -128,7 +131,7 @@ namespace ArenaMasters
         {
             menu_loadGames.Visibility = Visibility.Visible;
             sp_loadGames.Visibility = Visibility.Visible;
-            manager.GetAllGames(id_user);
+            manager.GetAllGames(manager.id_User);
         }
         private void click_close(object sender, RoutedEventArgs e)
         {

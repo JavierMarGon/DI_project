@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\DAM2B-09\\Desktop\\proyectoDI18\\DI_project\\ArenaMasters\\ArenaMasters.csproj": {}
+    "C:\\Users\\javier.martin.gonzal\\Source\\Repos\\DI_project\\ArenaMasters\\ArenaMasters.csproj": {}
   },
   "projects": {
-    "C:\\Users\\DAM2B-09\\Desktop\\proyectoDI18\\DI_project\\ArenaMasters\\ArenaMasters.csproj": {
+    "C:\\Users\\javier.martin.gonzal\\Source\\Repos\\DI_project\\ArenaMasters\\ArenaMasters.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DAM2B-09\\Desktop\\proyectoDI18\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
+        "projectUniqueName": "C:\\Users\\javier.martin.gonzal\\Source\\Repos\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
         "projectName": "ArenaMasters",
-        "projectPath": "C:\\Users\\DAM2B-09\\Desktop\\proyectoDI18\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
-        "packagesPath": "C:\\Users\\DAM2B-09\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DAM2B-09\\Desktop\\proyectoDI18\\DI_project\\ArenaMasters\\obj\\",
+        "projectPath": "C:\\Users\\javier.martin.gonzal\\Source\\Repos\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
+        "packagesPath": "C:\\Users\\javier.martin.gonzal\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\javier.martin.gonzal\\Source\\Repos\\DI_project\\ArenaMasters\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\DAM2B-09\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\javier.martin.gonzal\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -60,6 +60,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.25, 6.0.25]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.25, 6.0.25]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.25, 6.0.25]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.25, 6.0.25]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"

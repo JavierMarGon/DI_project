@@ -21,10 +21,22 @@ namespace ArenaMasters.model
         private DataAccess _ad = new DataAccess();
 
     //Campos privados
+
     ObservableCollection<Units> _unitList;
     ObservableCollection<Partida> _gameList;
-
+    private int _id_User;
+    private string _userName;
         //Propiedades (campos publicos)
+    public int id_User
+        {
+            get { return _id_User; }
+            set { _id_User = value; }
+        }  
+    public string userName
+        {
+            get { return _userName; }
+            set { _userName = value; }
+        }
     public ObservableCollection<Units> UnitList
     {
         get { return _unitList; }
@@ -116,12 +128,12 @@ namespace ArenaMasters.model
         if(gameData != null)
             {
                 return new Game(
-                                id_game,                               //ID GAME
-                                name,                                  //NAME
-                                id_user,                               //ID USER
-                                gameData.Round, //ROUND
-                                gameData.Money, //REFRESH
-                                gameData.Refresh  //MONEY
+                                id_game,
+                                id_user,
+                                name,                                  
+                                gameData.Round,
+                                gameData.Refresh,
+                                gameData.Money 
                                 );
             }
         

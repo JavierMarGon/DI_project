@@ -120,8 +120,8 @@ namespace ArenaMasters.model
                                 name,                                  //NAME
                                 id_user,                               //ID USER
                                 gameData.Round, //ROUND
-                                gameData.Refresh, //REFRESH
-                                gameData.Money  //MONEY
+                                gameData.Money, //REFRESH
+                                gameData.Refresh  //MONEY
                                 );
             }
         

@@ -9,6 +9,7 @@ using System.Text;
 using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Configuration;
 
 namespace ArenaMasters.model
 {
@@ -17,11 +18,11 @@ namespace ArenaMasters.model
         MySqlConnection _conn;
         MySqlCommand _cmd;
 
-        string _conectionString = "server=localhost;" +
-                                  "user=root;" +
-                                  "database=arenamasters;" +
-                                  "port=3309;" +
-                                  "password=joyfe";
+        string _conectionString = "server= " + ConfigurationManager.AppSettings["server"] +";" +
+                                  "user=" + ConfigurationManager.AppSettings["user"] + ";" +
+                                  "database=" + ConfigurationManager.AppSettings["database"] + ";" +
+                                  "port=" + ConfigurationManager.AppSettings["port"] + ";" +
+                                  "password=" + ConfigurationManager.AppSettings["password"] + ";";
 
 
 

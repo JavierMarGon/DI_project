@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using CommunityToolkit.Mvvm.Input;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -9,16 +10,18 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 
 namespace ArenaMasters.model
 {
 
     class ArenaMastersManager : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+    public event PropertyChangedEventHandler PropertyChanged;
     
 
-        private DataAccess _ad = new DataAccess();
+    private DataAccess _ad = new DataAccess();
+
 
     //Campos privados
 
@@ -26,7 +29,13 @@ namespace ArenaMasters.model
     ObservableCollection<Partida> _gameList;
     private int _id_User;
     private string _userName;
+    private MainWindow _mainWindow;
         //Propiedades (campos publicos)
+    public MainWindow MainWindow
+        {
+            get { return _mainWindow;}
+            set { _mainWindow = value; }
+        }
     public int id_User
         {
             get { return _id_User; }
@@ -46,15 +55,17 @@ namespace ArenaMasters.model
     {
         get { return _gameList; }
     }
-
-    //Constructor(es)
-    public ArenaMastersManager()
+    
+        //Constructor(es)
+        public ArenaMastersManager()
     {
         _unitList = new ObservableCollection<Units>();
-        _gameList = new ObservableCollection<Partida>();    
-    }
-    //Metodos (de Negocio)
-    public int Login(string usuario, string pass)
+        _gameList = new ObservableCollection<Partida>();
+        
+        }
+        //Metodos (de Negocio)
+        
+        public int Login(string usuario, string pass)
     {
             //Comprobaciones previas
         int id_user = _ad.PA_Login(usuario, pass);
@@ -138,8 +149,9 @@ namespace ArenaMasters.model
         
         return null;
     }
+       
 
-    public void GetAllGames(int id_user)
+        public void GetAllGames(int id_user)
     {
             _gameList.Clear();
 
@@ -149,10 +161,14 @@ namespace ArenaMasters.model
         foreach (DataRow dr in dataGames.Tables[0].Rows)
         {
             Partida p;
-            p = new Partida( int.Parse(dr.ItemArray[0].ToString()),
+            p = new Partida(id_User,
+                            userName,
+                            int.Parse(dr.ItemArray[0].ToString()),
                             int.Parse(dr.ItemArray[1].ToString()),
                             int.Parse(dr.ItemArray[2].ToString()),
-                            DateTime.Parse(dr.ItemArray[3].ToString()));
+                            DateTime.Parse(dr.ItemArray[3].ToString()),
+                            MainWindow,
+                            this);
             _gameList.Add(p);
         }
         OnPropertyChanged("GameList");

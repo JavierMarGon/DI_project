@@ -403,8 +403,8 @@
     </Style>
 
     <DataTemplate x:Key="Plantilla_partidas">
-        
-        <Button Style="{StaticResource btnMenuUsuario}"  BorderBrush="Black" Height="100" BorderThickness="2" Margin="10">
+
+        <Button Style="{StaticResource btnMenuUsuario}"  BorderBrush="Black" Height="100" BorderThickness="2" Margin="10" Command="{Binding MyCommand}">
             <Grid Width="400" Height="90">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="3*"/>

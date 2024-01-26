@@ -1,4 +1,5 @@
 ﻿using ArenaMasters.model;
+using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,7 @@ namespace ArenaMasters
     {
         ArenaMastersManager manager = new ArenaMastersManager();
         Game game;
+        
         MediaPlayer mediaPlayer = new MediaPlayer();
         public MainWindow()
         {
@@ -31,6 +33,7 @@ namespace ArenaMasters
             InitializeComponent();
             playSimpleSound();
             DataContext = manager;
+            manager.MainWindow= this;
             if (manager.id_User > 0)
             {
                 menu_login.Visibility = Visibility.Collapsed;
@@ -41,12 +44,14 @@ namespace ArenaMasters
         {
             InitializeComponent();
             DataContext = manager;
+            manager.MainWindow = this;
             manager.id_User = user;
             manager.userName = username;
             menu_login.Visibility = Visibility.Collapsed;
             menu_user.Visibility = Visibility.Visible;
             playSimpleSound();
         }
+        
 
         private void MediaPlayer_MediaEnded(object sender, EventArgs e)
         {

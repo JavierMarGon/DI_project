@@ -30,6 +30,7 @@ namespace ArenaMasters
             
             InitializeComponent();
             playSimpleSound();
+            DataContext = manager;
             if (manager.id_User > 0)
             {
                 menu_login.Visibility = Visibility.Collapsed;
@@ -39,6 +40,7 @@ namespace ArenaMasters
         public MainWindow(int user, string username)
         {
             InitializeComponent();
+            DataContext = manager;
             manager.id_User = user;
             manager.userName = username;
             menu_login.Visibility = Visibility.Collapsed;
@@ -129,14 +131,33 @@ namespace ArenaMasters
         }
         private void click_loadGame(object sender, RoutedEventArgs e)
         {
+            menu_user.Visibility = Visibility.Collapsed;
+            manager.GetAllGames(manager.id_User);
             menu_loadGames.Visibility = Visibility.Visible;
             sp_loadGames.Visibility = Visibility.Visible;
-            manager.GetAllGames(manager.id_User);
         }
         private void click_close(object sender, RoutedEventArgs e)
         {
             menu_user.Visibility = Visibility.Collapsed;
             menu_login.Visibility = Visibility.Visible;
+        }
+
+        private void click_exit_loadGames(object sender, RoutedEventArgs e)
+        {
+            menu_loadGames.Visibility = Visibility.Collapsed;
+            sp_loadGames.Visibility = Visibility.Collapsed;
+            menu_user.Visibility = Visibility.Visible;
+        }
+
+        private void LoadGame(object sender, RoutedEventArgs e)
+        {
+            // Obtén la Partida seleccionada
+            if (sender is FrameworkElement element && element.DataContext is Partida partida)
+            {
+                int idPartida = partida.IdGame;
+                // Ahora, puedes usar idPartida para realizar otras operaciones.
+                MessageBox.Show($"Clicaste en la partida con ID: {idPartida}");
+            }
         }
 
     }

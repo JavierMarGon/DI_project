@@ -69,15 +69,23 @@
             </StackPanel>
         </Grid>
 
-        <ScrollViewer x:Name="menu_loadGames" Visibility="Collapsed" Grid.Column="1" Grid.RowSpan="12" Background="#66808080">
-            <StackPanel x:Name="sp_loadGames" Visibility="Collapsed" Margin="10">
-                <ListBox Name="lb_partidas"
-                         ItemsSource="{Binding GameList}"
-                         ItemTemplate="{StaticResource Plantilla_partidas}">
-                    
-                </ListBox>
+        <Grid x:Name="menu_loadGames" Visibility="Collapsed" Grid.Column="1" Grid.RowSpan="12" Background="#66808080">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <ScrollViewer Grid.Row="0" >
+                <StackPanel x:Name="sp_loadGames" Margin="10">
+                    <ItemsControl ItemsSource="{Binding GameList}" ItemTemplate="{StaticResource Plantilla_partidas}">
+                        
+                    </ItemsControl>
+                </StackPanel>
+            </ScrollViewer>
+            <StackPanel Grid.Row="1" VerticalAlignment="Center">
+                <Button Style="{StaticResource btnMenuCerrarSesion}" Content="Salir" Click="click_exit_loadGames" FontSize="20" Height="44" Width="156" Foreground="White"/>
             </StackPanel>
-        </ScrollViewer>
+        </Grid>
+        
 
         <!--Menu usuario-->
         <Grid x:Name="menu_user" Visibility="Hidden" Grid.Column="1" Grid.RowSpan="12" Background="#66808080" >

@@ -264,5 +264,34 @@ namespace ArenaMasters.model
 
         }
 
+        public int deleteGame(int id_user) 
+        {
+            int resultado = -99;
+
+            try
+            {
+                _cmd = new MySqlCommand();
+                _cmd.Connection = _conn;
+                _cmd.CommandType = CommandType.StoredProcedure;
+                _cmd.CommandText = "deleteGame";
+
+                _cmd.Parameters.AddWithValue("_id_user", id_user);
+                _cmd.Parameters["_id_user"].Direction = ParameterDirection.Input;
+
+                _cmd.Parameters.Add(new MySqlParameter("_res", MySqlDbType.Int32));
+                _cmd.Parameters["_res"].Direction = ParameterDirection.Output;
+
+                _cmd.ExecuteNonQuery();
+
+                resultado = (int)_cmd.Parameters["_res"].Value;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return resultado;
+            }
+            return resultado;
+        }
+
     }
 }

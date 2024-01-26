@@ -45,7 +45,6 @@ namespace ArenaMasters.model
     public ObservableCollection<Partida> GameList
     {
         get { return _gameList; }
-    
     }
 
     //Constructor(es)
@@ -142,25 +141,24 @@ namespace ArenaMasters.model
 
     public void GetAllGames(int id_user)
     {
-        _gameList = new ObservableCollection<Partida>();
+            _gameList.Clear();
 
-        DataSet dataGames = new DataSet();
+            DataSet dataGames = new DataSet();
         dataGames = _ad.PA_GetAllGames(id_user);
         
         foreach (DataRow dr in dataGames.Tables[0].Rows)
         {
-                Partida p;
-                p = new Partida( int.Parse(dr.ItemArray[0].ToString()),
-                             int.Parse(dr.ItemArray[1].ToString()),
-                             int.Parse(dr.ItemArray[2].ToString()),
-                             DateTime.Parse(dr.ItemArray[3].ToString())
-                                );
+            Partida p;
+            p = new Partida( int.Parse(dr.ItemArray[0].ToString()),
+                            int.Parse(dr.ItemArray[1].ToString()),
+                            int.Parse(dr.ItemArray[2].ToString()),
+                            DateTime.Parse(dr.ItemArray[3].ToString()));
             _gameList.Add(p);
         }
         OnPropertyChanged("GameList");
     }
 
-        protected void OnPropertyChanged([CallerMemberName] string name = null)
+    protected void OnPropertyChanged([CallerMemberName] string name = null)
     {
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
     }

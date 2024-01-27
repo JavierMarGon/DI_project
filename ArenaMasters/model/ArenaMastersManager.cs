@@ -123,6 +123,18 @@ namespace ArenaMasters.model
             }
         }
 
+        public int NewGame(int id_user)
+        {
+            if (_ad.PA_NewGame(id_user) > 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return -1;
+            }
+        }
+
         public Game GetGame(int id_game, string name, int id_user)
         {
             string jsonResult = _ad.PA_GetGameData(id_game);   //Obtengo los datos de la partida
@@ -171,6 +183,18 @@ namespace ArenaMasters.model
                 _gameList.Add(p);
             }
             OnPropertyChanged("GameList");
+        }
+
+        public int CountGames(int id_user)
+        {
+            if (_ad.PA_CountGames(id_User) > 0)
+            {
+                return 1;       //Tiene partidas guardadas
+            }
+            else
+            {
+                return 0;       //No tiene partidas guardadas
+            }
         }
 
         protected void OnPropertyChanged([CallerMemberName] string name = null)

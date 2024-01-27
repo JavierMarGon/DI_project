@@ -89,7 +89,7 @@
         
 
         <!--Menu usuario-->
-        <Grid x:Name="menu_user" Visibility="Hidden" Grid.Column="1" Grid.RowSpan="12" Background="#66808080" >
+        <Grid x:Name="menu_user" Visibility="Collapsed" Grid.Column="1" Grid.RowSpan="12" Background="#66808080" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.5*"/>
                 <RowDefinition Height="0.75*"/>
@@ -103,13 +103,13 @@
             </Grid.ColumnDefinitions>
 
             <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Height="69" Width="274">
-                <Button Style="{StaticResource btnMenuUsuario}" Content="Continuar" Click="click_continue" FontSize="20" Height="69" Width="274" Foreground="White"/>
+                <Button x:Name="btnContinue" Style="{StaticResource btnMenuUsuario}" Content="Continuar" Click="click_continue" FontSize="20" Height="69" Width="274" Foreground="White"/>
             </StackPanel>
             <StackPanel Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Height="69" Width="274">
                 <Button Style="{StaticResource btnMenuUsuario}" Content="Nueva Partida" Click="click_newGame" FontSize="20" Height="69" Width="274" Foreground="White"/>
             </StackPanel>
             <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Height="69" Width="274">
-                <Button Style="{StaticResource btnMenuUsuario}" Content="Cargar Partida" Click="click_loadGame" FontSize="20" Height="69" Width="274" Foreground="White"/>
+                <Button x:Name="btnLoadGame" Style="{StaticResource btnMenuUsuario}" Content="Cargar Partida" Click="click_loadGame" FontSize="20" Height="69" Width="274" Foreground="White"/>
             </StackPanel>
             <StackPanel Grid.Row="4" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Height="40" Width="189" Margin="30,0,0,0" Grid.Column="1">
                 <Button Style="{StaticResource btnMenuCerrarSesion}" Content="Cerrar sesion" Click="click_close" FontSize="20" Height="34" Width="136" Foreground="White"/>

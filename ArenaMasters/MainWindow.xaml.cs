@@ -47,6 +47,7 @@ namespace ArenaMasters
             manager.MainWindow = this;
             manager.id_User = user;
             manager.userName = username;
+            noGame(false);
             menu_login.Visibility = Visibility.Collapsed;
             menu_user.Visibility = Visibility.Visible;
             playSimpleSound();
@@ -97,6 +98,10 @@ namespace ArenaMasters
             manager.id_User = manager.Login(tb_user.Text.ToString(), psw_user.Password.ToString());
             if (manager.id_User > 0)
             {
+                if(manager.CountGames(manager.id_User) < 1)
+                {
+                    noGame(true);
+                }
                 manager.userName = tb_user.Text.ToString();
                 menu_login.Visibility = Visibility.Collapsed;
                 menu_user.Visibility = Visibility.Visible;
@@ -132,6 +137,19 @@ namespace ArenaMasters
         }
         private void click_newGame(object sender, RoutedEventArgs e)
         {
+            mediaPlayer.Close();
+            if(manager.NewGame(manager.id_User) > 0)
+            {
+                int id_game = manager.ContinueGame(manager.id_User);
+                game = manager.GetGame(id_game, manager.userName, manager.id_User);
+                GameMenu menu = new GameMenu(game);
+                this.Close();
+                menu.Show();
+            }
+            else
+            {
+                MessageBox.Show("Error al crear nueva partida");
+            }
 
         }
         private void click_loadGame(object sender, RoutedEventArgs e)
@@ -162,6 +180,24 @@ namespace ArenaMasters
                 int idPartida = partida.IdGame;
                 // Ahora, puedes usar idPartida para realizar otras operaciones.
                 MessageBox.Show($"Clicaste en la partida con ID: {idPartida}");
+            }
+        }
+
+        private void noGame(bool x)
+        {
+            if (x)
+            {
+                btnContinue.IsEnabled = false;
+                btnContinue.Opacity = 0.5;
+                btnLoadGame.IsEnabled = false;
+                btnLoadGame.Opacity = 0.5;
+            }
+            else
+            {
+                btnContinue.IsEnabled = true;
+                btnContinue.Opacity = 1;
+                btnLoadGame.IsEnabled = true;
+                btnLoadGame.Opacity = 1;
             }
         }
 

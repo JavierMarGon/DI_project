@@ -769,3 +769,4 @@ C:\Users\javier.martin.gonzal\source\repos\DI_project\DI_project\ArenaMasters\ob
 C:\Users\javier.martin.gonzal\source\repos\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters.pdb
 C:\Users\javier.martin.gonzal\source\repos\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters.genruntimeconfig.cache
 C:\Users\javier.martin.gonzal\source\repos\DI_project\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ref\ArenaMasters.dll
+C:\Users\franl\OneDrive\Escritorio\proyectoDI\DI_project\ArenaMasters\bin\Debug\net6.0-windows\CommunityToolkit.Mvvm.dll

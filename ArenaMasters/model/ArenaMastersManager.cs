@@ -168,22 +168,30 @@ namespace ArenaMasters.model
 
             DataSet dataGames = new DataSet();
             dataGames = _ad.PA_GetAllGames(id_user);
-        
-            foreach (DataRow dr in dataGames.Tables[0].Rows)
+            try
             {
-                Partida p;
-                p = new Partida(id_User,
-                                userName,
-                                int.Parse(dr.ItemArray[0].ToString()),
-                                int.Parse(dr.ItemArray[1].ToString()),
-                                int.Parse(dr.ItemArray[2].ToString()),
-                                DateTime.Parse(dr.ItemArray[3].ToString()),
-                                MainWindow,
-                                this);
-                _gameList.Add(p);
+                foreach (DataRow dr in dataGames.Tables[0].Rows)
+                {
+                    Partida p;
+                    p = new Partida(id_User,
+                                    userName,
+                                    int.Parse(dr.ItemArray[0].ToString()),
+                                    int.Parse(dr.ItemArray[1].ToString()),
+                                    int.Parse(dr.ItemArray[2].ToString()),
+                                    DateTime.Parse(dr.ItemArray[3].ToString()),
+                                    MainWindow,
+                                    this);
+                    _gameList.Add(p);
+                }
+                OnPropertyChanged("GameList");
             }
-            OnPropertyChanged("GameList");
+            catch (Exception e)
+            {
+                MessageBox.Show("No hay mas partidas");
+            }
+            
         }
+       
 
         public int CountGames(int id_user)
         {
@@ -194,6 +202,19 @@ namespace ArenaMasters.model
             else
             {
                 return 0;       //No tiene partidas guardadas
+            }
+        }
+        
+        public int DeleteGame(int id_game)
+        {
+            if (_ad.PA_deleteGame(id_game) > 0)
+            {
+                OnPropertyChanged("GameList");
+                return 1;
+            }
+            else
+            {
+                return 0;      
             }
         }
 

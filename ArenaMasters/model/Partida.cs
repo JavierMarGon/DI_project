@@ -22,6 +22,8 @@ namespace ArenaMasters.model
         MainWindow window;
         Game game;
         public ICommand MyCommand { get; set; }
+        public ICommand MyCommandDelete { get; set; }
+
         public int IdGame
         {
             get { return _id_game; }
@@ -64,6 +66,8 @@ namespace ArenaMasters.model
             IdUser = _idUser;
             window = win;
             MyCommand = new RelayCommand(GetFromListGame);
+            MyCommandDelete = new RelayCommand(DeleteGame);
+           
             IdGame = id_game;
             Money = money;
             Round = round;
@@ -76,6 +80,15 @@ namespace ArenaMasters.model
             window.Close();
             menu.Show();
 
+        }
+
+        private void DeleteGame()
+        {
+            manager.DeleteGame(IdGame);
+            manager.GetAllGames(IdUser);
+            window.menu_loadGames.Visibility = Visibility.Collapsed;
+            window.menu_user.Visibility = Visibility.Visible;
+            window.EnablingMenu();
         }
     }
 }

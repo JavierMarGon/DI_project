@@ -38,7 +38,9 @@ namespace ArenaMasters
             {
                 menu_login.Visibility = Visibility.Collapsed;
                 menu_user.Visibility = Visibility.Visible;
+                EnablingMenu();
             }
+            
         }
         public MainWindow(int user, string username)
         {
@@ -47,7 +49,7 @@ namespace ArenaMasters
             manager.MainWindow = this;
             manager.id_User = user;
             manager.userName = username;
-            noGame(false);
+            EnablingMenu();
             menu_login.Visibility = Visibility.Collapsed;
             menu_user.Visibility = Visibility.Visible;
             playSimpleSound();
@@ -58,6 +60,18 @@ namespace ArenaMasters
         {
             // Cierra la ventana cuando la reproducción ha terminado
             Close();
+        }
+
+        public void EnablingMenu()
+        {
+            if (manager.CountGames(manager.id_User) > 0)
+            {
+                noGame(false);
+            }
+            else
+            {
+                noGame(true);
+            }
         }
 
         private void playSimpleSound()

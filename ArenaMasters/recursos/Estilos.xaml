@@ -414,7 +414,7 @@
                     <TextBlock FontSize="25" Text="Ultima vez jugada"/>
                     <TextBlock FontSize="25" Text="{Binding LastPlay, StringFormat='yyyy/MM/dd HH:mm:ss'}"/>
                 </StackPanel>
-                <Button Style="{StaticResource btnEliminar}" Grid.Column="2" Foreground="Beige" Content="EIMINAR" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25"/>
+                <Button Style="{StaticResource btnEliminar}" Grid.Column="2" Foreground="Beige" Content="EIMINAR" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25" Command="{Binding MyCommandDelete}"/>
             </Grid>
         </Button>
         

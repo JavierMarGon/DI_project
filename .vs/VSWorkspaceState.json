@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ArenaMasters",
+    "\\ArenaMasters\\model"
   ],
+  "SelectedNode": "\\ArenaMasters\\model\\Skills.cs",
   "PreviewInSolutionExplorer": false
 }

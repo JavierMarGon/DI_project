@@ -54,6 +54,9 @@ namespace ArenaMasters.model
         public ObservableCollection<Partida> GameList
         {
             get { return _gameList; }
+            set { _gameList = value;
+                OnPropertyChanged("GameList");
+            }
         }
     
         //Constructor(es)
@@ -164,7 +167,7 @@ namespace ArenaMasters.model
 
         public void GetAllGames(int id_user)
         {
-            _gameList.Clear();
+            GameList.Clear();
 
             DataSet dataGames = new DataSet();
             dataGames = _ad.PA_GetAllGames(id_user);
@@ -181,15 +184,17 @@ namespace ArenaMasters.model
                                     DateTime.Parse(dr.ItemArray[3].ToString()),
                                     MainWindow,
                                     this);
-                    _gameList.Add(p);
+                    GameList.Add(p);
                 }
                 OnPropertyChanged("GameList");
             }
             catch (Exception e)
             {
-                MessageBox.Show("No hay mas partidas");
+                MainWindow.menu_loadGames.Visibility = Visibility.Collapsed;
+                MainWindow.menu_user.Visibility = Visibility.Visible;
+                MainWindow.EnablingMenu();
             }
-            
+
         }
        
 

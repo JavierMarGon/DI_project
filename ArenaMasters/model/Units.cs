@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ArenaMasters.model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,7 @@ namespace ArenaMasters
         int _skill2 = 0;
         int _skill3 = 0;
         int _skill4 = 0;
+        List<Skills> Skills { get; set; }
         public Units() {
             
         }

@@ -86,9 +86,6 @@ namespace ArenaMasters.model
         {
             manager.DeleteGame(IdGame);
             manager.GetAllGames(IdUser);
-            window.menu_loadGames.Visibility = Visibility.Collapsed;
-            window.menu_user.Visibility = Visibility.Visible;
-            window.EnablingMenu();
         }
     }
 }

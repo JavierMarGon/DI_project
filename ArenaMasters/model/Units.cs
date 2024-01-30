@@ -9,90 +9,37 @@ namespace ArenaMasters
 {
     class Units
     {
-        String _unitName = "";
-        int _skill1 = 0;
-        int _skill2 = 0;
-        int _skill3 = 0;
-        int _skill4 = 0;
-        List<Skills> Skills { get; set; }
-        public Units() {
-            
-        }
-        public Units(String unitName)
+        private string _unitName = "";
+
+        protected List<Skills> _skills;
+
+        public string UnitName
         {
-            _unitName = unitName;
+            get { return _unitName; }
+            set { _unitName = value; }
         }
-        public Units(String unitName, int skill1)
+        public Units(string unitName)
         {
-            _unitName = unitName;
-            _skill1 = skill1;
+            UnitName = unitName;
         }
-        public Units(String unitName, int skill1, int skill2)
+        public Units(string unitName, List<Skills> skillsData)
         {
-            _unitName = unitName;
-            _skill1 = skill1;
-            _skill2 = skill2;  
+            UnitName = unitName;
+            foreach (Skills skill in skillsData)
+            {
+                _skills.Add(skill);
+            }
         }
-        public Units(String unitName, int skill1, int skill2, int skill3)
+        public void setSkillByIndex(int index, Skills data)
         {
-            _unitName = unitName;
-            _skill1 = skill1;
-            _skill2 = skill2;
-            _skill3 = skill3;
-        }
-        public Units(String unitName, int skill1, int skill2, int skill3, int skill4)
-        {
-            _unitName = unitName;
-            _skill1 = skill1;
-            _skill2 = skill2;
-            _skill3 = skill3;
-            _skill4 = skill4;
-        }
-        public void setName(string unitName)
-        {
-            _unitName = unitName;
+            _skills[index] = data;
             return;
         }
-        public String getName()
+        public Skills getSkillByIndex(int index)
         {
-            return _unitName;
+            return _skills[index];
         }
-        public void setSkill1(int skill)
-        {
-            _skill1 = skill;
-            return;
-        }
-        public int getSkill1()
-        {
-            return _skill1;
-        }
-        public void setSkill2(int skill)
-        {
-            _skill2 = skill;
-            return;
-        }
-        public int getSkill2()
-        {
-            return _skill2;
-        }
-        public void setSkill3(int skill)
-        {
-            _skill3 = skill;
-            return;
-        }
-        public int getSkill3()
-        {
-            return _skill3;
-        }
-        public void setSkill4(int skill)
-        {
-            _skill4 = skill;
-            return;
-        }
-        public int getSkill4()
-        {
-            return _skill4;
-        }
+        
 
     }
 }

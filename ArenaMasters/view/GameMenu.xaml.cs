@@ -29,7 +29,7 @@ namespace ArenaMasters
         int rewards = 0;
         ArenaMastersManager manager = new ArenaMastersManager();
         Game game;
-        Units[] units;
+        List<Units> units;
         Random random = new Random();
         MediaPlayer mediaPlayer = new MediaPlayer();
 
@@ -51,38 +51,38 @@ namespace ArenaMasters
             
             String name;
             int val = 0;
-            maxUnits = 7; //esto sere el count de las unidades de la partida
-            units = new Units[maxUnits];
-            for (int i = 0; i < maxUnits; i++)
-            {
-                val = random.Next(0, 1);
-                name = "pj";
-                name += i;
-                units[i] = new Units(name);
-                if (val == 0)
-                {
-                    val = random.Next(0, 5);
-                    units[i].setSkill1(val);
-                }
-                val = random.Next(0, 1);
-                if (val == 0)
-                {
-                    val = random.Next(0, 5);
-                    units[i].setSkill2(val);
-                }
-                val = random.Next(0, 1);
-                if (val == 0)
-                {
-                    val = random.Next(0, 5);
-                    units[i].setSkill3(val);
-                }
-                val = random.Next(0, 1);
-                if (val == 0)
-                {
-                    val = random.Next(0, 5);
-                    units[i].setSkill4(val);
-                }
-            }
+            //maxUnits = 7; //esto sere el count de las unidades de la partida
+            
+            //for (int i = 0; i < maxUnits; i++)
+            //{
+            //    val = random.Next(0, 1);
+            //    name = "pj";
+            //    name += i;
+            //    units[i] = new Units(name);
+            //    if (val == 0)
+            //    {
+            //        val = random.Next(0, 5);
+            //        units[i].;
+            //    }
+            //    val = random.Next(0, 1);
+            //    if (val == 0)
+            //    {
+            //        val = random.Next(0, 5);
+            //        units[i].setSkill2(val);
+            //    }
+            //    val = random.Next(0, 1);
+            //    if (val == 0)
+            //    {
+            //        val = random.Next(0, 5);
+            //        units[i].setSkill3(val);
+            //    }
+            //    val = random.Next(0, 1);
+            //    if (val == 0)
+            //    {
+            //        val = random.Next(0, 5);
+            //        units[i].setSkill4(val);
+            //    }
+            //}
         }
 
         private void MediaPlayer_MediaEnded(object sender, EventArgs e)
@@ -157,11 +157,11 @@ namespace ArenaMasters
             settingsPanel.Visibility = Visibility.Collapsed;
             setting.Visibility = Visibility.Collapsed;
             space = 0;
-            habpjName.Text = units[space].getName();
-            habpjSkill1.Text = units[space].getSkill1().ToString();
-            habpjSkill2.Text = units[space].getSkill2().ToString();
-            habpjSkill3.Text = units[space].getSkill3().ToString();
-            habpjSkill4.Text = units[space].getSkill4().ToString();
+            habpjName.Text = units[space].UnitName;
+            habpjSkill1.Text = units[space].getSkillByIndex(1).Name.ToString();
+            habpjSkill2.Text = units[space].getSkillByIndex(2).Name.ToString();
+            habpjSkill3.Text = units[space].getSkillByIndex(3).Name.ToString();
+            habpjSkill4.Text = units[space].getSkillByIndex(4).Name.ToString();
             habShop.Visibility = Visibility.Visible;
         }
         public void habShopHide(object sender, RoutedEventArgs e)
@@ -200,11 +200,11 @@ namespace ArenaMasters
             setting.Visibility = Visibility.Collapsed;
             settingsPanel.Visibility = Visibility.Collapsed;
             space = 0;
-            habpjName.Text = units[space].getName();
-            habpjSkill1.Text = units[space].getSkill1().ToString();
-            habpjSkill2.Text = units[space].getSkill2().ToString();
-            habpjSkill3.Text = units[space].getSkill3().ToString();
-            habpjSkill4.Text = units[space].getSkill4().ToString();
+            habpjName.Text = units[space].UnitName;
+            habpjSkill1.Text = units[space].getSkillByIndex(1).Name.ToString();
+            habpjSkill2.Text = units[space].getSkillByIndex(2).Name.ToString();
+            habpjSkill3.Text = units[space].getSkillByIndex(3).Name.ToString();
+            habpjSkill4.Text = units[space].getSkillByIndex(4).Name.ToString();
             pjShop.Visibility = Visibility.Visible;
 
         }
@@ -212,21 +212,21 @@ namespace ArenaMasters
         {
             if (space == 0) { space = maxUnits - 1; }
             else { space--; }
-            habpjName.Text = units[space].getName();
-            habpjSkill1.Text = units[space].getSkill1().ToString();
-            habpjSkill2.Text = units[space].getSkill2().ToString();
-            habpjSkill3.Text = units[space].getSkill3().ToString();
-            habpjSkill4.Text = units[space].getSkill4().ToString();
+            habpjName.Text = units[space].UnitName;
+            habpjSkill1.Text = units[space].getSkillByIndex(1).Name.ToString();
+            habpjSkill2.Text = units[space].getSkillByIndex(2).Name.ToString();
+            habpjSkill3.Text = units[space].getSkillByIndex(3).Name.ToString();
+            habpjSkill4.Text = units[space].getSkillByIndex(4).Name.ToString();
         }
         public void habNextPj(object sender, RoutedEventArgs e)
         {
             if (space == maxUnits - 1) { space = 0; }
             else { space++; }
-            habpjName.Text = units[space].getName();
-            habpjSkill1.Text = units[space].getSkill1().ToString();
-            habpjSkill2.Text = units[space].getSkill2().ToString();
-            habpjSkill3.Text = units[space].getSkill3().ToString();
-            habpjSkill4.Text = units[space].getSkill4().ToString();
+            habpjName.Text = units[space].UnitName;
+            habpjSkill1.Text = units[space].getSkillByIndex(1).Name.ToString();
+            habpjSkill2.Text = units[space].getSkillByIndex(2).Name.ToString();
+            habpjSkill3.Text = units[space].getSkillByIndex(3).Name.ToString();
+            habpjSkill4.Text = units[space].getSkillByIndex(4).Name.ToString();
         }
         public void pjShopHide(object sender, RoutedEventArgs e)
         {
@@ -320,27 +320,27 @@ namespace ArenaMasters
         }
         public void habChangeSkill1(object sender, RoutedEventArgs e)
         {
-            int val = random.Next(0, 5);
-            units[space].setSkill1(val);
-            habpjSkill1.Text = units[space].getSkill1().ToString();
+            Skills skill_data = PA;
+            units[space].setSkillByIndex(1,skill_data);
+            habpjSkill1.Text = units[space].getSkillByIndex(1).Name.ToString();
         }
         public void habChangeSkill2(object sender, RoutedEventArgs e)
         {
-            int val = random.Next(0, 5);
-            units[space].setSkill2(val);
-            habpjSkill2.Text = units[space].getSkill2().ToString();
+            Skills skill_data = PA;
+            units[space].setSkillByIndex(2, skill_data);
+            habpjSkill1.Text = units[space].getSkillByIndex(2).Name.ToString();
         }
         public void habChangeSkill3(object sender, RoutedEventArgs e)
         {
-            int val = random.Next(0, 5);
-            units[space].setSkill3(val);
-            habpjSkill3.Text = units[space].getSkill3().ToString();
+            Skills skill_data = PA;
+            units[space].setSkillByIndex(1, skill_data);
+            habpjSkill1.Text = units[space].getSkillByIndex(1).Name.ToString();
         }
         public void habChangeSkill4(object sender, RoutedEventArgs e)
         {
-            int val = random.Next(0, 5);
-            units[space].setSkill4(val);
-            habpjSkill4.Text = units[space].getSkill4().ToString();
+            Skills skill_data = PA;
+            units[space].setSkillByIndex(1, skill_data);
+            habpjSkill1.Text = units[space].getSkillByIndex(1).Name.ToString();
         }
 
         private void settingsPanelShow(object sender, RoutedEventArgs e)

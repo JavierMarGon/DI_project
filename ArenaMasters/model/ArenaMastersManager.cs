@@ -163,8 +163,41 @@ namespace ArenaMasters.model
         
             return null;
         }
-       
 
+        public Skills SetRandomSkill(int id_character, int placement)
+        {
+            if (_ad.PA_RandomSkill(id_character,placement) > 0)
+            {
+                _ad.PA_RandomSkill(id_character, placement);
+                return ;       //Tiene partidas guardadas
+            }
+            else
+            {
+                return 0;       //No tiene partidas guardadas
+            }
+            string jsonResult = _ad.PA_GetGameData(id_game);   //Obtengo los datos de la partida
+            var gameData = JsonConvert.DeserializeAnonymousType(jsonResult, new
+            {
+                Res = 0,
+                Money = 0,
+                Round = 0,
+                Refresh = 0
+            });
+
+            if (gameData != null)
+            {
+                return new Game(
+                                id_game,
+                                id_user,
+                                name,
+                                gameData.Round,
+                                gameData.Refresh,
+                                gameData.Money
+                                );
+            }
+
+            return null;
+        }
         public void GetAllGames(int id_user)
         {
             GameList.Clear();

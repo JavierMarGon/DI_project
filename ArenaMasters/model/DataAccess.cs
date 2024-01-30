@@ -229,7 +229,105 @@ namespace ArenaMasters.model
                 return ex.Message;
             }
         }
+        public string PA_GetSkillData(int id_character, int placement)
+        {
+            //int resultado = -99;
+            DataSet ds = new DataSet();
+            try
+            {
+                _cmd = new MySqlCommand(); 
+                _cmd.Connection = _conn;    
+                _cmd.CommandType = CommandType.StoredProcedure;
+                _cmd.CommandText = "getSkillInfoFromRooster";
 
+                _cmd.Parameters.AddWithValue("_place", placement);
+                _cmd.Parameters["_place"].Direction = ParameterDirection.Input;
+
+                _cmd.Parameters.AddWithValue("_id_character", id_character);
+                _cmd.Parameters["_id_character"].Direction = ParameterDirection.Input;
+
+                _cmd.Parameters.Add(new MySqlParameter("_res", MySqlDbType.Int32));
+                _cmd.Parameters["_res"].Direction = ParameterDirection.Output;
+
+                _cmd.Parameters.Add(new MySqlParameter("_id_skill", MySqlDbType.Int32));
+                _cmd.Parameters["_id_skill"].Direction = ParameterDirection.Output;
+
+                _cmd.Parameters.Add(new MySqlParameter("_name", MySqlDbType.VarChar));
+                _cmd.Parameters["_name"].Direction = ParameterDirection.Output;
+                
+                _cmd.Parameters.Add(new MySqlParameter("_description", MySqlDbType.VarChar));
+                _cmd.Parameters["_description"].Direction = ParameterDirection.Output;
+
+                _cmd.Parameters.Add(new MySqlParameter("_type", MySqlDbType.VarChar));
+                _cmd.Parameters["_type"].Direction = ParameterDirection.Output;
+
+                _cmd.Parameters.Add(new MySqlParameter("_tier", MySqlDbType.Int32));
+                _cmd.Parameters["_tier"].Direction = ParameterDirection.Output;
+                
+                _cmd.Parameters.Add(new MySqlParameter("_target", MySqlDbType.VarChar));
+                _cmd.Parameters["_target"].Direction = ParameterDirection.Output;
+                
+                _cmd.Parameters.Add(new MySqlParameter("_target_range", MySqlDbType.VarChar));
+                _cmd.Parameters["_target_range"].Direction = ParameterDirection.Output;
+
+
+
+                _cmd.ExecuteNonQuery();
+
+                var resultJson = new
+                {
+                    IdSkill = _cmd.Parameters["_id_skill"].Value,
+                    Name = _cmd.Parameters["_name"].Value,
+                    Description = _cmd.Parameters["_description"].Value,
+                    Type = _cmd.Parameters["_type"].Value,
+                    Tier = _cmd.Parameters["_tier"].Value,
+                    Target = _cmd.Parameters["_target"].Value,
+                    TargetRange = _cmd.Parameters["_target_range"].Value
+                };
+                string jsonResult = JsonConvert.SerializeObject(resultJson);
+
+                return jsonResult;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return ex.Message;
+            }
+        }
+
+        public int PA_RandomSkill(int id_character,int placement)
+        {
+            int resultado = -99;
+            try
+            {
+                _cmd = new MySqlCommand();
+                _cmd.Connection = _conn;
+                _cmd.CommandType = CommandType.StoredProcedure;
+                _cmd.CommandText = "setRandomSkill";
+                
+                _cmd.Parameters.AddWithValue("_id_character", id_character);
+                _cmd.Parameters["_id_character"].Direction = ParameterDirection.Input;
+
+                _cmd.Parameters.AddWithValue("skillPlace", placement);
+                _cmd.Parameters["skillPlace"].Direction = ParameterDirection.Input;
+
+                _cmd.Parameters.Add(new MySqlParameter("_res", MySqlDbType.Int32));
+                _cmd.Parameters["_res"].Direction = ParameterDirection.Output;
+
+                _cmd.ExecuteNonQuery();
+
+                resultado = (int)_cmd.Parameters["_res"].Value;
+
+                return resultado;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return resultado;
+            }
+            
+        }
         public DataSet PA_GetAllGames(int id_user)
         {
             DataSet ds = new DataSet();

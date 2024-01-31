@@ -276,11 +276,11 @@ namespace ArenaMasters.model
 
 
                 _cmd.ExecuteNonQuery();
-                if (_cmd.Parameters["_target"].Value=="foes")
+                if (_cmd.Parameters["_target"].Value.ToString()=="foes")
                 {
                     _target=true;
                 }
-                if (_cmd.Parameters["_target_range"].Value=="multiple")
+                if (_cmd.Parameters["_target_range"].Value.ToString()=="multiple")
                 {
                     _targetRange=true;
                 }
@@ -371,7 +371,40 @@ namespace ArenaMasters.model
             }
 
         }
+        public DataSet PA_GetAllCharacters(int id_game)
+        {
+            DataSet ds = new DataSet();
+            int res = -99;
+            try
+            {
+                _cmd = new MySqlCommand();
+                _cmd.Connection = _conn;
+                _cmd.CommandType = CommandType.StoredProcedure;
+                _cmd.CommandText = "getAllCharacters";
 
+                _cmd.Parameters.AddWithValue("_id_game", id_game);
+                _cmd.Parameters["_id_game"].Direction = ParameterDirection.Input;
+
+                _cmd.Parameters.Add(new MySqlParameter("_res", MySqlDbType.Int32));
+                _cmd.Parameters["_res"].Direction = ParameterDirection.Output;
+
+                _cmd.ExecuteNonQuery();
+                IDataAdapter adapter = new MySqlDataAdapter(_cmd);
+
+                // construct DataSet to store result
+                adapter.Fill(ds);
+
+                return ds;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return ds;
+            }
+
+        }
+        
         public int PA_deleteGame(int id_game) 
         {
             int resultado = -99;

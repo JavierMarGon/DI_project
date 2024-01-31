@@ -11,7 +11,16 @@ namespace ArenaMasters
     {
         private string _unitName = "";
         private int _id_character;
-        protected List<Skills> _skills;
+        private int _id_rol;
+        private string _rol_name;
+        private int _hp;
+        private int _atk;
+        private int _def;
+        private int _hit_rate;
+        private int _evasion;
+        private int _greed;
+        private int _price;
+        protected List<Skills> _skills = new List<Skills>();
         public int IdCharacter
         {
             get { return _id_character; }
@@ -26,9 +35,8 @@ namespace ArenaMasters
         {
             UnitName = unitName;
         }
-        public Units(string unitName, List<Skills> skillsData)
+        public Units( List<Skills> skillsData)
         {
-            UnitName = unitName;
             foreach (Skills skill in skillsData)
             {
                 _skills.Add(skill);
@@ -36,12 +44,12 @@ namespace ArenaMasters
         }
         public void setSkillByIndex(int index, Skills data)
         {
-            _skills[index] = data;
+            _skills[index-1] = data;
             return;
         }
         public Skills getSkillByIndex(int index)
         {
-            return _skills[index];
+            return _skills[index-1];
         }
         
 

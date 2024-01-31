@@ -199,10 +199,39 @@ namespace ArenaMasters.model
             else
             {
                 return null;       //No tiene partidas guardadas
-            }
-            
-            
+            }   
+        }
 
+        public List<Skills> fetchAllSkills(int id_character)
+        {
+            List<Skills> skillsData= new List<Skills>();
+            for (int i = 1; i < 5; i++)
+            {
+                string jsonResult = _ad.PA_GetSkillData(id_character, i);
+                var skillData = JsonConvert.DeserializeAnonymousType(jsonResult, new
+                {
+                    IdSkill = 0,
+                    Name = "",
+                    Description = "",
+                    Type = "",
+                    Tier = 0,
+                    Target = false,
+                    TargetRange = false
+                });
+                if (skillData != null)
+                {
+                    skillsData.Add( new Skills(
+                                    skillData.IdSkill,
+                                    skillData.Name,
+                                    skillData.Description,
+                                    skillData.Type,
+                                    skillData.Tier,
+                                    skillData.Target,
+                                    skillData.TargetRange
+                                    ));
+                }
+            }
+            return skillsData;
             
         }
         public void GetAllGames(int id_user)
@@ -235,6 +264,26 @@ namespace ArenaMasters.model
                 MainWindow.EnablingMenu();
             }
 
+        }
+       
+        public List<int> GetAllCharactersId(int id_game)
+        {
+                    
+            List<int> ids = new List<int>();
+            DataSet dataUnits = new DataSet();
+            dataUnits = _ad.PA_GetAllCharacters(id_game);
+            try
+            {
+                foreach (DataRow dr in dataUnits.Tables[0].Rows)
+                {
+                    ids.Add(int.Parse(dr.ItemArray[0].ToString()));                     
+                }
+                return ids;
+            }
+                catch (Exception e)
+            {
+                return ids;
+            }
         }
        
 

@@ -14,6 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 
 namespace ArenaMasters
 {
@@ -29,7 +30,7 @@ namespace ArenaMasters
         int rewards = 0;
         ArenaMastersManager manager = new ArenaMastersManager();
         Game game;
-        List<Units> units;
+        List<Units> units ;
         Random random = new Random();
         MediaPlayer mediaPlayer = new MediaPlayer();
 
@@ -39,6 +40,7 @@ namespace ArenaMasters
             game = _game;
             namePj.Text = game.Name.ToString();
             currentMoney.Text = game.Money.ToString();
+            playSimpleSound();
             initializeUnits();
             currentUnits.Text = maxUnits.ToString() + "/7";
             
@@ -47,42 +49,15 @@ namespace ArenaMasters
 
         public void initializeUnits()
         {
-            playSimpleSound();
-            
-            String name;
-            int val = 0;
-            //maxUnits = 7; //esto sere el count de las unidades de la partida
-            
-            //for (int i = 0; i < maxUnits; i++)
-            //{
-            //    val = random.Next(0, 1);
-            //    name = "pj";
-            //    name += i;
-            //    units[i] = new Units(name);
-            //    if (val == 0)
-            //    {
-            //        val = random.Next(0, 5);
-            //        units[i].;
-            //    }
-            //    val = random.Next(0, 1);
-            //    if (val == 0)
-            //    {
-            //        val = random.Next(0, 5);
-            //        units[i].setSkill2(val);
-            //    }
-            //    val = random.Next(0, 1);
-            //    if (val == 0)
-            //    {
-            //        val = random.Next(0, 5);
-            //        units[i].setSkill3(val);
-            //    }
-            //    val = random.Next(0, 1);
-            //    if (val == 0)
-            //    {
-            //        val = random.Next(0, 5);
-            //        units[i].setSkill4(val);
-            //    }
-            //}
+            List<int> unitsIds = new List<int>();
+            maxUnits = 7; //esto sere el count de las unidades de la partida
+            units = new List<Units>();
+            unitsIds=manager.GetAllCharactersId(game.IdGame); 
+            foreach (int id in unitsIds )
+            {
+                units.Add(new Units(manager.fetchAllSkills(id)));
+                
+            }
         }
 
         private void MediaPlayer_MediaEnded(object sender, EventArgs e)
@@ -157,7 +132,7 @@ namespace ArenaMasters
             settingsPanel.Visibility = Visibility.Collapsed;
             setting.Visibility = Visibility.Collapsed;
             space = 0;
-            habpjName.Text = units[space].UnitName;
+            habpjName.Text = "";
             habpjSkill1.Text = units[space].getSkillByIndex(1).Name.ToString();
             habpjSkill2.Text = units[space].getSkillByIndex(2).Name.ToString();
             habpjSkill3.Text = units[space].getSkillByIndex(3).Name.ToString();

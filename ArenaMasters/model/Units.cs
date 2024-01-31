@@ -10,9 +10,13 @@ namespace ArenaMasters
     class Units
     {
         private string _unitName = "";
-
+        private int _id_character;
         protected List<Skills> _skills;
-
+        public int IdCharacter
+        {
+            get { return _id_character; }
+            set { _id_character = value; }
+        }
         public string UnitName
         {
             get { return _unitName; }

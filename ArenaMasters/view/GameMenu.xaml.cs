@@ -320,25 +320,25 @@ namespace ArenaMasters
         }
         public void habChangeSkill1(object sender, RoutedEventArgs e)
         {
-            Skills skill_data = PA;
+            Skills skill_data = manager.SetRandomSkill(units[space].IdCharacter,1);
             units[space].setSkillByIndex(1,skill_data);
             habpjSkill1.Text = units[space].getSkillByIndex(1).Name.ToString();
         }
         public void habChangeSkill2(object sender, RoutedEventArgs e)
         {
-            Skills skill_data = PA;
+            Skills skill_data = manager.SetRandomSkill(units[space].IdCharacter, 2);
             units[space].setSkillByIndex(2, skill_data);
             habpjSkill1.Text = units[space].getSkillByIndex(2).Name.ToString();
         }
         public void habChangeSkill3(object sender, RoutedEventArgs e)
         {
-            Skills skill_data = PA;
+            Skills skill_data = manager.SetRandomSkill(units[space].IdCharacter, 3);
             units[space].setSkillByIndex(1, skill_data);
             habpjSkill1.Text = units[space].getSkillByIndex(1).Name.ToString();
         }
         public void habChangeSkill4(object sender, RoutedEventArgs e)
         {
-            Skills skill_data = PA;
+            Skills skill_data = manager.SetRandomSkill(units[space].IdCharacter, 4);
             units[space].setSkillByIndex(1, skill_data);
             habpjSkill1.Text = units[space].getSkillByIndex(1).Name.ToString();
         }

@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using System.Xml.Linq;
 
 namespace ArenaMasters.model
 {
@@ -168,35 +169,41 @@ namespace ArenaMasters.model
         {
             if (_ad.PA_RandomSkill(id_character,placement) > 0)
             {
-                _ad.PA_RandomSkill(id_character, placement);
-                return ;       //Tiene partidas guardadas
+
+                string jsonResult = _ad.PA_GetSkillData(id_character, placement);
+                var skillData = JsonConvert.DeserializeAnonymousType(jsonResult, new
+                {
+                    IdSkill = 0,
+                    Name = "",
+                    Description = "",
+                    Type = "",
+                    Tier = 0,
+                    Target = false,
+                    TargetRange = false
+                });
+                if (skillData != null)
+                {
+                    return new Skills(
+                                    skillData.IdSkill,
+                                    skillData.Name,
+                                    skillData.Description,
+                                    skillData.Type,
+                                    skillData.Tier,
+                                    skillData.Target,
+                                    skillData.TargetRange
+                                    );
+                }
+
+                return null;       //Tiene partidas guardadas
             }
             else
             {
-                return 0;       //No tiene partidas guardadas
+                return null;       //No tiene partidas guardadas
             }
-            string jsonResult = _ad.PA_GetGameData(id_game);   //Obtengo los datos de la partida
-            var gameData = JsonConvert.DeserializeAnonymousType(jsonResult, new
-            {
-                Res = 0,
-                Money = 0,
-                Round = 0,
-                Refresh = 0
-            });
+            
+            
 
-            if (gameData != null)
-            {
-                return new Game(
-                                id_game,
-                                id_user,
-                                name,
-                                gameData.Round,
-                                gameData.Refresh,
-                                gameData.Money
-                                );
-            }
-
-            return null;
+            
         }
         public void GetAllGames(int id_user)
         {

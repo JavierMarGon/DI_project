@@ -10,6 +10,7 @@ using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Configuration;
+using Org.BouncyCastle.Asn1.X509;
 
 namespace ArenaMasters.model
 {
@@ -233,6 +234,8 @@ namespace ArenaMasters.model
         {
             //int resultado = -99;
             DataSet ds = new DataSet();
+            bool _target = false;  
+            bool _targetRange = false;  
             try
             {
                 _cmd = new MySqlCommand(); 
@@ -273,7 +276,14 @@ namespace ArenaMasters.model
 
 
                 _cmd.ExecuteNonQuery();
-
+                if (_cmd.Parameters["_target"].Value=="foes")
+                {
+                    _target=true;
+                }
+                if (_cmd.Parameters["_target_range"].Value=="multiple")
+                {
+                    _targetRange=true;
+                }
                 var resultJson = new
                 {
                     IdSkill = _cmd.Parameters["_id_skill"].Value,
@@ -281,8 +291,8 @@ namespace ArenaMasters.model
                     Description = _cmd.Parameters["_description"].Value,
                     Type = _cmd.Parameters["_type"].Value,
                     Tier = _cmd.Parameters["_tier"].Value,
-                    Target = _cmd.Parameters["_target"].Value,
-                    TargetRange = _cmd.Parameters["_target_range"].Value
+                    Target = _target,
+                    TargetRange = _targetRange
                 };
                 string jsonResult = JsonConvert.SerializeObject(resultJson);
 

@@ -93,7 +93,7 @@ namespace ArenaMasters {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ArenaMasters;component/view/moneydungeon.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ArenaMasters;V1.0.0.0;component/view/moneydungeon.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\view\MoneyDungeon.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

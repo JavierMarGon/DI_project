@@ -23,7 +23,7 @@ namespace ArenaMasters
     /// </summary>
     public partial class GameMenu : Window
     {
-        int maxUnits = 0;
+        int maxUnits;
         int _gameId = 0;
         int space = 0;
         int level = 0;
@@ -42,6 +42,7 @@ namespace ArenaMasters
             currentMoney.Text = game.Money.ToString();
             playSimpleSound();
             initializeUnits();
+            
             currentUnits.Text = maxUnits.ToString() + "/7";
             
         }
@@ -50,14 +51,14 @@ namespace ArenaMasters
         public void initializeUnits()
         {
             List<int> unitsIds = new List<int>();
-            maxUnits = 7; //esto sere el count de las unidades de la partida
+            //esto sere el count de las unidades de la partida
             units = new List<Units>();
             unitsIds=manager.GetAllCharactersId(game.IdGame); 
             foreach (int id in unitsIds )
             {
-                units.Add(new Units(manager.fetchAllSkills(id)));
-                
+                units.Add(new Units(manager.fetchAllSkills(id)));  
             }
+            maxUnits = manager.CountCharacters(game.IdGame);
         }
 
         private void MediaPlayer_MediaEnded(object sender, EventArgs e)

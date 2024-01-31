@@ -298,6 +298,18 @@ namespace ArenaMasters.model
                 return 0;       //No tiene partidas guardadas
             }
         }
+        public int CountCharacters(int id_game)
+        {
+            int val = _ad.PA_CountCharacters(id_game);
+            if (val > 0)
+            {
+                return val;       //Tiene partidas guardadas
+            }
+            else
+            {
+                return 0;       //No tiene partidas guardadas
+            }
+        }
         
         public int DeleteGame(int id_game)
         {

@@ -193,8 +193,7 @@ namespace ArenaMasters.model
                                     skillData.TargetRange
                                     );
                 }
-
-                return null;       //Tiene partidas guardadas
+                return null;
             }
             else
             {

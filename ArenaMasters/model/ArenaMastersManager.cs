@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.Input;
 using Newtonsoft.Json;
 using System;
+using System.Threading;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -169,7 +170,7 @@ namespace ArenaMasters.model
         {
             if (_ad.PA_RandomSkill(id_character,placement) > 0)
             {
-
+                
                 string jsonResult = _ad.PA_GetSkillData(id_character, placement);
                 var skillData = JsonConvert.DeserializeAnonymousType(jsonResult, new
                 {
@@ -181,9 +182,7 @@ namespace ArenaMasters.model
                     Target = false,
                     TargetRange = false
                 });
-                if (skillData != null)
-                {
-                    return new Skills(
+                return new Skills(
                                     skillData.IdSkill,
                                     skillData.Name,
                                     skillData.Description,
@@ -192,11 +191,10 @@ namespace ArenaMasters.model
                                     skillData.Target,
                                     skillData.TargetRange
                                     );
-                }
-                return null;
             }
             else
             {
+                MessageBox.Show("cagada");
                 return null;       //No tiene partidas guardadas
             }   
         }

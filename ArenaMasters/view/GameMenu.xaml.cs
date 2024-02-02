@@ -24,13 +24,13 @@ namespace ArenaMasters
     public partial class GameMenu : Window
     {
         int maxUnits;
-        int _gameId = 0;
         int space = 0;
         int level = 0;
         int rewards = 0;
         ArenaMastersManager manager = new ArenaMastersManager();
         Game game;
         List<Units> units ;
+        List<Units> shopInventory;
         Random random = new Random();
         MediaPlayer mediaPlayer = new MediaPlayer();
 
@@ -47,7 +47,31 @@ namespace ArenaMasters
             
         }
 
+        public void initializeShop()
+        {
+            //List<int> unitsIds = new List<int>();
+            ////esto sere el count de las unidades de la partida
+            //units = new List<Units>();
+            //unitsIds = manager.GetAllShopCharactersId(game.IdGame);
+            //foreach (int id in unitsIds)
+            //{
+            //    units.Add(new Units(id, manager.fetchAllSkills(id)));
+            //}
+        }
+        public void refreshShop()
+        {
+            //List<int> unitsIds = new List<int>();
+            ////esto sere el count de las unidades de la partida
+            //units = new List<Units>();
+            //unitsIds = manager.GetAllCharactersId(game.IdGame);
+            //foreach (int id in unitsIds)
+            //{
+            //    units.Add(new Units(id, manager.fetchAllSkills(id)));
+            //}
+            //maxUnits = manager.CountCharacters(game.IdGame);
+        }
 
+        
         public void initializeUnits()
         {
             List<int> unitsIds = new List<int>();
@@ -56,7 +80,7 @@ namespace ArenaMasters
             unitsIds=manager.GetAllCharactersId(game.IdGame); 
             foreach (int id in unitsIds )
             {
-                units.Add(new Units(manager.fetchAllSkills(id)));  
+                units.Add(new Units(id,manager.fetchAllSkills(id)));  
             }
             maxUnits = manager.CountCharacters(game.IdGame);
         }
@@ -296,27 +320,42 @@ namespace ArenaMasters
         }
         public void habChangeSkill1(object sender, RoutedEventArgs e)
         {
-            Skills skill_data = manager.SetRandomSkill(units[space].IdCharacter,1);
-            units[space].setSkillByIndex(1,skill_data);
-            habpjSkill1.Text = units[space].getSkillByIndex(1).Name.ToString();
+            Skills skill_data = manager.SetRandomSkill(units[space].IdCharacter, 1);
+            if (skill_data != null)
+            {
+                units[space].setSkillByIndex(1, skill_data);
+                habpjSkill1.Text = units[space].getSkillByIndex(1).Name.ToString();
+            }
         }
         public void habChangeSkill2(object sender, RoutedEventArgs e)
         {
+
             Skills skill_data = manager.SetRandomSkill(units[space].IdCharacter, 2);
-            units[space].setSkillByIndex(2, skill_data);
-            habpjSkill1.Text = units[space].getSkillByIndex(2).Name.ToString();
+            if (skill_data != null)
+            {
+                units[space].setSkillByIndex(2, skill_data);
+                habpjSkill2.Text = units[space].getSkillByIndex(2).Name.ToString();
+            }
         }
         public void habChangeSkill3(object sender, RoutedEventArgs e)
         {
+            
             Skills skill_data = manager.SetRandomSkill(units[space].IdCharacter, 3);
-            units[space].setSkillByIndex(1, skill_data);
-            habpjSkill1.Text = units[space].getSkillByIndex(1).Name.ToString();
+            if (skill_data != null)
+            {
+                units[space].setSkillByIndex(3, skill_data);
+                habpjSkill3.Text = units[space].getSkillByIndex(3).Name.ToString();
+            }
         }
         public void habChangeSkill4(object sender, RoutedEventArgs e)
         {
+
             Skills skill_data = manager.SetRandomSkill(units[space].IdCharacter, 4);
-            units[space].setSkillByIndex(1, skill_data);
-            habpjSkill1.Text = units[space].getSkillByIndex(1).Name.ToString();
+            if (skill_data != null)
+            {
+                units[space].setSkillByIndex(4, skill_data);
+                habpjSkill4.Text = units[space].getSkillByIndex(4).Name.ToString();
+            }
         }
 
         private void settingsPanelShow(object sender, RoutedEventArgs e)
@@ -339,7 +378,6 @@ namespace ArenaMasters
             MainWindow mainWindow = new MainWindow(game.IdUser, game.Name);
             this.Close();
             mainWindow.Show();
-
         }
     }
 }

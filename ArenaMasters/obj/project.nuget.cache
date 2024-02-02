@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wlx4WnL9XXcfuXxMm6waoLy5UxNy2x62uyPVVm98apNIBY9Jncw4qkjylkHYCCOP9cHvPmr6mAVq5BtDMRUacw==",
+  "dgSpecHash": "6m1yWcYNXojY5vs2P7umyQfS57betPPgdRpIe9beOPCZP82r07JWRFoWo5OUkwzt7Knjb/VPGDouTf+L4wwg0A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\javier.martin.gonzal\\Source\\Repos\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
+  "projectFilePath": "C:\\Users\\javier.martin.gonzal\\source\\repos\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\javier.martin.gonzal\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "C:\\Users\\javier.martin.gonzal\\.nuget\\packages\\communitytoolkit.mvvm\\8.2.2\\communitytoolkit.mvvm.8.2.2.nupkg.sha512",

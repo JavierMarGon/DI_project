@@ -35,8 +35,9 @@ namespace ArenaMasters
         {
             UnitName = unitName;
         }
-        public Units( List<Skills> skillsData)
+        public Units(int id, List<Skills> skillsData)
         {
+            IdCharacter = id;
             foreach (Skills skill in skillsData)
             {
                 _skills.Add(skill);

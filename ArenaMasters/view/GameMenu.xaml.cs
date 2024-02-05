@@ -44,6 +44,7 @@ namespace ArenaMasters
             playSimpleSound();
             initializeUnits();
             DataContext = manager;
+            manager.GameMenu = this;
             currentUnits.Text = maxUnits.ToString() + "/7";
             
         }

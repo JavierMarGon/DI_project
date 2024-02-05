@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\javier.martin.gonzal\\source\\repos\\DI_prTest\\ArenaMasters\\ArenaMasters.csproj": {}
+    "C:\\Users\\javier.martin.gonzal\\source\\repos\\DI_project\\ArenaMasters\\ArenaMasters.csproj": {}
   },
   "projects": {
-    "C:\\Users\\javier.martin.gonzal\\source\\repos\\DI_prTest\\ArenaMasters\\ArenaMasters.csproj": {
+    "C:\\Users\\javier.martin.gonzal\\source\\repos\\DI_project\\ArenaMasters\\ArenaMasters.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\javier.martin.gonzal\\source\\repos\\DI_prTest\\ArenaMasters\\ArenaMasters.csproj",
+        "projectUniqueName": "C:\\Users\\javier.martin.gonzal\\source\\repos\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
         "projectName": "ArenaMasters",
-        "projectPath": "C:\\Users\\javier.martin.gonzal\\source\\repos\\DI_prTest\\ArenaMasters\\ArenaMasters.csproj",
+        "projectPath": "C:\\Users\\javier.martin.gonzal\\source\\repos\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
         "packagesPath": "C:\\Users\\javier.martin.gonzal\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\javier.martin.gonzal\\source\\repos\\DI_prTest\\ArenaMasters\\obj\\",
+        "outputPath": "C:\\Users\\javier.martin.gonzal\\source\\repos\\DI_project\\ArenaMasters\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\javier.martin.gonzal\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -473,7 +473,7 @@
     </DataTemplate>
 
     <DataTemplate x:Key="Plantilla_pjShop">
-        <Button Height="90"  Margin="20" Command="SelectedItemFromShop" >
+        <Button Height="90"  Margin="20" Command="{Binding SelectedItemFromShop}" >
              <Grid Width="1250" Background="#BF524939">
                  <Grid.ColumnDefinitions>
                      <ColumnDefinition Width="253*"/>

@@ -98,7 +98,7 @@ namespace ArenaMasters.model
             GameMenu = thisGameMenu;
             Manager = manager;
             PriceValue = Price.ToString();
-            //SelectedItemFromShop = new RelayCommand(GetSelectedItem);
+            SelectedItemFromShop = new RelayCommand(GetSelectedItem);
             _skills = manager.fetchAllShopSkills(idItem);
         }
         private void GetSelectedItem()

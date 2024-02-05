@@ -201,7 +201,7 @@
                 </ItemsControl>
             </StackPanel>
         </StackPanel>
-        <StackPanel x:Name="pjShopDetails" Visibility="Collapsed" Canvas.Top="60" HorizontalAlignment="Left" Height="699" VerticalAlignment="Top" Width="1375" >
+        <StackPanel x:Name="pjShopDetails" Visibility="Visible" Canvas.Top="60" HorizontalAlignment="Left" Height="699" VerticalAlignment="Top" Width="1375" >
             <StackPanel.Background>
                 <ImageBrush ImageSource="/images/crossroad.jpg"/>
             </StackPanel.Background>
@@ -291,9 +291,74 @@
                         </StackPanel>
                     </Grid>
                 </StackPanel>
-                <StackPanel Grid.Row="5" Width="300">
+                <StackPanel Grid.Row="4" Width="300" Grid.RowSpan="5" VerticalAlignment="Center" Margin="0,30,0,0">
                     <TextBlock FontSize="30" Foreground="Beige" HorizontalAlignment="Center" Text="1231$"/>
                     <Button Style="{StaticResource btnMenuUsuario}" Content="Comprar" FontSize="30" FontWeight="Bold"  />
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="20" Height="600" Grid.Row="0" Grid.RowSpan="6" Grid.Column="1">
+                    <StackPanel Orientation="Horizontal" Height="90"  Margin="20" Grid.Row="0" Grid.Column="1" >
+                        <Grid Width="760" Background="#BF524939">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="0" Text="attack" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="0" Grid.Row="1" Text="Tipo:" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Text="Descripcion" Foreground="Beige" FontSize="20" TextWrapping="Wrap" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Height="90"  Margin="20" Grid.Row="0" Grid.Column="1" >
+                        <Grid Width="760" Background="#BF524939">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="0" Text="attack" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="0" Grid.Row="1" Text="Tipo:" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Text="Descripcion" Foreground="Beige" FontSize="20" TextWrapping="Wrap" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Height="90"  Margin="20" Grid.Row="0" Grid.Column="1" >
+                        <Grid Width="760" Background="#BF524939">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="0" Text="attack" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="0" Grid.Row="1" Text="Tipo:" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Text="Descripcion" Foreground="Beige" FontSize="20" TextWrapping="Wrap" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Height="90"  Margin="20" Grid.Row="0" Grid.Column="1" >
+                        <Grid Width="760" Background="#BF524939">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="0" Text="attack" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="0" Grid.Row="1" Text="Tipo:" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Text="Descripcion" Foreground="Beige" FontSize="20" TextWrapping="Wrap" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </StackPanel>
                 </StackPanel>
 
 

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ArenaMasters
 {
-    class Units
+    public class Units
     {
         private string _unitName = "";
         private int _id_character;

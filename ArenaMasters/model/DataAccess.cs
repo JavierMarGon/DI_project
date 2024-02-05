@@ -321,8 +321,8 @@ namespace ArenaMasters.model
                 _cmd.Parameters.AddWithValue("_place", placement);
                 _cmd.Parameters["_place"].Direction = ParameterDirection.Input;
 
-                _cmd.Parameters.AddWithValue("_id_character", id_character);
-                _cmd.Parameters["_id_character"].Direction = ParameterDirection.Input;
+                _cmd.Parameters.AddWithValue("_id_item", id_character);
+                _cmd.Parameters["_id_item"].Direction = ParameterDirection.Input;
 
                 _cmd.Parameters.Add(new MySqlParameter("_res", MySqlDbType.Int32));
                 _cmd.Parameters["_res"].Direction = ParameterDirection.Output;

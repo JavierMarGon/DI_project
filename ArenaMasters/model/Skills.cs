@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ArenaMasters.model
 {
-    class Skills
+    public class Skills
     {
         private int _id_skill;
         private string _name;

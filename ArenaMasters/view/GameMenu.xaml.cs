@@ -31,10 +31,10 @@ namespace ArenaMasters
         ArenaMastersManager manager = new ArenaMastersManager();
         Game game;
         List<Units> units ;
-        Units shopItemSelected;
+        public Units shopItemSelected;
         Random random = new Random();
         MediaPlayer mediaPlayer = new MediaPlayer();
-
+        
         public GameMenu(Game _game)
         {
             InitializeComponent();
@@ -43,7 +43,7 @@ namespace ArenaMasters
             currentMoney.Text = game.Money.ToString();
             playSimpleSound();
             initializeUnits();
-            
+            DataContext = manager;
             currentUnits.Text = maxUnits.ToString() + "/7";
             
         }
@@ -197,15 +197,9 @@ namespace ArenaMasters
             {
                 MessageBox.Show(ex.ToString());
             }
-
+            manager.GetAllShopItems(game.IdGame);
             setting.Visibility = Visibility.Collapsed;
             settingsPanel.Visibility = Visibility.Collapsed;
-            space = 0;
-            habpjName.Text = units[space].UnitName;
-            habpjSkill1.Text = units[space].getSkillByIndex(1).Name.ToString();
-            habpjSkill2.Text = units[space].getSkillByIndex(2).Name.ToString();
-            habpjSkill3.Text = units[space].getSkillByIndex(3).Name.ToString();
-            habpjSkill4.Text = units[space].getSkillByIndex(4).Name.ToString();
             pjShop.Visibility = Visibility.Visible;
 
         }
@@ -243,7 +237,10 @@ namespace ArenaMasters
             }
             pjShop.Visibility = Visibility.Hidden;
         }
-
+        public void pjShopDetailsHide(object sender, RoutedEventArgs e)
+        {
+            
+        }
         public void pjShopHide(object sender)
         {
             setting.Visibility = Visibility.Visible;

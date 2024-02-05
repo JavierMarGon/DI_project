@@ -473,25 +473,26 @@
     </DataTemplate>
 
     <DataTemplate x:Key="Plantilla_pjShop">
-
-
-        <StackPanel Orientation="Horizontal" Height="90"  Margin="20" >
-            <Grid Width="1250" Background="#BF524939">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="253*"/>
-                    <ColumnDefinition Width="216*"/>
-                    <ColumnDefinition Width="37*"/>
-                    <ColumnDefinition Width="253*"/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Text="asdfasdf" x:Name="pj1" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
-                <TextBlock Text="Tipo:" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="4" Margin="253,0,253,0"/>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Column="3">
-                    <Image Source="/images/coin.png" Height="40" Margin="10,0,20,0"/>
-                    <TextBlock  Text="{Binding Price}" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
-                </StackPanel>
+        <Button Height="90"  Margin="20" Command="SelectedItemFromShop" >
+             <Grid Width="1250" Background="#BF524939">
+                 <Grid.ColumnDefinitions>
+                     <ColumnDefinition Width="253*"/>
+                     <ColumnDefinition Width="216*"/>
+                     <ColumnDefinition Width="37*"/>
+                     <ColumnDefinition Width="253*"/>
+                 </Grid.ColumnDefinitions>
+                 <TextBlock Grid.Column="0" Text="asdfasdf" x:Name="pj1" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
+                 <TextBlock Text="Tipo:" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="4" Margin="253,0,253,0"/>
+                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Column="3">
+                     <Image Source="/images/coin.png" Height="40" Margin="10,0,20,0"/>
+                     <TextBlock  Text="{Binding PriceValue}" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
+                 </StackPanel>
+                <Button Style="{StaticResource btnActualizar}" Height="50" Width="105"/>
             </Grid>
-            <Button Style="{StaticResource btnActualizar}" Height="50" Width="105"/>
-        </StackPanel>
+             
+         </Button>
     </DataTemplate>
+       
+    
 
 </ResourceDictionary>

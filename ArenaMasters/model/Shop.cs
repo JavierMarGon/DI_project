@@ -1,8 +1,12 @@
-﻿using System;
+﻿using CommunityToolkit.Mvvm.Input;
+using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Input;
 
 namespace ArenaMasters.model
 {
@@ -11,6 +15,7 @@ namespace ArenaMasters.model
         private int _id_item;
         private int _id_rol;
         private string _rol_name;
+        private string _price_value;
         private int _hp;
         private int _atk;
         private int _def;
@@ -20,6 +25,7 @@ namespace ArenaMasters.model
         private GameMenu _game_menu;
         private ArenaMastersManager _manager;
         protected List<Skills> _skills = new List<Skills>();
+        public ICommand SelectedItemFromShop { get; set; }
         public int IdItem
         {
             get { return _id_item; }
@@ -65,6 +71,11 @@ namespace ArenaMasters.model
             get { return _price; }
             set { _price = value; }
         }
+        public string PriceValue
+        {
+            get { return _price_value; }
+            set { _price_value = value; }
+        }
         public GameMenu GameMenu
         {
             get { return _game_menu; }
@@ -86,8 +97,15 @@ namespace ArenaMasters.model
             Price = price;
             GameMenu = thisGameMenu;
             Manager = manager;
+            PriceValue = Price.ToString();
+            //SelectedItemFromShop = new RelayCommand(GetSelectedItem);
             _skills = manager.fetchAllShopSkills(idItem);
         }
-
+        private void GetSelectedItem()
+        {
+            GameMenu.shopItemSelected = new Units(IdItem, _skills);
+            
+            GameMenu.pjShopDetails.Visibility = Visibility.Visible;
+        }
     }
 }

@@ -306,7 +306,7 @@ namespace ArenaMasters.model
         }
         public void GetAllShopItems(int id_game)
         {
-            GameList.Clear();
+            ShopInventory.Clear();
 
             DataSet dataGames = new DataSet();
             dataGames = _ad.PA_GetAllShopItems(id_game);
@@ -331,9 +331,7 @@ namespace ArenaMasters.model
             }
             catch (Exception e)
             {
-                MainWindow.menu_loadGames.Visibility = Visibility.Collapsed;
-                MainWindow.menu_user.Visibility = Visibility.Visible;
-                MainWindow.EnablingMenu();
+
             }
 
         }

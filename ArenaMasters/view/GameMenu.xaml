@@ -193,11 +193,13 @@
             <Grid Width="1375" Height="100" Background="#BF524939">
                 <Button Style="{StaticResource btnSalirPrincipal}" Width="150" Click="pjShopHide" Height="70" Background="Transparent" HorizontalAlignment="Left"/>
                 <TextBlock Text="Encrucijada" Height="100" Width="800"  Foreground="Beige" FontSize="80" FontFamily="Algerian" TextAlignment="Center" HorizontalAlignment="Center"/>
+                
             </Grid>
-            <ItemsControl ItemsSource="{Binding ShopInventory}" ItemTemplate="{StaticResource Plantilla_pjShop}">
+            <StackPanel x:Name="sp_loadItems" Margin="10">
+                <ItemsControl ItemsSource="{Binding ShopInventory}" ItemTemplate="{StaticResource Plantilla_pjShop}">
 
-            </ItemsControl>
-
+                </ItemsControl>
+            </StackPanel>
         </StackPanel>
         <StackPanel x:Name="pjShopDetails" Visibility="Collapsed" Canvas.Top="60" HorizontalAlignment="Left" Height="699" VerticalAlignment="Top" Width="1375" >
             <StackPanel.Background>

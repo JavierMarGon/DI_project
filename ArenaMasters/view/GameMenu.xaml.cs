@@ -3,6 +3,7 @@ using Org.BouncyCastle.Tls;
 using Org.BouncyCastle.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,7 +31,7 @@ namespace ArenaMasters
         ArenaMastersManager manager = new ArenaMastersManager();
         Game game;
         List<Units> units ;
-        List<Units> shopInventory;
+        Units shopItemSelected;
         Random random = new Random();
         MediaPlayer mediaPlayer = new MediaPlayer();
 
@@ -49,7 +50,7 @@ namespace ArenaMasters
 
         public void initializeShop()
         {
-            //List<int> unitsIds = new List<int>();
+            List<int> shopInventory = new List<int>();
             ////esto sere el count de las unidades de la partida
             //units = new List<Units>();
             //unitsIds = manager.GetAllShopCharactersId(game.IdGame);

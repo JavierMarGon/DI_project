@@ -27,16 +27,22 @@ namespace ArenaMasters.model
 
         //Campos privados
 
-        ObservableCollection<Units> _unitList;
-        ObservableCollection<Partida> _gameList;
+        ObservableCollection<Shop> _shopInventory;
+        private ObservableCollection<Partida> _gameList;
         private int _id_User;
         private string _userName;
         private MainWindow _mainWindow;
+        private GameMenu _gameWindow;
         //Propiedades (campos publicos)
         public MainWindow MainWindow
         {
             get { return _mainWindow;}
             set { _mainWindow = value; }
+        }
+        public GameMenu GameMenu
+        {
+            get { return _gameWindow;}
+            set { _gameWindow = value; }
         }
         public int id_User
         {
@@ -48,11 +54,7 @@ namespace ArenaMasters.model
             get { return _userName; }
             set { _userName = value; }
         }
-        public ObservableCollection<Units> UnitList
-        {
-            get { return _unitList; }
-        }
-
+       
         public ObservableCollection<Partida> GameList
         {
             get { return _gameList; }
@@ -60,11 +62,19 @@ namespace ArenaMasters.model
                 OnPropertyChanged("GameList");
             }
         }
-    
+        public ObservableCollection<Shop> ShopInventory
+        {
+            get { return _shopInventory; }
+            set
+            {
+                _shopInventory = value;
+                OnPropertyChanged("ShopInventory");
+            }
+        }
         //Constructor(es)
         public ArenaMastersManager()
         {
-            _unitList = new ObservableCollection<Units>();
+            _shopInventory = new ObservableCollection<Shop>();
             _gameList = new ObservableCollection<Partida>();
         }
         //Metodos (de Negocio)
@@ -230,6 +240,38 @@ namespace ArenaMasters.model
             }
             return skillsData;
             
+        } 
+        public List<Skills> fetchAllShopSkills(int id_character)
+        {
+            List<Skills> skillsData= new List<Skills>();
+            for (int i = 1; i < 5; i++)
+            {
+                string jsonResult = _ad.PA_GetItemSkillData(id_character, i);
+                var skillData = JsonConvert.DeserializeAnonymousType(jsonResult, new
+                {
+                    IdSkill = 0,
+                    Name = "",
+                    Description = "",
+                    Type = "",
+                    Tier = 0,
+                    Target = false,
+                    TargetRange = false
+                });
+                if (skillData != null)
+                {
+                    skillsData.Add( new Skills(
+                                    skillData.IdSkill,
+                                    skillData.Name,
+                                    skillData.Description,
+                                    skillData.Type,
+                                    skillData.Tier,
+                                    skillData.Target,
+                                    skillData.TargetRange
+                                    ));
+                }
+            }
+            return skillsData;
+            
         }
         public void GetAllGames(int id_user)
         {
@@ -262,7 +304,40 @@ namespace ArenaMasters.model
             }
 
         }
-       
+        public void GetAllShopItems(int id_game)
+        {
+            GameList.Clear();
+
+            DataSet dataGames = new DataSet();
+            dataGames = _ad.PA_GetAllShopItems(id_game);
+            try
+            {
+                foreach (DataRow dr in dataGames.Tables[0].Rows)
+                {
+                    Shop s;
+                    s = new Shop(   int.Parse(dr.ItemArray[0].ToString()),
+                                    int.Parse(dr.ItemArray[1].ToString()),
+                                    int.Parse(dr.ItemArray[2].ToString()),
+                                    int.Parse(dr.ItemArray[3].ToString()),
+                                    int.Parse(dr.ItemArray[4].ToString()),
+                                    int.Parse(dr.ItemArray[5].ToString()),
+                                    int.Parse(dr.ItemArray[6].ToString()),
+                                    int.Parse(dr.ItemArray[7].ToString()),
+                                    GameMenu,
+                                    this);
+                    ShopInventory.Add(s);
+                }
+                OnPropertyChanged("ShopInventory");
+            }
+            catch (Exception e)
+            {
+                MainWindow.menu_loadGames.Visibility = Visibility.Collapsed;
+                MainWindow.menu_user.Visibility = Visibility.Visible;
+                MainWindow.EnablingMenu();
+            }
+
+        }
+        
         public List<int> GetAllCharactersId(int id_game)
         {
                     

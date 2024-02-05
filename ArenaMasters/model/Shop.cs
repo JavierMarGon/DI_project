@@ -105,7 +105,7 @@ namespace ArenaMasters.model
         {
             GameMenu.shopItemSelected = new Units(IdItem, _skills);
             
-            GameMenu.pjShopDetails.Visibility = Visibility.Visible;
+            GameMenu.itemDetails.Visibility = Visibility.Visible;
         }
     }
 }

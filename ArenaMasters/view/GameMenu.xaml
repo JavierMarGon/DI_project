@@ -201,9 +201,168 @@
                 </ItemsControl>
             </StackPanel>
         </StackPanel>
-        <ItemsControl x:Name="itemDetails" ItemsSource="{Binding ShopInventory}" ItemTemplate="{StaticResource skillsShopDetails}">
-            
-        </ItemsControl>
+        <StackPanel x:Name="pjShopDetails" Visibility="Collapsed" Canvas.Top="60" HorizontalAlignment="Left" Height="699" VerticalAlignment="Top" Width="1375" >
+            <StackPanel.Background>
+                <ImageBrush ImageSource="/images/crossroad.jpg"/>
+            </StackPanel.Background>
+            <Grid Width="1375" Height="100" Background="#BF524939">
+                <Button Style="{StaticResource btnSalirPrincipal}" Click="pjShopDetailsHide" Width="150" Height="70" Background="Transparent" HorizontalAlignment="Left"/>
+                <TextBlock Text="Encrucijada" Height="100" Width="800"  Foreground="Beige" FontSize="80" FontFamily="Algerian" TextAlignment="Center" HorizontalAlignment="Center"/>
+            </Grid>
+            <Grid Height="600">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Height="70" Text="Name" Foreground="Beige" TextAlignment="Center" FontSize="40"/>
+
+                <StackPanel Width="250" Height="160" Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Margin="0,30,0,0" Background="#BF524939">
+                    <Image Height="140" Source="/images/dragon.png"/>
+                </StackPanel>
+
+                <StackPanel Height="50" Width="300" Background="#FF37B537" VerticalAlignment="Center" Margin="0,0,0,10" Grid.Row="1" Grid.RowSpan="4">
+                    <Grid Height="50" VerticalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="HP" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock Text="{Binding Hp}" Grid.Column="1" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </StackPanel>
+                <StackPanel  Grid.Row="3" Grid.RowSpan="6">
+                    <Grid Height="150" Width="300" Margin="0,30,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Background="#FFFFD200" Margin="10">
+                            <Grid Height="50">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="HIT" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding HitRate}" Grid.Column="1" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                        </StackPanel>
+                        <StackPanel Background="#FFFF7500" Margin="10" Height="55" Grid.Column="1">
+                            <Grid  Height="50">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="ATK" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding Atk}" Grid.Column="1" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                        </StackPanel>
+                        <StackPanel Background="#FF6969FB" Margin="10" Height="55" Grid.Column="0" Grid.Row="1">
+                            <Grid Height="50" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="DEF" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding Def}" Grid.Column="1" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                        </StackPanel>
+                        <StackPanel Background="#FFFF56D2" Margin="10" Height="55" Grid.Column="1" Grid.Row="1">
+                            <Grid Height="50" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="EVA" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding Evasion}" Grid.Column="1" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+                <StackPanel Grid.Row="4" Width="300" Grid.RowSpan="5" VerticalAlignment="Center" Margin="0,30,0,0">
+                    <TextBlock FontSize="30" Foreground="Beige" HorizontalAlignment="Center" Text="{Binding Price}"/>
+                    <Button Style="{StaticResource btnMenuUsuario}" Content="Comprar" FontSize="30" FontWeight="Bold" DataContext="{Binding Shop}" Command="{Binding ClickBuyUnitShop}" CommandParameter="{Binding IdItem}" />
+
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="20" Height="600" Grid.Row="0" Grid.RowSpan="6" Grid.Column="1">
+                    <StackPanel Orientation="Horizontal" Height="90"  Margin="20" Grid.Row="0" Grid.Column="1" >
+                        <Grid Width="760" Background="#BF524939">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="0" Text="{Binding AllSkills[0].Name}" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="0" Grid.Row="1" Text="{Binding AllSkills[0].SkillType}" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Text="{Binding AllSkills[0].Description}" Foreground="Beige" FontSize="20" TextWrapping="Wrap" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Height="90"  Margin="20" Grid.Row="0" Grid.Column="1" >
+                        <Grid Width="760" Background="#BF524939">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="0" Text="{Binding AllSkills[1].Name}" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="0" Grid.Row="1" Text="{Binding AllSkills[1].SkillType}" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Text="{Binding AllSkills[1].Description}" Foreground="Beige" FontSize="20" TextWrapping="Wrap" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Height="90"  Margin="20" Grid.Row="0" Grid.Column="1" >
+                        <Grid Width="760" Background="#BF524939">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="0" Text="{Binding AllSkills[2].Name}" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="0" Grid.Row="1" Text="{Binding AllSkills[2].SkillType}" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Text="{Binding AllSkills[2].Description}" Foreground="Beige" FontSize="20" TextWrapping="Wrap" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Height="90"  Margin="20" Grid.Row="0" Grid.Column="1" >
+                        <Grid Width="760" Background="#BF524939">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="0" Text="{Binding AllSkills[3].Name}" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="0" Grid.Row="1" Text="{Binding AllSkills[3].SkillType}" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Text="{Binding AllSkills[3].Description}" Foreground="Beige" FontSize="20" TextWrapping="Wrap" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
 
         <!--CEMENTERIO-->
 

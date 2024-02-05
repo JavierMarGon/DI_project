@@ -1,11 +1,16 @@
 ﻿using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using Newtonsoft.Json;
+using System.Windows.Controls;
+using System.Windows.Documents;
+using System.Windows.Media;
 using System.Windows.Input;
 
 namespace ArenaMasters.model
@@ -26,10 +31,14 @@ namespace ArenaMasters.model
         private ArenaMastersManager _manager;
         protected List<Skills> _skills = new List<Skills>();
         public ICommand SelectedItemFromShop { get; set; }
+
+        public ICommand ClickBuyUnitShop { get; set; }
+
         public int IdItem
         {
             get { return _id_item; }
-            set { _id_item = value; }
+            set { _id_item = value;
+            }
         }
         public int IdRol
         {
@@ -44,7 +53,7 @@ namespace ArenaMasters.model
         public int Hp
         {
             get { return _hp; }
-            set { _hp = value; }
+            set { _hp = value;}
         }
         public int Atk
         {
@@ -85,6 +94,20 @@ namespace ArenaMasters.model
             get { return _manager; }
             set { _manager = value; }
         }
+        private List<Skills> _allSkills;
+
+        public List<Skills> AllSkills
+        {
+            get { return _allSkills; }
+            set
+            {
+                if (_allSkills != value)
+                {
+                    _allSkills = value;
+                }
+            }
+        }
+
         public Shop(int idItem, int idRol, int hp, int atk, int def, int hit, int eva, int price, GameMenu thisGameMenu, ArenaMastersManager manager)
         {
             IdItem = idItem;
@@ -99,13 +122,33 @@ namespace ArenaMasters.model
             Manager = manager;
             PriceValue = Price.ToString();
             SelectedItemFromShop = new RelayCommand(GetSelectedItem);
+            ClickBuyUnitShop = new RelayCommand<int>(BuyUnitShop);
             _skills = manager.fetchAllShopSkills(idItem);
+            AllSkills = _skills;
         }
         private void GetSelectedItem()
         {
             GameMenu.shopItemSelected = new Units(IdItem, _skills);
+            GameMenu.DataContext = this;
             
-            GameMenu.itemDetails.Visibility = Visibility.Visible;
+            GameMenu.pjShopDetails.Visibility = Visibility.Visible;
+        }
+
+        private void BuyUnitShop(int id_item)
+        {
+            MessageBox.Show("sdfgsd");
+            //int buy = _manager.BuyUnit(id_item);
+            //if (buy > 0)
+            //{
+            //    MessageBox.Show("Comprado correctamente");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Error");
+            //}
+            //GameMenu.DataContext = this;
+
+            //GameMenu.pjShopDetails.Visibility = Visibility.Collapsed;
         }
     }
 }

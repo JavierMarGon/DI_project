@@ -394,6 +394,18 @@ namespace ArenaMasters.model
             }
         }
 
+        public int BuyUnit(int thisShopUnit)
+        {
+            if (_ad.PA_BuyUnit(thisShopUnit) > 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
         protected void OnPropertyChanged([CallerMemberName] string name = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));

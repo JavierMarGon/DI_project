@@ -623,5 +623,33 @@ namespace ArenaMasters.model
             return resultado;
         }
 
+        public int PA_BuyUnit(int thisShopUnit)
+        {
+            int resultado = -99;
+            try
+            {
+                _cmd = new MySqlCommand();
+                _cmd.Connection = _conn;
+                _cmd.CommandType = CommandType.StoredProcedure;
+                _cmd.CommandText = "BuyUnit";
+
+                _cmd.Parameters.AddWithValue("thisShopUnit", thisShopUnit);
+                _cmd.Parameters["thisShopUnit"].Direction = ParameterDirection.Input;
+
+                _cmd.Parameters.Add(new MySqlParameter("_res", MySqlDbType.Int32));
+                _cmd.Parameters["_res"].Direction = ParameterDirection.Output;
+
+                _cmd.ExecuteNonQuery();
+
+                resultado = (int)_cmd.Parameters["_res"].Value;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return resultado;
+            }
+            return resultado;
+        }
+
     }
 }

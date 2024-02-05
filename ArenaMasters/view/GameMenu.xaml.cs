@@ -240,7 +240,8 @@ namespace ArenaMasters
         }
         public void pjShopDetailsHide(object sender, RoutedEventArgs e)
         {
-            
+            pjShopDetails.Visibility = Visibility.Collapsed;
+            DataContext = manager;
         }
         public void pjShopHide(object sender)
         {

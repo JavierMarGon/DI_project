@@ -916,3 +916,15 @@ C:\Users\JavierMG\source\repos\DI_project\ArenaMasters\obj\Debug\net6.0-windows\
 C:\Users\JavierMG\source\repos\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters.pdb
 C:\Users\JavierMG\source\repos\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters.genruntimeconfig.cache
 C:\Users\JavierMG\source\repos\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ref\ArenaMasters.dll
+C:\Users\DAM2B-09\Desktop\Tienda\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters.csproj.AssemblyReference.cache
+C:\Users\DAM2B-09\Desktop\Tienda\DI_project\ArenaMasters\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\DAM2B-09\Desktop\Tienda\DI_project\ArenaMasters\obj\Debug\net6.0-windows\view\GameMenu.g.cs
+C:\Users\DAM2B-09\Desktop\Tienda\DI_project\ArenaMasters\obj\Debug\net6.0-windows\view\MoneyDungeon.g.cs
+C:\Users\DAM2B-09\Desktop\Tienda\DI_project\ArenaMasters\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\DAM2B-09\Desktop\Tienda\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters_Content.g.cs
+C:\Users\DAM2B-09\Desktop\Tienda\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters_MarkupCompile.cache
+C:\Users\DAM2B-09\Desktop\Tienda\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters_MarkupCompile.lref
+C:\Users\DAM2B-09\Desktop\Tienda\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters.dll
+C:\Users\DAM2B-09\Desktop\Tienda\DI_project\ArenaMasters\obj\Debug\net6.0-windows\refint\ArenaMasters.dll
+C:\Users\DAM2B-09\Desktop\Tienda\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters.pdb
+C:\Users\DAM2B-09\Desktop\Tienda\DI_project\ArenaMasters\obj\Debug\net6.0-windows\recursos\Estilos.baml

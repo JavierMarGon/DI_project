@@ -293,7 +293,8 @@
                 </StackPanel>
                 <StackPanel Grid.Row="4" Width="300" Grid.RowSpan="5" VerticalAlignment="Center" Margin="0,30,0,0">
                     <TextBlock FontSize="30" Foreground="Beige" HorizontalAlignment="Center" Text="{Binding Price}"/>
-                    <Button Style="{StaticResource btnMenuUsuario}" Content="Comprar" FontSize="30" FontWeight="Bold" DataContext="{Binding Shop}" Command="{Binding ClickBuyUnitShop}" CommandParameter="{Binding IdItem}" />
+                    <Button Style="{StaticResource btnMenuUsuario}" Content="Comprar" FontSize="30" FontWeight="Bold" Click="ClickBuyUnitShop" />
+
 
                 </StackPanel>
                 <StackPanel Orientation="Vertical" Margin="20" Height="600" Grid.Row="0" Grid.RowSpan="6" Grid.Column="1">

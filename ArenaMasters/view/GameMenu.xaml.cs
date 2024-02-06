@@ -204,6 +204,29 @@ namespace ArenaMasters
             pjShop.Visibility = Visibility.Visible;
 
         }
+        private void ClickBuyUnitShop(object sender, RoutedEventArgs e)
+        {
+            Button btn = (Button)sender;
+
+            Shop selectedUnit = (Shop)btn.DataContext;
+
+            int id_item = selectedUnit.IdItem;
+
+            int buy = manager.BuyUnit(id_item);
+            if (buy > 0)
+            {
+                MessageBox.Show("Comprado correctamente");
+            }
+            else
+            {
+                MessageBox.Show("Error");
+            }
+            DataContext = manager;
+            manager.GetAllShopItems(game.IdGame);
+            pjShopDetails.Visibility = Visibility.Collapsed;
+            
+        }
+
         public void habAntPj(object sender, RoutedEventArgs e)
         {
             if (space == 0) { space = maxUnits - 1; }

@@ -32,7 +32,6 @@ namespace ArenaMasters.model
         protected List<Skills> _skills = new List<Skills>();
         public ICommand SelectedItemFromShop { get; set; }
 
-        public ICommand ClickBuyUnitShop { get; set; }
 
         public int IdItem
         {
@@ -118,11 +117,11 @@ namespace ArenaMasters.model
             HitRate = hit; 
             Evasion = eva; 
             Price = price;
+            GetRolName();
             GameMenu = thisGameMenu;
             Manager = manager;
             PriceValue = Price.ToString();
             SelectedItemFromShop = new RelayCommand(GetSelectedItem);
-            ClickBuyUnitShop = new RelayCommand<int>(BuyUnitShop);
             _skills = manager.fetchAllShopSkills(idItem);
             AllSkills = _skills;
         }
@@ -130,25 +129,27 @@ namespace ArenaMasters.model
         {
             GameMenu.shopItemSelected = new Units(IdItem, _skills);
             GameMenu.DataContext = this;
-            
+
             GameMenu.pjShopDetails.Visibility = Visibility.Visible;
         }
-
-        private void BuyUnitShop(int id_item)
+        private void GetRolName()
         {
-            MessageBox.Show("sdfgsd");
-            //int buy = _manager.BuyUnit(id_item);
-            //if (buy > 0)
-            //{
-            //    MessageBox.Show("Comprado correctamente");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Error");
-            //}
-            //GameMenu.DataContext = this;
-
-            //GameMenu.pjShopDetails.Visibility = Visibility.Collapsed;
+            if(IdRol == 1)
+            {
+                RolName = "Damage";
+            }
+            else if(IdRol == 2)
+            {
+                RolName = "Support";
+            }
+            else if(IdRol == 3)
+            {
+                RolName = "Healer";
+            }
+            else if( IdRol == 4)
+            {
+                RolName = "Control";
+            }
         }
     }
 }

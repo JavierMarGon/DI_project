@@ -45,7 +45,7 @@ namespace ArenaMasters
             initializeUnits();
             DataContext = manager;
             manager.GameMenu = this;
-            currentUnits.Text = maxUnits.ToString() + "/7";
+            
             
         }
 
@@ -85,6 +85,7 @@ namespace ArenaMasters
                 units.Add(new Units(id,manager.fetchAllSkills(id)));  
             }
             maxUnits = manager.CountCharacters(game.IdGame);
+            currentUnits.Text = maxUnits.ToString() + "/7";
         }
 
         private void MediaPlayer_MediaEnded(object sender, EventArgs e)
@@ -211,20 +212,29 @@ namespace ArenaMasters
             Shop selectedUnit = (Shop)btn.DataContext;
 
             int id_item = selectedUnit.IdItem;
-
-            int buy = manager.BuyUnit(id_item);
-            if (buy > 0)
+            if (maxUnits < 7)
             {
-                MessageBox.Show("Comprado correctamente");
+                
+            
+                int buy = manager.BuyUnit(id_item);
+                if (buy > 0 && maxUnits<7)
+                {
+                    MessageBox.Show("Comprado correctamente");
+                    initializeUnits();
+                }
+                else
+                {
+                    MessageBox.Show("Error");
+                }
+                DataContext = manager;
+                manager.GetAllShopItems(game.IdGame);
+                pjShopDetails.Visibility = Visibility.Collapsed;
             }
             else
             {
-                MessageBox.Show("Error");
+                MessageBox.Show("Excedido");
             }
-            DataContext = manager;
-            manager.GetAllShopItems(game.IdGame);
-            pjShopDetails.Visibility = Visibility.Collapsed;
-            
+
         }
 
         public void habAntPj(object sender, RoutedEventArgs e)

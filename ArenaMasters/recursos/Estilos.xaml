@@ -443,7 +443,29 @@
              
          </Button>
     </DataTemplate>
-       
+
+    <DataTemplate x:Key="Plantilla_cementery">
+        <StackPanel Orientation="Horizontal" Width="1300" Margin="10" Grid.Row="0">
+            <Grid Width="1210" Background="#BF524939">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="namePjDelet1" Grid.Column="0" Text="{Binding IdCharacter}" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="1" Text="Tipo:" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="2">
+                    <Image Source="/images/coin.png" Height="40" Margin="10,0,20,0"/>
+                    <TextBlock x:Name="valuePjDelet1" Text="100$" Foreground="Beige" Margin="10,0,50,0" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Grid>
+            <StackPanel VerticalAlignment="Center" Height="90">
+                <Button Style="{StaticResource btnEliminar}" Height="90" Width="105" Command="{Binding IdItem}"/>
+            </StackPanel>
+        </StackPanel>
+    </DataTemplate>
     
+
+
 
 </ResourceDictionary>

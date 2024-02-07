@@ -138,6 +138,7 @@ namespace ArenaMasters
                 MessageBox.Show(ex.ToString());
             }
 
+            manager.GetAllCharacters(game.IdGame);
             settingsPanel.Visibility = Visibility.Collapsed;
             setting.Visibility = Visibility.Collapsed;
             cementery.Visibility = Visibility.Visible;

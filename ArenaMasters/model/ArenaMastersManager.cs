@@ -28,9 +28,11 @@ namespace ArenaMasters.model
         //Campos privados
 
         ObservableCollection<Shop> _shopInventory;
+        ObservableCollection<Units> _CementeryInventory;
         private ObservableCollection<Partida> _gameList;
         private int _id_User;
         private string _userName;
+        List<Units> units;
         private MainWindow _mainWindow;
         private GameMenu _gameWindow;
         //Propiedades (campos publicos)
@@ -71,11 +73,21 @@ namespace ArenaMasters.model
                 OnPropertyChanged("ShopInventory");
             }
         }
+        public ObservableCollection<Units> CementeryInventory
+        {
+            get { return _CementeryInventory; }
+            set
+            {
+                _CementeryInventory = value;
+                OnPropertyChanged("CementeryInventory");
+            }
+        }
         //Constructor(es)
         public ArenaMastersManager()
         {
             _shopInventory = new ObservableCollection<Shop>();
             _gameList = new ObservableCollection<Partida>();
+            _CementeryInventory = new ObservableCollection<Units>();
         }
         //Metodos (de Negocio)
         
@@ -331,9 +343,27 @@ namespace ArenaMasters.model
             }
             catch (Exception e)
             {
-
+                
             }
 
+        }
+
+        public void GetAllCharacters(int id_game)
+        {
+            List<int> unitsIds;
+            //esto sere el count de las unidades de la partida
+            units = new List<Units>();
+            unitsIds = GetAllCharactersId(id_game);
+            foreach (int id in unitsIds)
+            {
+                units.Add(new Units(id, fetchAllSkills(id_game)));
+            }
+            foreach (Units unit in units)
+            {
+                CementeryInventory.Add(unit);
+            }
+
+            OnPropertyChanged("CementeryInventory");
         }
         
         public List<int> GetAllCharactersId(int id_game)

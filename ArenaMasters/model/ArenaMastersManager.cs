@@ -28,7 +28,7 @@ namespace ArenaMasters.model
         //Campos privados
 
         ObservableCollection<Shop> _shopInventory;
-        ObservableCollection<Units> _CementeryInventory;
+        ObservableCollection<Units> _Inventory;
         private ObservableCollection<Partida> _gameList;
         private int _id_User;
         private string _userName;
@@ -73,13 +73,13 @@ namespace ArenaMasters.model
                 OnPropertyChanged("ShopInventory");
             }
         }
-        public ObservableCollection<Units> CementeryInventory
+        public ObservableCollection<Units> Inventory
         {
-            get { return _CementeryInventory; }
+            get { return _Inventory; }
             set
             {
-                _CementeryInventory = value;
-                OnPropertyChanged("CementeryInventory");
+                _Inventory = value;
+                OnPropertyChanged("Inventory");
             }
         }
         //Constructor(es)
@@ -87,7 +87,7 @@ namespace ArenaMasters.model
         {
             _shopInventory = new ObservableCollection<Shop>();
             _gameList = new ObservableCollection<Partida>();
-            _CementeryInventory = new ObservableCollection<Units>();
+            _Inventory = new ObservableCollection<Units>();
         }
         //Metodos (de Negocio)
         
@@ -370,12 +370,13 @@ namespace ArenaMasters.model
                         fetchAllSkills(int.Parse(dr.ItemArray[0].ToString()))
                         ));                     
                 }
+                Inventory = new ObservableCollection<Units>();
                 foreach (Units unit in uds)
                 {
-                    CementeryInventory.Add(unit);
+                    Inventory.Add(unit);
                 }
 
-                OnPropertyChanged("CementeryInventory");
+                OnPropertyChanged("Inventory");
                 return uds;
             }
                 catch (Exception e)

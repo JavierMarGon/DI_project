@@ -453,7 +453,31 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock x:Name="namePjDelet1" Grid.Column="0" Text="{Binding IdCharacter}" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
-                <TextBlock Grid.Column="1" Text="Tipo:" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
+                <Grid Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0">
+                        <TextBlock Grid.Column="0" Grid.Row="0" Foreground="Beige" Text="{Binding Skills[0].Name}" FontSize="20"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="0" Grid.Column="1">
+                        <TextBlock Grid.Column="0" Grid.Row="0" Foreground="Beige" Text="{Binding Skills[1].Name}" FontSize="20"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Grid.Column="0">
+                        <TextBlock Grid.Column="1" Grid.Row="1" Foreground="Beige" Text="{Binding Skills[2].Name}" FontSize="20"/>
+
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Grid.Column="1">
+                        <TextBlock Grid.Column="1" Grid.Row="1" Foreground="Beige" Text="{Binding Skills[3].Name}" FontSize="20"/>
+
+                    </StackPanel>
+                </Grid>
+
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="2">
                     <Image Source="/images/coin.png" Height="40" Margin="10,0,20,0"/>
                     <TextBlock x:Name="valuePjDelet1" Text="100$" Foreground="Beige" Margin="10,0,50,0" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
@@ -464,7 +488,7 @@
             </StackPanel>
         </StackPanel>
     </DataTemplate>
-    
+
 
 
 

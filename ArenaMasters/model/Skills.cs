@@ -52,6 +52,7 @@ namespace ArenaMasters.model
             get { return _multi_target; }
             set { _multi_target = value; }
         }
+
         public Skills(int idSkill, string name, string description, string skillType, int tier, bool targetFoe, bool multiTarget)
         {
             IdSkill = idSkill;

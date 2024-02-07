@@ -73,6 +73,11 @@ namespace ArenaMasters
             get { return _unitName; }
             set { _unitName = value; }
         }
+        public List<Skills> Skills
+        {
+            get { return _skills; }
+            set { _skills = value; }
+        }
         public Units(string unitName)
         {
             UnitName = unitName;

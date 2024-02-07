@@ -387,7 +387,7 @@
                 </Grid.RowDefinitions>
                 <ScrollViewer >
                     <StackPanel Margin="10">
-                        <ItemsControl ItemsSource="{Binding CementeryInventory}" ItemTemplate="{StaticResource Plantilla_cementery}">
+                        <ItemsControl ItemsSource="{Binding Inventory}" ItemTemplate="{StaticResource Plantilla_cementery}">
 
                         </ItemsControl>
                     </StackPanel>

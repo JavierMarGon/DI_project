@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\DAM2B-09\\Desktop\\cementery\\DI_project\\ArenaMasters\\ArenaMasters.csproj": {}
+    "C:\\Users\\DAM2B-09\\Desktop\\ProyectDi\\DI_project\\ArenaMasters\\ArenaMasters.csproj": {}
   },
   "projects": {
-    "C:\\Users\\DAM2B-09\\Desktop\\cementery\\DI_project\\ArenaMasters\\ArenaMasters.csproj": {
+    "C:\\Users\\DAM2B-09\\Desktop\\ProyectDi\\DI_project\\ArenaMasters\\ArenaMasters.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DAM2B-09\\Desktop\\cementery\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
+        "projectUniqueName": "C:\\Users\\DAM2B-09\\Desktop\\ProyectDi\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
         "projectName": "ArenaMasters",
-        "projectPath": "C:\\Users\\DAM2B-09\\Desktop\\cementery\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
+        "projectPath": "C:\\Users\\DAM2B-09\\Desktop\\ProyectDi\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
         "packagesPath": "C:\\Users\\DAM2B-09\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DAM2B-09\\Desktop\\cementery\\DI_project\\ArenaMasters\\obj\\",
+        "outputPath": "C:\\Users\\DAM2B-09\\Desktop\\ProyectDi\\DI_project\\ArenaMasters\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DAM2B-09\\AppData\\Roaming\\NuGet\\NuGet.Config",

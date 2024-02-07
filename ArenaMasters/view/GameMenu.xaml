@@ -367,7 +367,7 @@
 
         <!--CEMENTERIO-->
 
-        <Grid x:Name="cementery" Visibility="Hidden" Canvas.Top="60" HorizontalAlignment="Left" Height="780" VerticalAlignment="Top" Width="1359">
+        <Grid x:Name="cementery" Visibility="Visible" Canvas.Top="60" HorizontalAlignment="Left" Height="780" VerticalAlignment="Top" Width="1359">
             <Grid.Background>
                 <ImageBrush ImageSource="/images/cementerio.jpg"/>
             </Grid.Background>
@@ -376,7 +376,7 @@
                 <RowDefinition Height="7*"/>
             </Grid.RowDefinitions>
 
-            <Grid Grid.Row="0" Width="1375" Height="100" Background="#BF524939">
+            <Grid Grid.Row="0" Width="1375" Height="100" Background="#7F4D244E">
                 <Button Style="{StaticResource btnSalirPrincipal}" Width="150" Click="cementeryHide" Height="70" Background="Transparent" HorizontalAlignment="Left"/>
                 <TextBlock Text="Cementerio" Height="100" Width="800"  Foreground="Beige" FontSize="80" FontFamily="Algerian" TextAlignment="Center" HorizontalAlignment="Center"/>
             </Grid>

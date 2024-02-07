@@ -446,7 +446,7 @@
 
     <DataTemplate x:Key="Plantilla_cementery">
         <StackPanel Orientation="Horizontal" Width="1300" Margin="10" Grid.Row="0">
-            <Grid Width="1210" Background="#BF524939">
+            <Grid Width="1210" Background="#7F4D244E">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -462,25 +462,25 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <StackPanel Grid.Row="0">
+                    <StackPanel  Width="150" VerticalAlignment="Center"  Grid.Row="0">
                         <TextBlock Grid.Column="0" Grid.Row="0" Foreground="Beige" Text="{Binding Skills[0].Name}" FontSize="20"/>
                     </StackPanel>
-                    <StackPanel Grid.Row="0" Grid.Column="1">
+                    <StackPanel  Width="150" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1">
                         <TextBlock Grid.Column="0" Grid.Row="0" Foreground="Beige" Text="{Binding Skills[1].Name}" FontSize="20"/>
                     </StackPanel>
-                    <StackPanel Grid.Row="1" Grid.Column="0">
+                    <StackPanel  Width="150" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0">
                         <TextBlock Grid.Column="1" Grid.Row="1" Foreground="Beige" Text="{Binding Skills[2].Name}" FontSize="20"/>
 
                     </StackPanel>
-                    <StackPanel Grid.Row="1" Grid.Column="1">
+                    <StackPanel  Width="150" VerticalAlignment="Center"  Grid.Row="1" Grid.Column="1">
                         <TextBlock Grid.Column="1" Grid.Row="1" Foreground="Beige" Text="{Binding Skills[3].Name}" FontSize="20"/>
 
                     </StackPanel>
                 </Grid>
 
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="2">
-                    <Image Source="/images/coin.png" Height="40" Margin="10,0,20,0"/>
-                    <TextBlock x:Name="valuePjDelet1" Text="100$" Foreground="Beige" Margin="10,0,50,0" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
+                <StackPanel Orientation="Horizontal" Width="200" HorizontalAlignment="Right" Margin="0,0,40,0" Grid.Column="2">
+                    <Image Source="/images/coin.png" HorizontalAlignment="Left" Height="40" Margin="10,0,20,0"/>
+                    <TextBlock x:Name="valuePjDelet1" Text="{Binding Price}" Foreground="Beige" Margin="10,0,50,0" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
                 </StackPanel>
             </Grid>
             <StackPanel VerticalAlignment="Center" Height="90">

@@ -76,13 +76,11 @@ namespace ArenaMasters
         
         public void initializeUnits()
         {
-            List<int> unitsIds = new List<int>();
             //esto sere el count de las unidades de la partida
             units = new List<Units>();
-            unitsIds=manager.GetAllCharactersId(game.IdGame); 
-            foreach (int id in unitsIds )
+            foreach (Units item in manager.GetAllCharacters(game.IdGame))
             {
-                units.Add(new Units(id,manager.fetchAllSkills(id)));  
+                units.Add(item);
             }
             maxUnits = manager.CountCharacters(game.IdGame);
             currentUnits.Text = maxUnits.ToString() + "/7";
@@ -138,7 +136,7 @@ namespace ArenaMasters
                 MessageBox.Show(ex.ToString());
             }
 
-            manager.GetAllCharacters(game.IdGame);
+            initializeUnits();
             settingsPanel.Visibility = Visibility.Collapsed;
             setting.Visibility = Visibility.Collapsed;
             cementery.Visibility = Visibility.Visible;

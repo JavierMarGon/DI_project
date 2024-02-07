@@ -347,42 +347,40 @@ namespace ArenaMasters.model
             }
 
         }
-
-        public void GetAllCharacters(int id_game)
-        {
-            List<int> unitsIds;
-            //esto sere el count de las unidades de la partida
-            units = new List<Units>();
-            unitsIds = GetAllCharactersId(id_game);
-            foreach (int id in unitsIds)
-            {
-                units.Add(new Units(id, fetchAllSkills(id_game)));
-            }
-            foreach (Units unit in units)
-            {
-                CementeryInventory.Add(unit);
-            }
-
-            OnPropertyChanged("CementeryInventory");
-        }
-        
-        public List<int> GetAllCharactersId(int id_game)
+        public List<Units> GetAllCharacters(int id_game)
         {
                     
-            List<int> ids = new List<int>();
+            List<Units> uds = new List<Units>();
             DataSet dataUnits = new DataSet();
             dataUnits = _ad.PA_GetAllCharacters(id_game);
             try
             {
                 foreach (DataRow dr in dataUnits.Tables[0].Rows)
                 {
-                    ids.Add(int.Parse(dr.ItemArray[0].ToString()));                     
+                    uds.Add(new Units(
+                        int.Parse(dr.ItemArray[0].ToString()),
+                        int.Parse(dr.ItemArray[1].ToString()),
+                        int.Parse(dr.ItemArray[2].ToString()),
+                        int.Parse(dr.ItemArray[3].ToString()),
+                        int.Parse(dr.ItemArray[4].ToString()),
+                        int.Parse(dr.ItemArray[5].ToString()),
+                        int.Parse(dr.ItemArray[6].ToString()),
+                        int.Parse(dr.ItemArray[7].ToString()),
+                        int.Parse(dr.ItemArray[8].ToString()),
+                        fetchAllSkills(int.Parse(dr.ItemArray[0].ToString()))
+                        ));                     
                 }
-                return ids;
+                foreach (Units unit in uds)
+                {
+                    CementeryInventory.Add(unit);
+                }
+
+                OnPropertyChanged("CementeryInventory");
+                return uds;
             }
                 catch (Exception e)
             {
-                return ids;
+                return uds;
             }
         }
        

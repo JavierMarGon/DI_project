@@ -127,7 +127,7 @@ namespace ArenaMasters.model
         }
         private void GetSelectedItem()
         {
-            GameMenu.shopItemSelected = new Units(IdItem, _skills);
+            GameMenu.shopItemSelected = new Units(IdItem,IdRol,Hp,Atk,Def,HitRate,Evasion,0,Price, _skills);
             GameMenu.DataContext = this;
 
             GameMenu.pjShopDetails.Visibility = Visibility.Visible;

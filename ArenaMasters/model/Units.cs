@@ -138,10 +138,11 @@ namespace ArenaMasters
             //tengo que obtener el numero de units
             if (_manager.CountCharacters(IdGame) > 1)
             {
+                GameMenu.Comprar(Price);
                 int delete = _manager.SoldUnit(IdCharacter);
                 if (delete > 0)
                 {
-                    _game_menu.initializeUnits();
+                    GameMenu.initializeUnits();
                     MessageBox.Show("Eliminado correctamente");
                 }
                 else

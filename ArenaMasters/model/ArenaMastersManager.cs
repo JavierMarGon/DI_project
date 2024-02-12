@@ -17,10 +17,11 @@ using System.Xml.Linq;
 namespace ArenaMasters.model
 {
 
-    class ArenaMastersManager : INotifyPropertyChanged{
+    class ArenaMastersManager : INotifyPropertyChanged
+    {
 
         public event PropertyChangedEventHandler PropertyChanged;
-    
+
 
         private DataAccess _ad = new DataAccess();
 
@@ -38,29 +39,31 @@ namespace ArenaMasters.model
         //Propiedades (campos publicos)
         public MainWindow MainWindow
         {
-            get { return _mainWindow;}
+            get { return _mainWindow; }
             set { _mainWindow = value; }
         }
         public GameMenu GameMenu
         {
-            get { return _gameWindow;}
+            get { return _gameWindow; }
             set { _gameWindow = value; }
         }
         public int id_User
         {
             get { return _id_User; }
             set { _id_User = value; }
-        }  
+        }
         public string userName
         {
             get { return _userName; }
             set { _userName = value; }
         }
-       
+
         public ObservableCollection<Partida> GameList
         {
             get { return _gameList; }
-            set { _gameList = value;
+            set
+            {
+                _gameList = value;
                 OnPropertyChanged("GameList");
             }
         }
@@ -90,7 +93,7 @@ namespace ArenaMasters.model
             _Inventory = new ObservableCollection<Units>();
         }
         //Metodos (de Negocio)
-        
+
         public int Login(string usuario, string pass)
         {
             //Comprobaciones previas
@@ -106,7 +109,7 @@ namespace ArenaMasters.model
                 return -1;
             }
         }
-        public int Register(string nombre,  string pass)
+        public int Register(string nombre, string pass)
         {
             //Comprobaciones previas
 
@@ -173,26 +176,26 @@ namespace ArenaMasters.model
                 Refresh = 0
             });
 
-            if(gameData != null)
-                {
-                    return new Game(
-                                    id_game,
-                                    id_user,
-                                    name,                                  
-                                    gameData.Round,
-                                    gameData.Refresh,
-                                    gameData.Money 
-                                    );
-                }
-        
+            if (gameData != null)
+            {
+                return new Game(
+                                id_game,
+                                id_user,
+                                name,
+                                gameData.Round,
+                                gameData.Refresh,
+                                gameData.Money
+                                );
+            }
+
             return null;
         }
 
         public Skills SetRandomSkill(int id_character, int placement)
         {
-            if (_ad.PA_RandomSkill(id_character,placement) > 0)
+            if (_ad.PA_RandomSkill(id_character, placement) > 0)
             {
-                
+
                 string jsonResult = _ad.PA_GetSkillData(id_character, placement);
                 var skillData = JsonConvert.DeserializeAnonymousType(jsonResult, new
                 {
@@ -218,12 +221,12 @@ namespace ArenaMasters.model
             {
                 MessageBox.Show("cagada");
                 return null;       //No tiene partidas guardadas
-            }   
+            }
         }
 
         public List<Skills> fetchAllSkills(int id_character)
         {
-            List<Skills> skillsData= new List<Skills>();
+            List<Skills> skillsData = new List<Skills>();
             for (int i = 1; i < 5; i++)
             {
                 string jsonResult = _ad.PA_GetSkillData(id_character, i);
@@ -239,7 +242,7 @@ namespace ArenaMasters.model
                 });
                 if (skillData != null)
                 {
-                    skillsData.Add( new Skills(
+                    skillsData.Add(new Skills(
                                     skillData.IdSkill,
                                     skillData.Name,
                                     skillData.Description,
@@ -251,11 +254,11 @@ namespace ArenaMasters.model
                 }
             }
             return skillsData;
-            
-        } 
+
+        }
         public List<Skills> fetchAllShopSkills(int id_character)
         {
-            List<Skills> skillsData= new List<Skills>();
+            List<Skills> skillsData = new List<Skills>();
             for (int i = 1; i < 5; i++)
             {
                 string jsonResult = _ad.PA_GetItemSkillData(id_character, i);
@@ -271,7 +274,7 @@ namespace ArenaMasters.model
                 });
                 if (skillData != null)
                 {
-                    skillsData.Add( new Skills(
+                    skillsData.Add(new Skills(
                                     skillData.IdSkill,
                                     skillData.Name,
                                     skillData.Description,
@@ -283,7 +286,7 @@ namespace ArenaMasters.model
                 }
             }
             return skillsData;
-            
+
         }
         public void GetAllGames(int id_user)
         {
@@ -327,7 +330,7 @@ namespace ArenaMasters.model
                 foreach (DataRow dr in dataGames.Tables[0].Rows)
                 {
                     Shop s;
-                    s = new Shop(   int.Parse(dr.ItemArray[0].ToString()),
+                    s = new Shop(int.Parse(dr.ItemArray[0].ToString()),
                                     int.Parse(dr.ItemArray[1].ToString()),
                                     int.Parse(dr.ItemArray[2].ToString()),
                                     int.Parse(dr.ItemArray[3].ToString()),
@@ -344,13 +347,13 @@ namespace ArenaMasters.model
             }
             catch (Exception e)
             {
-                
+
             }
 
         }
         public List<Units> GetAllCharacters(int id_game)
         {
-                    
+
             List<Units> uds = new List<Units>();
             DataSet dataUnits = new DataSet();
             dataUnits = _ad.PA_GetAllCharacters(id_game);
@@ -371,7 +374,7 @@ namespace ArenaMasters.model
                         fetchAllSkills(int.Parse(dr.ItemArray[0].ToString())),
                         GameMenu,
                         id_game
-                        ));                     
+                        ));
                 }
                 Inventory = new ObservableCollection<Units>();
                 foreach (Units unit in uds)
@@ -382,12 +385,23 @@ namespace ArenaMasters.model
                 OnPropertyChanged("Inventory");
                 return uds;
             }
-                catch (Exception e)
+            catch (Exception e)
             {
                 return uds;
             }
         }
-       
+
+        public int updateMoney(int idgame, int profit)
+        {
+            if (_ad.PA_UpdateMoney(idgame, profit) > 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
 
         public int CountGames(int id_user)
         {
@@ -412,7 +426,7 @@ namespace ArenaMasters.model
                 return 0;       //No tiene partidas guardadas
             }
         }
-        
+
         public int DeleteGame(int id_game)
         {
             if (_ad.PA_deleteGame(id_game) > 0)
@@ -422,7 +436,7 @@ namespace ArenaMasters.model
             }
             else
             {
-                return 0;      
+                return 0;
             }
         }
 
@@ -437,7 +451,6 @@ namespace ArenaMasters.model
                 return 0;
             }
         }
-
         public int SoldUnit(int thisUnit)
         {
             if (_ad.PA_SoldUnit(thisUnit) > 0)
@@ -449,7 +462,6 @@ namespace ArenaMasters.model
                 return 0;
             }
         }
-
         protected void OnPropertyChanged([CallerMemberName] string name = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));

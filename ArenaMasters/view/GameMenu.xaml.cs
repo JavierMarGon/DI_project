@@ -30,11 +30,11 @@ namespace ArenaMasters
         int rewards = 0;
         ArenaMastersManager manager = new ArenaMastersManager();
         Game game;
-        List<Units> units ;
+        List<Units> units;
         public Units shopItemSelected;
         Random random = new Random();
         MediaPlayer mediaPlayer = new MediaPlayer();
-        
+
         public GameMenu(Game _game)
         {
             InitializeComponent();
@@ -45,8 +45,8 @@ namespace ArenaMasters
             initializeUnits();
             DataContext = manager;
             manager.GameMenu = this;
-            
-            
+
+
         }
 
         public void initializeShop()
@@ -73,7 +73,7 @@ namespace ArenaMasters
             //maxUnits = manager.CountCharacters(game.IdGame);
         }
 
-        
+
         public void initializeUnits()
         {
             //esto sere el count de las unidades de la partida
@@ -160,6 +160,8 @@ namespace ArenaMasters
             setting.Visibility = Visibility.Collapsed;
             space = 0;
             habpjName.Text = "";
+            greedLvl.Text = units[space].Greed.ToString();
+            newHabPrice.Text = (units[space].Greed * 150).ToString();
             habpjSkill1.Text = units[space].getSkillByIndex(1).Name.ToString();
             habpjSkill2.Text = units[space].getSkillByIndex(2).Name.ToString();
             habpjSkill3.Text = units[space].getSkillByIndex(3).Name.ToString();
@@ -204,6 +206,12 @@ namespace ArenaMasters
             pjShop.Visibility = Visibility.Visible;
 
         }
+        public void Comprar(int valor)
+        {
+            manager.updateMoney(game.IdGame, valor);
+            game.Money += valor;
+            currentMoney.Text = game.Money.ToString();
+        }
         private void ClickBuyUnitShop(object sender, RoutedEventArgs e)
         {
             Button btn = (Button)sender;
@@ -211,12 +219,12 @@ namespace ArenaMasters
             Shop selectedUnit = (Shop)btn.DataContext;
 
             int id_item = selectedUnit.IdItem;
-            if (maxUnits < 7)
+            if (maxUnits < 7 && selectedUnit.Price < game.Money)
             {
-                
-            
+
+                Comprar(-selectedUnit.Price);
                 int buy = manager.BuyUnit(id_item);
-                if (buy > 0 && maxUnits<7)
+                if (buy > 0 && maxUnits < 7)
                 {
                     MessageBox.Show("Comprado correctamente");
                     initializeUnits();
@@ -240,6 +248,8 @@ namespace ArenaMasters
         {
             if (space == 0) { space = maxUnits - 1; }
             else { space--; }
+            greedLvl.Text = units[space].Greed.ToString();
+            newHabPrice.Text = (units[space].Greed * 150).ToString();
             habpjName.Text = units[space].UnitName;
             habpjSkill1.Text = units[space].getSkillByIndex(1).Name.ToString();
             habpjSkill2.Text = units[space].getSkillByIndex(2).Name.ToString();
@@ -250,6 +260,8 @@ namespace ArenaMasters
         {
             if (space == maxUnits - 1) { space = 0; }
             else { space++; }
+            greedLvl.Text = units[space].Greed.ToString();
+            newHabPrice.Text = (units[space].Greed * 150).ToString();
             habpjName.Text = units[space].UnitName;
             habpjSkill1.Text = units[space].getSkillByIndex(1).Name.ToString();
             habpjSkill2.Text = units[space].getSkillByIndex(2).Name.ToString();
@@ -355,8 +367,16 @@ namespace ArenaMasters
             Skills skill_data = manager.SetRandomSkill(units[space].IdCharacter, 1);
             if (skill_data != null)
             {
-                units[space].setSkillByIndex(1, skill_data);
-                habpjSkill1.Text = units[space].getSkillByIndex(1).Name.ToString();
+                if (game.Money > units[space].Greed * 150)
+                {
+                    Comprar(-units[space].Greed * 150);
+                    units[space].setSkillByIndex(1, skill_data);
+                    habpjSkill1.Text = units[space].getSkillByIndex(1).Name.ToString();
+                    initializeUnits();
+                    greedLvl.Text = units[space].Greed.ToString();
+                    newHabPrice.Text = (units[space].Greed * 150).ToString();
+                }
+
             }
         }
         public void habChangeSkill2(object sender, RoutedEventArgs e)
@@ -365,18 +385,32 @@ namespace ArenaMasters
             Skills skill_data = manager.SetRandomSkill(units[space].IdCharacter, 2);
             if (skill_data != null)
             {
-                units[space].setSkillByIndex(2, skill_data);
-                habpjSkill2.Text = units[space].getSkillByIndex(2).Name.ToString();
+                if (game.Money > units[space].Greed * 150)
+                {
+                    Comprar(-units[space].Greed * 150);
+                    units[space].setSkillByIndex(2, skill_data);
+                    habpjSkill2.Text = units[space].getSkillByIndex(2).Name.ToString();
+                    initializeUnits();
+                    greedLvl.Text = units[space].Greed.ToString();
+                    newHabPrice.Text = (units[space].Greed * 150).ToString();
+                }
             }
         }
         public void habChangeSkill3(object sender, RoutedEventArgs e)
         {
-            
+
             Skills skill_data = manager.SetRandomSkill(units[space].IdCharacter, 3);
             if (skill_data != null)
             {
-                units[space].setSkillByIndex(3, skill_data);
-                habpjSkill3.Text = units[space].getSkillByIndex(3).Name.ToString();
+                if (game.Money > units[space].Greed * 150)
+                {
+                    Comprar(-units[space].Greed * 150);
+                    units[space].setSkillByIndex(3, skill_data);
+                    habpjSkill3.Text = units[space].getSkillByIndex(3).Name.ToString();
+                    initializeUnits();
+                    greedLvl.Text = units[space].Greed.ToString();
+                    newHabPrice.Text = (units[space].Greed * 150).ToString();
+                }
             }
         }
         public void habChangeSkill4(object sender, RoutedEventArgs e)
@@ -385,8 +419,15 @@ namespace ArenaMasters
             Skills skill_data = manager.SetRandomSkill(units[space].IdCharacter, 4);
             if (skill_data != null)
             {
-                units[space].setSkillByIndex(4, skill_data);
-                habpjSkill4.Text = units[space].getSkillByIndex(4).Name.ToString();
+                if (game.Money > units[space].Greed * 150)
+                {
+                    Comprar(-units[space].Greed * 150);
+                    units[space].setSkillByIndex(4, skill_data);
+                    habpjSkill4.Text = units[space].getSkillByIndex(4).Name.ToString();
+                    initializeUnits();
+                    greedLvl.Text = units[space].Greed.ToString();
+                    newHabPrice.Text = (units[space].Greed * 150).ToString();
+                }
             }
         }
 

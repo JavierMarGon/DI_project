@@ -19,7 +19,7 @@ namespace ArenaMasters.model
         MySqlConnection _conn;
         MySqlCommand _cmd;
 
-        string _conectionString = "server= " + ConfigurationManager.AppSettings["server"] +";" +
+        string _conectionString = "server= " + ConfigurationManager.AppSettings["server"] + ";" +
                                   "user=" + ConfigurationManager.AppSettings["user"] + ";" +
                                   "database=" + ConfigurationManager.AppSettings["database"] + ";" +
                                   "port=" + ConfigurationManager.AppSettings["port"] + ";" +
@@ -39,7 +39,7 @@ namespace ArenaMasters.model
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message+"\nFAllo conex");
+                Console.WriteLine(ex.Message + "\nFAllo conex");
             }
 
         }
@@ -190,8 +190,8 @@ namespace ArenaMasters.model
             DataSet ds = new DataSet();
             try
             {
-                _cmd = new MySqlCommand(); 
-                _cmd.Connection = _conn;    
+                _cmd = new MySqlCommand();
+                _cmd.Connection = _conn;
                 _cmd.CommandType = CommandType.StoredProcedure;
                 _cmd.CommandText = "getGameData";
 
@@ -206,7 +206,7 @@ namespace ArenaMasters.model
 
                 _cmd.Parameters.Add(new MySqlParameter("_round", MySqlDbType.Int32));
                 _cmd.Parameters["_round"].Direction = ParameterDirection.Output;
-                
+
                 _cmd.Parameters.Add(new MySqlParameter("_refresh", MySqlDbType.Int32));
                 _cmd.Parameters["_refresh"].Direction = ParameterDirection.Output;
 
@@ -234,12 +234,12 @@ namespace ArenaMasters.model
         {
             //int resultado = -99;
             DataSet ds = new DataSet();
-            bool _target = false;  
-            bool _targetRange = false;  
+            bool _target = false;
+            bool _targetRange = false;
             try
             {
-                _cmd = new MySqlCommand(); 
-                _cmd.Connection = _conn;    
+                _cmd = new MySqlCommand();
+                _cmd.Connection = _conn;
                 _cmd.CommandType = CommandType.StoredProcedure;
                 _cmd.CommandText = "getSkillInfoFromRooster";
 
@@ -257,7 +257,7 @@ namespace ArenaMasters.model
 
                 _cmd.Parameters.Add(new MySqlParameter("_name", MySqlDbType.VarChar));
                 _cmd.Parameters["_name"].Direction = ParameterDirection.Output;
-                
+
                 _cmd.Parameters.Add(new MySqlParameter("_description", MySqlDbType.VarChar));
                 _cmd.Parameters["_description"].Direction = ParameterDirection.Output;
 
@@ -266,23 +266,23 @@ namespace ArenaMasters.model
 
                 _cmd.Parameters.Add(new MySqlParameter("_tier", MySqlDbType.Int32));
                 _cmd.Parameters["_tier"].Direction = ParameterDirection.Output;
-                
+
                 _cmd.Parameters.Add(new MySqlParameter("_target", MySqlDbType.VarChar));
                 _cmd.Parameters["_target"].Direction = ParameterDirection.Output;
-                
+
                 _cmd.Parameters.Add(new MySqlParameter("_target_range", MySqlDbType.VarChar));
                 _cmd.Parameters["_target_range"].Direction = ParameterDirection.Output;
 
 
 
                 _cmd.ExecuteNonQuery();
-                if (_cmd.Parameters["_target"].Value.ToString()=="foes")
+                if (_cmd.Parameters["_target"].Value.ToString() == "foes")
                 {
-                    _target=true;
+                    _target = true;
                 }
-                if (_cmd.Parameters["_target_range"].Value.ToString()=="multiple")
+                if (_cmd.Parameters["_target_range"].Value.ToString() == "multiple")
                 {
-                    _targetRange=true;
+                    _targetRange = true;
                 }
                 var resultJson = new
                 {
@@ -309,12 +309,12 @@ namespace ArenaMasters.model
         {
             //int resultado = -99;
             DataSet ds = new DataSet();
-            bool _target = false;  
-            bool _targetRange = false;  
+            bool _target = false;
+            bool _targetRange = false;
             try
             {
-                _cmd = new MySqlCommand(); 
-                _cmd.Connection = _conn;    
+                _cmd = new MySqlCommand();
+                _cmd.Connection = _conn;
                 _cmd.CommandType = CommandType.StoredProcedure;
                 _cmd.CommandText = "getSkillInfoFromShop";
 
@@ -332,7 +332,7 @@ namespace ArenaMasters.model
 
                 _cmd.Parameters.Add(new MySqlParameter("_name", MySqlDbType.VarChar));
                 _cmd.Parameters["_name"].Direction = ParameterDirection.Output;
-                
+
                 _cmd.Parameters.Add(new MySqlParameter("_description", MySqlDbType.VarChar));
                 _cmd.Parameters["_description"].Direction = ParameterDirection.Output;
 
@@ -341,23 +341,23 @@ namespace ArenaMasters.model
 
                 _cmd.Parameters.Add(new MySqlParameter("_tier", MySqlDbType.Int32));
                 _cmd.Parameters["_tier"].Direction = ParameterDirection.Output;
-                
+
                 _cmd.Parameters.Add(new MySqlParameter("_target", MySqlDbType.VarChar));
                 _cmd.Parameters["_target"].Direction = ParameterDirection.Output;
-                
+
                 _cmd.Parameters.Add(new MySqlParameter("_target_range", MySqlDbType.VarChar));
                 _cmd.Parameters["_target_range"].Direction = ParameterDirection.Output;
 
 
 
                 _cmd.ExecuteNonQuery();
-                if (_cmd.Parameters["_target"].Value.ToString()=="foes")
+                if (_cmd.Parameters["_target"].Value.ToString() == "foes")
                 {
-                    _target=true;
+                    _target = true;
                 }
-                if (_cmd.Parameters["_target_range"].Value.ToString()=="multiple")
+                if (_cmd.Parameters["_target_range"].Value.ToString() == "multiple")
                 {
-                    _targetRange=true;
+                    _targetRange = true;
                 }
                 var resultJson = new
                 {
@@ -381,7 +381,7 @@ namespace ArenaMasters.model
             }
         }
 
-        public int PA_RandomSkill(int id_character,int placement)
+        public int PA_RandomSkill(int id_character, int placement)
         {
             int resultado = -99;
             try
@@ -390,7 +390,7 @@ namespace ArenaMasters.model
                 _cmd.Connection = _conn;
                 _cmd.CommandType = CommandType.StoredProcedure;
                 _cmd.CommandText = "setRandomSkill";
-                
+
                 _cmd.Parameters.AddWithValue("_id_character", id_character);
                 _cmd.Parameters["_id_character"].Direction = ParameterDirection.Input;
 
@@ -411,7 +411,7 @@ namespace ArenaMasters.model
                 MessageBox.Show(ex.Message);
                 return resultado;
             }
-            
+
         }
         public DataSet PA_GetAllGames(int id_user)
         {
@@ -512,7 +512,7 @@ namespace ArenaMasters.model
             }
 
         }
-        public int PA_deleteGame(int id_game) 
+        public int PA_deleteGame(int id_game)
         {
             int resultado = -99;
 
@@ -553,6 +553,36 @@ namespace ArenaMasters.model
 
                 _cmd.Parameters.AddWithValue("_id_user", id_user);
                 _cmd.Parameters["_id_user"].Direction = ParameterDirection.Input;
+
+                _cmd.Parameters.Add(new MySqlParameter("_res", MySqlDbType.Int32));
+                _cmd.Parameters["_res"].Direction = ParameterDirection.Output;
+
+                _cmd.ExecuteNonQuery();
+
+                resultado = (int)_cmd.Parameters["_res"].Value;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return resultado;
+            }
+            return resultado;
+        }
+        public int PA_UpdateMoney(int id_game, int profit)
+        {
+            int resultado = -99;
+            try
+            {
+                _cmd = new MySqlCommand();
+                _cmd.Connection = _conn;
+                _cmd.CommandType = CommandType.StoredProcedure;
+                _cmd.CommandText = "updateMoney";
+
+                _cmd.Parameters.AddWithValue("_id_game", id_game);
+                _cmd.Parameters["_id_game"].Direction = ParameterDirection.Input;
+
+                _cmd.Parameters.AddWithValue("profit", profit);
+                _cmd.Parameters["profit"].Direction = ParameterDirection.Input;
 
                 _cmd.Parameters.Add(new MySqlParameter("_res", MySqlDbType.Int32));
                 _cmd.Parameters["_res"].Direction = ParameterDirection.Output;
@@ -650,7 +680,6 @@ namespace ArenaMasters.model
             }
             return resultado;
         }
-
         public int PA_SoldUnit(int thisUnit)
         {
             int resultado = -99;
@@ -678,6 +707,5 @@ namespace ArenaMasters.model
             }
             return resultado;
         }
-
     }
 }

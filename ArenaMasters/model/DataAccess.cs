@@ -651,5 +651,33 @@ namespace ArenaMasters.model
             return resultado;
         }
 
+        public int PA_SoldUnit(int thisUnit)
+        {
+            int resultado = -99;
+            try
+            {
+                _cmd = new MySqlCommand();
+                _cmd.Connection = _conn;
+                _cmd.CommandType = CommandType.StoredProcedure;
+                _cmd.CommandText = "soldUnit";
+
+                _cmd.Parameters.AddWithValue("thisUnit", thisUnit);
+                _cmd.Parameters["thisUnit"].Direction = ParameterDirection.Input;
+
+                _cmd.Parameters.Add(new MySqlParameter("_res", MySqlDbType.Int32));
+                _cmd.Parameters["_res"].Direction = ParameterDirection.Output;
+
+                _cmd.ExecuteNonQuery();
+
+                resultado = (int)_cmd.Parameters["_res"].Value;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return resultado;
+            }
+            return resultado;
+        }
+
     }
 }

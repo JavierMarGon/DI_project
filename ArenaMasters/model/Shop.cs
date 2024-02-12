@@ -18,6 +18,7 @@ namespace ArenaMasters.model
     internal class Shop
     {
         private int _id_item;
+        private int _id_game;
         private int _id_rol;
         private string _rol_name;
         private string _price_value;
@@ -84,6 +85,14 @@ namespace ArenaMasters.model
             get { return _price_value; }
             set { _price_value = value; }
         }
+        public int IdGame
+        {
+            get { return _id_game; }
+            set
+            {
+                _id_game = value;
+            }
+        }
         public GameMenu GameMenu
         {
             get { return _game_menu; }
@@ -107,7 +116,7 @@ namespace ArenaMasters.model
             }
         }
 
-        public Shop(int idItem, int idRol, int hp, int atk, int def, int hit, int eva, int price, GameMenu thisGameMenu, ArenaMastersManager manager)
+        public Shop(int idItem, int idRol, int hp, int atk, int def, int hit, int eva, int price, GameMenu thisGameMenu, ArenaMastersManager manager, int id_game)
         {
             IdItem = idItem;
             IdRol = idRol;
@@ -124,10 +133,11 @@ namespace ArenaMasters.model
             SelectedItemFromShop = new RelayCommand(GetSelectedItem);
             _skills = manager.fetchAllShopSkills(idItem);
             AllSkills = _skills;
+            IdGame = id_game;
         }
         private void GetSelectedItem()
         {
-            GameMenu.shopItemSelected = new Units(IdItem,IdRol,Hp,Atk,Def,HitRate,Evasion,0,Price, _skills);
+            GameMenu.shopItemSelected = new Units(IdItem,IdRol,Hp,Atk,Def,HitRate,Evasion,0,Price, _skills, GameMenu, IdGame);
             GameMenu.DataContext = this;
 
             GameMenu.pjShopDetails.Visibility = Visibility.Visible;

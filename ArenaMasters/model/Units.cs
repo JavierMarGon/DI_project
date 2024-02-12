@@ -1,10 +1,13 @@
 ﻿using ArenaMasters.model;
+using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Documents;
+using System.Windows.Input;
 
 namespace ArenaMasters
 {
@@ -21,7 +24,13 @@ namespace ArenaMasters
         private int _evasion;
         private int _greed;
         private int _price;
+        private int _id_game;
         protected List<Skills> _skills = new List<Skills>();
+
+        private ArenaMastersManager _manager = new ArenaMastersManager();
+        private GameMenu _game_menu;
+        public ICommand SelectedSoldUnit { get; set; }
+
         public int IdCharacter
         {
             get { return _id_character; }
@@ -78,11 +87,22 @@ namespace ArenaMasters
             get { return _skills; }
             set { _skills = value; }
         }
+        public GameMenu GameMenu
+        {
+            get { return _game_menu; }
+            set { _game_menu = value; }
+        }
+        public int IdGame
+        {
+            get { return _id_game; }
+            set { _id_game = value; }
+        }
+
         public Units(string unitName)
         {
             UnitName = unitName;
         }
-        public Units(int id,int idRol, int hp, int atk , int def, int hitRate, int evasion, int greed, int price, List<Skills> skillsData)
+        public Units(int id,int idRol, int hp, int atk , int def, int hitRate, int evasion, int greed, int price, List<Skills> skillsData, GameMenu thisGameMenu, int id_game)
         {
             IdCharacter = id;
             IdRol = idRol;
@@ -93,7 +113,11 @@ namespace ArenaMasters
             Evasion = evasion;
             Greed = greed;
             Price = price;
+            GameMenu = thisGameMenu;
+            IdGame = id_game;
 
+            SelectedSoldUnit = new RelayCommand(DeleteSelectedItem);
+            
             foreach (Skills skill in skillsData)
             {
                 _skills.Add(skill);
@@ -107,6 +131,29 @@ namespace ArenaMasters
         public Skills getSkillByIndex(int index)
         {
             return _skills[index-1];
+        }
+
+        private void DeleteSelectedItem()
+        {
+            //tengo que obtener el numero de units
+            if (_manager.CountCharacters(IdGame) > 1)
+            {
+                int delete = _manager.SoldUnit(IdCharacter);
+                if (delete > 0)
+                {
+                    _game_menu.initializeUnits();
+                    MessageBox.Show("Eliminado correctamente");
+                }
+                else
+                {
+                    MessageBox.Show("Error al eliminar");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No puedes eliminar más personajes");
+            }
+            
         }
         
 

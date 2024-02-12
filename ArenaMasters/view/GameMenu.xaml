@@ -125,9 +125,7 @@
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0" Text="asdfasdf" x:Name="habpjSkill1" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
                         <TextBlock Grid.Column="1" Text="Tipo:" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
-                        <StackPanel Orientation="Horizontal" Grid.Column="2">
-                            <Button Style="{StaticResource btnComprar}"  Margin="30,0,0,0"/>
-                        </StackPanel>
+                        
                     </Grid>
                     <Button Style="{StaticResource btnActualizar}" Height="50" Width="105" Click="habChangeSkill1"/>
                 </StackPanel>
@@ -141,9 +139,7 @@
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0" Text="asdfasdf" x:Name="habpjSkill2" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
                         <TextBlock Grid.Column="1" Text="Tipo:" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
-                        <StackPanel Orientation="Horizontal" Grid.Column="2">
-                            <Button Style="{StaticResource btnComprar}" Margin="30,0,0,0"/>
-                        </StackPanel>
+                        
                     </Grid>
                     <Button Style="{StaticResource btnActualizar}" Height="50" Width="105" Click="habChangeSkill2"/>
                 </StackPanel>
@@ -157,9 +153,7 @@
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0" Text="asdfasdf" x:Name="habpjSkill3" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
                         <TextBlock Grid.Column="1" Text="Tipo:" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
-                        <StackPanel Orientation="Horizontal" Grid.Column="2">
-                            <Button Style="{StaticResource btnComprar}" Margin="30,0,0,0"/>
-                        </StackPanel>
+                        
                     </Grid>
                     <Button Style="{StaticResource btnActualizar}" Height="50" Width="105" Click="habChangeSkill3"/>
                 </StackPanel>
@@ -173,9 +167,7 @@
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0" Text="asdfasdf" x:Name="habpjSkill4" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
                         <TextBlock Grid.Column="1" Text="Tipo:" Foreground="Beige" FontSize="30" FontFamily="Algerian" TextAlignment="Center" VerticalAlignment="Center"/>
-                        <StackPanel Orientation="Horizontal" Grid.Column="2">
-                            <Button Style="{StaticResource btnComprar}"  Margin="30,0,0,0"/>
-                        </StackPanel>
+                        
                     </Grid>
                     <Button Style="{StaticResource btnActualizar}" Height="50" Width="105" Click="habChangeSkill4"/>
                 </StackPanel>
@@ -367,7 +359,7 @@
 
         <!--CEMENTERIO-->
 
-        <Grid x:Name="cementery" Visibility="Visible" Canvas.Top="60" HorizontalAlignment="Left" Height="780" VerticalAlignment="Top" Width="1359">
+        <Grid x:Name="cementery" Visibility="Collapsed" Canvas.Top="60" HorizontalAlignment="Left" Height="780" VerticalAlignment="Top" Width="1359">
             <Grid.Background>
                 <ImageBrush ImageSource="/images/cementerio.jpg"/>
             </Grid.Background>

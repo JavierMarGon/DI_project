@@ -484,7 +484,7 @@
                 </StackPanel>
             </Grid>
             <StackPanel VerticalAlignment="Center" Height="90">
-                <Button Style="{StaticResource btnEliminar}" Height="90" Width="105" Command="{Binding IdItem}"/>
+                <Button Style="{StaticResource btnEliminar}" Height="90" Width="105" Command="{Binding SelectedSoldUnit}"/>
             </StackPanel>
         </StackPanel>
     </DataTemplate>

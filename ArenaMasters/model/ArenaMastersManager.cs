@@ -336,7 +336,8 @@ namespace ArenaMasters.model
                                     int.Parse(dr.ItemArray[6].ToString()),
                                     int.Parse(dr.ItemArray[7].ToString()),
                                     GameMenu,
-                                    this);
+                                    this,
+                                    id_game);
                     ShopInventory.Add(s);
                 }
                 OnPropertyChanged("ShopInventory");
@@ -367,7 +368,9 @@ namespace ArenaMasters.model
                         int.Parse(dr.ItemArray[6].ToString()),
                         int.Parse(dr.ItemArray[7].ToString()),
                         int.Parse(dr.ItemArray[8].ToString()),
-                        fetchAllSkills(int.Parse(dr.ItemArray[0].ToString()))
+                        fetchAllSkills(int.Parse(dr.ItemArray[0].ToString())),
+                        GameMenu,
+                        id_game
                         ));                     
                 }
                 Inventory = new ObservableCollection<Units>();
@@ -426,6 +429,18 @@ namespace ArenaMasters.model
         public int BuyUnit(int thisShopUnit)
         {
             if (_ad.PA_BuyUnit(thisShopUnit) > 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        public int SoldUnit(int thisUnit)
+        {
+            if (_ad.PA_SoldUnit(thisUnit) > 0)
             {
                 return 1;
             }

@@ -315,8 +315,7 @@ namespace ArenaMasters
         public void levelSelected1(object sender, RoutedEventArgs e)
         {
             level = 1;
-            rewards = 500;
-            MoneyDungeon moneyDungeon = new MoneyDungeon(level, rewards, game);
+            MoneyDungeon moneyDungeon = new MoneyDungeon(level, game);
             moneyDungeon.Show();
             this.Close();
 
@@ -324,31 +323,27 @@ namespace ArenaMasters
         public void levelSelected2(object sender, RoutedEventArgs e)
         {
             level = 2;
-            rewards = 1500;
-            MoneyDungeon moneyDungeon = new MoneyDungeon(level, rewards, game);
+            MoneyDungeon moneyDungeon = new MoneyDungeon(level, game);
             this.Close();
             moneyDungeon.Show();
         }
         public void levelSelected3(object sender, RoutedEventArgs e)
         {
             level = 3;
-            rewards = 2750;
-            MoneyDungeon moneyDungeon = new MoneyDungeon(level, rewards, game);
+            MoneyDungeon moneyDungeon = new MoneyDungeon(level, game);
             this.Close();
             moneyDungeon.Show();
         }
         public void levelSelected4(object sender, RoutedEventArgs e)
         {
             level = 4;
-            rewards = 4000;
-            MoneyDungeon moneyDungeon = new MoneyDungeon(level, rewards, game);
+            MoneyDungeon moneyDungeon = new MoneyDungeon(level, game);
             this.Close();
             moneyDungeon.Show();
         }
         public void levelSelected5(object sender, RoutedEventArgs e)
         {
             level = 5;
-            rewards = 10000;
 
             int actualMoney = Int32.Parse(currentMoney.Text.ToString());
             currentMoney.Text = (actualMoney += rewards).ToString();

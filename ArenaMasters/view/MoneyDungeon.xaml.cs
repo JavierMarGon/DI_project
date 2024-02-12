@@ -32,7 +32,7 @@ namespace ArenaMasters
         //Instancia de rectangulo para generar el pj
         public System.Windows.Shapes.Rectangle image = new System.Windows.Shapes.Rectangle();
 
-        public MoneyDungeon(int level, int rewards, Game _game)
+        public MoneyDungeon(int level, Game _game)
         {
             InitializeComponent();
             personajeLeft = new ImageBrush();
@@ -40,10 +40,10 @@ namespace ArenaMasters
             lvl = level;
             pj = new PlayableDungeonMovement(lvl);
             paintImage();
-            profit = rewards;
+            profit = Rewards(lvl);
             game = _game;
             AgregarRectangulos(lvl);
-            
+
         }
 
         private void exitClick(object sender, RoutedEventArgs e)
@@ -117,6 +117,31 @@ namespace ArenaMasters
                     // Obtén el rectángulo del elemento del mapa
                     Rect mapaRect = new Rect(Canvas.GetLeft(rectangulo), Canvas.GetTop(rectangulo), rectangulo.Width, rectangulo.Height);
 
+                    if (rectangulo.Name == "bedCollision1")
+                    {
+                        if (jugadorRect.IntersectsWith(mapaRect))
+                        {
+                            MessageBox.Show("Choque con la cama 1");
+                            ChangeImageBed(1);
+                        }
+                    }
+                    else if (rectangulo.Name == "bedCollision2")
+                    {
+                        if (jugadorRect.IntersectsWith(mapaRect))
+                        {
+                            MessageBox.Show("Choque con la cama 2");
+                            ChangeImageBed(2);
+                        }
+                    }
+                    else if (rectangulo.Name == "finallyLvl")
+                    {
+                        if (jugadorRect.IntersectsWith(mapaRect))
+                        {
+                            CheckFinally();
+                        }
+                    }
+
+
                     // Comprueba si hay intersección entre los dos rectángulos
                     if (jugadorRect.IntersectsWith(mapaRect))
                     {
@@ -135,7 +160,14 @@ namespace ArenaMasters
             //Generamos las colisiones dependiendo del mapa
             foreach (var data in mapaSeleccionado)
             {
-                AgregarRectangulo(data.Name, data.Height, data.Width, data.Left, data.Top);
+                if (data.Name == "bedImg1" || data.Name == "bedImg2")
+                {
+                    AgregarImagenCama(data.Name, data.Width, data.Height, data.Left, data.Top, data.Rotation);
+                }
+                else
+                {
+                    AgregarRectangulo(data.Name, data.Height, data.Width, data.Left, data.Top);
+                }
             }
         }
         private Dictionary<string, List<ColisionMapa>> ObtenerMapas()
@@ -170,13 +202,13 @@ namespace ArenaMasters
             double rightPj = pj.MarginLeft + image.Width;
             pj.MarginRight = rightPj;     //Insert MarginRight en la Clase pjs
         }
-        
+
 
 
         private void updateImage()
         {
-            Canvas.SetLeft(image, pj.MarginLeft); 
-            Canvas.SetTop(image, pj.MarginTop); 
+            Canvas.SetLeft(image, pj.MarginLeft);
+            Canvas.SetTop(image, pj.MarginTop);
         }
 
         public void paintImage()
@@ -218,6 +250,78 @@ namespace ArenaMasters
             container_pj.Children.Add(image);
         }
 
+        private void CheckFinally()
+        {
+            MessageBoxResult result = MessageBox.Show("¿Quieres continuar?", "Confirmación", MessageBoxButton.OKCancel);
 
+            if (result == MessageBoxResult.OK)
+            {
+                // logica para avanzar al siguiente nivel
+                MoneyDungeon md = new MoneyDungeon(lvl + 1, game);
+                this.Close();
+                md.Show();
+            }
+        }
+
+        private void AgregarImagenCama(string name, double height, double width, double left, double top, int rotation)
+        {
+            Image camaImage = new Image();
+            camaImage.Source = new BitmapImage(new Uri(@"pack://application:,,,/images/bedUnused.png", UriKind.Absolute)); // Reemplaza "ruta_de_la_imagen_de_cama" con la ruta real de tu imagen de cama
+            camaImage.Width = width; // Reemplaza con el ancho real de tu imagen de cama
+            camaImage.Height = height; // Reemplaza con el alto real de tu imagen de cama
+
+            // Configura las coordenadas de la imagen de la cama
+            Canvas.SetLeft(camaImage, left);
+            Canvas.SetTop(camaImage, top);
+            RotateTransform rotateTransform = new RotateTransform(rotation);
+            camaImage.RenderTransform = rotateTransform;
+            container_pj.Children.Add(camaImage);
+        }
+
+        private void ChangeImageBed(int cama)
+        {
+
+
+            if (cama == 1)
+            {
+                if (image.Name == "bedImg1")
+                {
+                    MessageBox.Show("Fasfasd");
+                    //image.Source = new BitmapImage(new Uri(@"pack://application:,,,/images/bedUsed.png", UriKind.Absolute));
+                }
+            }
+            else if (cama == 2)
+            {
+                if (image.Name == "bedImg2")
+                {
+                    //image.Source = new BitmapImage(new Uri(@"pack://application:,,,/images/bedUsed.png", UriKind.Absolute));
+                }
+            }
+
+        }
+
+        private int Rewards(int lvl)
+        {
+            if (lvl == 1)
+            {
+                return 1500;
+            }
+            else if (lvl == 2)
+            {
+                return 2000;
+            }
+            else if (lvl == 3)
+            {
+                return 2750;
+            }
+            else if (lvl == 4)
+            {
+                return 4000;
+            }
+            else
+            {
+                return 10000;
+            }
+        }
     }
 }

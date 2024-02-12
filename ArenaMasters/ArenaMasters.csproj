@@ -10,6 +10,8 @@
   <ItemGroup>
     <None Remove="images\actualizar.png" />
     <None Remove="images\back.png" />
+    <None Remove="images\bedUnused.png" />
+    <None Remove="images\bedUsed.png" />
     <None Remove="images\castle.jpg" />
     <None Remove="images\cementerio.jpg" />
     <None Remove="images\coin.png" />
@@ -26,6 +28,7 @@
     <None Remove="images\map2.png" />
     <None Remove="images\map3.png" />
     <None Remove="images\map4.png" />
+    <None Remove="images\map5.png" />
     <None Remove="images\persona.png" />
     <None Remove="images\personajeLeft.png" />
     <None Remove="images\personajeRight.png" />
@@ -54,6 +57,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="images\back.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bedUnused.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bedUsed.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="images\castle.jpg">
@@ -102,6 +111,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="images\map4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\map5.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="images\persona.png">

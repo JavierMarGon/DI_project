@@ -61,6 +61,7 @@ namespace ArenaMasters
             public int Width { get; set; }
             public int Left { get; set; }
             public int Top { get; set; }
+            public int Rotation { get; set; }
         }
 
         public string json = @"{
@@ -176,6 +177,43 @@ namespace ArenaMasters
                                             ""Width"": 88,
                                             ""Left"": 1324,
                                             ""Top"": 66
+                                        },
+{
+                                            ""Name"": ""bedImg1"",
+                                            ""Height"": 93,
+                                            ""Width"": 109,
+                                            ""Left"": 330,
+                                            ""Top"": 200,
+                                            ""Rotation"": -90
+                                        },
+{
+                                            ""Name"": ""bedCollision1"",
+                                            ""Height"": 93,
+                                            ""Width"": 109,
+                                            ""Left"": 330,
+                                            ""Top"": 120
+                                        },
+{
+                                            ""Name"": ""bedCollision2"",
+                                            ""Height"": 100,
+                                            ""Width"": 102,
+                                            ""Left"": 1018,
+                                            ""Top"": 580
+                                        },
+{
+                                            ""Name"": ""bedImg2"",
+                                            ""Height"": 100,
+                                            ""Width"": 102,
+                                            ""Left"": 1018,
+                                            ""Top"": 580,
+                                            ""Rotation"": 90
+                                        },
+{
+                                            ""Name"": ""finallyLvl"",
+                                            ""Height"": 100,
+                                            ""Width"": 102,
+                                            ""Left"": 1108,
+                                            ""Top"": 76
                                         }
                                     ],
                                     ""Mapa2"": [
@@ -304,6 +342,27 @@ namespace ArenaMasters
                                             ""Width"": 161,
                                             ""Left"": 756,
                                             ""Top"": 693
+                                        },
+                                        {
+                                            ""Name"": ""bedCollision1"",
+                                            ""Height"": 100,
+                                            ""Width"": 102,
+                                            ""Left"": 1157,
+                                            ""Top"": 330
+                                        },
+                                        {
+                                            ""Name"": ""bedCollision2"",
+                                            ""Height"": 100,
+                                            ""Width"": 102,
+                                            ""Left"": 204,
+                                            ""Top"": 447
+                                        },
+                                        {
+                                            ""Name"": ""finallyLvl"",
+                                            ""Height"": 100,
+                                            ""Width"": 102,
+                                            ""Left"": 145,
+                                            ""Top"": 81
                                         }
                                     ],
                                     ""Mapa3"": [
@@ -432,6 +491,27 @@ namespace ArenaMasters
                                            ""Width"": 76,
                                            ""Left"": 18,
                                            ""Top"": 70
+                                       },
+                                       {
+                                           ""Name"": ""bedCollision1"",
+                                           ""Height"": 100,
+                                           ""Width"": 102,
+                                           ""Left"": 1177,
+                                           ""Top"": 175
+                                       },
+                                       {
+                                           ""Name"": ""bedCollision2"",
+                                           ""Height"": 100,
+                                           ""Width"": 102,
+                                           ""Left"": 133,
+                                           ""Top"": 466
+                                       },
+                                       {
+                                           ""Name"": ""finallyLvl"",
+                                           ""Height"": 100,
+                                           ""Width"": 102,
+                                           ""Left"": 1192,
+                                           ""Top"": 439
                                        }
                                     ], 
                                     ""Mapa4"": [
@@ -525,6 +605,20 @@ namespace ArenaMasters
                                            ""Width"": 152,
                                            ""Left"": 486,
                                            ""Top"": 10
+                                       },
+                                       {
+                                           ""Name"": ""bedCollision1"",
+                                           ""Height"": 134,
+                                           ""Width"": 102,
+                                           ""Left"": 1108,
+                                           ""Top"": 84
+                                       },
+                                       {
+                                           ""Name"": ""finallyLvl"",
+                                           ""Height"": 104,
+                                           ""Width"": 102,
+                                           ""Left"": 101,
+                                           ""Top"": 566
                                        }
                                     ]
 

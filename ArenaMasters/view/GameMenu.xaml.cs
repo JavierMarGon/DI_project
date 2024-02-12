@@ -32,8 +32,7 @@ namespace ArenaMasters
         Game game;
         List<Units> units;
         public Units shopItemSelected;
-        Random random = new Random();
-        MediaPlayer mediaPlayer = new MediaPlayer();
+        MusicController controller= new MusicController();
 
         public GameMenu(Game _game)
         {
@@ -96,8 +95,7 @@ namespace ArenaMasters
         {
             try
             {
-                mediaPlayer.Open(new Uri("music/PantallaPrincipal.mp3", UriKind.Relative));
-                mediaPlayer.Play();
+                controller.playPrincipal();
             }
             catch (Exception ex)
             {
@@ -112,7 +110,7 @@ namespace ArenaMasters
             setting.Visibility = Visibility.Visible;
             try
             {
-                mediaPlayer.Close();
+                controller.stop();
                 playSimpleSound();
             }
             catch (Exception ex)
@@ -127,9 +125,7 @@ namespace ArenaMasters
         {
             try
             {
-                mediaPlayer.Close();
-                mediaPlayer.Open(new Uri("music/Cementerio.mp3", UriKind.Relative));
-                mediaPlayer.Play();
+                controller.playCementerio();
             }
             catch (Exception ex)
             {
@@ -147,9 +143,7 @@ namespace ArenaMasters
         {
             try
             {
-                mediaPlayer.Close();
-                mediaPlayer.Open(new Uri("music/Taberna.mp3", UriKind.Relative));
-                mediaPlayer.Play();
+                controller.playTaberna();
             }
             catch (Exception ex)
             {
@@ -173,7 +167,7 @@ namespace ArenaMasters
             setting.Visibility = Visibility.Visible;
             try
             {
-                mediaPlayer.Close();
+                controller.stop();
                 playSimpleSound();
             }
             catch (Exception ex)
@@ -192,9 +186,7 @@ namespace ArenaMasters
         {
             try
             {
-                mediaPlayer.Close();
-                mediaPlayer.Open(new Uri("music/Encrucijada.mp3", UriKind.Relative));
-                mediaPlayer.Play();
+                controller.playEncrucijada();
             }
             catch (Exception ex)
             {
@@ -273,7 +265,7 @@ namespace ArenaMasters
             setting.Visibility = Visibility.Visible;
             try
             {
-                mediaPlayer.Close();
+                controller.stop();
                 playSimpleSound();
             }
             catch (Exception ex)

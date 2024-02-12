@@ -25,13 +25,13 @@ namespace ArenaMasters
     {
         ArenaMastersManager manager = new ArenaMastersManager();
         Game game;
+        MusicController m_controller=new MusicController();
         
-        MediaPlayer mediaPlayer = new MediaPlayer();
         public MainWindow()
         {
             
             InitializeComponent();
-            playSimpleSound();
+            m_controller.playInicioSesion();
             DataContext = manager;
             manager.MainWindow= this;
             if (manager.id_User > 0)
@@ -45,6 +45,7 @@ namespace ArenaMasters
         public MainWindow(int user, string username)
         {
             InitializeComponent();
+            m_controller.playInicioSesion();
             DataContext = manager;
             manager.MainWindow = this;
             manager.id_User = user;
@@ -52,7 +53,7 @@ namespace ArenaMasters
             EnablingMenu();
             menu_login.Visibility = Visibility.Collapsed;
             menu_user.Visibility = Visibility.Visible;
-            playSimpleSound();
+            
         }
         
 
@@ -74,18 +75,7 @@ namespace ArenaMasters
             }
         }
 
-        private void playSimpleSound()
-        {
-            try
-            {
-                mediaPlayer.Open(new Uri("music/InicioSesion.mp3", UriKind.Relative));
-                mediaPlayer.Play();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        
 
         private void click_register(object sender, RoutedEventArgs e)
         {
@@ -142,7 +132,7 @@ namespace ArenaMasters
 
         private void click_continue(object sender, RoutedEventArgs e)
         {
-            mediaPlayer.Close();
+            m_controller.stop();
             int id_game = manager.ContinueGame(manager.id_User);
             game = manager.GetGame(id_game, manager.userName, manager.id_User);
             GameMenu menu = new GameMenu(game);
@@ -151,9 +141,10 @@ namespace ArenaMasters
         }
         private void click_newGame(object sender, RoutedEventArgs e)
         {
-            mediaPlayer.Close();
+            
             if(manager.NewGame(manager.id_User) > 0)
             {
+                m_controller.stop();
                 int id_game = manager.ContinueGame(manager.id_User);
                 game = manager.GetGame(id_game, manager.userName, manager.id_User);
                 GameMenu menu = new GameMenu(game);

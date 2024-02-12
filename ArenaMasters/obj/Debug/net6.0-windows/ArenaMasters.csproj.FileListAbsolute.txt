@@ -1147,3 +1147,17 @@ C:\Users\DAM2B-09\Desktop\ProyectDi\DI_project\ArenaMasters\obj\Debug\net6.0-win
 C:\Users\DAM2B-09\Desktop\ProyectDi\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters.pdb
 C:\Users\DAM2B-09\Desktop\ProyectDi\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ArenaMasters.genruntimeconfig.cache
 C:\Users\DAM2B-09\Desktop\ProyectDi\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ref\ArenaMasters.dll
+C:\Users\javier.martin.gonzal\source\repos\DI_project\ArenaMasters\bin\Debug\net6.0-windows\music\Cementerio.mp3
+C:\Users\javier.martin.gonzal\source\repos\DI_project\ArenaMasters\bin\Debug\net6.0-windows\music\Encrucijada.mp3
+C:\Users\javier.martin.gonzal\source\repos\DI_project\ArenaMasters\bin\Debug\net6.0-windows\music\FinalDungeonBattle.mp3
+C:\Users\javier.martin.gonzal\source\repos\DI_project\ArenaMasters\bin\Debug\net6.0-windows\music\FinalDungeonBossFightPhase1.mp3
+C:\Users\javier.martin.gonzal\source\repos\DI_project\ArenaMasters\bin\Debug\net6.0-windows\music\FinalDungeonBossFightPhase2.mp3
+C:\Users\javier.martin.gonzal\source\repos\DI_project\ArenaMasters\bin\Debug\net6.0-windows\music\FinalDungeonMapFinal.mp3
+C:\Users\javier.martin.gonzal\source\repos\DI_project\ArenaMasters\bin\Debug\net6.0-windows\music\FinalDungeonMapPhase1.mp3
+C:\Users\javier.martin.gonzal\source\repos\DI_project\ArenaMasters\bin\Debug\net6.0-windows\music\FinalDungeonMapPhase2.mp3
+C:\Users\javier.martin.gonzal\source\repos\DI_project\ArenaMasters\bin\Debug\net6.0-windows\music\InicioSesion.mp3
+C:\Users\javier.martin.gonzal\source\repos\DI_project\ArenaMasters\bin\Debug\net6.0-windows\music\MoneyDungeonBattle.mp3
+C:\Users\javier.martin.gonzal\source\repos\DI_project\ArenaMasters\bin\Debug\net6.0-windows\music\MoneyDungeonMap.mp3
+C:\Users\javier.martin.gonzal\source\repos\DI_project\ArenaMasters\bin\Debug\net6.0-windows\music\PantallaPrincipal.mp3
+C:\Users\javier.martin.gonzal\source\repos\DI_project\ArenaMasters\bin\Debug\net6.0-windows\music\sonido_mouseEnter.mp3
+C:\Users\javier.martin.gonzal\source\repos\DI_project\ArenaMasters\bin\Debug\net6.0-windows\music\Taberna.mp3

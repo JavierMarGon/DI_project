@@ -28,6 +28,10 @@ namespace ArenaMasters
                     return mapasContainer.Mapa3;
                 case 4:
                     return mapasContainer.Mapa4;
+                case 5:
+                    return mapasContainer.Mapa5;
+                case 6:
+                    return mapasContainer.Mapa6;
                 default:
                     throw new ArgumentException("Nombre de mapa no válido");
             }
@@ -51,6 +55,12 @@ namespace ArenaMasters
 
             [JsonProperty("Mapa4")]
             public List<ColisionMapa> Mapa4 { get; set; }
+
+            [JsonProperty("Mapa5")]
+            public List<ColisionMapa> Mapa5 { get; set; }
+
+            [JsonProperty("Mapa6")]
+            public List<ColisionMapa> Mapa6 { get; set; }
         }
 
         // Clase para representar cada elemento del array en el JSON
@@ -646,12 +656,178 @@ namespace ArenaMasters
                                            ""Top"": 84
                                        },
                                        {
+                                           ""Name"": ""bedImg1"",
+                                           ""Height"": 93,
+                                           ""Width"": 109,
+                                           ""Left"": 1200,
+                                           ""Top"":119,
+                                           ""Rotation"": 90
+                                       },
+                                       {
                                            ""Name"": ""finallyLvl"",
                                            ""Height"": 104,
                                            ""Width"": 102,
                                            ""Left"": 101,
                                            ""Top"": 566
                                        }
+                                    ],""Mapa5"": [
+                                          {
+                                             ""Name"": ""colisionmapa63"",
+                                             ""Height"": 119,
+                                             ""Width"": 1268,
+                                             ""Left"": 45,
+                                             ""Top"": 71
+                                          },
+                                          {
+                                             ""Name"": ""colisionmapa64"",
+                                             ""Height"": 268,
+                                             ""Width"": 304,
+                                             ""Left"": 522,
+                                             ""Top"": 304
+                                          },
+                                          {
+                                             ""Name"": ""colisionmapa65"",
+                                             ""Height"": 268,
+                                             ""Width"": 110,
+                                             ""Left"": 294,
+                                             ""Top"": 304
+                                          },
+                                          {
+                                             ""Name"": ""colisionmapa66"",
+                                             ""Height"": 141,
+                                             ""Width"": 211,
+                                             ""Left"": 78,
+                                             ""Top"": 438
+                                          },
+                                          {
+                                             ""Name"": ""colisionmapa67"",
+                                             ""Height"": 141,
+                                             ""Width"": 191,
+                                             ""Left"": 45,
+                                             ""Top"": 557
+                                          },
+                                          {
+                                             ""Name"": ""colisionmapa68"",
+                                             ""Height"": 51,
+                                             ""Width"": 1268,
+                                             ""Left"": 40,
+                                             ""Top"": 698
+                                          },
+                                          {
+                                             ""Name"": ""colisionmapa69"",
+                                             ""Height"": 141,
+                                             ""Width"": 68,
+                                             ""Left"": 10,
+                                             ""Top"": 292
+                                          },
+                                          {
+                                             ""Name"": ""colisionmapa70"",
+                                             ""Height"": 141,
+                                             ""Width"": 112,
+                                             ""Left"": 72,
+                                             ""Top"": 151
+                                          },
+                                          {
+                                             ""Name"": ""colisionmapa71"",
+                                             ""Height"": 244,
+                                             ""Width"": 86,
+                                             ""Left"": 972,
+                                             ""Top"": 316
+                                          },
+                                          {
+                                             ""Name"": ""colisionmapa72"",
+                                             ""Height"": 99,
+                                             ""Width"": 289,
+                                             ""Left"": 1063,
+                                             ""Top"": 316
+                                          },
+                                          {
+                                             ""Name"": ""colisionmapa73"",
+                                             ""Height"": 159,
+                                             ""Width"": 86,
+                                             ""Left"": 1289,
+                                             ""Top"": 420
+                                          },
+                                          {
+                                             ""Name"": ""colisionmapa74"",
+                                             ""Height"": 159,
+                                             ""Width"": 86,
+                                             ""Left"": 1289,
+                                             ""Top"": 157
+                                          },
+                                          {
+                                             ""Name"": ""colisionmapa75"",
+                                             ""Height"": 160,
+                                             ""Width"": 110,
+                                             ""Left"": 1203,
+                                             ""Top"": 564
+                                          },
+                                          {
+                                             ""Name"": ""bedCollision1"",
+                                             ""Height"": 134,
+                                             ""Width"": 102,
+                                             ""Left"": 1108,
+                                             ""Top"": 84
+                                          },
+                                          {
+                                             ""Name"": ""bedImg1"",
+                                             ""Height"": 93,
+                                             ""Width"": 109,
+                                             ""Left"": 1200,
+                                             ""Top"": 119,
+                                             ""Rotation"": 90
+                                          },
+                                          {
+                                             ""Name"": ""finallyLvl"",
+                                             ""Height"": 69,
+                                             ""Width"": 71,
+                                             ""Left"": 112,
+                                             ""Top"": 336
+                                          }
+                                       ],
+                                        ""Mapa6"": [
+                                        {
+                                            ""Name"": ""colisionmapa63"",
+                                            ""Height"": 215,
+                                            ""Width"": 661,
+                                            ""Left"": 69,
+                                            ""Top"": 84
+                                        },
+                                        {
+                                            ""Name"": ""colisionmapa64"",
+                                            ""Height"": 165,
+                                            ""Width"": 660,
+                                            ""Left"": 688,
+                                            ""Top"": 65
+                                        },
+                                        {
+                                            ""Name"": ""colisionmapa65"",
+                                            ""Height"": 165,
+                                            ""Width"": 660,
+                                            ""Left"": 688,
+                                            ""Top"": 535
+                                        },
+                                        {
+                                            ""Name"": ""colisionmapa66"",
+                                            ""Height"": 166,
+                                            ""Width"": 660,
+                                            ""Left"": 70,
+                                            ""Top"": 452
+                                        },
+                                        {
+                                            ""Name"": ""colisionmapa67"",
+                                            ""Height"": 410,
+                                            ""Width"": 55,
+                                            ""Left"": 1295,
+                                            ""Top"": 192
+                                        },
+                                        {
+                                            ""Name"": ""colisionmapa68"",
+                                            ""Height"": 410,
+                                            ""Width"": 55,
+                                            ""Left"": 33,
+                                            ""Top"": 175
+                                        }
                                     ]
 
 

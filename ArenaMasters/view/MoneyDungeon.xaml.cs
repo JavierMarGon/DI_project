@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using static ArenaMasters.Collisions;
 
 namespace ArenaMasters
@@ -26,9 +27,11 @@ namespace ArenaMasters
         int profit;
         private ImageBrush personajeLeft;
         private ImageBrush personajeRight;
+        private ImageBrush personajeStatic;
         //Clase con los datos de movimiento del pj
         PlayableDungeonMovement pj;
-        MusicController controller = new MusicController();
+        private DispatcherTimer timer;
+        MusicController controller =  new MusicController();
         //Instancia de rectangulo para generar el pj
         public System.Windows.Shapes.Rectangle image = new System.Windows.Shapes.Rectangle();
 
@@ -43,9 +46,12 @@ namespace ArenaMasters
             profit = Rewards(lvl);
             game = _game;
             AgregarRectangulos(lvl);
-           
-            
+            timer = new System.Windows.Threading.DispatcherTimer();
+            timer.Interval = TimeSpan.FromMilliseconds(400);
+            timer.Tick += Timer_Tick;
+
         }
+
         private void exitClick(object sender, RoutedEventArgs e)
         {
             CautionMessage.Visibility = Visibility.Visible;
@@ -99,6 +105,8 @@ namespace ArenaMasters
                 pj.MarginTop = originalTop;
                 updateImage();
             }
+            timer.Stop();
+            timer.Start();
         }
 
 
@@ -233,14 +241,24 @@ namespace ArenaMasters
             {
                 backgroundImage.ImageSource = new BitmapImage(new Uri(@"pack://application:,,,/images/map4.png", UriKind.Absolute));
             }
-
+            else if (lvl == 5)
+            {
+                backgroundImage.ImageSource = new BitmapImage(new Uri(@"pack://application:,,,/images/map5.png", UriKind.Absolute));
+            }
+            else if (lvl == 6)
+            {
+                backgroundImage.ImageSource = new BitmapImage(new Uri(@"pack://application:,,,/images/map6.png", UriKind.Absolute));
+            }
             // Establecer un color sólido como fondo
+            personajeStatic = new ImageBrush();
+            personajeStatic.ImageSource = new BitmapImage(new Uri(@"pack://application:,,,/images/PlayerStatic.png", UriKind.Absolute));
+
             personajeLeft = new ImageBrush();
-            personajeLeft.ImageSource = new BitmapImage(new Uri(@"pack://application:,,,/images/personajeLeft.png", UriKind.Absolute));
+            personajeLeft.ImageSource = new BitmapImage(new Uri(@"pack://application:,,,/images/PlayerMovementLeft.png", UriKind.Absolute));
 
             personajeRight = new ImageBrush();
-            personajeRight.ImageSource = new BitmapImage(new Uri(@"pack://application:,,,/images/personajeRight.png", UriKind.Absolute));
-            image.Fill = personajeRight; // Color de relleno del rectángulo
+            personajeRight.ImageSource = new BitmapImage(new Uri(@"pack://application:,,,/images/PlayerMovementRight.png", UriKind.Absolute));
+            image.Fill = personajeStatic; // Color de relleno del rectángulo
             image.Name = "player";
 
             Canvas.SetLeft(image, pj.MarginLeft); // Posición izquierda de la imagen
@@ -252,7 +270,6 @@ namespace ArenaMasters
 
         private void CheckFinally()
         {
-            controller.switchMoneyDungeonBattle();
             MessageBoxResult result = MessageBox.Show("¿Quieres continuar?", "Confirmación", MessageBoxButton.OKCancel);
 
             if (result == MessageBoxResult.OK)
@@ -262,19 +279,15 @@ namespace ArenaMasters
                 this.Close();
                 md.Show();
             }
-            else
-            {
-                controller.switchMoneyDungeonMap();
-            }
         }
 
         private void AgregarImagenCama(string name, double height, double width, double left, double top, int rotation)
         {
             Image camaImage = new Image();
             camaImage.Name = name;
-            camaImage.Source = new BitmapImage(new Uri(@"pack://application:,,,/images/bedUnused.png", UriKind.Absolute)); 
+            camaImage.Source = new BitmapImage(new Uri(@"pack://application:,,,/images/bedUnused.png", UriKind.Absolute));
             camaImage.Width = width;
-            camaImage.Height = height; 
+            camaImage.Height = height;
 
             Canvas.SetLeft(camaImage, left);
             Canvas.SetTop(camaImage, top);
@@ -309,6 +322,13 @@ namespace ArenaMasters
 
         }
 
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            // Se ejecutará cada vez que transcurra 1 segundo sin presionar ninguna tecla
+            image.Fill = personajeStatic; // Cambia la imagen del jugador a la estática
+            timer.Stop(); // Detiene el temporizador
+        }
+
         private int Rewards(int lvl)
         {
             if (lvl == 1)
@@ -332,6 +352,7 @@ namespace ArenaMasters
                 return 10000;
             }
         }
+    
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {

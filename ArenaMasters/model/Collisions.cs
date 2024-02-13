@@ -178,7 +178,7 @@ namespace ArenaMasters
                                             ""Left"": 1324,
                                             ""Top"": 66
                                         },
-{
+                                        {
                                             ""Name"": ""bedImg1"",
                                             ""Height"": 93,
                                             ""Width"": 109,
@@ -186,29 +186,29 @@ namespace ArenaMasters
                                             ""Top"": 200,
                                             ""Rotation"": -90
                                         },
-{
+                                        {
                                             ""Name"": ""bedCollision1"",
                                             ""Height"": 93,
                                             ""Width"": 109,
                                             ""Left"": 330,
                                             ""Top"": 120
                                         },
-{
+                                        {
                                             ""Name"": ""bedCollision2"",
                                             ""Height"": 100,
                                             ""Width"": 102,
                                             ""Left"": 1018,
                                             ""Top"": 580
                                         },
-{
+                                        {
                                             ""Name"": ""bedImg2"",
                                             ""Height"": 100,
                                             ""Width"": 102,
-                                            ""Left"": 1018,
+                                            ""Left"": 1095,
                                             ""Top"": 580,
                                             ""Rotation"": 90
                                         },
-{
+                                        {
                                             ""Name"": ""finallyLvl"",
                                             ""Height"": 100,
                                             ""Width"": 102,
@@ -344,11 +344,27 @@ namespace ArenaMasters
                                             ""Top"": 693
                                         },
                                         {
+                                            ""Name"": ""bedImg1"",
+                                            ""Height"": 93,
+                                            ""Width"": 109,
+                                            ""Left"": 1100,
+                                            ""Top"": 420,
+                                            ""Rotation"": -90
+                                        },
+                                        {
                                             ""Name"": ""bedCollision1"",
                                             ""Height"": 100,
                                             ""Width"": 102,
                                             ""Left"": 1157,
                                             ""Top"": 330
+                                        },
+                                        {
+                                            ""Name"": ""bedImg2"",
+                                            ""Height"": 93,
+                                            ""Width"": 109,
+                                            ""Left"": 214,
+                                            ""Top"": 444,
+                                            ""Rotation"": 0
                                         },
                                         {
                                             ""Name"": ""bedCollision2"",
@@ -493,11 +509,27 @@ namespace ArenaMasters
                                            ""Top"": 70
                                        },
                                        {
+                                           ""Name"": ""bedImg1"",
+                                           ""Height"": 93,
+                                           ""Width"": 109,
+                                           ""Left"": 1257,
+                                           ""Top"": 183,
+                                           ""Rotation"": 90
+                                       },
+                                       {
                                            ""Name"": ""bedCollision1"",
                                            ""Height"": 100,
                                            ""Width"": 102,
                                            ""Left"": 1177,
                                            ""Top"": 175
+                                       },
+                                       {
+                                           ""Name"": ""bedImg2"",
+                                           ""Height"": 93,
+                                           ""Width"": 109,
+                                           ""Left"": 115,
+                                           ""Top"": 550,
+                                           ""Rotation"": -90
                                        },
                                        {
                                            ""Name"": ""bedCollision2"",

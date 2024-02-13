@@ -121,7 +121,7 @@ namespace ArenaMasters
                     {
                         if (jugadorRect.IntersectsWith(mapaRect))
                         {
-                            MessageBox.Show("Choque con la cama 1");
+                            MessageBox.Show("Has recuperado vida");
                             ChangeImageBed(1);
                         }
                     }
@@ -129,7 +129,7 @@ namespace ArenaMasters
                     {
                         if (jugadorRect.IntersectsWith(mapaRect))
                         {
-                            MessageBox.Show("Choque con la cama 2");
+                            MessageBox.Show("Has recuperado vida");
                             ChangeImageBed(2);
                         }
                     }
@@ -266,11 +266,11 @@ namespace ArenaMasters
         private void AgregarImagenCama(string name, double height, double width, double left, double top, int rotation)
         {
             Image camaImage = new Image();
-            camaImage.Source = new BitmapImage(new Uri(@"pack://application:,,,/images/bedUnused.png", UriKind.Absolute)); // Reemplaza "ruta_de_la_imagen_de_cama" con la ruta real de tu imagen de cama
-            camaImage.Width = width; // Reemplaza con el ancho real de tu imagen de cama
-            camaImage.Height = height; // Reemplaza con el alto real de tu imagen de cama
+            camaImage.Name = name;
+            camaImage.Source = new BitmapImage(new Uri(@"pack://application:,,,/images/bedUnused.png", UriKind.Absolute)); 
+            camaImage.Width = width;
+            camaImage.Height = height; 
 
-            // Configura las coordenadas de la imagen de la cama
             Canvas.SetLeft(camaImage, left);
             Canvas.SetTop(camaImage, top);
             RotateTransform rotateTransform = new RotateTransform(rotation);
@@ -282,21 +282,25 @@ namespace ArenaMasters
         {
 
 
-            if (cama == 1)
+            string camaCollisionName = $"bedCollision{cama}";
+            string camaUsedName = $"bedUsed{cama}";
+            string camaImgName = $"bedImg{cama}";
+
+            foreach (UIElement element in container_pj.Children)
             {
-                if (image.Name == "bedImg1")
+                if (element is Rectangle rectangle && rectangle.Name == camaCollisionName)
                 {
-                    MessageBox.Show("Fasfasd");
-                    //image.Source = new BitmapImage(new Uri(@"pack://application:,,,/images/bedUsed.png", UriKind.Absolute));
+                    rectangle.Name = camaUsedName;
+                }
+                else if (element is Image image && image.Name == camaImgName)
+                {
+                    if (image.Source != null)
+                    {
+                        image.Source = new BitmapImage(new Uri(@"pack://application:,,,/images/bedUsed.png", UriKind.Absolute));
+                    }
                 }
             }
-            else if (cama == 2)
-            {
-                if (image.Name == "bedImg2")
-                {
-                    //image.Source = new BitmapImage(new Uri(@"pack://application:,,,/images/bedUsed.png", UriKind.Absolute));
-                }
-            }
+
 
         }
 

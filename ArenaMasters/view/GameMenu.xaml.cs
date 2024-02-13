@@ -44,6 +44,7 @@ namespace ArenaMasters
             initializeUnits();
             DataContext = manager;
             manager.GameMenu = this;
+           
 
 
         }

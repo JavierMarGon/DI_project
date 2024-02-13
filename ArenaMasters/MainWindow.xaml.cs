@@ -135,9 +135,11 @@ namespace ArenaMasters
             m_controller.stop();
             int id_game = manager.ContinueGame(manager.id_User);
             game = manager.GetGame(id_game, manager.userName, manager.id_User);
-            GameMenu menu = new GameMenu(game);
+            MoneyDungeon moneyDungeon = new MoneyDungeon(3, game);
+            moneyDungeon.Show();
+            //GameMenu menu = new GameMenu(game);
             this.Close();
-            menu.Show();
+            //menu.Show();
         }
         private void click_newGame(object sender, RoutedEventArgs e)
         {

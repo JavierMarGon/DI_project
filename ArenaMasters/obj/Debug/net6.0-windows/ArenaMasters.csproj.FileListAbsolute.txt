@@ -654,8 +654,6 @@ C:\Users\javier.martin.gonzal\Source\Repos\DI_project\ArenaMasters\bin\Debug\net
 C:\Users\javier.martin.gonzal\Source\Repos\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\map3.png
 C:\Users\javier.martin.gonzal\Source\Repos\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\map4.png
 C:\Users\javier.martin.gonzal\Source\Repos\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\persona.png
-C:\Users\javier.martin.gonzal\Source\Repos\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\personajeRight.png
-C:\Users\javier.martin.gonzal\Source\Repos\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\personajeLeft.png
 C:\Users\javier.martin.gonzal\Source\Repos\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\salir.png
 C:\Users\javier.martin.gonzal\Source\Repos\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\settings.png
 C:\Users\javier.martin.gonzal\Source\Repos\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\tavern.jpg
@@ -1271,3 +1269,7 @@ C:\Users\franl\OneDrive\Escritorio\proyectoDI\DI_project\ArenaMasters\bin\Debug\
 C:\Users\javier.martin.gonzal\source\repos\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\bedUnused.png
 C:\Users\javier.martin.gonzal\source\repos\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\bedUsed.png
 C:\Users\javier.martin.gonzal\source\repos\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\map5.png
+C:\Users\javier.martin.gonzal\source\repos\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\map6.png
+C:\Users\javier.martin.gonzal\source\repos\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\PlayerMovementLeft.png
+C:\Users\javier.martin.gonzal\source\repos\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\PlayerMovementRight.png
+C:\Users\javier.martin.gonzal\source\repos\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\PlayerStatic.png

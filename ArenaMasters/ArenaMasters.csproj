@@ -29,9 +29,13 @@
     <None Remove="images\map3.png" />
     <None Remove="images\map4.png" />
     <None Remove="images\map5.png" />
+    <None Remove="images\map6.png" />
     <None Remove="images\persona.png" />
     <None Remove="images\personajeLeft.png" />
     <None Remove="images\personajeRight.png" />
+    <None Remove="images\PlayerMovementLeft.png" />
+    <None Remove="images\PlayerMovementRight.png" />
+    <None Remove="images\PlayerStatic.png" />
     <None Remove="images\salir.png" />
     <None Remove="images\settings.png" />
     <None Remove="images\tavern.jpg" />
@@ -116,13 +120,19 @@
     <Content Include="images\map5.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="images\map6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="images\persona.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="images\personajeRight.png">
+    <Content Include="images\PlayerMovementLeft.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="images\personajeLeft.png">
+    <Content Include="images\PlayerMovementRight.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\PlayerStatic.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="images\salir.png">

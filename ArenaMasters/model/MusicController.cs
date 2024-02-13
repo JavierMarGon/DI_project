@@ -5,51 +5,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
+using System.Windows.Threading;
 
 namespace ArenaMasters.model
 {
     internal class MusicController
     {
-        MediaPlayer mediaPlayer = new MediaPlayer();
+        MediaPlayer mediaPrincipal = new MediaPlayer();
+        MediaPlayer mediaBattle = new MediaPlayer();
         private void Media_Ended(object sender, EventArgs e)
         {
-            mediaPlayer.Position = TimeSpan.Zero;
-            mediaPlayer.Play();
+            mediaPrincipal.Position = TimeSpan.Zero;
+            mediaPrincipal.Play();
         }
+        
         public void playInicioSesion()
         {
             try
             {
-                mediaPlayer.Open(new Uri("music/InicioSesion.mp3", UriKind.Relative));
-                mediaPlayer.MediaEnded += new EventHandler(Media_Ended);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-        public void playCementerio()
-        {
-            try
-            {
-                mediaPlayer.Close();
-                mediaPlayer.Open(new Uri("music/Cementerio.mp3", UriKind.Relative));
-                mediaPlayer.MediaEnded += new EventHandler(Media_Ended);
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-        public void playTaberna()
-        {
-            try
-            {
-                mediaPlayer.Close();
-                mediaPlayer.Open(new Uri("music/Taberna.mp3", UriKind.Relative));
-                mediaPlayer.MediaEnded += new EventHandler(Media_Ended);
-
+                mediaPrincipal.Open(new Uri("music/InicioSesion.mp3", UriKind.Relative));
+                mediaPrincipal.Play();
+                mediaPrincipal.MediaEnded += new EventHandler(Media_Ended);
             }
             catch (Exception ex)
             {
@@ -60,9 +36,10 @@ namespace ArenaMasters.model
         {
             try
             {
-                mediaPlayer.Close();
-                mediaPlayer.Open(new Uri("music/PantallaPrincipal.mp3", UriKind.Relative));
-                mediaPlayer.MediaEnded += new EventHandler(Media_Ended);
+                mediaPrincipal.Close();
+                mediaPrincipal.Open(new Uri("music/PantallaPrincipal.mp3", UriKind.Relative));
+                mediaPrincipal.Play();
+                mediaPrincipal.MediaEnded += new EventHandler(Media_Ended);
 
             }
             catch (Exception ex)
@@ -70,14 +47,24 @@ namespace ArenaMasters.model
                 MessageBox.Show(ex.Message);
             }
         }
-        public void playEncrucijada()
+        public async Task playMoneyDungeonMap()
         {
             try
             {
-                mediaPlayer.Close();
-                mediaPlayer.Open(new Uri("music/Encrucijada.mp3", UriKind.Relative));
-                mediaPlayer.Play();
-                mediaPlayer.MediaEnded += new EventHandler(Media_Ended);
+                mediaBattle.Close();
+                mediaBattle.Open(new Uri("music/MoneyDungeonBattle.mp3", UriKind.Relative));
+                mediaBattle.Volume = 0;
+                mediaBattle.Play();
+                mediaPrincipal.Close();
+                mediaPrincipal.Open(new Uri("music/MoneyDungeonMap.mp3", UriKind.Relative));
+                mediaPrincipal.Volume = 0;
+                mediaPrincipal.Play();
+                for (float i = 0.01f; i < 0.5; i += 0.01f)
+                {
+                    await Task.Delay(150);
+                    mediaPrincipal.Volume += i;
+                }
+                mediaPrincipal.MediaEnded += new EventHandler(Media_Ended);
 
             }
             catch (Exception ex)
@@ -85,10 +72,62 @@ namespace ArenaMasters.model
                 MessageBox.Show(ex.Message);
             }
         }
-        
+        public async Task switchMoneyDungeonBattle()
+        {
+            try
+            {
+                
+                for (float i = 0.01f; i < 0.5; i+=0.01f)
+                {
+                    await Task.Delay(100);
+                    mediaPrincipal.Volume -= i;
+                    mediaBattle.Volume += i;
+                }
+                mediaBattle.MediaEnded += new EventHandler(Media_Ended);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public async Task switchMoneyDungeonMap()
+        {
+            try
+            {
+
+                for (float i = 0.01f; i < 0.5; i += 0.01f)
+                {
+                    await Task.Delay(100);
+                    mediaPrincipal.Volume += i;
+                    mediaBattle.Volume -= i;
+                }
+                mediaBattle.MediaEnded += new EventHandler(Media_Ended);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void switchVolume()
+        {
+            try
+            {
+                mediaPrincipal.Volume= 0.2;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void restoreVolume()
+        {
+            mediaPrincipal.Volume = 0.5;
+        }
         public void stop()
         {
-            mediaPlayer.Close();
+            mediaPrincipal.Close();
         }
     }
 

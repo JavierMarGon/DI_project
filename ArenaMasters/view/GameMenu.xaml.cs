@@ -111,8 +111,7 @@ namespace ArenaMasters
             setting.Visibility = Visibility.Visible;
             try
             {
-                controller.stop();
-                playSimpleSound();
+                controller.restoreVolume();
             }
             catch (Exception ex)
             {
@@ -126,7 +125,7 @@ namespace ArenaMasters
         {
             try
             {
-                controller.playCementerio();
+                controller.switchVolume();
             }
             catch (Exception ex)
             {
@@ -144,7 +143,7 @@ namespace ArenaMasters
         {
             try
             {
-                controller.playTaberna();
+                controller.switchVolume();
             }
             catch (Exception ex)
             {
@@ -168,8 +167,7 @@ namespace ArenaMasters
             setting.Visibility = Visibility.Visible;
             try
             {
-                controller.stop();
-                playSimpleSound();
+                controller.restoreVolume();
             }
             catch (Exception ex)
             {
@@ -187,7 +185,7 @@ namespace ArenaMasters
         {
             try
             {
-                controller.playEncrucijada();
+                controller.switchVolume();
             }
             catch (Exception ex)
             {
@@ -266,8 +264,9 @@ namespace ArenaMasters
             setting.Visibility = Visibility.Visible;
             try
             {
-                controller.stop();
-                playSimpleSound();
+                controller.restoreVolume();
+                //controller.stop();
+                //playSimpleSound();
             }
             catch (Exception ex)
             {
@@ -316,6 +315,7 @@ namespace ArenaMasters
         public void levelSelected1(object sender, RoutedEventArgs e)
         {
             level = 1;
+            controller.stop();
             MoneyDungeon moneyDungeon = new MoneyDungeon(level, game);
             moneyDungeon.Show();
             this.Close();
@@ -324,23 +324,26 @@ namespace ArenaMasters
         public void levelSelected2(object sender, RoutedEventArgs e)
         {
             level = 2;
+            controller.stop();
             MoneyDungeon moneyDungeon = new MoneyDungeon(level, game);
-            this.Close();
             moneyDungeon.Show();
+            this.Close();
         }
         public void levelSelected3(object sender, RoutedEventArgs e)
         {
             level = 3;
+            controller.stop();
             MoneyDungeon moneyDungeon = new MoneyDungeon(level, game);
-            this.Close();
             moneyDungeon.Show();
+            this.Close();
         }
         public void levelSelected4(object sender, RoutedEventArgs e)
         {
             level = 4;
+            controller.stop();
             MoneyDungeon moneyDungeon = new MoneyDungeon(level, game);
-            this.Close();
             moneyDungeon.Show();
+            this.Close();
         }
         public void levelSelected5(object sender, RoutedEventArgs e)
         {

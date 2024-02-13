@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ArenaMasters"
         mc:Ignorable="d"
-        Title="MoneyDungeon" Height="775" Width="1375" Focusable="True" PreviewKeyDown="Window_PreviewKeyDown">
+        Title="MoneyDungeon" Height="775" Width="1375" Focusable="True" PreviewKeyDown="Window_PreviewKeyDown"
+        Loaded="Window_Loaded">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

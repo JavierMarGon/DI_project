@@ -1268,3 +1268,6 @@ C:\Users\franl\OneDrive\Escritorio\proyectoDI\DI_project\ArenaMasters\bin\Debug\
 C:\Users\franl\OneDrive\Escritorio\proyectoDI\DI_project\ArenaMasters\bin\Debug\net6.0-windows\music\PantallaPrincipal.mp3
 C:\Users\franl\OneDrive\Escritorio\proyectoDI\DI_project\ArenaMasters\bin\Debug\net6.0-windows\music\sonido_mouseEnter.mp3
 C:\Users\franl\OneDrive\Escritorio\proyectoDI\DI_project\ArenaMasters\bin\Debug\net6.0-windows\music\Taberna.mp3
+C:\Users\javier.martin.gonzal\source\repos\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\bedUnused.png
+C:\Users\javier.martin.gonzal\source\repos\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\bedUsed.png
+C:\Users\javier.martin.gonzal\source\repos\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\map5.png

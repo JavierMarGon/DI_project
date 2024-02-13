@@ -28,7 +28,7 @@ namespace ArenaMasters
         private ImageBrush personajeRight;
         //Clase con los datos de movimiento del pj
         PlayableDungeonMovement pj;
-
+        MusicController controller = new MusicController();
         //Instancia de rectangulo para generar el pj
         public System.Windows.Shapes.Rectangle image = new System.Windows.Shapes.Rectangle();
 
@@ -43,9 +43,9 @@ namespace ArenaMasters
             profit = Rewards(lvl);
             game = _game;
             AgregarRectangulos(lvl);
-
+           
+            
         }
-
         private void exitClick(object sender, RoutedEventArgs e)
         {
             CautionMessage.Visibility = Visibility.Visible;
@@ -252,6 +252,7 @@ namespace ArenaMasters
 
         private void CheckFinally()
         {
+            controller.switchMoneyDungeonBattle();
             MessageBoxResult result = MessageBox.Show("¿Quieres continuar?", "Confirmación", MessageBoxButton.OKCancel);
 
             if (result == MessageBoxResult.OK)
@@ -260,6 +261,10 @@ namespace ArenaMasters
                 MoneyDungeon md = new MoneyDungeon(lvl + 1, game);
                 this.Close();
                 md.Show();
+            }
+            else
+            {
+                controller.switchMoneyDungeonMap();
             }
         }
 
@@ -326,6 +331,11 @@ namespace ArenaMasters
             {
                 return 10000;
             }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            controller.playMoneyDungeonMap();
         }
     }
 }

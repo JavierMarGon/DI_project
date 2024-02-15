@@ -15,7 +15,7 @@
         </ResourceDictionary>
     </Window.Resources>
     <Window.Background>
-        <ImageBrush x:Name="backgroundImage" ImageSource="/images/map3.png" />
+        <ImageBrush x:Name="backgroundImage" ImageSource="/images/map1.png" />
     </Window.Background>
     <Grid>
         <StackPanel Orientation="Horizontal" Height="40" VerticalAlignment="Top">
@@ -39,16 +39,7 @@
             </StackPanel>
         </StackPanel>
         <Canvas x:Name="container_pj">
-            <!--<Image Source="/images/bedUnused.png" Canvas.Left="1167" Canvas.Top="173" RenderTransformOrigin="0.5,0.5">
-                <Image.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="90"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Image.RenderTransform>
-            </Image>-->
+            <!--<Image Height="45" Width="50" Source="/images/dragon.png" Canvas.Left="688" Canvas.Top="365" HorizontalAlignment="Center" VerticalAlignment="Top"/>-->
         </Canvas>
     </Grid>
 

@@ -160,6 +160,13 @@ namespace ArenaMasters
                         {
                             CheckFinally();
                         }
+                    }else if(rectangulo.Name == "enemigoColl1")
+                    {
+                        if (jugadorRect.IntersectsWith(mapaRect))
+                        {
+                            int enemy = 1;
+                            CheckEnemy(/*lvl,*/ enemy);
+                        }
                     }
 
 
@@ -185,6 +192,10 @@ namespace ArenaMasters
                 {
                     AgregarImagenCama(data.Name, data.Width, data.Height, data.Left, data.Top, data.Rotation);
                 }
+                else if (data.Name == "enemigoImg1")
+                {
+                    AgregarImagenEnemy(data.Name, data.Width, data.Height, data.Left, data.Top, data.Path);
+                }
                 else
                 {
                     AgregarRectangulo(data.Name, data.Height, data.Width, data.Left, data.Top);
@@ -194,7 +205,6 @@ namespace ArenaMasters
         private Dictionary<string, List<ColisionMapa>> ObtenerMapas()
         {
             // Implementación para obtener o crear el diccionario de mapas
-            // Puedes adaptar esto según tus necesidades específicas
             return new Dictionary<string, List<ColisionMapa>>();
         }
 
@@ -300,6 +310,38 @@ namespace ArenaMasters
             }
         }
 
+        private void CheckEnemy(/*int lvl, */int enemy)
+        {
+            this.IsEnabled = false;
+
+            Fight f = new Fight(1, game);
+            f.ShowDialog();
+
+            // La ventana actual vuelve a ser interactiva después de que la ventana modal se cierra
+            this.IsEnabled = true;
+
+            // Hay que hacer una lógica para saber si ha conseguido derrotar al enemigo o no y así hacer que se eliminen los rectangulos o no.
+            MessageBox.Show("Enemigo derrotado");
+
+            string collEnemy = $"enemigoColl{enemy}";
+
+            List<UIElement> elementosAEliminar = new List<UIElement>();
+
+            foreach (UIElement element in container_pj.Children)
+            {
+                if (element is Rectangle rectangle && rectangle.Name == collEnemy)
+                {
+                    elementosAEliminar.Add(rectangle);
+                }
+            }
+
+            foreach (UIElement elementoEliminar in elementosAEliminar)
+            {
+                container_pj.Children.Remove(elementoEliminar);
+            }
+
+        }
+
         private void AgregarImagenCama(string name, double height, double width, double left, double top, int rotation)
         {
             Image camaImage = new Image();
@@ -314,11 +356,22 @@ namespace ArenaMasters
             camaImage.RenderTransform = rotateTransform;
             container_pj.Children.Add(camaImage);
         }
+        private void AgregarImagenEnemy(string name, double height, double width, double left, double top, string path)
+        {
+            Image camaImage = new Image();
+            camaImage.Name = name;
+            string imagePath = $"pack://application:,,,{path}";
+            camaImage.Source = new BitmapImage(new Uri(imagePath, UriKind.Absolute));
+            camaImage.Width = width;
+            camaImage.Height = height;
+
+            Canvas.SetLeft(camaImage, left);
+            Canvas.SetTop(camaImage, top);
+            container_pj.Children.Add(camaImage);
+        }
 
         private void ChangeImageBed(int cama)
         {
-
-
             string camaCollisionName = $"bedCollision{cama}";
             string camaUsedName = $"bedUsed{cama}";
             string camaImgName = $"bedImg{cama}";
@@ -337,8 +390,6 @@ namespace ArenaMasters
                     }
                 }
             }
-
-
         }
 
         private void Timer_Tick(object sender, EventArgs e)

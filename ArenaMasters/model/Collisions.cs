@@ -72,6 +72,7 @@ namespace ArenaMasters
             public int Left { get; set; }
             public int Top { get; set; }
             public int Rotation { get; set; }
+            public string Path { get; set; }
         }
 
         public string json = @"{
@@ -187,6 +188,21 @@ namespace ArenaMasters
                                             ""Width"": 88,
                                             ""Left"": 1324,
                                             ""Top"": 66
+                                        },
+                                        {
+                                            ""Name"": ""enemigoImg1"",
+                                            ""Height"": 45,
+                                            ""Width"": 50,
+                                            ""Left"": 688,
+                                            ""Top"": 365 ,
+                                            ""Path"": ""/images/dragon.png""
+                                        },
+                                        {
+                                            ""Name"": ""enemigoColl1"",
+                                            ""Height"": 45,
+                                            ""Width"": 50,
+                                            ""Left"": 688,
+                                            ""Top"": 365 
                                         },
                                         {
                                             ""Name"": ""bedImg1"",

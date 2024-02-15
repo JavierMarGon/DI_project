@@ -348,9 +348,10 @@ namespace ArenaMasters
         public void levelSelected5(object sender, RoutedEventArgs e)
         {
             level = 5;
-
-            int actualMoney = Int32.Parse(currentMoney.Text.ToString());
-            currentMoney.Text = (actualMoney += rewards).ToString();
+            controller.stop();
+            MoneyDungeon moneyDungeon = new MoneyDungeon(level, game);
+            moneyDungeon.Show();
+            this.Close();
 
         }
         public void habChangeSkill1(object sender, RoutedEventArgs e)

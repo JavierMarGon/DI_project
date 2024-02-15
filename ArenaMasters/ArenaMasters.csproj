@@ -12,6 +12,7 @@
     <None Remove="images\back.png" />
     <None Remove="images\bedUnused.png" />
     <None Remove="images\bedUsed.png" />
+    <None Remove="images\BossStage.png" />
     <None Remove="images\castle.jpg" />
     <None Remove="images\cementerio.jpg" />
     <None Remove="images\coin.png" />
@@ -30,6 +31,9 @@
     <None Remove="images\map4.png" />
     <None Remove="images\map5.png" />
     <None Remove="images\map6.png" />
+    <None Remove="images\MapPhase1.jpg" />
+    <None Remove="images\MapPhase2.jpg" />
+    <None Remove="images\MapPhase3.jpg" />
     <None Remove="images\persona.png" />
     <None Remove="images\personajeLeft.png" />
     <None Remove="images\personajeRight.png" />
@@ -67,6 +71,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="images\bedUsed.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\BossStage.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="images\castle.jpg">
@@ -121,6 +128,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="images\map6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\MapPhase1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\MapPhase2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\MapPhase3.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="images\persona.png">

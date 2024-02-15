@@ -9,10 +9,11 @@ using System.Windows.Threading;
 
 namespace ArenaMasters.model
 {
-    internal class MusicController
+    public class MusicController
     {
         MediaPlayer mediaPrincipal = new MediaPlayer();
         MediaPlayer mediaBattle = new MediaPlayer();
+        public bool playing = false;
         private void Media_Ended(object sender, EventArgs e)
         {
             mediaPrincipal.Position = TimeSpan.Zero;
@@ -26,6 +27,7 @@ namespace ArenaMasters.model
                 mediaPrincipal.Open(new Uri("music/InicioSesion.mp3", UriKind.Relative));
                 mediaPrincipal.Play();
                 mediaPrincipal.MediaEnded += new EventHandler(Media_Ended);
+                playing = true;
             }
             catch (Exception ex)
             {
@@ -40,6 +42,7 @@ namespace ArenaMasters.model
                 mediaPrincipal.Open(new Uri("music/PantallaPrincipal.mp3", UriKind.Relative));
                 mediaPrincipal.Play();
                 mediaPrincipal.MediaEnded += new EventHandler(Media_Ended);
+                playing = true;
 
             }
             catch (Exception ex)
@@ -65,6 +68,8 @@ namespace ArenaMasters.model
                     mediaPrincipal.Volume += i;
                 }
                 mediaPrincipal.MediaEnded += new EventHandler(Media_Ended);
+                mediaBattle.MediaEnded += new EventHandler(Media_Ended);
+                playing = true;
 
             }
             catch (Exception ex)
@@ -83,7 +88,7 @@ namespace ArenaMasters.model
                     mediaPrincipal.Volume -= i;
                     mediaBattle.Volume += i;
                 }
-                mediaBattle.MediaEnded += new EventHandler(Media_Ended);
+                
 
             }
             catch (Exception ex)
@@ -102,7 +107,6 @@ namespace ArenaMasters.model
                     mediaPrincipal.Volume += i;
                     mediaBattle.Volume -= i;
                 }
-                mediaBattle.MediaEnded += new EventHandler(Media_Ended);
 
             }
             catch (Exception ex)
@@ -128,6 +132,7 @@ namespace ArenaMasters.model
         public void stop()
         {
             mediaPrincipal.Close();
+            playing = false;
         }
     }
 

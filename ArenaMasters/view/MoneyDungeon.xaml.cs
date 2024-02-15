@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using System.Xml.Linq;
 using static ArenaMasters.Collisions;
 
 namespace ArenaMasters
@@ -31,13 +32,26 @@ namespace ArenaMasters
         //Clase con los datos de movimiento del pj
         PlayableDungeonMovement pj;
         private DispatcherTimer timer;
-        MusicController controller =  new MusicController();
+        private MusicController controller =  new MusicController();
         //Instancia de rectangulo para generar el pj
         public System.Windows.Shapes.Rectangle image = new System.Windows.Shapes.Rectangle();
 
         public MoneyDungeon(int level, Game _game)
         {
             InitializeComponent();
+            chargeGame(level,_game);
+
+        }
+        public MoneyDungeon(int level, Game _game, MusicController mc)
+        {
+            InitializeComponent();
+            chargeGame(level, _game);
+            controller=mc;  
+
+        }
+        private void chargeGame(int level, Game _game)
+        {
+
             personajeLeft = new ImageBrush();
             personajeRight = new ImageBrush();
             lvl = level;
@@ -47,9 +61,8 @@ namespace ArenaMasters
             game = _game;
             AgregarRectangulos(lvl);
             timer = new System.Windows.Threading.DispatcherTimer();
-            timer.Interval = TimeSpan.FromMilliseconds(400);
+            timer.Interval = TimeSpan.FromMilliseconds(390);
             timer.Tick += Timer_Tick;
-
         }
 
         private void exitClick(object sender, RoutedEventArgs e)
@@ -275,9 +288,15 @@ namespace ArenaMasters
             if (result == MessageBoxResult.OK)
             {
                 // logica para avanzar al siguiente nivel
-                MoneyDungeon md = new MoneyDungeon(lvl + 1, game);
+                controller.switchMoneyDungeonMap();
+                MoneyDungeon newMoneyD=new MoneyDungeon(lvl + 1, game, controller);
+                newMoneyD.Show();
                 this.Close();
-                md.Show();
+                
+            }
+            else
+            {
+                controller.switchMoneyDungeonBattle();
             }
         }
 
@@ -356,7 +375,11 @@ namespace ArenaMasters
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            controller.playMoneyDungeonMap();
+            if (controller.playing==false)
+            {
+                controller.playMoneyDungeonMap();
+            }
+            
         }
     }
 }

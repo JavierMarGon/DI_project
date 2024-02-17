@@ -25,6 +25,8 @@ namespace ArenaMasters
         private int _greed;
         private int _price;
         private int _id_game;
+        protected Status _ailments = new Status();
+        protected Status _buff = new Status();
         protected List<Skills> _skills = new List<Skills>();
 
         private ArenaMastersManager _manager = new ArenaMastersManager();
@@ -86,6 +88,15 @@ namespace ArenaMasters
         {
             get { return _skills; }
             set { _skills = value; }
+        }
+        public Status Ailments
+        {
+            get { return _ailments; }
+        }
+        public Status Buff
+        {
+            get { return _buff; }
+            
         }
         public GameMenu GameMenu
         {

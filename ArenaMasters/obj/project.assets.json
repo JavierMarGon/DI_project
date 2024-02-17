@@ -1884,19 +1884,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\fran.bedmar.vega_alu\\.nuget\\packages\\": {}
+    "C:\\Users\\JavierMG\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fran.bedmar.vega_alu\\Desktop\\proyectoDI\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
+      "projectUniqueName": "C:\\Users\\JavierMG\\Desktop\\ditest\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
       "projectName": "ArenaMasters",
-      "projectPath": "C:\\Users\\fran.bedmar.vega_alu\\Desktop\\proyectoDI\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
-      "packagesPath": "C:\\Users\\fran.bedmar.vega_alu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fran.bedmar.vega_alu\\Desktop\\proyectoDI\\DI_project\\ArenaMasters\\obj\\",
+      "projectPath": "C:\\Users\\JavierMG\\Desktop\\ditest\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
+      "packagesPath": "C:\\Users\\JavierMG\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\JavierMG\\Desktop\\ditest\\DI_project\\ArenaMasters\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\fran.bedmar.vega_alu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\JavierMG\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1946,6 +1946,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.25, 6.0.25]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[6.0.25, 6.0.25]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.25, 6.0.25]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[6.0.25, 6.0.25]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"

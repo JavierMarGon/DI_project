@@ -7,7 +7,7 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Fight.xaml.cs">
+    <Compile Update="view\Fight.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="view\GameMenu.xaml.cs">
@@ -18,7 +18,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Fight.xaml">
+    <Page Update="view\Fight.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">

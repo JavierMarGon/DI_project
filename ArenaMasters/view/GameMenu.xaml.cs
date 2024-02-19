@@ -300,44 +300,59 @@ namespace ArenaMasters
         public void levelSelected1(object sender, RoutedEventArgs e)
         {
             level = 1;
-            controller.stop();
-            MoneyDungeon moneyDungeon = new MoneyDungeon(level, game);
-            moneyDungeon.Show();
-            this.Close();
-
+            ShowUnitSelectionGrid();
         }
+
         public void levelSelected2(object sender, RoutedEventArgs e)
         {
             level = 2;
-            controller.stop();
-            MoneyDungeon moneyDungeon = new MoneyDungeon(level, game);
-            moneyDungeon.Show();
-            this.Close();
+            ShowUnitSelectionGrid();
         }
+
         public void levelSelected3(object sender, RoutedEventArgs e)
         {
             level = 3;
-            controller.stop();
-            MoneyDungeon moneyDungeon = new MoneyDungeon(level, game);
-            moneyDungeon.Show();
-            this.Close();
+            ShowUnitSelectionGrid();
         }
+
         public void levelSelected4(object sender, RoutedEventArgs e)
         {
             level = 4;
-            controller.stop();
-            MoneyDungeon moneyDungeon = new MoneyDungeon(level, game);
-            moneyDungeon.Show();
-            this.Close();
+            ShowUnitSelectionGrid();
         }
+
         public void levelSelected5(object sender, RoutedEventArgs e)
         {
             level = 5;
-            controller.stop();
-            MoneyDungeon moneyDungeon = new MoneyDungeon(level, game);
-            moneyDungeon.Show();
-            this.Close();
+            ShowUnitSelectionGrid();
+        }
 
+        private void ShowUnitSelectionGrid()
+        {
+            gridSelectedUnits.Visibility = Visibility.Visible;
+        }
+
+        private void BackSelectUnits(object sender, RoutedEventArgs e)
+        {
+            gridSelectedUnits.Visibility = Visibility.Hidden;
+
+        }
+
+        private void SelectUnitsAndProceed(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(listBoxUnits.SelectedItems.Count.ToString());
+            if (listBoxUnits.SelectedItems.Count > 0)
+            {
+                // Proceed to MoneyDungeon with the selected level and units
+                controller.stop();
+                MoneyDungeon moneyDungeon = new MoneyDungeon(level, game);
+                moneyDungeon.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Please select at least one unit before proceeding.");
+            }
         }
         public void habChangeSkill1(object sender, RoutedEventArgs e)
         {

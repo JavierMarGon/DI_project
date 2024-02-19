@@ -467,6 +467,23 @@
                 </Button>
             </StackPanel>
         </StackPanel>
+
+        <Grid x:Name="gridSelectedUnits" Visibility="Collapsed" Background="Transparent" Height="750" Width="1370">
+            <StackPanel Height="220" Width="300" HorizontalAlignment="Center">
+                <ListBox x:Name="listBoxUnits" ItemsSource="{Binding Inventory}" Background="#66FFFFFF" SelectionMode="Multiple" HorizontalContentAlignment="Center">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <ListBoxItem Content="{Binding IdCharacter}" FontSize="22"></ListBoxItem>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Name="btnSelectUnits" Click="SelectUnitsAndProceed" Height="20" Width="100" Content="Jugar"/>
+                    <Button Name="btnBackSelectUnits" Click="BackSelectUnits" Height="20" Width="100" Content="Volver"/>
+                </StackPanel>
+            </StackPanel>
+
+        </Grid>
     </Canvas>
 
 </Window>

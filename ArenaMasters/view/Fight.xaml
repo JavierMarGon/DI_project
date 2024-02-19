@@ -5,8 +5,104 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ArenaMasters"
         mc:Ignorable="d"
-        Title="Fight" Height="450" Width="800">
+        Title="Fight" Height="450" Width="800"
+        >
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/recursos/Estilos.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Window.Background>
+        <ImageBrush x:Name="backgroundImage" ImageSource="/images/MapPhase1.jpg" />
+    </Window.Background>
     <Grid>
-        
+        <Grid Name="gridFight" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel x:Name="spEnemy" Grid.Column="1" VerticalAlignment="Center">
+
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                        <StackPanel>
+                            <ProgressBar Width="150" Height="15" Minimum="0" Maximum="200" Value="100" Margin="20"/>
+                            <TextBlock Margin="0,0,0,20" Text="Unit1" Foreground="Bisque" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <Button  Height="80" Width="70" Background="Transparent">
+                                <Image Source="/images/dragon.png" />
+                            </Button>
+                        </StackPanel>
+                        <StackPanel>
+                            <ProgressBar Width="150" Height="15" Minimum="0" Maximum="200" Value="100" Margin="20"/>
+                            <TextBlock Margin="0,0,0,20" Text="Unit1" Foreground="Bisque" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <Button  Height="80" Width="70" Background="Transparent">
+                                <Image Source="/images/dragon.png" />
+                            </Button>
+                        </StackPanel>
+                        <StackPanel>
+                            <ProgressBar Width="150" Height="15" Minimum="0" Maximum="200" Value="100" Margin="20"/>
+                            <TextBlock Margin="0,0,0,20" Text="Unit1" Foreground="Bisque" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <Button  Height="80" Width="70" Background="Transparent">
+                                <Image Source="/images/dragon.png" />
+                            </Button>
+                        </StackPanel>
+                        <StackPanel>
+                            <ProgressBar Width="150" Height="15" Minimum="0" Maximum="200" Value="100" Margin="20"/>
+                            <TextBlock Margin="0,0,0,20" Text="Unit1" Foreground="Bisque" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <Button  Height="80" Width="70" Background="Transparent">
+                                <Image Source="/images/dragon.png" />
+                            </Button>
+                        </StackPanel>
+
+
+                    </StackPanel>
+                </Grid>
+
+            </StackPanel>
+
+            <StackPanel x:Name="spUnits" Margin="0,50,0,0" Grid.Row="1">
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                        <StackPanel>
+                            <Button  Height="80" Width="70" Background="Transparent">
+                                <Image Source="/images/dragon.png" />
+                            </Button>
+                            <TextBlock Text="Unit1" Foreground="Bisque" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <ProgressBar Width="150" Height="15" Minimum="0" Maximum="200" Value="100" Margin="20"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Button  Height="80" Width="70" Background="Transparent">
+                                <Image Source="/images/dragon.png" />
+                            </Button>
+                            <TextBlock Text="Unit1" Foreground="Bisque" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <ProgressBar Width="150" Height="15" Minimum="0" Maximum="200" Value="100" Margin="20"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Button  Height="80" Width="70" Background="Transparent">
+                                <Image Source="/images/dragon.png" />
+                            </Button>
+                            <TextBlock Text="Unit1" Foreground="Bisque" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <ProgressBar Width="150" Height="15" Minimum="0" Maximum="200" Value="100" Margin="20"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Button  Height="80" Width="70" Background="Transparent">
+                                <Image Source="/images/dragon.png" />
+                            </Button>
+                            <TextBlock Text="Unit1" Foreground="Bisque" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <ProgressBar Width="150" Height="15" Minimum="0" Maximum="200" Value="100" Margin="20"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>

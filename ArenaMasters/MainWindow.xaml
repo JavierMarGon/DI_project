@@ -64,10 +64,15 @@
                 <PasswordBox x:Name="psw_user" FontSize="25" Width="200" VerticalContentAlignment="Center" Background="#4CFFFFFF" Margin="0,10,10,0" Foreground="White"/>
             </StackPanel>
 
-            <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center">
-                <Button Style="{StaticResource btnRegister}" Content="Register" Click="click_register" FontSize="20" Height="40" Width="100" Margin="5" Foreground="White"/>
-                <Button Style="{StaticResource btnLogin}" Content="Login" Click="click_login" FontSize="20" Height="40" Width="100" Margin="5" Foreground="White"/>
+            <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <Button Style="{StaticResource btnRegister}" Content="Register" Click="click_register" FontSize="20" Height="40" Width="100" Margin="5" Foreground="White"/>
+                    <Button Style="{StaticResource btnLogin}" Content="Login" Click="click_login" FontSize="20" Height="40" Width="100" Margin="5" Foreground="White"/>
+                </StackPanel>
+                <Button Style="{StaticResource btnMenuCerrarSesion}" Content="Acceso Invitado" Click="guestAccess" FontSize="20" Height="34" Width="166" Foreground="White"/>
+
             </StackPanel>
+
         </Grid>
         
         <Grid x:Name="menu_loadGames" Visibility="Collapsed" Grid.Column="1" Grid.RowSpan="12" Background="#66808080">

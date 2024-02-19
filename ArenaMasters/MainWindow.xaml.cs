@@ -139,6 +139,21 @@ namespace ArenaMasters
             this.Close();
             menu.Show();
         }
+        private void guestAccess(object sender, RoutedEventArgs e)
+        {
+            manager.id_User = 1;
+            if (manager.id_User > 0)
+            {
+                if (manager.CountGames(manager.id_User) < 1)
+                {
+                    noGame(true);
+                }
+                manager.userName = "Guest";
+                menu_login.Visibility = Visibility.Collapsed;
+                menu_user.Visibility = Visibility.Visible;
+            }
+            limpiarCampos();
+        }
         private void click_newGame(object sender, RoutedEventArgs e)
         {
             

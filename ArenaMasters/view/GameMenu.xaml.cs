@@ -51,29 +51,11 @@ namespace ArenaMasters
 
         public void initializeShop()
         {
-            List<int> shopInventory = new List<int>();
-            ////esto sere el count de las unidades de la partida
-            //units = new List<Units>();
-            //unitsIds = manager.GetAllShopCharactersId(game.IdGame);
-            //foreach (int id in unitsIds)
-            //{
-            //    units.Add(new Units(id, manager.fetchAllSkills(id)));
-            //}
-        }
-        public void refreshShop()
-        {
-            //List<int> unitsIds = new List<int>();
-            ////esto sere el count de las unidades de la partida
-            //units = new List<Units>();
-            //unitsIds = manager.GetAllCharactersId(game.IdGame);
-            //foreach (int id in unitsIds)
-            //{
-            //    units.Add(new Units(id, manager.fetchAllSkills(id)));
-            //}
-            //maxUnits = manager.CountCharacters(game.IdGame);
-        }
+            RefreshStoreValue.Text = (1000+(500*game.Refresh)).ToString();
 
-
+            Comprar((1000 + (500 * game.Refresh)));
+            manager.GetAllShopItems(game.IdGame);
+        }
         public void initializeUnits()
         {
             //esto sere el count de las unidades de la partida
@@ -191,7 +173,7 @@ namespace ArenaMasters
             {
                 MessageBox.Show(ex.ToString());
             }
-            manager.GetAllShopItems(game.IdGame);
+            initializeShop();
             setting.Visibility = Visibility.Collapsed;
             settingsPanel.Visibility = Visibility.Collapsed;
             pjShop.Visibility = Visibility.Visible;
@@ -199,9 +181,12 @@ namespace ArenaMasters
         }
         public void Comprar(int valor)
         {
-            manager.updateMoney(game.IdGame, valor);
-            game.Money += valor;
-            currentMoney.Text = game.Money.ToString();
+            if (game.Money > valor)
+            {
+                manager.updateMoney(game.IdGame, valor);
+                game.Money += valor;
+                currentMoney.Text = game.Money.ToString();
+            }     
         }
         private void ClickBuyUnitShop(object sender, RoutedEventArgs e)
         {
@@ -225,7 +210,7 @@ namespace ArenaMasters
                     MessageBox.Show("Error");
                 }
                 DataContext = manager;
-                manager.GetAllShopItems(game.IdGame);
+                initializeShop();
                 pjShopDetails.Visibility = Visibility.Collapsed;
             }
             else
@@ -443,6 +428,13 @@ namespace ArenaMasters
             MainWindow mainWindow = new MainWindow(game.IdUser, game.Name);
             this.Close();
             mainWindow.Show();
+        }
+
+        private void refreshShop(object sender, RoutedEventArgs e)
+        {
+            manager.refreshShop(game.IdGame);
+            game.Refresh += 1;
+            initializeShop();
         }
     }
 }

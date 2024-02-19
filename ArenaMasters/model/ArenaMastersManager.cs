@@ -402,7 +402,17 @@ namespace ArenaMasters.model
                 return 0;
             }
         }
-
+        public int refreshShop(int id_game)
+        {
+            if (_ad.PA_eraseShop(id_game) > 0)
+            {
+                return 1;       //Tiene partidas guardadas
+            }
+            else
+            {
+                return 0;       //No tiene partidas guardadas
+            }
+        }
         public int CountGames(int id_user)
         {
             if (_ad.PA_CountGames(id_User) > 0)

@@ -185,7 +185,18 @@
             <Grid Width="1375" Height="100" Background="#BF524939">
                 <Button Style="{StaticResource btnSalirPrincipal}" Width="150" Click="pjShopHide" Height="70" Background="Transparent" HorizontalAlignment="Left"/>
                 <TextBlock Text="Encrucijada" Height="100" Width="800"  Foreground="Beige" FontSize="80" FontFamily="Algerian" TextAlignment="Center" HorizontalAlignment="Center"/>
-                
+                <!--Recargar tiendo-->
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Height="100" Margin="20,10,20,0">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
+                        <TextBlock Text="Refresh" Foreground="Beige" FontSize="20" FontFamily="Algerian" VerticalAlignment="Center"/>
+                        <Button Style="{StaticResource btnActualizar}" Height="40" Width="40" Click="refreshShop" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10,0,10,0"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
+                        <TextBlock Text="Precio: " Foreground="Beige" FontSize="20" FontFamily="Algerian"/>
+                        <TextBlock x:Name="RefreshStoreValue" Text="1000" Foreground="Beige" FontSize="20" FontFamily="Algerian"/>
+                    </StackPanel>
+
+                </StackPanel>
             </Grid>
             <StackPanel x:Name="sp_loadItems" Margin="10">
                 <ItemsControl ItemsSource="{Binding ShopInventory}" ItemTemplate="{StaticResource Plantilla_pjShop}">

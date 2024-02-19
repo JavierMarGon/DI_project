@@ -298,7 +298,7 @@ namespace ArenaMasters
             if (result == MessageBoxResult.OK)
             {
                 // logica para avanzar al siguiente nivel
-                controller.switchMoneyDungeonMap();
+                
                 MoneyDungeon newMoneyD=new MoneyDungeon(lvl + 1, game, controller);
                 newMoneyD.Show();
                 this.Close();
@@ -306,25 +306,28 @@ namespace ArenaMasters
             }
             else
             {
-                controller.switchMoneyDungeonBattle();
+                
             }
         }
 
         private void CheckEnemy(/*int lvl, */int enemy)
         {
             this.IsEnabled = false;
-
+            this.Visibility = Visibility.Hidden;
+            controller.switchMoneyDungeonBattle();
             Fight f = new Fight(1, game);
             f.ShowDialog();
 
             // La ventana actual vuelve a ser interactiva después de que la ventana modal se cierra
-            this.IsEnabled = true;
 
             // Hay que hacer una lógica para saber si ha conseguido derrotar al enemigo o no y así hacer que se eliminen los rectangulos o no.
+            this.IsEnabled = true;
+            controller.switchMoneyDungeonMap();
+            this.Visibility = Visibility.Visible;
             MessageBox.Show("Enemigo derrotado");
 
             string collEnemy = $"enemigoColl{enemy}";
-
+            
             List<UIElement> elementosAEliminar = new List<UIElement>();
 
             foreach (UIElement element in container_pj.Children)

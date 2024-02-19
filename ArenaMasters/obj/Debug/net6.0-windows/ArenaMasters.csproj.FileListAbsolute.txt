@@ -1469,3 +1469,9 @@ C:\Users\JavierMG\Desktop\ditest\DI_project\ArenaMasters\obj\Debug\net6.0-window
 C:\Users\JavierMG\Desktop\ditest\DI_project\ArenaMasters\obj\Debug\net6.0-windows\ref\ArenaMasters.dll
 C:\Users\JavierMG\Desktop\ditest\DI_project\ArenaMasters\obj\Debug\net6.0-windows\view\Fight.g.cs
 C:\Users\JavierMG\Desktop\ditest\DI_project\ArenaMasters\obj\Debug\net6.0-windows\view\Fight.baml
+C:\Users\javier.martin.gonzal\source\repos\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\BossStage.png
+C:\Users\javier.martin.gonzal\source\repos\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\MapPhase1.jpg
+C:\Users\javier.martin.gonzal\source\repos\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\MapPhase2.jpg
+C:\Users\javier.martin.gonzal\source\repos\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\MapPhase3.jpg
+C:\Users\javier.martin.gonzal\source\repos\DI_project\ArenaMasters\obj\Debug\net6.0-windows\view\Fight.g.cs
+C:\Users\javier.martin.gonzal\source\repos\DI_project\ArenaMasters\obj\Debug\net6.0-windows\view\Fight.baml

@@ -15,6 +15,7 @@ namespace ArenaMasters.model
         private int _tier;
         private bool _target_foe;
         private bool _multi_target;
+        private string _multi_target_string;
 
         public int IdSkill
         {
@@ -52,6 +53,11 @@ namespace ArenaMasters.model
             get { return _multi_target; }
             set { _multi_target = value; }
         }
+        public string MultiTargetString
+        {
+            get { return _multi_target_string; }
+            set { _multi_target_string = value; }
+        }
 
         public Skills(int idSkill, string name, string description, string skillType, int tier, bool targetFoe, bool multiTarget)
         {
@@ -62,7 +68,14 @@ namespace ArenaMasters.model
             Tier = tier;
             TargetFoe = targetFoe;
             MultiTarget = multiTarget;
+            MultiTargetString = multiTargeToString(multiTarget);
         }
+
+        private string multiTargeToString(bool multiTarget)
+        {
+            return multiTarget ? "Multiple" : "Individual";
+        }
+
 
     }
 }

@@ -49,7 +49,61 @@ namespace ArenaMasters
 
         private void clickUnitFight(object sender, RoutedEventArgs e)
         {
-            var unit = (sender as Button).DataContext as Units;
+            Button clickedButton = (Button)sender;
+
+            if (clickedButton.DataContext is Units clickedUnit)
+            {
+                Button[] btnAtk = { btnAtk1, btnAtk2, btnAtk3, btnAtk4 };
+                TextBlock[] typeSkill = { typeSkill1, typeSkill2, typeSkill3, typeSkill4 };
+                TextBlock[] targetRange = { targetRange1, targetRange2, targetRange3, targetRange4 };
+                unitNameAtk.Text = clickedUnit.IdCharacter.ToString(); 
+                for (int i = 0; i < 4; i++)
+                {
+                    btnAtk[i].Content = clickedUnit.Skills[i].Name;
+                    typeSkill[i].Text = clickedUnit.Skills[i].SkillType.ToString();
+                    targetRange[i].Text = clickedUnit.Skills[i].MultiTargetString;
+
+                    SetSkillTypeColor(typeSkill[i], clickedUnit.Skills[i].SkillType);
+                    SetTargetRangeFormatting(targetRange[i], clickedUnit.Skills[i].MultiTarget);
+                }
+
+            }
+            gridSkillsFight.Visibility = Visibility.Visible;
+        }
+        
+        private void SetTargetRangeFormatting(TextBlock textBlock, bool isMultiTarget)
+        {
+            textBlock.FontWeight = isMultiTarget ? FontWeights.Bold : FontWeights.Normal;
+        }
+
+        private void SetSkillTypeColor(TextBlock textBlock, string skillType)
+        {
+            switch (skillType)
+            {
+                case "Attack":
+                    textBlock.Foreground = Brushes.Red;
+                    break;
+                case "Heal":
+                    textBlock.Foreground = Brushes.Green;
+                    break;
+                case "Debuff":
+                    textBlock.Foreground = Brushes.Blue;
+                    break;
+                case "Boost":
+                    textBlock.Foreground = Brushes.Purple;
+                    break;
+                case "Buff":
+                    textBlock.Foreground = Brushes.Orange;
+                    break;
+                default:
+                    textBlock.Foreground = Brushes.Gray;
+                    break;
+            }
+        }
+
+        private void backUnitAtk(object sender, RoutedEventArgs e)
+        {
+            gridSkillsFight.Visibility = Visibility.Collapsed;
         }
 
         private void Attack(Units Active, List<Units> Passives,Skills AttackSkill) { 
@@ -137,6 +191,6 @@ namespace ArenaMasters
             }
         }
 
-
+        
     }
 }

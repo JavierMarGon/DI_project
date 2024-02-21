@@ -490,6 +490,30 @@
     </DataTemplate>
 
 
+    <Style x:Key="btnSalirAtk" BasedOn="{StaticResource miBoton}" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Image x:Name="imgSalir" Source="/images/eliminar.png">
+                            <Image.Style>
+                                <Style TargetType="Image">
+                                    <Setter Property="Height" Value="22"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=IsMouseOver}" Value="True">
+                                            <Setter Property="Height" Value="26"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
 
 
 </ResourceDictionary>

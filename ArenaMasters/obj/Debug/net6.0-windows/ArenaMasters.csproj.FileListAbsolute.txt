@@ -511,8 +511,6 @@ C:\Users\franl\OneDrive\Escritorio\proyectoDI\DI_project\ArenaMasters\bin\Debug\
 C:\Users\franl\OneDrive\Escritorio\proyectoDI\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\map3.png
 C:\Users\franl\OneDrive\Escritorio\proyectoDI\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\map4.png
 C:\Users\franl\OneDrive\Escritorio\proyectoDI\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\persona.png
-C:\Users\franl\OneDrive\Escritorio\proyectoDI\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\personajeRight.png
-C:\Users\franl\OneDrive\Escritorio\proyectoDI\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\personajeLeft.png
 C:\Users\franl\OneDrive\Escritorio\proyectoDI\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\salir.png
 C:\Users\franl\OneDrive\Escritorio\proyectoDI\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\settings.png
 C:\Users\franl\OneDrive\Escritorio\proyectoDI\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\tavern.jpg
@@ -1475,3 +1473,13 @@ C:\Users\javier.martin.gonzal\source\repos\DI_project\ArenaMasters\bin\Debug\net
 C:\Users\javier.martin.gonzal\source\repos\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\MapPhase3.jpg
 C:\Users\javier.martin.gonzal\source\repos\DI_project\ArenaMasters\obj\Debug\net6.0-windows\view\Fight.g.cs
 C:\Users\javier.martin.gonzal\source\repos\DI_project\ArenaMasters\obj\Debug\net6.0-windows\view\Fight.baml
+C:\Users\franl\OneDrive\Escritorio\proyectoDI\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\BossStage.png
+C:\Users\franl\OneDrive\Escritorio\proyectoDI\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\map6.png
+C:\Users\franl\OneDrive\Escritorio\proyectoDI\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\MapPhase1.jpg
+C:\Users\franl\OneDrive\Escritorio\proyectoDI\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\MapPhase2.jpg
+C:\Users\franl\OneDrive\Escritorio\proyectoDI\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\MapPhase3.jpg
+C:\Users\franl\OneDrive\Escritorio\proyectoDI\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\PlayerMovementLeft.png
+C:\Users\franl\OneDrive\Escritorio\proyectoDI\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\PlayerMovementRight.png
+C:\Users\franl\OneDrive\Escritorio\proyectoDI\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\PlayerStatic.png
+C:\Users\franl\OneDrive\Escritorio\proyectoDI\DI_project\ArenaMasters\obj\Debug\net6.0-windows\view\Fight.g.cs
+C:\Users\franl\OneDrive\Escritorio\proyectoDI\DI_project\ArenaMasters\obj\Debug\net6.0-windows\view\Fight.baml

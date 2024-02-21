@@ -18,7 +18,7 @@
         <ImageBrush x:Name="backgroundImage" ImageSource="/images/MapPhase1.jpg" />
     </Window.Background>
     <Grid>
-        <Grid Name="gridFight" Visibility="Collapsed">
+        <Grid Name="gridFight" Visibility="Visible">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
@@ -66,7 +66,44 @@
 
             </StackPanel>
 
-            <StackPanel x:Name="spUnits" Margin="0,50,0,0" Grid.Row="1">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" x:Name="spUnits" Margin="0,50,0,0" Grid.Row="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <ItemsControl ItemsSource="{Binding Units}" HorizontalAlignment="Center">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical">
+                                    <Button Click="clickUnitFight" Height="80" Width="70" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Padding="-4">
+                                        <Image Height="70" Source="/images/dragon.png" />
+                                    </Button>
+                                    <TextBlock Text="{Binding Hp}" Foreground="Bisque" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <ProgressBar Width="150" Height="15" Minimum="0" Maximum="{Binding MaxHp}" Value="{Binding Hp}" Margin="20"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </Grid>
+            </StackPanel>
+
+            <StackPanel Grid.RowSpan="12">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                </Grid>
+            </StackPanel>
+
+                <!--<StackPanel x:Name="spUnits" Margin="0,50,0,0" Grid.Row="1">
                 <Grid >
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
@@ -86,23 +123,9 @@
                             <TextBlock Text="Unit1" Foreground="Bisque" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                             <ProgressBar Width="150" Height="15" Minimum="0" Maximum="200" Value="100" Margin="20"/>
                         </StackPanel>
-                        <StackPanel>
-                            <Button  Height="80" Width="70" Background="Transparent">
-                                <Image Source="/images/dragon.png" />
-                            </Button>
-                            <TextBlock Text="Unit1" Foreground="Bisque" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                            <ProgressBar Width="150" Height="15" Minimum="0" Maximum="200" Value="100" Margin="20"/>
-                        </StackPanel>
-                        <StackPanel>
-                            <Button  Height="80" Width="70" Background="Transparent">
-                                <Image Source="/images/dragon.png" />
-                            </Button>
-                            <TextBlock Text="Unit1" Foreground="Bisque" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                            <ProgressBar Width="150" Height="15" Minimum="0" Maximum="200" Value="100" Margin="20"/>
-                        </StackPanel>
                     </StackPanel>
                 </Grid>
-            </StackPanel>
+            </StackPanel>-->
         </Grid>
     </Grid>
 </Window>

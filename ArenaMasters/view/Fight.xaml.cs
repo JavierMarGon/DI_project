@@ -21,14 +21,16 @@ namespace ArenaMasters
     /// </summary>
     public partial class Fight : Window
     {
-        List<Units> self = new List<Units>();
+        public List<Units> Units { get; set; } = new List<Units>();
         List<Units> cpu = new List<Units>();
         Game _game;
-        public Fight(int lvl, Game game)
+        public Fight(int lvl, Game game, List<Units> _unitsSelected)
         {
+            InitializeComponent();
             GenerarPantalla(lvl);
             _game = game;
-            InitializeComponent();
+            Units = _unitsSelected;
+            DataContext = this;
         }
 
 
@@ -43,6 +45,11 @@ namespace ArenaMasters
                     this.Background = new ImageBrush(new BitmapImage(new Uri("pack://application:,,,/images/MapPhase2.jpg")));
                     break;
             }
+        }
+
+        private void clickUnitFight(object sender, RoutedEventArgs e)
+        {
+            var unit = (sender as Button).DataContext as Units;
         }
 
         private void Attack(Units Active, List<Units> Passives,Skills AttackSkill) { 

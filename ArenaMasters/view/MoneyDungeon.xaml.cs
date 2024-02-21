@@ -33,25 +33,26 @@ namespace ArenaMasters
         PlayableDungeonMovement pj;
         private DispatcherTimer timer;
         private MusicController controller =  new MusicController();
+        private List<Units> unitsSelected = new List<Units>();
         //Instancia de rectangulo para generar el pj
         public System.Windows.Shapes.Rectangle image = new System.Windows.Shapes.Rectangle();
 
-        public MoneyDungeon(int level, Game _game)
+        public MoneyDungeon(int level, Game _game, List<Units> _unitsSelected)
         {
             InitializeComponent();
-            chargeGame(level,_game);
+            chargeGame(level,_game, _unitsSelected);
 
         }
-        public MoneyDungeon(int level, Game _game, MusicController mc)
+        public MoneyDungeon(int level, Game _game, List<Units> _unitsSelected, MusicController mc)
         {
             InitializeComponent();
-            chargeGame(level, _game);
+            chargeGame(level, _game, _unitsSelected);
             controller=mc;  
 
         }
-        private void chargeGame(int level, Game _game)
+        private void chargeGame(int level, Game _game, List<Units> _unitsSelected)
         {
-
+            unitsSelected = _unitsSelected;
             personajeLeft = new ImageBrush();
             personajeRight = new ImageBrush();
             lvl = level;
@@ -299,7 +300,7 @@ namespace ArenaMasters
             {
                 // logica para avanzar al siguiente nivel
                 
-                MoneyDungeon newMoneyD=new MoneyDungeon(lvl + 1, game, controller);
+                MoneyDungeon newMoneyD=new MoneyDungeon(lvl + 1, game, unitsSelected, controller);
                 newMoneyD.Show();
                 this.Close();
                 
@@ -315,7 +316,7 @@ namespace ArenaMasters
             this.IsEnabled = false;
             this.Visibility = Visibility.Hidden;
             controller.switchMoneyDungeonBattle();
-            Fight f = new Fight(1, game);
+            Fight f = new Fight(1, game, unitsSelected);
             f.ShowDialog();
 
             // La ventana actual vuelve a ser interactiva después de que la ventana modal se cierra

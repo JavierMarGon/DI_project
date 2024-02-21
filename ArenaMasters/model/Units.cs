@@ -18,6 +18,7 @@ namespace ArenaMasters
         private int _id_rol;
         private string _rol_name;
         private int _hp;
+        private int _maxHp;
         private int _atk;
         private int _def;
         private int _hit_rate;
@@ -47,6 +48,11 @@ namespace ArenaMasters
         { 
             set { _hp = value; } 
             get { return _hp; } 
+        }
+        public int MaxHp
+        {
+            set{ _maxHp = value; }
+            get { return _maxHp; }
         }
         public int Atk
         {
@@ -118,6 +124,7 @@ namespace ArenaMasters
             IdCharacter = id;
             IdRol = idRol;
             Hp = hp;
+            MaxHp = hp;         //Para obtener el maximo de Hp, esto no se va a modificar nunca
             Atk = atk;
             Def = def;
             HitRate = hitRate;

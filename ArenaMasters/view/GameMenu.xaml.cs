@@ -340,12 +340,16 @@ namespace ArenaMasters
 
         private void SelectUnitsAndProceed(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(listBoxUnits.SelectedItems.Count.ToString());
             if (listBoxUnits.SelectedItems.Count > 0)
             {
+                List<Units> unitsSelected = new List<Units>();
                 // Proceed to MoneyDungeon with the selected level and units
+                foreach (Units unit in listBoxUnits.SelectedItems)
+                {
+                    unitsSelected.Add(unit);
+                }
                 controller.stop();
-                MoneyDungeon moneyDungeon = new MoneyDungeon(level, game);
+                MoneyDungeon moneyDungeon = new MoneyDungeon(level, game, unitsSelected);
                 moneyDungeon.Show();
                 this.Close();
             }
@@ -354,73 +358,42 @@ namespace ArenaMasters
                 MessageBox.Show("Please select at least one unit before proceeding.");
             }
         }
-        public void habChangeSkill1(object sender, RoutedEventArgs e)
+        public void habChange(int val)
         {
-            Skills skill_data = manager.SetRandomSkill(units[space].IdCharacter, 1);
+            Skills skill_data = manager.SetRandomSkill(units[space].IdCharacter, val);
             if (skill_data != null)
             {
                 if (game.Money > units[space].Greed * 150)
                 {
+                    TextBlock textBlock = (TextBlock)FindName("habpjSkill"+val);
                     Comprar(-units[space].Greed * 150);
-                    units[space].setSkillByIndex(1, skill_data);
-                    habpjSkill1.Text = units[space].getSkillByIndex(1).Name.ToString();
+                    units[space].setSkillByIndex(val, skill_data);
+                    textBlock.Text = units[space].getSkillByIndex(val).Name.ToString();
                     initializeUnits();
                     greedLvl.Text = units[space].Greed.ToString();
                     newHabPrice.Text = (units[space].Greed * 150).ToString();
                 }
 
             }
+        }
+        public void habChangeSkill1(object sender, RoutedEventArgs e)
+        {
+            habChange(1);
         }
         public void habChangeSkill2(object sender, RoutedEventArgs e)
         {
+            habChange(2);
 
-            Skills skill_data = manager.SetRandomSkill(units[space].IdCharacter, 2);
-            if (skill_data != null)
-            {
-                if (game.Money > units[space].Greed * 150)
-                {
-                    Comprar(-units[space].Greed * 150);
-                    units[space].setSkillByIndex(2, skill_data);
-                    habpjSkill2.Text = units[space].getSkillByIndex(2).Name.ToString();
-                    initializeUnits();
-                    greedLvl.Text = units[space].Greed.ToString();
-                    newHabPrice.Text = (units[space].Greed * 150).ToString();
-                }
-            }
         }
         public void habChangeSkill3(object sender, RoutedEventArgs e)
         {
+            habChange(3);
 
-            Skills skill_data = manager.SetRandomSkill(units[space].IdCharacter, 3);
-            if (skill_data != null)
-            {
-                if (game.Money > units[space].Greed * 150)
-                {
-                    Comprar(-units[space].Greed * 150);
-                    units[space].setSkillByIndex(3, skill_data);
-                    habpjSkill3.Text = units[space].getSkillByIndex(3).Name.ToString();
-                    initializeUnits();
-                    greedLvl.Text = units[space].Greed.ToString();
-                    newHabPrice.Text = (units[space].Greed * 150).ToString();
-                }
-            }
         }
         public void habChangeSkill4(object sender, RoutedEventArgs e)
         {
+            habChange(4);
 
-            Skills skill_data = manager.SetRandomSkill(units[space].IdCharacter, 4);
-            if (skill_data != null)
-            {
-                if (game.Money > units[space].Greed * 150)
-                {
-                    Comprar(-units[space].Greed * 150);
-                    units[space].setSkillByIndex(4, skill_data);
-                    habpjSkill4.Text = units[space].getSkillByIndex(4).Name.ToString();
-                    initializeUnits();
-                    greedLvl.Text = units[space].Greed.ToString();
-                    newHabPrice.Text = (units[space].Greed * 150).ToString();
-                }
-            }
         }
 
         private void settingsPanelShow(object sender, RoutedEventArgs e)

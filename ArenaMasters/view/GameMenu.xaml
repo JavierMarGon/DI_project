@@ -482,7 +482,6 @@
                     <Button Name="btnBackSelectUnits" Click="BackSelectUnits" Height="20" Width="100" Content="Volver"/>
                 </StackPanel>
             </StackPanel>
-
         </Grid>
     </Canvas>
 

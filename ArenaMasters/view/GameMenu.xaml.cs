@@ -414,6 +414,7 @@ namespace ArenaMasters
         public void exitGame(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow(game.IdUser, game.Name);
+            controller.stop();
             this.Close();
             mainWindow.Show();
         }

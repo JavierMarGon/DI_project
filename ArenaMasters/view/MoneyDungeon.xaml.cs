@@ -73,6 +73,7 @@ namespace ArenaMasters
 
         private void gameExitTrue(object sender, RoutedEventArgs e)
         {
+            controller.stop();
             GameMenu gameMenu = new GameMenu(game);
             gameMenu.Show();
             this.Close();

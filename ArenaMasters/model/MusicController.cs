@@ -14,19 +14,23 @@ namespace ArenaMasters.model
         MediaPlayer mediaPrincipal = new MediaPlayer();
         MediaPlayer mediaBattle = new MediaPlayer();
         public bool playing = false;
-        private void Media_Ended(object sender, EventArgs e)
+        private void MediaPrincipal_Ended(object sender, EventArgs e)
         {
             mediaPrincipal.Position = TimeSpan.Zero;
             mediaPrincipal.Play();
         }
-        
+        private void MediaBattle_Ended(object sender, EventArgs e)
+        {
+            mediaBattle.Position = TimeSpan.Zero;
+            mediaBattle.Play();
+        }
         public void playInicioSesion()
         {
             try
             {
                 mediaPrincipal.Open(new Uri("music/InicioSesion.mp3", UriKind.Relative));
                 mediaPrincipal.Play();
-                mediaPrincipal.MediaEnded += new EventHandler(Media_Ended);
+                mediaPrincipal.MediaEnded += new EventHandler(MediaPrincipal_Ended);
                 playing = true;
             }
             catch (Exception ex)
@@ -41,7 +45,7 @@ namespace ArenaMasters.model
                 mediaPrincipal.Close();
                 mediaPrincipal.Open(new Uri("music/PantallaPrincipal.mp3", UriKind.Relative));
                 mediaPrincipal.Play();
-                mediaPrincipal.MediaEnded += new EventHandler(Media_Ended);
+                mediaPrincipal.MediaEnded += new EventHandler(MediaPrincipal_Ended);
                 playing = true;
 
             }
@@ -67,8 +71,8 @@ namespace ArenaMasters.model
                     await Task.Delay(150);
                     mediaPrincipal.Volume += i;
                 }
-                mediaPrincipal.MediaEnded += new EventHandler(Media_Ended);
-                mediaBattle.MediaEnded += new EventHandler(Media_Ended);
+                mediaPrincipal.MediaEnded += new EventHandler(MediaPrincipal_Ended);
+                mediaBattle.MediaEnded += new EventHandler(MediaBattle_Ended);
                 playing = true;
 
             }
@@ -81,14 +85,14 @@ namespace ArenaMasters.model
         {
             try
             {
-                
+
                 for (float i = 0.01f; i < 0.5; i+=0.01f)
                 {
                     await Task.Delay(100);
                     mediaPrincipal.Volume -= i;
                     mediaBattle.Volume += i;
                 }
-                
+
 
             }
             catch (Exception ex)
@@ -132,6 +136,7 @@ namespace ArenaMasters.model
         public void stop()
         {
             mediaPrincipal.Close();
+            mediaBattle.Close();
             playing = false;
         }
     }

@@ -68,7 +68,7 @@ namespace ArenaMasters
                 }
 
             }
-            gridSkillsFight.Visibility = Visibility.Visible;
+            spSkillsFight.Visibility = Visibility.Visible;
         }
         
         private void SetTargetRangeFormatting(TextBlock textBlock, bool isMultiTarget)
@@ -103,7 +103,7 @@ namespace ArenaMasters
 
         private void backUnitAtk(object sender, RoutedEventArgs e)
         {
-            gridSkillsFight.Visibility = Visibility.Collapsed;
+            spSkillsFight.Visibility = Visibility.Collapsed;
         }
 
         private void Attack(Units Active, List<Units> Passives,Skills AttackSkill) { 

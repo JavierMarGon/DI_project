@@ -414,7 +414,7 @@
 
         <!--SAQUEOS-->
 
-        <StackPanel x:Name="moneyDungeonLvSelector" Orientation="Vertical" Visibility="Hidden" Canvas.Top="60" HorizontalAlignment="Left" Height="699" VerticalAlignment="Top" Width="1375" >
+        <StackPanel x:Name="moneyDungeonLvSelector" Orientation="Vertical" Visibility="Visible" Canvas.Top="60" HorizontalAlignment="Left" Height="699" VerticalAlignment="Top" Width="1375" >
             <StackPanel.Background>
                 <ImageBrush ImageSource="/images/goldmine.jpg"/>
             </StackPanel.Background>
@@ -469,18 +469,25 @@
         </StackPanel>
 
         <Grid x:Name="gridSelectedUnits" Visibility="Collapsed" Background="Transparent" Height="750" Width="1370">
-            <StackPanel Height="220" Width="300" HorizontalAlignment="Center">
-                <ListBox x:Name="listBoxUnits" ItemsSource="{Binding Inventory}" Background="#66FFFFFF" SelectionMode="Multiple" HorizontalContentAlignment="Center">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <ListBoxItem Content="{Binding IdCharacter}" FontSize="22"></ListBoxItem>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button Name="btnSelectUnits" Click="SelectUnitsAndProceed" Height="20" Width="100" Content="Jugar"/>
-                    <Button Name="btnBackSelectUnits" Click="BackSelectUnits" Height="20" Width="100" Content="Volver"/>
+            <StackPanel Height="250" Width="300" HorizontalAlignment="Center" Background="#BF524939">
+                <StackPanel Margin="20">
+                    <TextBlock FontSize="15" Height="40" HorizontalAlignment="Center" Foreground="White" Text="Selecciona tus unidades para el saqueo"/>
+                    <ListBox x:Name="listBoxUnits" ItemsSource="{Binding Inventory}" Background="#66FFFFFF" SelectionMode="Multiple" HorizontalContentAlignment="Center">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding IdCharacter}" FontSize="22" Margin="0,0,30,0"/>
+                                    <ProgressBar Minimum="0" Maximum="{Binding MaxHp}" Value="{Binding Hp}" Width="150" Background="Green" Margin="10,0,0,0" Style="{StaticResource CustomProgressBarStyle}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button Style="{StaticResource btnLogin}" Foreground="white" Margin="20" Name="btnSelectUnits" Click="SelectUnitsAndProceed" Height="30" Width="100" Content="Jugar"/>
+                        <Button Style="{StaticResource btnNo}" Name="btnBackSelectUnits" Margin="20" Click="BackSelectUnits" Height="30" Width="100" Content="Volver"/>
+                    </StackPanel>
                 </StackPanel>
+                
             </StackPanel>
         </Grid>
     </Canvas>

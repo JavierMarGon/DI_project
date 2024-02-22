@@ -513,6 +513,21 @@
         </Setter>
     </Style>
 
+    <Style x:Key="CustomProgressBarStyle" TargetType="ProgressBar">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ProgressBar">
+                    <Grid>
+                        <Border x:Name="PART_Track" BorderBrush="#FFE6E6E6" BorderThickness="1" CornerRadius="5"/>
+                        <Border x:Name="PART_Indicator" Background="Green" BorderThickness="1" CornerRadius="3" HorizontalAlignment="Left"/>
+                        <TextBlock Text="{Binding Hp, StringFormat=' {0}HP'}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
 
 
 

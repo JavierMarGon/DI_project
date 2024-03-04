@@ -414,7 +414,7 @@
 
         <!--SAQUEOS-->
 
-        <StackPanel x:Name="moneyDungeonLvSelector" Orientation="Vertical" Visibility="Visible" Canvas.Top="60" HorizontalAlignment="Left" Height="699" VerticalAlignment="Top" Width="1375" >
+        <StackPanel x:Name="moneyDungeonLvSelector" Orientation="Vertical" Visibility="Collapsed" Canvas.Top="60" HorizontalAlignment="Left" Height="699" VerticalAlignment="Top" Width="1375" >
             <StackPanel.Background>
                 <ImageBrush ImageSource="/images/goldmine.jpg"/>
             </StackPanel.Background>

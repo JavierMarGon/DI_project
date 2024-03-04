@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\JavierMG\\Desktop\\dilastest\\DI_project\\ArenaMasters\\ArenaMasters.csproj": {}
+    "C:\\Users\\javier.martin.gonzal\\Downloads\\EntregaProyectoDI_AD\\EntregaProyectoDI_AD\\DI_project\\ArenaMasters\\ArenaMasters.csproj": {}
   },
   "projects": {
-    "C:\\Users\\JavierMG\\Desktop\\dilastest\\DI_project\\ArenaMasters\\ArenaMasters.csproj": {
+    "C:\\Users\\javier.martin.gonzal\\Downloads\\EntregaProyectoDI_AD\\EntregaProyectoDI_AD\\DI_project\\ArenaMasters\\ArenaMasters.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\JavierMG\\Desktop\\dilastest\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
+        "projectUniqueName": "C:\\Users\\javier.martin.gonzal\\Downloads\\EntregaProyectoDI_AD\\EntregaProyectoDI_AD\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
         "projectName": "ArenaMasters",
-        "projectPath": "C:\\Users\\JavierMG\\Desktop\\dilastest\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
-        "packagesPath": "C:\\Users\\JavierMG\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JavierMG\\Desktop\\dilastest\\DI_project\\ArenaMasters\\obj\\",
+        "projectPath": "C:\\Users\\javier.martin.gonzal\\Downloads\\EntregaProyectoDI_AD\\EntregaProyectoDI_AD\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
+        "packagesPath": "C:\\Users\\javier.martin.gonzal\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\javier.martin.gonzal\\Downloads\\EntregaProyectoDI_AD\\EntregaProyectoDI_AD\\DI_project\\ArenaMasters\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\JavierMG\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\javier.martin.gonzal\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

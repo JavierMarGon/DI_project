@@ -52,8 +52,6 @@ namespace ArenaMasters
         public void initializeShop()
         {
             RefreshStoreValue.Text = (1000+(500*game.Refresh)).ToString();
-
-            Comprar((1000 + (500 * game.Refresh)));
             manager.GetAllShopItems(game.IdGame);
         }
         public void initializeUnits()
@@ -179,14 +177,19 @@ namespace ArenaMasters
             pjShop.Visibility = Visibility.Visible;
 
         }
-        public void Comprar(int valor)
+        public bool Comprar(int valor)
         {
-            if (game.Money > valor)
+            if (game.Money >= Math.Abs(valor))
             {
                 manager.updateMoney(game.IdGame, valor);
                 game.Money += valor;
                 currentMoney.Text = game.Money.ToString();
-            }     
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         private void ClickBuyUnitShop(object sender, RoutedEventArgs e)
         {
@@ -421,9 +424,13 @@ namespace ArenaMasters
 
         private void refreshShop(object sender, RoutedEventArgs e)
         {
-            manager.refreshShop(game.IdGame);
-            game.Refresh += 1;
-            initializeShop();
+            if (Comprar(-(1000 + (500 * game.Refresh))))
+            {
+                manager.refreshShop(game.IdGame);
+                game.Refresh += 1;
+                initializeShop();
+            }
+            
         }
     }
 }

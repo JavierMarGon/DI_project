@@ -22,12 +22,6 @@
             <Button Style="{StaticResource miBoton}" Margin="20,0,0,0" Foreground="#00000000" Background="#00000000" BorderBrush="#00000000" Click="exitClick">
                 <Image Source="/images/back.png"/>
             </Button>
-            <StackPanel Orientation="Horizontal" Height="40" Width="1300">
-                <Image Source="/images/coin.png" Height="40" Margin="400,0,0,0"/>
-                <TextBlock x:Name="currentMoney" Margin="10,0,240,0" VerticalAlignment="center" TextWrapping="Wrap" Text="1230$" Foreground="Beige"  FontSize="22"/>
-                <Image Source="/images/persona.png" Height="40"/>
-                <TextBlock x:Name="currentUnits" Margin="10,0,0,0" VerticalAlignment="center" TextWrapping="Wrap" Text="0/7" Foreground="Beige"  FontSize="22"/>
-            </StackPanel>
         </StackPanel>
         <StackPanel x:Name="CautionMessage" Orientation="Vertical" Visibility="Collapsed" Background="LightGray" Height="286" VerticalAlignment="Top" Margin="374,186,408,0" Panel.ZIndex="1">
             <TextBlock Text="¡¡¡Atención!!!" Foreground="Red" HorizontalAlignment="Center" FontSize="40" TextWrapping="Wrap"></TextBlock>

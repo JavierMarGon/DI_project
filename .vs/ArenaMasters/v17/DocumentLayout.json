@@ -1,0 +1,135 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\f.bedmar\\Desktop\\Joyfe\\TFG\\DI_project\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|c:\\users\\f.bedmar\\desktop\\joyfe\\tfg\\di_project\\arenamasters\\view\\fight.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|solutionrelative:arenamasters\\view\\fight.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|c:\\users\\f.bedmar\\desktop\\joyfe\\tfg\\di_project\\arenamasters\\view\\fight.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|solutionrelative:arenamasters\\view\\fight.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|c:\\users\\f.bedmar\\desktop\\joyfe\\tfg\\di_project\\arenamasters\\model\\units.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|solutionrelative:arenamasters\\model\\units.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|c:\\users\\f.bedmar\\desktop\\joyfe\\tfg\\di_project\\arenamasters\\model\\arenamastersmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|solutionrelative:arenamasters\\model\\arenamastersmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|c:\\users\\f.bedmar\\desktop\\joyfe\\tfg\\di_project\\arenamasters\\view\\gamemenu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|solutionrelative:arenamasters\\view\\gamemenu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|c:\\users\\f.bedmar\\desktop\\joyfe\\tfg\\di_project\\arenamasters\\view\\gamemenu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|solutionrelative:arenamasters\\view\\gamemenu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|c:\\users\\f.bedmar\\desktop\\joyfe\\tfg\\di_project\\arenamasters\\model\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|solutionrelative:arenamasters\\model\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Fight.xaml",
+              "DocumentMoniker": "C:\\Users\\f.bedmar\\Desktop\\Joyfe\\TFG\\DI_project\\ArenaMasters\\view\\Fight.xaml",
+              "RelativeDocumentMoniker": "ArenaMasters\\view\\Fight.xaml",
+              "ToolTip": "C:\\Users\\f.bedmar\\Desktop\\Joyfe\\TFG\\DI_project\\ArenaMasters\\view\\Fight.xaml",
+              "RelativeToolTip": "ArenaMasters\\view\\Fight.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-07T07:22:22.483Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Fight.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\f.bedmar\\Desktop\\Joyfe\\TFG\\DI_project\\ArenaMasters\\view\\Fight.xaml.cs",
+              "RelativeDocumentMoniker": "ArenaMasters\\view\\Fight.xaml.cs",
+              "ToolTip": "C:\\Users\\f.bedmar\\Desktop\\Joyfe\\TFG\\DI_project\\ArenaMasters\\view\\Fight.xaml.cs",
+              "RelativeToolTip": "ArenaMasters\\view\\Fight.xaml.cs",
+              "ViewState": "AQIAAHkAAAAAAAAAAAAQwIQAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-07T07:01:28.811Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Units.cs",
+              "DocumentMoniker": "C:\\Users\\f.bedmar\\Desktop\\Joyfe\\TFG\\DI_project\\ArenaMasters\\model\\Units.cs",
+              "RelativeDocumentMoniker": "ArenaMasters\\model\\Units.cs",
+              "ToolTip": "C:\\Users\\f.bedmar\\Desktop\\Joyfe\\TFG\\DI_project\\ArenaMasters\\model\\Units.cs",
+              "RelativeToolTip": "ArenaMasters\\model\\Units.cs",
+              "ViewState": "AQIAADkAAAAAAAAAAAAmwJ4AAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-07T06:51:33.829Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ArenaMastersManager.cs",
+              "DocumentMoniker": "C:\\Users\\f.bedmar\\Desktop\\Joyfe\\TFG\\DI_project\\ArenaMasters\\model\\ArenaMastersManager.cs",
+              "RelativeDocumentMoniker": "ArenaMasters\\model\\ArenaMastersManager.cs",
+              "ToolTip": "C:\\Users\\f.bedmar\\Desktop\\Joyfe\\TFG\\DI_project\\ArenaMasters\\model\\ArenaMastersManager.cs",
+              "RelativeToolTip": "ArenaMasters\\model\\ArenaMastersManager.cs",
+              "ViewState": "AQIAAPsAAAAAAAAAAAAjwB0BAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-07T06:51:34.173Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Game.cs",
+              "DocumentMoniker": "C:\\Users\\f.bedmar\\Desktop\\Joyfe\\TFG\\DI_project\\ArenaMasters\\model\\Game.cs",
+              "RelativeDocumentMoniker": "ArenaMasters\\model\\Game.cs",
+              "ToolTip": "C:\\Users\\f.bedmar\\Desktop\\Joyfe\\TFG\\DI_project\\ArenaMasters\\model\\Game.cs",
+              "RelativeToolTip": "ArenaMasters\\model\\Game.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-07T06:51:34.179Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GameMenu.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\f.bedmar\\Desktop\\Joyfe\\TFG\\DI_project\\ArenaMasters\\view\\GameMenu.xaml.cs",
+              "RelativeDocumentMoniker": "ArenaMasters\\view\\GameMenu.xaml.cs",
+              "ToolTip": "C:\\Users\\f.bedmar\\Desktop\\Joyfe\\TFG\\DI_project\\ArenaMasters\\view\\GameMenu.xaml.cs",
+              "RelativeToolTip": "ArenaMasters\\view\\GameMenu.xaml.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAHIAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-07T06:51:34.184Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GameMenu.xaml",
+              "DocumentMoniker": "C:\\Users\\f.bedmar\\Desktop\\Joyfe\\TFG\\DI_project\\ArenaMasters\\view\\GameMenu.xaml",
+              "RelativeDocumentMoniker": "ArenaMasters\\view\\GameMenu.xaml",
+              "ToolTip": "C:\\Users\\f.bedmar\\Desktop\\Joyfe\\TFG\\DI_project\\ArenaMasters\\view\\GameMenu.xaml",
+              "RelativeToolTip": "ArenaMasters\\view\\GameMenu.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-07T06:51:34.189Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

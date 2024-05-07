@@ -80,7 +80,7 @@
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Vertical">
-                                    <Button Click="clickUnitFight" Height="80" Width="70" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Padding="-4">
+                                    <Button Click="selectUnit" Height="80" Width="70" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Padding="-4">
                                         <Image Height="70" Source="/images/dragon.png" />
                                     </Button>
                                     <TextBlock Text="{Binding Hp}" Foreground="Bisque" VerticalAlignment="Center" HorizontalAlignment="Center"/>
@@ -115,30 +115,31 @@
                             <Run x:Name="unitNameAtk"/>
                         </TextBlock>
                     </Grid>
+
                     <StackPanel x:Name="spAtk1" Grid.Row="1" VerticalAlignment="Center" >
                         <StackPanel  Width="280" Orientation="Horizontal" VerticalAlignment="Center"  HorizontalAlignment="Center">
-                            <Button ToolTip="asjhdfbas" Name="btnAtk1" Content="sdkfjgsbd" FontSize="20" Width="120" Background="Transparent" BorderBrush="Transparent" BorderThickness="0"/>
+                            <Button Click="attackPhases" ToolTip="asjhdfbas" Name="btnAtk1" Content="sdkfjgsbd" FontSize="20" Width="120" Background="Transparent" BorderBrush="Transparent" BorderThickness="0"/>
                             <TextBlock x:Name="typeSkill1" Text="Tipo" Width="70" FontSize="20" />
                             <TextBlock x:Name="targetRange1" Text="Rango" FontSize="20"/>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel x:Name="spAtk2" Grid.Row="2" VerticalAlignment="Center" >
                         <StackPanel Width="280" Orientation="Horizontal" VerticalAlignment="Center"  HorizontalAlignment="Center">
-                            <Button Name="btnAtk2" Content="sdkfjgsbd" FontSize="20" Width="120" Background="Transparent" BorderBrush="Transparent" BorderThickness="0"/>
+                            <Button Click="attackPhases" Name="btnAtk2" Content="sdkfjgsbd" FontSize="20" Width="120" Background="Transparent" BorderBrush="Transparent" BorderThickness="0"/>
                             <TextBlock x:Name="typeSkill2" Text="Tipo" Width="70" FontSize="20" />
                             <TextBlock x:Name="targetRange2" Text="Rango" FontSize="20"/>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel x:Name="spAtk3" Grid.Row="3" VerticalAlignment="Center" >
                         <StackPanel Width="280" Orientation="Horizontal" VerticalAlignment="Center"  HorizontalAlignment="Center">
-                            <Button Name="btnAtk3" Content="sdkfjgsbd" FontSize="20" Width="120" Background="Transparent" BorderBrush="Transparent" BorderThickness="0"/>
+                            <Button Click="attackPhases" Name="btnAtk3" Content="sdkfjgsbd" FontSize="20" Width="120" Background="Transparent" BorderBrush="Transparent" BorderThickness="0"/>
                             <TextBlock x:Name="typeSkill3" Text="Tipo" Width="70" FontSize="20" />
                             <TextBlock x:Name="targetRange3" Text="Rango" FontSize="20"/>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel x:Name="spAtk4" Grid.Row="4" VerticalAlignment="Center" >
                         <StackPanel Width="280" Orientation="Horizontal" VerticalAlignment="Center"  HorizontalAlignment="Center">
-                            <Button Name="btnAtk4" Content="sdkfjgsbd" FontSize="20" Width="120" Background="Transparent" BorderBrush="Transparent" BorderThickness="0"/>
+                            <Button Click="attackPhases" Name="btnAtk4" Content="sdkfjgsbd" FontSize="20" Width="120" Background="Transparent" BorderBrush="Transparent" BorderThickness="0"/>
                             <TextBlock x:Name="typeSkill4" Text="Tipo" Width="70" FontSize="20" />
                             <TextBlock x:Name="targetRange4" Text="rango" FontSize="20"/>
                         </StackPanel>

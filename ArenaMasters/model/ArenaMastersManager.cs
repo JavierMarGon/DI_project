@@ -256,6 +256,36 @@ namespace ArenaMasters.model
             return skillsData;
 
         }
+
+        public Skills getSkill(int id_character, int place)
+        {
+            Skills skill;
+            string jsonResult = _ad.PA_GetSkillData(id_character, place);
+            var skillData = JsonConvert.DeserializeAnonymousType(jsonResult, new
+            {
+                IdSkill = 0,
+                Name = "",
+                Description = "",
+                Type = "",
+                Tier = 0,
+                Target = false,
+                TargetRange = false
+            });
+            if (skillData != null)
+            {
+                return skill = new Skills(
+                                    skillData.IdSkill,
+                                    skillData.Name,
+                                    skillData.Description,
+                                    skillData.Type,
+                                    skillData.Tier,
+                                    skillData.Target,
+                                    skillData.TargetRange
+                                    );
+            }
+            return null;
+        }
+
         public List<Skills> fetchAllShopSkills(int id_character)
         {
             List<Skills> skillsData = new List<Skills>();

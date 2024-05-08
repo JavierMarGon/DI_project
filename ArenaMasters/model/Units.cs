@@ -114,7 +114,7 @@ namespace ArenaMasters
             get { return _id_game; }
             set { _id_game = value; }
         }
-
+        
         public Units(string unitName)
         {
             UnitName = unitName;
@@ -141,6 +141,21 @@ namespace ArenaMasters
                 _skills.Add(skill);
             }
         }
+        public Units(int idRol, int hp, int atk, int def, int hitRate, int evasion, List<Skills> skillsData)
+        {
+            IdRol = idRol;
+            Hp = hp;
+            MaxHp = hp;         //Para obtener el maximo de Hp, esto no se va a modificar nunca
+            Atk = atk;
+            Def = def;
+            HitRate = hitRate;
+            Evasion = evasion;
+           
+            foreach (Skills skill in skillsData)
+            {
+                _skills.Add(skill);
+            }
+        }
         public void setSkillByIndex(int index, Skills data)
         {
             _skills[index-1] = data;
@@ -150,7 +165,17 @@ namespace ArenaMasters
         {
             return _skills[index-1];
         }
-
+        public bool Alive()
+        {
+            if (Hp > 0) 
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         private void DeleteSelectedItem()
         {
             //tengo que obtener el numero de units

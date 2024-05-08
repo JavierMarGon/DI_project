@@ -28,98 +28,108 @@ namespace ArenaMasters
         Units unitSelect;
         Skills skillSelect;
         Game _game;
-        int phase = 1;
+        private int phase = 1;
+        private int _lvl;
         
         public Fight(int lvl, Game game, List<Units> _unitsSelected)
         {
+            _lvl = lvl;
             InitializeComponent();
             GenerarPantalla(lvl);
             _game = game;
             Units = _unitsSelected;
             DataContext = this;
+            generateEnemy(lvl);
             this.KeyDown += pressKey;
         }
-
-        public void attackPhases(object sender, RoutedEventArgs e)
+        private void generateEnemy(int lvl)
         {
-            switch(phase)
+            cpu.Clear();
+            Units generated;
+            Random random = new Random();
+            int rol = 0;
+            int hp = 0;
+            int ata = 0;
+            int def = 0;
+            int hit = 0;
+            int eva = 0;
+            List<Skills> skillset;
+            int value = random.Next(3, 5);
+            for (int i = 0; i < value; i++)
             {
-                case 1:         /*Fase de elección de personaje*/
-                    selectUnit(sender, e); 
-                    break;
-                case 2:         /*Fase de elección de habilidades*/
-                    selectSkill(sender, e);
-                    break;
-                /*case 3:         /*Fase de elección de enemigo*/
-                    /*selectEnemy(sender, e);
-                    break;*/
+                skillset = new List<Skills>();
+                skillset.Clear();
+                rol = random.Next(1, 5);
+                if (rol == 1)
+                {
+                    hp = 140 + (10 * lvl);
+                    ata = 6 + (2 * lvl);
+                    def = 3 + (1 * lvl);
+                    hit = 5 + (2 * lvl);
+                    eva = 5 + (2 * lvl);
+                    if (lvl >= 2)
+                    {
+                        skillset.Add(manager.fetchOneSkills(lvl, rol));
+                    }
+                    if (lvl >= 3)
+                    {
+                        skillset.Add(manager.fetchOneSkills(lvl, rol));
+                    }
+                }
+
+                else if (rol == 2)
+                {
+                    hp = 190 + (10 * lvl);
+                    ata = 4 + (1 * lvl);
+                    def = 7 + (3 * lvl);
+                    hit = 4 + (2 * lvl);
+                    eva = 4 + (1 * lvl);
+                }
+
+                else if (rol == 3)
+                {
+                    hp = 250 + (20 * lvl);
+                    ata = 2 + (1 * lvl); ;
+                    def = 5 + (1 * lvl); ;
+                    hit = 5 + (1 * lvl); ;
+                    eva = 15 + (2 * lvl); ;
+                }
+
+                else if (rol == 4)
+                {
+                    hp = 200 + (15 * lvl);
+                    ata = 5 + (2 * lvl);
+                    def = 6 + (1 * lvl);
+                    hit = 10 + (2 * lvl);
+                    eva = 8 + (3 * lvl);
+                }
+                if (lvl >= 1)
+                {
+                    skillset.Add(manager.fetchOneSkills(lvl, rol - 1));
+                }
+               
+                if (lvl >= 4)
+                {
+                    skillset.Add(manager.fetchOneSkills(lvl, rol - 1));
+                }
+
+                generated = new Units(rol, hp, ata, def, hit, eva, skillset);
             }
         }
-
-        
-
-        public void pressKey(object sender, KeyEventArgs e)
-        {
-            if(phase == 1)
-            {
-                switch (e.Key)      //Elegir la unidad
-                {
-                    case Key.D1:
-                        unitSelect = Units[0];
-                        selectUnit(sender, e);
-                        break;
-                    case Key.D2:
-                        unitSelect = Units[1];
-                        break;
-                    case Key.D3:
-                        unitSelect = Units[2];
-                        break;
-                    case Key.D4:
-                        unitSelect = Units[3];
-                        break;
-                }
-            }
-            if(phase == 3)
-            {
-                switch (e.Key)      //Habría que intercambiar los mensajes por la función Attack
-                {
-                    case Key.D1: 
-                        MessageBox.Show("Se presionó la tecla 1");
-                        break;
-                    case Key.D2: 
-                        MessageBox.Show("Se presionó la tecla 2");
-                        break;
-                    case Key.D3: 
-                        MessageBox.Show("Se presionó la tecla 3");
-                        break;
-                    case Key.D4: 
-                        MessageBox.Show("Se presionó la tecla 4");
-                        break;
-                }
-                phase = 1;
-            }
-        }
-
-        //private void selectEnemy(object sender, RoutedEventArgs e)
-        //{
-            
-        //}
-
-        private void selectSkill(object sender, RoutedEventArgs e)
+        public void btnSkillSelector(object sender, RoutedEventArgs e)
         {
             int id_character = unitSelect.IdCharacter;
             Button clickedButton = (Button)sender;
             if (clickedButton.DataContext is not null)
             {
                 string buttonName = clickedButton.Name.ToString();
-                
+
                 char lastCharacter = buttonName[buttonName.Length - 1];
                 int skillId;
                 if (int.TryParse(lastCharacter.ToString(), out skillId))
                 {
                     skillSelect = manager.getSkill(id_character, skillId);
                     spSkillsFight.Visibility = Visibility.Hidden;
-                    phase = 3;
                 }
                 else
                 {
@@ -128,6 +138,99 @@ namespace ArenaMasters
             }
         }
 
+        private int getKeyValue(Key key)
+        {
+            int value = -1;
+            
+            switch (key)
+            {
+                case Key.D1: 
+                    value = 1;
+                    break;
+                case Key.D2:
+                    value = 2;
+                    break;
+                case Key.D3:
+                    value = 3;
+                    break;
+                case Key.D4:
+                    value = 4;
+                    break;
+                case Key.Escape:
+                    value = 0;
+                    break;
+            }
+            return value;       
+        }
+
+        public void pressKey(object sender, KeyEventArgs e)
+        {
+            int value = 0;
+            value = getKeyValue(e.Key);
+            if (phase == 1)
+            {
+                try {
+                    if (Units[value-1].Alive())
+                    {
+                        unitSelect = Units[value-1];
+                        
+                        loadUnitInfo(unitSelect);
+                    }                 
+                }
+                catch { }
+                return;           
+            }
+            if(phase == 2)
+            {
+                try
+                {
+                    skillSelect = unitSelect.getSkillByIndex(value);
+                    nextPhase();
+                }
+                catch { }
+                return;
+            }
+        }
+
+        //private void selectEnemy(object sender, RoutedEventArgs e)
+        //{
+            
+        //}
+
+        private void selectSkill(Skills skill)
+        {
+            if (skill.TargetFoe) 
+            {
+                //inhabilitar botones de muñecos propios
+            }
+            else
+            {
+                //inhabilitar botones de muñecos ajenos
+            }
+            if (skill.MultiTarget)
+            {
+                //seleccionar todos los muñecos
+            }
+        }
+        private void loadUnitInfo(Units unit)
+        {
+            Button[] btnAtk = { btnAtk1, btnAtk2, btnAtk3, btnAtk4 };
+            TextBlock[] typeSkill = { typeSkill1, typeSkill2, typeSkill3, typeSkill4 };
+            TextBlock[] targetRange = { targetRange1, targetRange2, targetRange3, targetRange4 };
+            unitNameAtk.Text = unit.IdCharacter.ToString();
+            for (int i = 0; i < 4; i++)
+            {
+                btnAtk[i].Content = unit.Skills[i].Name;
+                typeSkill[i].Text = unit.Skills[i].SkillType.ToString();
+                targetRange[i].Text = unit.Skills[i].MultiTargetString;
+
+                SetSkillTypeColor(typeSkill[i], unit.Skills[i].SkillType);
+                SetTargetRangeFormatting(targetRange[i], unit.Skills[i].MultiTarget);
+            }
+            unitSelect = unit;
+            nextPhase();
+            spSkillsFight.Visibility = Visibility.Visible;
+        }
         private void selectUnit(object sender, RoutedEventArgs e)
         {
             Button clickedButton = (Button)sender;
@@ -135,23 +238,8 @@ namespace ArenaMasters
             
             if (unit is Units clickedUnit)
             {
-                Button[] btnAtk = { btnAtk1, btnAtk2, btnAtk3, btnAtk4 };
-                TextBlock[] typeSkill = { typeSkill1, typeSkill2, typeSkill3, typeSkill4 };
-                TextBlock[] targetRange = { targetRange1, targetRange2, targetRange3, targetRange4 };
-                unitNameAtk.Text = clickedUnit.IdCharacter.ToString(); 
-                for (int i = 0; i < 4; i++)
-                {
-                    btnAtk[i].Content = clickedUnit.Skills[i].Name;
-                    typeSkill[i].Text = clickedUnit.Skills[i].SkillType.ToString();
-                    targetRange[i].Text = clickedUnit.Skills[i].MultiTargetString;
-
-                    SetSkillTypeColor(typeSkill[i], clickedUnit.Skills[i].SkillType);
-                    SetTargetRangeFormatting(targetRange[i], clickedUnit.Skills[i].MultiTarget);
-                }
-                phase = 2;
-                unitSelect = clickedUnit;
+                loadUnitInfo(clickedUnit);
             }
-            spSkillsFight.Visibility = Visibility.Visible;
         }
         
         private void SetTargetRangeFormatting(TextBlock textBlock, bool isMultiTarget)
@@ -251,7 +339,10 @@ namespace ArenaMasters
                 
             }
         }
-
+        private void nextPhase() 
+        {
+            phase++;
+        }
         private void resetPhase()
         {
             unitSelect = null;

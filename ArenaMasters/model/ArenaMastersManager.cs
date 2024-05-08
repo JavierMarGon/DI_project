@@ -318,6 +318,35 @@ namespace ArenaMasters.model
             return skillsData;
 
         }
+        public Skills fetchOneSkills(int tier, int type)
+        {
+            Skills skill;
+            string jsonResult = _ad.PA_GetRandomSkill(tier, type);
+            var skillData = JsonConvert.DeserializeAnonymousType(jsonResult, new
+            {
+                IdSkill = 0,
+                Name = "",
+                Description = "",
+                Type = "",
+                Tier = 0,
+                Target = false,
+                TargetRange = false
+            });
+            if (skillData != null)
+            {
+                return skill = new Skills(
+                                    skillData.IdSkill,
+                                    skillData.Name,
+                                    skillData.Description,
+                                    skillData.Type,
+                                    skillData.Tier,
+                                    skillData.Target,
+                                    skillData.TargetRange
+                                    );
+            }
+            return null;
+
+        }
         public void GetAllGames(int id_user)
         {
             GameList.Clear();

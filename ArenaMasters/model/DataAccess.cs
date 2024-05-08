@@ -380,7 +380,78 @@ namespace ArenaMasters.model
                 return ex.Message;
             }
         }
+        public string PA_GetRandomSkill(int tier, int type)
+        {
+            //int resultado = -99;
+            DataSet ds = new DataSet();
+            bool _target = false;
+            bool _targetRange = false;
+            try
+            {
+                _cmd = new MySqlCommand();
+                _cmd.Connection = _conn;
+                _cmd.CommandType = CommandType.StoredProcedure;
+                _cmd.CommandText = "getRandomSkill";
 
+                _cmd.Parameters.AddWithValue("_tiersk", tier);
+                _cmd.Parameters["_tiersk"].Direction = ParameterDirection.Input;
+
+                _cmd.Parameters.AddWithValue("_typesk", type);
+                _cmd.Parameters["_typesk"].Direction = ParameterDirection.Input;
+
+                _cmd.Parameters.Add(new MySqlParameter("_id_skill", MySqlDbType.Int32));
+                _cmd.Parameters["_id_skill"].Direction = ParameterDirection.Output;
+
+                _cmd.Parameters.Add(new MySqlParameter("_name", MySqlDbType.VarChar));
+                _cmd.Parameters["_name"].Direction = ParameterDirection.Output;
+
+                _cmd.Parameters.Add(new MySqlParameter("_description", MySqlDbType.VarChar));
+                _cmd.Parameters["_description"].Direction = ParameterDirection.Output;
+
+                _cmd.Parameters.Add(new MySqlParameter("_type", MySqlDbType.VarChar));
+                _cmd.Parameters["_type"].Direction = ParameterDirection.Output;
+
+                _cmd.Parameters.Add(new MySqlParameter("_tier", MySqlDbType.Int32));
+                _cmd.Parameters["_tier"].Direction = ParameterDirection.Output;
+
+                _cmd.Parameters.Add(new MySqlParameter("_target", MySqlDbType.VarChar));
+                _cmd.Parameters["_target"].Direction = ParameterDirection.Output;
+
+                _cmd.Parameters.Add(new MySqlParameter("_target_range", MySqlDbType.VarChar));
+                _cmd.Parameters["_target_range"].Direction = ParameterDirection.Output;
+
+
+
+                _cmd.ExecuteNonQuery();
+                if (_cmd.Parameters["_target"].Value.ToString() == "foes")
+                {
+                    _target = true;
+                }
+                if (_cmd.Parameters["_target_range"].Value.ToString() == "multiple")
+                {
+                    _targetRange = true;
+                }
+                var resultJson = new
+                {
+                    IdSkill = _cmd.Parameters["_id_skill"].Value,
+                    Name = _cmd.Parameters["_name"].Value,
+                    Description = _cmd.Parameters["_description"].Value,
+                    Type = _cmd.Parameters["_type"].Value,
+                    Tier = _cmd.Parameters["_tier"].Value,
+                    Target = _target,
+                    TargetRange = _targetRange
+                };
+                string jsonResult = JsonConvert.SerializeObject(resultJson);
+
+                return jsonResult;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return ex.Message;
+            }
+        }
         public int PA_RandomSkill(int id_character, int placement)
         {
             int resultado = -99;

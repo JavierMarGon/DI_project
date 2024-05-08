@@ -1884,19 +1884,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\f.bedmar\\.nuget\\packages\\": {}
+    "C:\\Users\\javie\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\f.bedmar\\Desktop\\Joyfe\\TFG\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
+      "projectUniqueName": "C:\\Users\\javie\\Desktop\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
       "projectName": "ArenaMasters",
-      "projectPath": "C:\\Users\\f.bedmar\\Desktop\\Joyfe\\TFG\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
-      "packagesPath": "C:\\Users\\f.bedmar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\f.bedmar\\Desktop\\Joyfe\\TFG\\DI_project\\ArenaMasters\\obj\\",
+      "projectPath": "C:\\Users\\javie\\Desktop\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
+      "packagesPath": "C:\\Users\\javie\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\javie\\Desktop\\DI_project\\ArenaMasters\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\f.bedmar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\javie\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

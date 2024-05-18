@@ -40,8 +40,8 @@ namespace ArenaMasters.model
         }
         public int Tier
         {
-            get { return _id_skill; }
-            set { _id_skill = value; }
+            get { return _tier; }
+            set { _tier = value; }
         }
         public bool TargetFoe
         {

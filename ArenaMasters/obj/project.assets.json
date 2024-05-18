@@ -1889,11 +1889,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\javie\\Desktop\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
+      "projectUniqueName": "C:\\Users\\javie\\Desktop\\DI_project - copia\\ArenaMasters\\ArenaMasters.csproj",
       "projectName": "ArenaMasters",
-      "projectPath": "C:\\Users\\javie\\Desktop\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
+      "projectPath": "C:\\Users\\javie\\Desktop\\DI_project - copia\\ArenaMasters\\ArenaMasters.csproj",
       "packagesPath": "C:\\Users\\javie\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\javie\\Desktop\\DI_project\\ArenaMasters\\obj\\",
+      "outputPath": "C:\\Users\\javie\\Desktop\\DI_project - copia\\ArenaMasters\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\javie\\AppData\\Roaming\\NuGet\\NuGet.Config",

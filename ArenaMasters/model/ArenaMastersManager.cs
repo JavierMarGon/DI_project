@@ -30,6 +30,8 @@ namespace ArenaMasters.model
 
         ObservableCollection<Shop> _shopInventory;
         ObservableCollection<Units> _Inventory;
+        ObservableCollection<Units> _PlayerUnits;
+        ObservableCollection<Units> _CPUUnits;
         private ObservableCollection<Partida> _gameList;
         private int _id_User;
         private string _userName;
@@ -85,12 +87,32 @@ namespace ArenaMasters.model
                 OnPropertyChanged("Inventory");
             }
         }
+        public ObservableCollection<Units> PlayerUnits
+        {
+            get { return _PlayerUnits; }
+            set
+            {
+                _PlayerUnits = value;
+                OnPropertyChanged("PlayerUnits");
+            }
+        }
+        public ObservableCollection<Units> CPUUnits
+        {
+            get { return _CPUUnits; }
+            set
+            {
+                _CPUUnits = value;
+                OnPropertyChanged("CPUUnits");
+            }
+        }
         //Constructor(es)
         public ArenaMastersManager()
         {
             _shopInventory = new ObservableCollection<Shop>();
             _gameList = new ObservableCollection<Partida>();
             _Inventory = new ObservableCollection<Units>();
+            _PlayerUnits = new ObservableCollection<Units>();
+            _CPUUnits = new ObservableCollection<Units>();
         }
         //Metodos (de Negocio)
 
@@ -226,6 +248,7 @@ namespace ArenaMasters.model
 
         public List<Skills> fetchAllSkills(int id_character)
         {
+            
             List<Skills> skillsData = new List<Skills>();
             for (int i = 1; i < 5; i++)
             {
@@ -242,15 +265,16 @@ namespace ArenaMasters.model
                 });
                 if (skillData != null)
                 {
-                    skillsData.Add(new Skills(
-                                    skillData.IdSkill,
+                    Skills temp =new Skills
+                                    (skillData.IdSkill,
                                     skillData.Name,
                                     skillData.Description,
                                     skillData.Type,
                                     skillData.Tier,
                                     skillData.Target,
                                     skillData.TargetRange
-                                    ));
+                                    );
+                    skillsData.Add(temp);
                 }
             }
             return skillsData;

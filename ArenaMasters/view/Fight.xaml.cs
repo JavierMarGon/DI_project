@@ -1,6 +1,8 @@
 ﻿using ArenaMasters.model;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.Design;
 using System.Linq;
 using System.Reflection;
@@ -22,10 +24,10 @@ namespace ArenaMasters
     /// </summary>
     public partial class Fight : Window
     {
-        public List<Units> Units { get; set; } = new List<Units>();
-        List<Units> cpu = new List<Units>();
+        
         ArenaMastersManager manager = new ArenaMastersManager();
-        Units unitSelect;
+        Units playerUnitSelect;
+        List<Units> passives;
         Skills skillSelect;
         Game _game;
         private int phase = 1;
@@ -37,14 +39,23 @@ namespace ArenaMasters
             InitializeComponent();
             GenerarPantalla(lvl);
             _game = game;
-            Units = _unitsSelected;
-            DataContext = this;
-            generateEnemy(lvl);
+            if (manager.PlayerUnits != null)
+            {
+                manager.PlayerUnits.Clear();
+            }
+            manager.PlayerUnits = new ObservableCollection<Units>(_unitsSelected);
+            if (manager.CPUUnits != null)
+            {
+                manager.CPUUnits.Clear();
+            }
+            manager.CPUUnits = new ObservableCollection<Units>(generateEnemy(lvl));
+            DataContext = manager;
+            
             this.KeyDown += pressKey;
         }
-        private void generateEnemy(int lvl)
+        private List<Units> generateEnemy(int lvl)
         {
-            cpu.Clear();
+            List<Units> cpuUnits = new List<Units>();
             Units generated;
             Random random = new Random();
             int rol = 0;
@@ -67,13 +78,22 @@ namespace ArenaMasters
                     def = 3 + (1 * lvl);
                     hit = 5 + (2 * lvl);
                     eva = 5 + (2 * lvl);
+                    if (lvl >= 1)
+                    {
+                        skillset.Add(manager.fetchOneSkills(lvl, 1));
+                    }
                     if (lvl >= 2)
                     {
-                        skillset.Add(manager.fetchOneSkills(lvl, rol));
+                        skillset.Add(manager.fetchOneSkills(2, 2));
                     }
                     if (lvl >= 3)
                     {
-                        skillset.Add(manager.fetchOneSkills(lvl, rol));
+                        skillset.Add(manager.fetchOneSkills(3, 2));
+                    }
+
+                    if (lvl >= 4)
+                    {
+                        skillset.Add(manager.fetchOneSkills(lvl, 1));
                     }
                 }
 
@@ -84,15 +104,49 @@ namespace ArenaMasters
                     def = 7 + (3 * lvl);
                     hit = 4 + (2 * lvl);
                     eva = 4 + (1 * lvl);
+                    if (lvl >= 1)
+                    {
+                        skillset.Add(manager.fetchOneSkills(lvl, 1));
+                    }
+                    if (lvl >= 2)
+                    {
+                        skillset.Add(manager.fetchOneSkills(2, 2));
+                    }
+                    if (lvl >= 3)
+                    {
+                        skillset.Add(manager.fetchOneSkills(3, 2));
+                    }
+
+                    if (lvl >= 4)
+                    {
+                        skillset.Add(manager.fetchOneSkills(lvl, 1));
+                    }
                 }
 
                 else if (rol == 3)
                 {
                     hp = 250 + (20 * lvl);
-                    ata = 2 + (1 * lvl); ;
-                    def = 5 + (1 * lvl); ;
-                    hit = 5 + (1 * lvl); ;
-                    eva = 15 + (2 * lvl); ;
+                    ata = 2 + (1 * lvl);
+                    def = 5 + (1 * lvl);
+                    hit = 5 + (1 * lvl); 
+                    eva = 15 + (2 * lvl);
+                    if (lvl >= 1)
+                    {
+                        skillset.Add(manager.fetchOneSkills(lvl, 1));
+                    }
+                    if (lvl >= 2)
+                    {
+                        skillset.Add(manager.fetchOneSkills(2, 4));
+                    }
+                    if (lvl >= 3)
+                    {
+                        skillset.Add(manager.fetchOneSkills(2, 4));
+                    }
+
+                    if (lvl >= 4)
+                    {
+                        skillset.Add(manager.fetchOneSkills(lvl, 1));
+                    }
                 }
 
                 else if (rol == 4)
@@ -102,23 +156,34 @@ namespace ArenaMasters
                     def = 6 + (1 * lvl);
                     hit = 10 + (2 * lvl);
                     eva = 8 + (3 * lvl);
-                }
-                if (lvl >= 1)
-                {
-                    skillset.Add(manager.fetchOneSkills(lvl, rol - 1));
-                }
-               
-                if (lvl >= 4)
-                {
-                    skillset.Add(manager.fetchOneSkills(lvl, rol - 1));
+                    if (lvl >= 1)
+                    {
+                        skillset.Add(manager.fetchOneSkills(lvl, 1));
+                    }
+                    if (lvl >= 2)
+                    {
+                        skillset.Add(manager.fetchOneSkills(1+(lvl%2), 5));
+                    }
+                    if (lvl >= 3)
+                    {
+                        skillset.Add(manager.fetchOneSkills(1+(lvl % 2), 5));
+                    }
+
+                    if (lvl >= 4)
+                    {
+                        skillset.Add(manager.fetchOneSkills(lvl, 1));
+                    }
                 }
 
+
                 generated = new Units(rol, hp, ata, def, hit, eva, skillset);
+                cpuUnits.Add(generated);
             }
+            return cpuUnits;
         }
         public void btnSkillSelector(object sender, RoutedEventArgs e)
         {
-            int id_character = unitSelect.IdCharacter;
+            int id_character = playerUnitSelect.IdCharacter;
             Button clickedButton = (Button)sender;
             if (clickedButton.DataContext is not null)
             {
@@ -159,6 +224,9 @@ namespace ArenaMasters
                 case Key.Escape:
                     value = 0;
                     break;
+                case Key.Enter: 
+                    value = 5;
+                    break;
             }
             return value;       
         }
@@ -170,11 +238,11 @@ namespace ArenaMasters
             if (phase == 1)
             {
                 try {
-                    if (Units[value-1].Alive())
+                    if (manager.PlayerUnits[value-1].Alive())
                     {
-                        unitSelect = Units[value-1];
+                        playerUnitSelect = manager.PlayerUnits[value-1];
                         
-                        loadUnitInfo(unitSelect);
+                        loadUnitInfo(playerUnitSelect);
                     }                 
                 }
                 catch { }
@@ -184,32 +252,122 @@ namespace ArenaMasters
             {
                 try
                 {
-                    skillSelect = unitSelect.getSkillByIndex(value);
+                    if (value == 0) {
+                        priorPhase();
+                        spSkillsFight.Visibility = Visibility.Hidden;
+                        return;
+                    }
+                    skillSelect = playerUnitSelect.getSkillByIndex(value);
+                    if (skillSelect.SkillType != "Boost") {
+                        spSkillsFight.Visibility = Visibility.Hidden;
+                        nextPhase();
+                    }
+                    
+                }
+                catch { }
+                return;
+            }
+            if (phase == 3)
+            {
+                try
+                {
+                    if (value == 0)
+                    {
+                        priorPhase();
+                        return;
+                    }
+                    if (passives!=null)
+                    {
+                        passives.Clear();
+                    }
+                    
+                    passives=selectPassives(skillSelect,value-1);
                     nextPhase();
+                }
+                catch { }
+                return;
+            }
+            if (phase == 4)
+            {
+                try
+                {
+                    if (value == 0)
+                    {
+                        priorPhase();
+                    }
+                    if (value == 5)
+                    {
+                        selectSkillAction(playerUnitSelect, skillSelect, passives);
+                        resetPhase();
+                    }
                 }
                 catch { }
                 return;
             }
         }
 
-        //private void selectEnemy(object sender, RoutedEventArgs e)
+        //private void preparationSelectPassives(Skills skill)
         //{
-            
+        //if (skill.TargetFoe) 
+        //{
+        //    //inhabilitar botones de muñecos propios
+        //}
+        //else
+        //{
+        //    //inhabilitar botones de muñecos ajenos
+        //}
+        //}
+        //private void selectPassivesClick(object sender, RoutedEventArgs e)
+        //{
+
         //}
 
-        private void selectSkill(Skills skill)
+        private List<Units> selectPassives(Skills skill,int value)
         {
-            if (skill.TargetFoe) 
+            List<Units> list = new List<Units>();
+            if (skill.TargetFoe)
             {
-                //inhabilitar botones de muñecos propios
+                if (skill.MultiTarget)
+                {
+                    return manager.CPUUnits.ToList();
+                }
+                if (value <= manager.CPUUnits.Count)
+                {
+                    list.Add(manager.CPUUnits[value]);
+                    return list;
+                }
             }
             else
             {
-                //inhabilitar botones de muñecos ajenos
+                if (skill.MultiTarget)
+                {
+                    return manager.PlayerUnits.ToList();
+                }
+                if (value <= manager.PlayerUnits.Count)
+                {
+                    list.Add(manager.PlayerUnits[value]);
+                    return list;
+                }
             }
-            if (skill.MultiTarget)
+            
+            return null;
+        }
+        private void selectSkillAction(Units active,Skills skill,List<Units>passive)
+        {
+            switch (skill.SkillType)
             {
-                //seleccionar todos los muñecos
+                case "Attack":
+                    Attack(active, passive, skill);
+                    break;
+                case "Heal":
+                    
+                    break;
+                case "Debuff":
+                    
+                    break;
+                case "Buff":
+                   
+                    break ;
             }
         }
         private void loadUnitInfo(Units unit)
@@ -227,7 +385,7 @@ namespace ArenaMasters
                 SetSkillTypeColor(typeSkill[i], unit.Skills[i].SkillType);
                 SetTargetRangeFormatting(targetRange[i], unit.Skills[i].MultiTarget);
             }
-            unitSelect = unit;
+            playerUnitSelect = unit;
             nextPhase();
             spSkillsFight.Visibility = Visibility.Visible;
         }
@@ -319,7 +477,7 @@ namespace ArenaMasters
                 {
                     eva -= 25;
                 }
-                if (random.Next(0, 100)<hit-eva)
+                if (random.Next(0, 100)<50+hit-eva)
                 {
                     if (Passive.Ailments.Def)
                     {
@@ -341,11 +499,24 @@ namespace ArenaMasters
         }
         private void nextPhase() 
         {
-            phase++;
+            if (phase < 4)
+            {
+                phase++;
+            }
+            
+        }
+        private void priorPhase()
+        {
+            if (phase > 1)
+            {
+                phase--;
+            }           
         }
         private void resetPhase()
         {
-            unitSelect = null;
+            DataContext=null;
+            DataContext = manager;
+            playerUnitSelect=null;
             phase = 1;
         }
         private void GenerarPantalla(int lvl)

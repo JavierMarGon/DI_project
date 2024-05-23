@@ -26,6 +26,7 @@ namespace ArenaMasters
         private int _greed;
         private int _price;
         private int _id_game;
+        private bool _alive;
         protected Status _ailments = new Status();
         protected Status _buff = new Status();
         protected List<Skills> _skills = new List<Skills>();
@@ -90,6 +91,11 @@ namespace ArenaMasters
             get { return _unitName; }
             set { _unitName = value; }
         }
+        public bool Alive
+        {
+            get { return _alive; }
+            set { _alive = value; }
+        }
         public List<Skills> Skills
         {
             get { return _skills; }
@@ -150,7 +156,7 @@ namespace ArenaMasters
             Def = def;
             HitRate = hitRate;
             Evasion = evasion;
-           
+            Alive = AliveComprobation();
             foreach (Skills skill in skillsData)
             {
                 _skills.Add(skill);
@@ -165,7 +171,7 @@ namespace ArenaMasters
         {
             return _skills[index-1];
         }
-        public bool Alive()
+        public bool AliveComprobation()
         {
             if (Hp > 0) 
             {
@@ -181,7 +187,7 @@ namespace ArenaMasters
             //tengo que obtener el numero de units
             if (_manager.CountCharacters(IdGame) > 1)
             {
-                GameMenu.Comprar(Price);
+                GameMenu.Beneficio(Price);
                 int delete = _manager.SoldUnit(IdCharacter);
                 if (delete > 0)
                 {

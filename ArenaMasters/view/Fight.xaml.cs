@@ -1,4 +1,5 @@
 ﻿using ArenaMasters.model;
+using Org.BouncyCastle.Math.EC.Multiplier;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static Org.BouncyCastle.Asn1.Cmp.Challenge;
 
 namespace ArenaMasters
 {
@@ -195,6 +197,7 @@ namespace ArenaMasters
                 {
                     skillSelect = manager.getSkill(id_character, skillId);
                     spSkillsFight.Visibility = Visibility.Hidden;
+                    preparationSelectPassives(skillSelect);
                 }
                 else
                 {
@@ -238,7 +241,7 @@ namespace ArenaMasters
             if (phase == 1)
             {
                 try {
-                    if (manager.PlayerUnits[value-1].Alive())
+                    if (manager.PlayerUnits[value-1].AliveComprobation())
                     {
                         playerUnitSelect = manager.PlayerUnits[value-1];
                         
@@ -260,7 +263,7 @@ namespace ArenaMasters
                     skillSelect = playerUnitSelect.getSkillByIndex(value);
                     if (skillSelect.SkillType != "Boost") {
                         spSkillsFight.Visibility = Visibility.Hidden;
-                        nextPhase();
+                        preparationSelectPassives(skillSelect);
                     }
                     
                 }
@@ -280,9 +283,7 @@ namespace ArenaMasters
                     {
                         passives.Clear();
                     }
-                    
                     passives=selectPassives(skillSelect,value-1);
-                    nextPhase();
                 }
                 catch { }
                 return;
@@ -306,22 +307,35 @@ namespace ArenaMasters
             }
         }
 
-        //private void preparationSelectPassives(Skills skill)
-        //{
-        //if (skill.TargetFoe) 
-        //{
-        //    //inhabilitar botones de muñecos propios
-        //}
-        //else
-        //{
-        //    //inhabilitar botones de muñecos ajenos
-        //}
-        //}
-        //private void selectPassivesClick(object sender, RoutedEventArgs e)
-        //{
+        private void preparationSelectPassives(Skills skill)
+        {
+            spUnits.IsEnabled = true;
+            spEnemy.IsEnabled = true;
+            if (skill.TargetFoe)
+            {
+                spUnits.IsEnabled = false;
+            }
+            else
+            {
+                spEnemy.IsEnabled = false;
+            }
+            nextPhase();
+        }
+        private void selectPassivesClick(object sender, RoutedEventArgs e)
+        {
+            Button clickedButton = (Button)sender;
+            var unit = clickedButton.DataContext;
 
-        //}
-
+            if (unit is Units clickedUnit)
+            {
+                if (passives != null)
+                {
+                    passives.Clear();
+                }
+                passives.Add(clickedUnit);
+                nextPhase();
+            }
+        }
         private List<Units> selectPassives(Skills skill,int value)
         {
             List<Units> list = new List<Units>();
@@ -329,25 +343,42 @@ namespace ArenaMasters
             {
                 if (skill.MultiTarget)
                 {
+                    nextPhase();
                     return manager.CPUUnits.ToList();
                 }
                 if (value <= manager.CPUUnits.Count)
                 {
                     list.Add(manager.CPUUnits[value]);
+                    nextPhase();
                     return list;
                 }
             }
             else
             {
-                if (skill.MultiTarget)
+                if(skill.IdSkill==50 || skill.IdSkill == 51)
                 {
-                    return manager.PlayerUnits.ToList();
+                    if (!manager.PlayerUnits[value].AliveComprobation()) 
+                    {
+                        list.Add(manager.PlayerUnits[value]);
+                        nextPhase();
+                        return list;
+                    }
                 }
-                if (value <= manager.PlayerUnits.Count)
+                else
                 {
-                    list.Add(manager.PlayerUnits[value]);
-                    return list;
+                    if (skill.MultiTarget)
+                    {
+                        nextPhase();
+                        return manager.PlayerUnits.ToList();
+                    }
+                    if (value <= manager.PlayerUnits.Count)
+                    {
+                        list.Add(manager.PlayerUnits[value]);
+                        nextPhase();
+                        return list;
+                    }
                 }
+                
             }
             
             return null;
@@ -360,13 +391,20 @@ namespace ArenaMasters
                     Attack(active, passive, skill);
                     break;
                 case "Heal":
-                    
+                    if (skill.IdSkill == 50 || skill.IdSkill == 51)
+                    {
+                        Revive(passive, skill);
+                    }
+                    else
+                    {
+                        Heal(active, passive, skill);
+                    }
                     break;
                 case "Debuff":
-                    
+                        Debuff(active, passive, skill);
                     break;
                 case "Buff":
-                   
+                        Buff(passive, skill);
                     break ;
             }
         }
@@ -378,10 +416,14 @@ namespace ArenaMasters
             unitNameAtk.Text = unit.IdCharacter.ToString();
             for (int i = 0; i < 4; i++)
             {
+                btnAtk[i].IsEnabled = true;
                 btnAtk[i].Content = unit.Skills[i].Name;
                 typeSkill[i].Text = unit.Skills[i].SkillType.ToString();
                 targetRange[i].Text = unit.Skills[i].MultiTargetString;
-
+                if (unit.Skills[i].SkillType == "Boost")
+                {
+                    btnAtk[i].IsEnabled = false;
+                }
                 SetSkillTypeColor(typeSkill[i], unit.Skills[i].SkillType);
                 SetTargetRangeFormatting(targetRange[i], unit.Skills[i].MultiTarget);
             }
@@ -397,6 +439,7 @@ namespace ArenaMasters
             if (unit is Units clickedUnit)
             {
                 loadUnitInfo(clickedUnit);
+                nextPhase();
             }
         }
         
@@ -477,7 +520,7 @@ namespace ArenaMasters
                 {
                     eva -= 25;
                 }
-                if (random.Next(0, 100)<50+hit-eva)
+                if (random.Next(0, 100) < (50 + hit - eva))
                 {
                     if (Passive.Ailments.Def)
                     {
@@ -497,13 +540,186 @@ namespace ArenaMasters
                 
             }
         }
+        private void Heal(Units Active, List<Units> Passives, Skills healSkill)
+        {
+            float baseValue;
+            int finalValue;
+            float multiplier = 1;
+            bool boost = false;
+            
+            baseValue = Active.MaxHp;
+            foreach (Skills skill in Active.Skills)
+            {
+                if (skill.IdSkill == 52)
+                {
+                    boost = true;
+                }
+                
+            }
+            switch (healSkill.IdSkill)
+            {
+                case 46 or 47:
+                    baseValue *= 0.25f;
+                    break;
+                
+                case 48 or 49:
+                    baseValue *= 0.5f;
+                    break;
+
+            }
+            if (boost)
+            {
+                multiplier *= 1.25f;
+            }
+            finalValue = (int)(baseValue * multiplier);
+            foreach (Units Passive in Passives) 
+            {
+                Passive.Hp += finalValue;
+                if (Passive.Hp>Passive.MaxHp) 
+                {
+                    Passive.Hp = Passive.MaxHp;
+                }
+            }
+        }
+        private void Revive(List<Units> Passives, Skills healSkill)
+        {
+            float resValue = 0f;
+            int finalValue;
+            if (healSkill.IdSkill == 50)
+            {
+                resValue = 0.5f;
+            }
+            if (healSkill.IdSkill == 51)
+            {
+                resValue = 1f;
+            }
+
+            foreach (Units Passive in Passives)
+            {
+                finalValue = (int)(Passive.MaxHp * resValue);
+                Passive.Hp += finalValue;
+                Passive.Alive = true;
+                if (Passive.Hp > Passive.MaxHp)
+                {
+                    Passive.Hp = Passive.MaxHp;
+                }
+            }
+        }
+        private void Buff(List<Units> Passives, Skills buffSkill)
+        {
+            
+            string type = buffSkill.Name;
+            if (type.Contains("Ata"))
+            {
+                foreach (Units Passive in Passives)
+                {
+                    Passive.Buff.Atk=true;
+                }
+            } else if (type.Contains("Def"))
+            {
+                foreach (Units Passive in Passives)
+                {
+                    Passive.Buff.Def = true;
+
+                }
+            } else if (type.Contains("Eva"))
+            {
+                foreach (Units Passive in Passives)
+                {
+                    Passive.Buff.HitEva = true;
+
+                }
+            }
+            else if (type.Contains("Aggro"))
+            {
+                foreach (Units Passive in Passives)
+                {
+                    Passive.Buff.Aggro = true;
+
+                }
+            }
+
+        }
+        private void Debuff(Units Active, List<Units> Passives, Skills buffSkill)
+        {
+            Random random = new Random();
+            int hit =Active.HitRate;
+            int eva;
+            string type = buffSkill.Name;
+
+            if (Active.Buff.HitEva)
+            {
+                hit += 25;
+            }
+            if (Active.Ailments.HitEva)
+            {
+                hit -= 25;
+            }
+
+            if (type.Contains("Ata"))
+            {
+                foreach (Units Passive in Passives)
+                {
+                    eva = Passive.Evasion;
+                    if (Passive.Buff.HitEva)
+                    {
+                        eva += 25;
+                    }
+                    if (Passive.Ailments.HitEva)
+                    {
+                        eva -= 25;
+                    }
+                    if (random.Next(0, 100) < (50 + hit - eva))
+                    {
+                        Passive.Ailments.Atk = true;
+                    }
+                }
+            }
+            else if (type.Contains("Def"))
+            {
+                foreach (Units Passive in Passives)
+                {
+                    eva = Passive.Evasion;
+                    if (Passive.Buff.HitEva)
+                    {
+                        eva += 25;
+                    }
+                    if (Passive.Ailments.HitEva)
+                    {
+                        eva -= 25;
+                    }
+                    if (random.Next(0, 100) < (50 + hit - eva))
+                    {
+                        Passive.Ailments.Def=true;
+                    }
+                }
+            }
+            else if (type.Contains("Eva"))
+            {
+                foreach (Units Passive in Passives)
+                {
+                    eva = Passive.Evasion;
+                    if (Passive.Buff.HitEva)
+                    {
+                        eva += 25;
+                    }
+                    if (Passive.Ailments.HitEva)
+                    {
+                        eva -= 25;
+                    }
+                    if (random.Next(0, 100) < (50 + hit - eva))
+                    {
+                        Passive.Ailments.HitEva = true;
+                    }
+                }
+            }
+        }
         private void nextPhase() 
         {
             if (phase < 4)
             {
                 phase++;
-            }
-            
+            }           
         }
         private void priorPhase()
         {
@@ -512,8 +728,35 @@ namespace ArenaMasters
                 phase--;
             }           
         }
+        private void deadCPUUnitsComprobation()
+        {
+            List<Units> aliveUnits= new List<Units>();
+            foreach(Units unit in manager.CPUUnits)
+            {
+                if (unit.AliveComprobation())
+                {
+                    aliveUnits.Add(unit);
+                }
+            }
+            manager.CPUUnits.Clear();
+            if (aliveUnits.Count()>0) 
+            {
+                foreach (Units unit in aliveUnits)
+                {
+                    manager.CPUUnits.Add(unit);
+                }
+            }
+            else
+            {
+                this.Close();
+            }
+            
+        }
         private void resetPhase()
         {
+            deadCPUUnitsComprobation();
+            spEnemy.IsEnabled = true;
+            spUnits.IsEnabled = true;
             DataContext=null;
             DataContext = manager;
             playerUnitSelect=null;

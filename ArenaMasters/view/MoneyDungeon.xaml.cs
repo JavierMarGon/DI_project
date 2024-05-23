@@ -26,6 +26,7 @@ namespace ArenaMasters
         Game game;
         int lvl;
         int profit;
+        bool endDungeon=false;
         private ImageBrush personajeLeft;
         private ImageBrush personajeRight;
         private ImageBrush personajeStatic;
@@ -55,7 +56,16 @@ namespace ArenaMasters
             unitsSelected = _unitsSelected;
             personajeLeft = new ImageBrush();
             personajeRight = new ImageBrush();
-            lvl = level;
+            if(level<6) 
+            {
+                lvl = level;
+            }
+            else
+            {
+                endDungeon = true;
+                lvl = 1;
+            }
+            
             pj = new PlayableDungeonMovement(lvl);
             paintImage();
             profit = Rewards(lvl);
@@ -300,11 +310,22 @@ namespace ArenaMasters
             if (result == MessageBoxResult.OK)
             {
                 // logica para avanzar al siguiente nivel
-                
-                MoneyDungeon newMoneyD=new MoneyDungeon(lvl + 1, game, unitsSelected, controller);
-                newMoneyD.Show();
-                this.Close();
-                
+                if (endDungeon)
+                {
+                    MoneyDungeon newMoneyD = new MoneyDungeon(lvl + 1, game, unitsSelected, controller);
+                    newMoneyD.Show();
+                    this.Close();
+                }
+                else
+                {
+                    controller.stop();
+                    GameMenu gameMenu = new GameMenu(game,profit);
+                    gameMenu.Show();
+                    this.Close();
+
+                }
+
+
             }
             else
             {
@@ -408,11 +429,11 @@ namespace ArenaMasters
         {
             if (lvl == 1)
             {
-                return 1500;
+                return 500;
             }
             else if (lvl == 2)
             {
-                return 2000;
+                return 1500;
             }
             else if (lvl == 3)
             {

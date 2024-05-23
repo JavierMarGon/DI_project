@@ -69,6 +69,9 @@ namespace ArenaMasters.model
             TargetFoe = targetFoe;
             MultiTarget = multiTarget;
             MultiTargetString = multiTargeToString(multiTarget);
+            if (IdSkill == 52) {
+                SkillType = "Boost"; 
+            }
         }
 
         private string multiTargeToString(bool multiTarget)

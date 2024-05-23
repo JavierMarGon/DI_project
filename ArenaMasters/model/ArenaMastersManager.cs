@@ -36,6 +36,7 @@ namespace ArenaMasters.model
         private int _id_User;
         private string _userName;
         List<Units> units;
+        private List<int> _killedCharactersID;
         private MainWindow _mainWindow;
         private GameMenu _gameWindow;
         //Propiedades (campos publicos)
@@ -43,6 +44,11 @@ namespace ArenaMasters.model
         {
             get { return _mainWindow; }
             set { _mainWindow = value; }
+        }
+        public List<int> KilledCharactersID
+        {
+            get { return _killedCharactersID; }
+            set { _killedCharactersID = value; }
         }
         public GameMenu GameMenu
         {
@@ -178,6 +184,17 @@ namespace ArenaMasters.model
         public int NewGame(int id_user)
         {
             if (_ad.PA_NewGame(id_user) > 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return -1;
+            }
+        }
+        public int NextRound(int id_game)
+        {
+            if (_ad.PA_NextRound(id_game) > 0)
             {
                 return 1;
             }
@@ -559,5 +576,6 @@ namespace ArenaMasters.model
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
+
     }
 }

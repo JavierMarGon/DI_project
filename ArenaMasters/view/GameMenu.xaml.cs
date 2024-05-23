@@ -44,9 +44,19 @@ namespace ArenaMasters
             initializeUnits();
             DataContext = manager;
             manager.GameMenu = this;
-           
-
-
+        }
+        public GameMenu(Game _game,int reward)
+        {
+            InitializeComponent();     
+            game = _game;
+            manager.NextRound(game.IdGame);
+            Beneficio(reward);
+            namePj.Text = game.Name.ToString();
+            currentMoney.Text = game.Money.ToString();
+            playSimpleSound();
+            initializeUnits();
+            DataContext = manager;
+            manager.GameMenu = this;
         }
 
         public void initializeShop()
@@ -190,6 +200,12 @@ namespace ArenaMasters
             {
                 return false;
             }
+        }
+        public void Beneficio(int valor)
+        {
+            manager.updateMoney(game.IdGame, valor);
+            game.Money += valor;
+            currentMoney.Text = game.Money.ToString();
         }
         private void ClickBuyUnitShop(object sender, RoutedEventArgs e)
         {

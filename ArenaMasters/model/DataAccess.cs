@@ -184,6 +184,34 @@ namespace ArenaMasters.model
             return resultado;
         }
 
+        public int PA_NextRound(int id_game)
+        {
+            int resultado = -96;
+            try
+            {
+                _cmd = new MySqlCommand();
+                _cmd.Connection = _conn;
+                _cmd.CommandType = CommandType.StoredProcedure;
+                _cmd.CommandText = "nextRound";
+
+                _cmd.Parameters.AddWithValue("thisGame", id_game);
+                _cmd.Parameters["thisGame"].Direction = ParameterDirection.Input;
+
+                _cmd.Parameters.Add(new MySqlParameter("_res", MySqlDbType.Int32));
+                _cmd.Parameters["_res"].Direction = ParameterDirection.Output;
+
+                _cmd.ExecuteNonQuery();
+
+                resultado = (int)_cmd.Parameters["_res"].Value;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return resultado;
+            }
+            return resultado;
+        }
+
         public string PA_GetGameData(int id_game)
         {
             //int resultado = -99;

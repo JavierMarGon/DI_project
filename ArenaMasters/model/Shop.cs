@@ -22,6 +22,7 @@ namespace ArenaMasters.model
         private int _id_rol;
         private string _rol_name;
         private string _price_value;
+        private string _image_source;
         private int _hp;
         private int _atk;
         private int _def;
@@ -93,6 +94,11 @@ namespace ArenaMasters.model
                 _id_game = value;
             }
         }
+        public string ImageSource
+        {
+            get { return _image_source; }
+            set { _image_source = value; }
+        }
         public GameMenu GameMenu
         {
             get { return _game_menu; }
@@ -147,18 +153,22 @@ namespace ArenaMasters.model
             if(IdRol == 1)
             {
                 RolName = "Damage";
+                ImageSource = "/images/damagepj.png";
             }
             else if(IdRol == 2)
             {
                 RolName = "Support";
+                ImageSource = "/images/supportpj.png";
             }
             else if(IdRol == 3)
             {
                 RolName = "Healer";
+                ImageSource = "/images/healerpj.png";
             }
             else if( IdRol == 4)
             {
                 RolName = "Control";
+                ImageSource = "/images/controlpj.png";
             }
         }
     }

@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:ArenaMasters"
         mc:Ignorable="d"
         Title="GameMenu" 
+        WindowStyle="SingleBorderWindow"
         Width="1375" Height="775"
         ResizeMode="NoResize"
         >
@@ -100,7 +101,7 @@
 
                 <StackPanel Width="250" Height="170" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" Background="#BF524939">
                     <Border BorderBrush="#BF524939" BorderThickness="2">
-                        <Image Height="170" Source="/images/dragon.png"/>
+                        <Image x:Name="habShopItemImage" Height="170" Source="/images/dragon.png"/>
                     </Border>
                 </StackPanel>
 
@@ -229,7 +230,7 @@
                 <TextBlock Height="70" Text="Name" Foreground="Beige" TextAlignment="Center" FontSize="40"/>
 
                 <StackPanel Width="250" Height="160" Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Margin="0,30,0,0" Background="#BF524939">
-                    <Image Height="140" Source="/images/dragon.png"/>
+                    <Image Height="140" Source="{Binding ImageSource}"/>
                 </StackPanel>
 
                 <StackPanel Height="50" Width="300" Background="#FF37B537" VerticalAlignment="Center" Margin="0,0,0,10" Grid.Row="1" Grid.RowSpan="4">
@@ -467,21 +468,22 @@
                 </Button>
             </StackPanel>
         </StackPanel>
-
+        
         <Grid x:Name="gridSelectedUnits" Visibility="Collapsed" Background="Transparent" Height="750" Width="1370">
             <StackPanel Height="250" Width="300" HorizontalAlignment="Center" Background="#BF524939">
                 <StackPanel Margin="20">
                     <TextBlock FontSize="15" Height="40" HorizontalAlignment="Center" Foreground="White" Text="Selecciona tus unidades para el saqueo"/>
-                    <ListBox x:Name="listBoxUnits" ItemsSource="{Binding Inventory}" Background="#66FFFFFF" SelectionMode="Multiple" HorizontalContentAlignment="Center">
-                        <ListBox.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding IdCharacter}" FontSize="22" Margin="0,0,30,0"/>
-                                    <ProgressBar Minimum="0" Maximum="{Binding MaxHp}" Value="{Binding Hp}" Width="150" Background="Green" Margin="10,0,0,0" Style="{StaticResource CustomProgressBarStyle}" />
-                                </StackPanel>
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
-                    </ListBox>
+                        <ListBox x:Name="listBoxUnits" Height="120" ItemsSource="{Binding Inventory}" Background="#66FFFFFF" SelectionMode="Multiple" HorizontalContentAlignment="Center">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding IdCharacter}" FontSize="22" Margin="0,0,30,0"/>
+                                        <ProgressBar Minimum="0" Maximum="{Binding MaxHp}" Value="{Binding Hp}" Width="150" Background="Green" Margin="10,0,0,0" Style="{StaticResource CustomProgressBarStyle}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <Button Style="{StaticResource btnLogin}" Foreground="white" Margin="20" Name="btnSelectUnits" Click="SelectUnitsAndProceed" Height="30" Width="100" Content="Jugar"/>
                         <Button Style="{StaticResource btnNo}" Name="btnBackSelectUnits" Margin="20" Click="BackSelectUnits" Height="30" Width="100" Content="Volver"/>

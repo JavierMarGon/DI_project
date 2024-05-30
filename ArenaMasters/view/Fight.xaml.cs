@@ -1,4 +1,6 @@
 ﻿using ArenaMasters.model;
+using Google.Protobuf.WellKnownTypes;
+using Newtonsoft.Json.Linq;
 using Org.BouncyCastle.Math.EC.Multiplier;
 using System;
 using System.Collections;
@@ -29,7 +31,7 @@ namespace ArenaMasters
         
         ArenaMastersManager manager = new ArenaMastersManager();
         Units playerUnitSelect;
-        List<Units> passives;
+        List<Units> passives = new List<Units>();
         Skills skillSelect;
         Game _game;
         private int phase = 1;
@@ -52,7 +54,154 @@ namespace ArenaMasters
             }
             manager.CPUUnits = new ObservableCollection<Units>(generateEnemy(lvl));
             DataContext = manager;
+            phaseTxt.Text = phase.ToString();
+            setKeyListener();
+        }
+        private void selectUnit(object sender, RoutedEventArgs e)
+        {
+            Button clickedButton = (Button)sender;
+            var unit = clickedButton.DataContext;
+            if (phase == 1)
+            {
+                if (unit is Units clickedUnit)
+                {
+                    if (clickedUnit.AliveComprobation())
+                    {
+                        loadUnitInfo(clickedUnit);
+                        nextPhase();
+                    }
+                }
+            }
+            if (phase == 3)
+            {
+                if (unit is Units clickedUnit)
+                {
+                    if (passives != null)
+                    {
+                        passives.Clear();
+                        passives = new List<Units>();
+                    }
+                    if (skillSelect.TargetFoe)
+                    {
+                        if (skillSelect.MultiTarget)
+                        {
+                            passives = manager.CPUUnits.ToList();
+                        }
+                        else
+                        {
+                            passives.Add(clickedUnit);
+                        }
+                    }
+                    else
+                    {
+                        if (skillSelect.IdSkill == 50 || skillSelect.IdSkill == 51)
+                        {
+                            if (!clickedUnit.AliveComprobation())
+                            {
+                                passives.Add(clickedUnit);
+                            }
+                        }
+                        else
+                        {
+                            if (skillSelect.MultiTarget)
+                            {
+                                passives = manager.PlayerUnits.ToList();
+                            }
+                            else
+                            {
+                                passives.Add(clickedUnit);
+                            }
+                        }
+                    }
+                }
+
+                selectSkillAction(playerUnitSelect, skillSelect, passives);
+                lastUserSkillUsed.Text = skillSelect.Name;
+                resetPhase();
+
+            }
+            setKeyListener();
+        }
+        public void btnSkillSelector(object sender, RoutedEventArgs e)
+        {
+            int id_character = playerUnitSelect.IdCharacter;
+            Button clickedButton = (Button)sender;
+            if (clickedButton.DataContext is not null)
+            {
+                string buttonName = clickedButton.Name.ToString();
+
+                char lastCharacter = buttonName[buttonName.Length - 1];
+                int skillId;
+                if (int.TryParse(lastCharacter.ToString(), out skillId))
+                {
+                    skillSelect = manager.getSkill(id_character, skillId);
+                    spSkillsFight.Visibility = Visibility.Hidden;
+                    preparationSelectPassives(skillSelect);
+                }
+                else
+                {
+                    Console.WriteLine("El último carácter no es un número válido.");
+                }
+            }
+            setKeyListener();
+        }
+
+        private void selectPassivesClick(object sender, RoutedEventArgs e)
+        {
+            Button clickedButton = (Button)sender;
+            var unit = clickedButton.DataContext;
+            if (phase == 3) {
+                if (unit is Units clickedUnit)
+                {
+                    if (passives != null)
+                    {
+                        passives.Clear();
+                        passives = new List<Units>();
+                    }
+                    if (skillSelect.TargetFoe)
+                    {
+                        if (skillSelect.MultiTarget)
+                        {
+                            passives = manager.CPUUnits.ToList();
+                        }
+                        else
+                        {
+                            passives.Add(clickedUnit);
+                        }
+                    }
+                    else
+                    {
+                        if (skillSelect.IdSkill == 50 || skillSelect.IdSkill == 51)
+                        {
+                            if (!clickedUnit.AliveComprobation())
+                            {
+                                passives.Add(clickedUnit);
+                            }
+                        }
+                        else
+                        {
+                            if (skillSelect.MultiTarget)
+                            {
+                                passives = manager.PlayerUnits.ToList();
+                            }
+                            else
+                            {
+                                passives.Add(clickedUnit);
+                            }
+                        }
+                    }
+                }
+
+                selectSkillAction(playerUnitSelect, skillSelect, passives);
+                lastUserSkillUsed.Text = skillSelect.Name;
+                setKeyListener();
+
+                resetPhase();
+            }
             
+        }
+        private void setKeyListener()
+        {
             this.KeyDown += pressKey;
         }
         private List<Units> generateEnemy(int lvl)
@@ -73,6 +222,7 @@ namespace ArenaMasters
                 skillset = new List<Skills>();
                 skillset.Clear();
                 rol = random.Next(1, 5);
+                rol = 3;
                 if (rol == 1)
                 {
                     hp = 140 + (10 * lvl);
@@ -104,7 +254,7 @@ namespace ArenaMasters
                     hp = 190 + (10 * lvl);
                     ata = 4 + (1 * lvl);
                     def = 7 + (3 * lvl);
-                    hit = 4 + (2 * lvl);
+                    hit = 7 + (2 * lvl);
                     eva = 4 + (1 * lvl);
                     if (lvl >= 1)
                     {
@@ -130,8 +280,8 @@ namespace ArenaMasters
                     hp = 250 + (20 * lvl);
                     ata = 2 + (1 * lvl);
                     def = 5 + (1 * lvl);
-                    hit = 5 + (1 * lvl); 
-                    eva = 15 + (2 * lvl);
+                    hit = 3 + (1 * lvl); 
+                    eva = 7 + (2 * lvl);
                     if (lvl >= 1)
                     {
                         skillset.Add(manager.fetchOneSkills(lvl, 1));
@@ -183,28 +333,58 @@ namespace ArenaMasters
             }
             return cpuUnits;
         }
-        public void btnSkillSelector(object sender, RoutedEventArgs e)
+        void enemyAction()
         {
-            int id_character = playerUnitSelect.IdCharacter;
-            Button clickedButton = (Button)sender;
-            if (clickedButton.DataContext is not null)
+            Random random = new Random();
+            Units cpu;
+            List<Units> pj = new List<Units>();
+            Skills cpuSkill;
+            int value = random.Next(0, manager.CPUUnits.Count());
+            cpu = manager.CPUUnits[value];
+            do
             {
-                string buttonName = clickedButton.Name.ToString();
-
-                char lastCharacter = buttonName[buttonName.Length - 1];
-                int skillId;
-                if (int.TryParse(lastCharacter.ToString(), out skillId))
+                value = random.Next(0, cpu.Skills.Count());
+            } while (cpu.Skills[value].SkillType == "Boost");
+            cpuSkill = cpu.Skills[value];
+            value= random.Next(0, manager.PlayerUnits.Count());
+            if (cpuSkill.TargetFoe)
+            {
+                if (cpuSkill.MultiTarget)
+                {       
+                    pj= manager.PlayerUnits.ToList();
+                }
+                if (value <= manager.PlayerUnits.Count)
                 {
-                    skillSelect = manager.getSkill(id_character, skillId);
-                    spSkillsFight.Visibility = Visibility.Hidden;
-                    preparationSelectPassives(skillSelect);
+                    pj.Add(manager.PlayerUnits[value]);                   
+                }
+            }
+            else
+            {
+                if (cpuSkill.IdSkill == 50 || cpuSkill.IdSkill == 51)
+                {
+                    if (!manager.CPUUnits[value].AliveComprobation())
+                    {
+                        pj.Add(manager.CPUUnits[value]);
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("El último carácter no es un número válido.");
+                    if (cpuSkill.MultiTarget)
+                    {
+                        pj= manager.CPUUnits.ToList();
+                    }
+                    if (value <= manager.CPUUnits.Count)
+                    {
+                        pj.Add(manager.CPUUnits[value]);
+                    }
                 }
+
             }
+
+            selectSkillAction(cpu,cpuSkill,pj);
+            lastEnemySkillUsed.Text=cpuSkill.Name;
         }
+    
 
         private int getKeyValue(Key key)
         {
@@ -246,6 +426,7 @@ namespace ArenaMasters
                         playerUnitSelect = manager.PlayerUnits[value-1];
                         
                         loadUnitInfo(playerUnitSelect);
+                        nextPhase();
                     }                 
                 }
                 catch { }
@@ -276,6 +457,7 @@ namespace ArenaMasters
                 {
                     if (value == 0)
                     {
+                        
                         priorPhase();
                         return;
                     }
@@ -299,12 +481,15 @@ namespace ArenaMasters
                     if (value == 5)
                     {
                         selectSkillAction(playerUnitSelect, skillSelect, passives);
+                        lastUserSkillUsed.Text = skillSelect.Name;
+
                         resetPhase();
                     }
                 }
                 catch { }
                 return;
             }
+            setKeyListener();
         }
 
         private void preparationSelectPassives(Skills skill)
@@ -321,21 +506,7 @@ namespace ArenaMasters
             }
             nextPhase();
         }
-        private void selectPassivesClick(object sender, RoutedEventArgs e)
-        {
-            Button clickedButton = (Button)sender;
-            var unit = clickedButton.DataContext;
-
-            if (unit is Units clickedUnit)
-            {
-                if (passives != null)
-                {
-                    passives.Clear();
-                }
-                passives.Add(clickedUnit);
-                nextPhase();
-            }
-        }
+       
         private List<Units> selectPassives(Skills skill,int value)
         {
             List<Units> list = new List<Units>();
@@ -428,19 +599,7 @@ namespace ArenaMasters
                 SetTargetRangeFormatting(targetRange[i], unit.Skills[i].MultiTarget);
             }
             playerUnitSelect = unit;
-            nextPhase();
             spSkillsFight.Visibility = Visibility.Visible;
-        }
-        private void selectUnit(object sender, RoutedEventArgs e)
-        {
-            Button clickedButton = (Button)sender;
-            var unit = clickedButton.DataContext;
-            
-            if (unit is Units clickedUnit)
-            {
-                loadUnitInfo(clickedUnit);
-                nextPhase();
-            }
         }
         
         private void SetTargetRangeFormatting(TextBlock textBlock, bool isMultiTarget)
@@ -452,7 +611,7 @@ namespace ArenaMasters
 
         private void backUnitAtk(object sender, RoutedEventArgs e)
         {
-            resetPhase();
+            priorPhase();
             spSkillsFight.Visibility = Visibility.Collapsed;
         }
 
@@ -512,32 +671,33 @@ namespace ArenaMasters
             foreach(Units Passive in Passives) { 
                 trueMultiplier=multiplier;
                 eva=Passive.Evasion;
-                if (Passive.Buff.HitEva)
+                if (Passive.AliveComprobation())
                 {
-                    eva += 25;
-                }
-                if (Passive.Ailments.HitEva)
-                {
-                    eva -= 25;
-                }
-                if (random.Next(0, 100) < (50 + hit - eva))
-                {
-                    if (Passive.Ailments.Def)
+                    if (Passive.Buff.HitEva)
                     {
-                        trueMultiplier += 0.25f;
+                        eva += 25;
                     }
-                    if (Passive.Buff.Def)
+                    if (Passive.Ailments.HitEva)
                     {
-                        trueMultiplier -= 0.25f;
+                        eva -= 25;
                     }
-                    if (Passive.Buff.Aggro)
+                    if (random.Next(0, 100) < (80 + (hit / 2) - eva))
                     {
-                        trueMultiplier *= 0.7f;
+                        if (Passive.Ailments.Def)
+                        {
+                            trueMultiplier += 0.25f;
+                        }
+                        if (Passive.Buff.Def)
+                        {
+                            trueMultiplier -= 0.25f;
+                        }
+                        if (Passive.Buff.Aggro)
+                        {
+                            trueMultiplier *= 0.7f;
+                        }
+                        Passive.Hp -= (int)(baseDamage * (trueMultiplier * (1+(Active.Atk - (Passive.Def / 2)/10))));
                     }
-                    Passive.Hp-=(int)((baseDamage*trueMultiplier)*(Active.Atk/Passive.Def));
                 }
-                
-                
             }
         }
         private void Heal(Units Active, List<Units> Passives, Skills healSkill)
@@ -719,16 +879,18 @@ namespace ArenaMasters
             if (phase < 4)
             {
                 phase++;
-            }           
+                phaseTxt.Text = phase.ToString();
+            }
         }
         private void priorPhase()
         {
             if (phase > 1)
             {
                 phase--;
+                phaseTxt.Text = phase.ToString();
             }           
         }
-        private void deadCPUUnitsComprobation()
+        private bool deadCPUUnitsComprobation()
         {
             List<Units> aliveUnits= new List<Units>();
             foreach(Units unit in manager.CPUUnits)
@@ -750,17 +912,31 @@ namespace ArenaMasters
             {
                 this.Close();
             }
+            if (manager.CPUUnits.Count() > 0)
+            {
+                return false;
+            }
+            else 
+            {
+                return true;
+            }
             
         }
         private void resetPhase()
         {
-            deadCPUUnitsComprobation();
-            spEnemy.IsEnabled = true;
-            spUnits.IsEnabled = true;
-            DataContext=null;
-            DataContext = manager;
-            playerUnitSelect=null;
-            phase = 1;
+            if (!deadCPUUnitsComprobation())
+            {
+                enemyAction();
+                spEnemy.IsEnabled = true;
+                spUnits.IsEnabled = true;
+                DataContext = null;
+                DataContext = manager;
+                playerUnitSelect = null;
+                phase = 1;
+                phaseTxt.Text = phase.ToString();
+            }
+            
+            
         }
         private void GenerarPantalla(int lvl)
         {

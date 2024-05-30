@@ -143,7 +143,8 @@ namespace ArenaMasters
             settingsPanel.Visibility = Visibility.Collapsed;
             setting.Visibility = Visibility.Collapsed;
             space = 0;
-            habpjName.Text = "";
+            habShopItemImage.Source = new BitmapImage(new Uri(units[space].ImageSource, UriKind.Relative));
+            habpjName.Text = units[space].UnitName.ToString();
             greedLvl.Text = units[space].Greed.ToString();
             newHabPrice.Text = (units[space].Greed * 150).ToString();
             habpjSkill1.Text = units[space].getSkillByIndex(1).Name.ToString();
@@ -245,6 +246,7 @@ namespace ArenaMasters
             else { space--; }
             greedLvl.Text = units[space].Greed.ToString();
             newHabPrice.Text = (units[space].Greed * 150).ToString();
+            habShopItemImage.Source = new BitmapImage(new Uri(units[space].ImageSource, UriKind.Relative));
             habpjName.Text = units[space].UnitName;
             habpjSkill1.Text = units[space].getSkillByIndex(1).Name.ToString();
             habpjSkill2.Text = units[space].getSkillByIndex(2).Name.ToString();
@@ -257,6 +259,7 @@ namespace ArenaMasters
             else { space++; }
             greedLvl.Text = units[space].Greed.ToString();
             newHabPrice.Text = (units[space].Greed * 150).ToString();
+            habShopItemImage.Source = new BitmapImage(new Uri(units[space].ImageSource, UriKind.Relative));
             habpjName.Text = units[space].UnitName;
             habpjSkill1.Text = units[space].getSkillByIndex(1).Name.ToString();
             habpjSkill2.Text = units[space].getSkillByIndex(2).Name.ToString();
@@ -368,7 +371,7 @@ namespace ArenaMasters
                     unitsSelected.Add(unit);
                 }
                 controller.stop();
-                MoneyDungeon moneyDungeon = new MoneyDungeon(level, game, unitsSelected);
+                MoneyDungeon moneyDungeon = new MoneyDungeon(level, game, unitsSelected,true);
                 moneyDungeon.Show();
                 this.Close();
             }

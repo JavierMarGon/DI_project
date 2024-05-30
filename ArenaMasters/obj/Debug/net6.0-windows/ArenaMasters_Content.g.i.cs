@@ -8,6 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/controlpj.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/damagepj.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/healerpj.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/actualizar.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/back.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/bedunused.png")]
@@ -40,6 +43,7 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/playerstatic.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/salir.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/settings.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/supportpj.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/tavern.jpg")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("music/cementerio.mp3")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("music/encrucijada.mp3")]

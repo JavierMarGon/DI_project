@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ArenaMasters"
         mc:Ignorable="d"
-        Title="Fight" Height="500" Width="850"
+        Title="Fight" Height="588" Width="1000"
+        WindowState="Maximized"
         >
     <Window.Resources>
         <ResourceDictionary>
@@ -44,7 +45,7 @@
                                 <DataTemplate>
                                     <StackPanel Orientation="Vertical">
                                         <Button Name="otherUnitSelector" Click="selectPassivesClick" Height="80" Width="70" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Padding="-4">
-                                            <Image Height="70" Source="/images/dragon.png" />
+                                            <Image Height="70" Source="{Binding ImageSource}" />
                                         </Button>
                                         <TextBlock Text="{Binding Hp}" Foreground="Bisque" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                         <ProgressBar Width="150" Height="15" Minimum="0" Maximum="{Binding MaxHp}" Value="{Binding Hp}" Margin="20"/>
@@ -63,7 +64,19 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
-                    <ItemsControl ItemsSource="{Binding PlayerUnits}" HorizontalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Orientation="Vertical" Width="100">
+                        <TextBlock Text="Phase: "/>
+                        <TextBlock x:Name="phaseTxt"></TextBlock>
+                        <TextBlock Text="Last enemy skill used: "/>
+                        <TextBlock x:Name="lastEnemySkillUsed"></TextBlock>
+                        <TextBlock Text="Last user skill used: "/>
+                        <TextBlock x:Name="lastUserSkillUsed"></TextBlock>
+                    </StackPanel>
+                    <ItemsControl Grid.Column="1" ItemsSource="{Binding PlayerUnits}" HorizontalAlignment="Center">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <StackPanel Orientation="Horizontal" />
@@ -73,7 +86,7 @@
                             <DataTemplate>
                                 <StackPanel Orientation="Vertical">
                                     <Button Name="selfUnitSelector" Click="selectUnit" Height="80" Width="70" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Padding="-4">
-                                        <Image Height="70" Source="/images/dragon.png" />
+                                        <Image Height="70" Source="{Binding ImageSource}" />
                                     </Button>
                                     <TextBlock Text="{Binding Hp}" Foreground="Bisque" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <ProgressBar Width="150" Height="15" Minimum="0" Maximum="{Binding MaxHp}" Value="{Binding Hp}" Margin="20"/>

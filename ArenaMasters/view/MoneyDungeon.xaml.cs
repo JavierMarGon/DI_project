@@ -38,15 +38,18 @@ namespace ArenaMasters
         //Instancia de rectangulo para generar el pj
         public System.Windows.Shapes.Rectangle image = new System.Windows.Shapes.Rectangle();
 
-        public MoneyDungeon(int level, Game _game, List<Units> _unitsSelected)
+        public MoneyDungeon(int level, Game _game, List<Units> _unitsSelected,bool boss)
         {
             InitializeComponent();
+            if (boss) endDungeon = true;
+            
             chargeGame(level,_game, _unitsSelected);
 
         }
-        public MoneyDungeon(int level, Game _game, List<Units> _unitsSelected, MusicController mc)
+        public MoneyDungeon(int level, Game _game, List<Units> _unitsSelected, MusicController mc,bool boss)
         {
             InitializeComponent();
+            if (boss) endDungeon = true;
             chargeGame(level, _game, _unitsSelected);
             controller=mc;  
 
@@ -56,15 +59,7 @@ namespace ArenaMasters
             unitsSelected = _unitsSelected;
             personajeLeft = new ImageBrush();
             personajeRight = new ImageBrush();
-            if(level<6) 
-            {
-                lvl = level;
-            }
-            else
-            {
-                endDungeon = true;
-                lvl = 1;
-            }
+            lvl = level;
             
             pj = new PlayableDungeonMovement(lvl);
             paintImage();
@@ -312,7 +307,7 @@ namespace ArenaMasters
                 // logica para avanzar al siguiente nivel
                 if (endDungeon)
                 {
-                    MoneyDungeon newMoneyD = new MoneyDungeon(lvl + 1, game, unitsSelected, controller);
+                    MoneyDungeon newMoneyD = new MoneyDungeon(lvl + 1, game, unitsSelected, controller,endDungeon);
                     newMoneyD.Show();
                     this.Close();
                 }
@@ -324,8 +319,6 @@ namespace ArenaMasters
                     this.Close();
 
                 }
-
-
             }
             else
             {
@@ -337,7 +330,7 @@ namespace ArenaMasters
         {
             this.IsEnabled = false;
             this.Visibility = Visibility.Hidden;
-            controller.switchMoneyDungeonBattle();
+            controller.switchDungeonBattle();
             Fight f = new Fight(1, game, unitsSelected);
             f.ShowDialog();
 
@@ -345,7 +338,7 @@ namespace ArenaMasters
 
             // Hay que hacer una lógica para saber si ha conseguido derrotar al enemigo o no y así hacer que se eliminen los rectangulos o no.
             this.IsEnabled = true;
-            controller.switchMoneyDungeonMap();
+            controller.switchDungeonMap();
             this.Visibility = Visibility.Visible;
             MessageBox.Show("Enemigo derrotado");
 
@@ -452,9 +445,14 @@ namespace ArenaMasters
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            if (lvl == 3 || lvl == 5)
+            {
+                controller.stop();
+            }
+            
             if (controller.playing==false)
             {
-                controller.playMoneyDungeonMap();
+                controller.playDungeonMap(lvl,endDungeon);
             }
             
         }

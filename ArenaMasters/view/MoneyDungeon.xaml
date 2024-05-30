@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:ArenaMasters"
         mc:Ignorable="d"
         Title="MoneyDungeon" Height="775" Width="1375" Focusable="True" PreviewKeyDown="Window_PreviewKeyDown"
+        ResizeMode="NoResize"
         Loaded="Window_Loaded">
     <Window.Resources>
         <ResourceDictionary>

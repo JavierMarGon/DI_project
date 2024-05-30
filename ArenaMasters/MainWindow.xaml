@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:ArenaMasters"
         mc:Ignorable="d"
         Title="MainWindow"
+        WindowState="Maximized"
         Height="775"
         Width="1375">
     <Window.Resources>

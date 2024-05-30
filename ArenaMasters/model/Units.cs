@@ -17,6 +17,7 @@ namespace ArenaMasters
         private int _id_character;
         private int _id_rol;
         private string _rol_name;
+        private string _image_source;
         private int _hp;
         private int _maxHp;
         private int _atk;
@@ -42,7 +43,32 @@ namespace ArenaMasters
         }
         public int IdRol
         {
-            set { _id_rol = value; }
+            set { 
+                _id_rol = value;
+                switch (value)
+                {
+                    case 1:
+                        _rol_name = "Damage";
+                        _image_source = "/images/damagepj.png";
+                        break;
+                    case 2:
+                        _rol_name = "Support";
+                        _image_source = "/images/supportpj.png";
+                        break;
+                    case 3:
+                        _rol_name = "Healer";
+                        _image_source = "/images/healerpj.png";
+
+                        break;
+                    case 4:
+                        _rol_name = "Control";
+                        _image_source = "/images/controlpj.png";
+                        break;
+                    default:
+                        _rol_name = "None";
+                        break;
+                }
+            }
             get { return _id_rol; }
         }
         public int Hp
@@ -90,6 +116,16 @@ namespace ArenaMasters
         {
             get { return _unitName; }
             set { _unitName = value; }
+        }
+        public string ImageSource
+        {
+            get { return _image_source; }
+            set { _image_source = value; }
+        }
+        public string RolName
+        {
+            get { return _rol_name; }
+            set { _rol_name = value; }
         }
         public bool Alive
         {
@@ -139,7 +175,7 @@ namespace ArenaMasters
             Price = price;
             GameMenu = thisGameMenu;
             IdGame = id_game;
-
+            UnitName = RolName;
             SelectedSoldUnit = new RelayCommand(DeleteSelectedItem);
             
             foreach (Skills skill in skillsData)
@@ -156,6 +192,7 @@ namespace ArenaMasters
             Def = def;
             HitRate = hitRate;
             Evasion = evasion;
+            UnitName = RolName;
             Alive = AliveComprobation();
             foreach (Skills skill in skillsData)
             {

@@ -1,74 +1,38 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\javie\\Desktop\\DI_project - copia\\",
+  "WorkspaceRootPath": "C:\\Users\\javie\\Desktop\\Proyecto\\DI_project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|c:\\users\\javie\\desktop\\di_project - copia\\arenamasters\\model\\musiccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|solutionrelative:arenamasters\\model\\musiccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|c:\\users\\javie\\desktop\\di_project - copia\\arenamasters\\view\\fight.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|solutionrelative:arenamasters\\view\\fight.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|c:\\users\\javie\\desktop\\di_project - copia\\arenamasters\\view\\gamemenu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|solutionrelative:arenamasters\\view\\gamemenu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|c:\\users\\javie\\desktop\\di_project - copia\\arenamasters\\view\\moneydungeon.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|solutionrelative:arenamasters\\view\\moneydungeon.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|c:\\users\\javie\\desktop\\di_project - copia\\arenamasters\\model\\dataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|solutionrelative:arenamasters\\model\\dataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|c:\\users\\javie\\desktop\\di_project - copia\\arenamasters\\view\\gamemenu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|c:\\users\\javie\\desktop\\proyecto\\di_project\\arenamasters\\view\\gamemenu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|solutionrelative:arenamasters\\view\\gamemenu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|c:\\users\\javie\\desktop\\di_project - copia\\arenamasters\\model\\arenamastersmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|solutionrelative:arenamasters\\model\\arenamastersmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|c:\\users\\javie\\desktop\\proyecto\\di_project\\arenamasters\\view\\moneydungeon.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|solutionrelative:arenamasters\\view\\moneydungeon.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|c:\\users\\javie\\desktop\\di_project - copia\\arenamasters\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|solutionrelative:arenamasters\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|c:\\users\\javie\\desktop\\proyecto\\di_project\\arenamasters\\model\\musiccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|solutionrelative:arenamasters\\model\\musiccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|c:\\users\\javie\\desktop\\di_project - copia\\arenamasters\\model\\units.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|solutionrelative:arenamasters\\model\\units.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|c:\\users\\javie\\desktop\\di_project - copia\\arenamasters\\view\\moneydungeon.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|c:\\users\\javie\\desktop\\proyecto\\di_project\\arenamasters\\view\\moneydungeon.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|solutionrelative:arenamasters\\view\\moneydungeon.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|c:\\users\\javie\\desktop\\di_project - copia\\arenamasters\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|solutionrelative:arenamasters\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|c:\\users\\javie\\desktop\\proyecto\\di_project\\arenamasters\\view\\fight.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|solutionrelative:arenamasters\\view\\fight.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|c:\\users\\javie\\desktop\\di_project - copia\\arenamasters\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|solutionrelative:arenamasters\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\javie\\Desktop\\DI_project - copia\\ArenaMasters\\obj\\Debug\\net6.0-windows\\view\\Fight.g.i.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\javie\\Desktop\\Proyecto\\DI_project\\ArenaMasters\\obj\\Debug\\net6.0-windows\\view\\Fight.g.i.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ArenaMasters\\obj\\Debug\\net6.0-windows\\view\\Fight.g.i.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|c:\\users\\javie\\desktop\\di_project - copia\\arenamasters\\view\\fight.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|c:\\users\\javie\\desktop\\proyecto\\di_project\\arenamasters\\view\\fight.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|solutionrelative:arenamasters\\view\\fight.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|c:\\users\\javie\\desktop\\di_project - copia\\arenamasters\\model\\skills.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|solutionrelative:arenamasters\\model\\skills.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|c:\\users\\javie\\desktop\\di_project - copia\\arenamasters\\recursos\\estilos.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|solutionrelative:arenamasters\\recursos\\estilos.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|c:\\users\\javie\\desktop\\di_project - copia\\arenamasters\\model\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|solutionrelative:arenamasters\\model\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|c:\\users\\javie\\desktop\\proyecto\\di_project\\arenamasters\\view\\gamemenu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{784A0C8D-9233-4503-8833-86E161BDDF76}|ArenaMasters\\ArenaMasters.csproj|solutionrelative:arenamasters\\view\\gamemenu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -78,222 +42,108 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MusicController.cs",
-              "DocumentMoniker": "C:\\Users\\javie\\Desktop\\DI_project - copia\\ArenaMasters\\model\\MusicController.cs",
-              "RelativeDocumentMoniker": "ArenaMasters\\model\\MusicController.cs",
-              "ToolTip": "C:\\Users\\javie\\Desktop\\DI_project - copia\\ArenaMasters\\model\\MusicController.cs",
-              "RelativeToolTip": "ArenaMasters\\model\\MusicController.cs",
-              "ViewState": "AQIAAD8AAAAAAAAAAAAowAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T14:37:26.3Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ArenaMastersManager.cs",
-              "DocumentMoniker": "C:\\Users\\javie\\Desktop\\DI_project - copia\\ArenaMasters\\model\\ArenaMastersManager.cs",
-              "RelativeDocumentMoniker": "ArenaMasters\\model\\ArenaMastersManager.cs",
-              "ToolTip": "C:\\Users\\javie\\Desktop\\DI_project - copia\\ArenaMasters\\model\\ArenaMastersManager.cs",
-              "RelativeToolTip": "ArenaMasters\\model\\ArenaMastersManager.cs",
-              "ViewState": "AQIAALkAAAAAAAAAAAAowMQAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-07T06:51:34.173Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Fight.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\javie\\Desktop\\DI_project - copia\\ArenaMasters\\view\\Fight.xaml.cs",
-              "RelativeDocumentMoniker": "ArenaMasters\\view\\Fight.xaml.cs",
-              "ToolTip": "C:\\Users\\javie\\Desktop\\DI_project - copia\\ArenaMasters\\view\\Fight.xaml.cs",
-              "RelativeToolTip": "ArenaMasters\\view\\Fight.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0BAAAAAAAA",
+              "Title": "MoneyDungeon.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\javie\\Desktop\\Proyecto\\DI_project\\ArenaMasters\\view\\MoneyDungeon.xaml.cs",
+              "RelativeDocumentMoniker": "ArenaMasters\\view\\MoneyDungeon.xaml.cs",
+              "ToolTip": "C:\\Users\\javie\\Desktop\\Proyecto\\DI_project\\ArenaMasters\\view\\MoneyDungeon.xaml.cs",
+              "RelativeToolTip": "ArenaMasters\\view\\MoneyDungeon.xaml.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAAAwMEBAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-08T07:44:06.95Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Skills.cs",
-              "DocumentMoniker": "C:\\Users\\javie\\Desktop\\DI_project - copia\\ArenaMasters\\model\\Skills.cs",
-              "RelativeDocumentMoniker": "ArenaMasters\\model\\Skills.cs",
-              "ToolTip": "C:\\Users\\javie\\Desktop\\DI_project - copia\\ArenaMasters\\model\\Skills.cs",
-              "RelativeToolTip": "ArenaMasters\\model\\Skills.cs",
-              "ViewState": "AQIAADYAAAAAAAAAAADwv0cAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-08T09:02:09.712Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Units.cs",
-              "DocumentMoniker": "C:\\Users\\javie\\Desktop\\DI_project - copia\\ArenaMasters\\model\\Units.cs",
-              "RelativeDocumentMoniker": "ArenaMasters\\model\\Units.cs",
-              "ToolTip": "C:\\Users\\javie\\Desktop\\DI_project - copia\\ArenaMasters\\model\\Units.cs",
-              "RelativeToolTip": "ArenaMasters\\model\\Units.cs",
-              "ViewState": "AQIAALEAAAAAAAAAAAAnwL0AAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-07T06:51:33.829Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "GameMenu.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\javie\\Desktop\\DI_project - copia\\ArenaMasters\\view\\GameMenu.xaml.cs",
-              "RelativeDocumentMoniker": "ArenaMasters\\view\\GameMenu.xaml.cs",
-              "ToolTip": "C:\\Users\\javie\\Desktop\\DI_project - copia\\ArenaMasters\\view\\GameMenu.xaml.cs",
-              "RelativeToolTip": "ArenaMasters\\view\\GameMenu.xaml.cs",
-              "ViewState": "AQIAAFQAAAAAAAAAAAA5wDEAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-07T06:51:34.184Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GameMenu.xaml",
-              "DocumentMoniker": "C:\\Users\\javie\\Desktop\\DI_project - copia\\ArenaMasters\\view\\GameMenu.xaml",
-              "RelativeDocumentMoniker": "ArenaMasters\\view\\GameMenu.xaml",
-              "ToolTip": "C:\\Users\\javie\\Desktop\\DI_project - copia\\ArenaMasters\\view\\GameMenu.xaml",
-              "RelativeToolTip": "ArenaMasters\\view\\GameMenu.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-07T06:51:34.189Z",
+              "WhenOpened": "2024-05-30T10:31:51.137Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "MoneyDungeon.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\javie\\Desktop\\DI_project - copia\\ArenaMasters\\view\\MoneyDungeon.xaml.cs",
-              "RelativeDocumentMoniker": "ArenaMasters\\view\\MoneyDungeon.xaml.cs",
-              "ToolTip": "C:\\Users\\javie\\Desktop\\DI_project - copia\\ArenaMasters\\view\\MoneyDungeon.xaml.cs",
-              "RelativeToolTip": "ArenaMasters\\view\\MoneyDungeon.xaml.cs",
-              "ViewState": "AQIAADEBAAAAAAAAAAD4v0EBAAA0AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T13:33:59.935Z",
+              "Title": "MoneyDungeon.xaml",
+              "DocumentMoniker": "C:\\Users\\javie\\Desktop\\Proyecto\\DI_project\\ArenaMasters\\view\\MoneyDungeon.xaml",
+              "RelativeDocumentMoniker": "ArenaMasters\\view\\MoneyDungeon.xaml",
+              "ToolTip": "C:\\Users\\javie\\Desktop\\Proyecto\\DI_project\\ArenaMasters\\view\\MoneyDungeon.xaml",
+              "RelativeToolTip": "ArenaMasters\\view\\MoneyDungeon.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-30T10:31:45.46Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DataAccess.cs",
-              "DocumentMoniker": "C:\\Users\\javie\\Desktop\\DI_project - copia\\ArenaMasters\\model\\DataAccess.cs",
-              "RelativeDocumentMoniker": "ArenaMasters\\model\\DataAccess.cs",
-              "ToolTip": "C:\\Users\\javie\\Desktop\\DI_project - copia\\ArenaMasters\\model\\DataAccess.cs",
-              "RelativeToolTip": "ArenaMasters\\model\\DataAccess.cs",
-              "ViewState": "AQIAALgAAAAAAAAAAAAIwLoAAAAfAAAA",
+              "DocumentIndex": 5,
+              "Title": "Fight.g.i.cs",
+              "DocumentMoniker": "C:\\Users\\javie\\Desktop\\Proyecto\\DI_project\\ArenaMasters\\obj\\Debug\\net6.0-windows\\view\\Fight.g.i.cs",
+              "RelativeDocumentMoniker": "ArenaMasters\\obj\\Debug\\net6.0-windows\\view\\Fight.g.i.cs",
+              "ToolTip": "C:\\Users\\javie\\Desktop\\Proyecto\\DI_project\\ArenaMasters\\obj\\Debug\\net6.0-windows\\view\\Fight.g.i.cs",
+              "RelativeToolTip": "ArenaMasters\\obj\\Debug\\net6.0-windows\\view\\Fight.g.i.cs",
+              "ViewState": "AQIAABsBAAAAAAAAAAAcwCwBAABrAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-08T09:55:46.58Z",
+              "WhenOpened": "2024-05-30T10:09:03.605Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MusicController.cs",
+              "DocumentMoniker": "C:\\Users\\javie\\Desktop\\Proyecto\\DI_project\\ArenaMasters\\model\\MusicController.cs",
+              "RelativeDocumentMoniker": "ArenaMasters\\model\\MusicController.cs",
+              "ToolTip": "C:\\Users\\javie\\Desktop\\Proyecto\\DI_project\\ArenaMasters\\model\\MusicController.cs",
+              "RelativeToolTip": "ArenaMasters\\model\\MusicController.cs",
+              "ViewState": "AQIAAMAAAAAAAAAAAAAMwEYAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T06:02:42.829Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GameMenu.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\javie\\Desktop\\Proyecto\\DI_project\\ArenaMasters\\view\\GameMenu.xaml.cs",
+              "RelativeDocumentMoniker": "ArenaMasters\\view\\GameMenu.xaml.cs",
+              "ToolTip": "C:\\Users\\javie\\Desktop\\Proyecto\\DI_project\\ArenaMasters\\view\\GameMenu.xaml.cs",
+              "RelativeToolTip": "ArenaMasters\\view\\GameMenu.xaml.cs",
+              "ViewState": "AQIAAGYBAAAAAAAAAAAAwHUBAABcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-29T11:58:25.506Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\javie\\Desktop\\DI_project - copia\\ArenaMasters\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "ArenaMasters\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\javie\\Desktop\\DI_project - copia\\ArenaMasters\\MainWindow.xaml",
-              "RelativeToolTip": "ArenaMasters\\MainWindow.xaml",
+              "Title": "GameMenu.xaml",
+              "DocumentMoniker": "C:\\Users\\javie\\Desktop\\Proyecto\\DI_project\\ArenaMasters\\view\\GameMenu.xaml",
+              "RelativeDocumentMoniker": "ArenaMasters\\view\\GameMenu.xaml",
+              "ToolTip": "C:\\Users\\javie\\Desktop\\Proyecto\\DI_project\\ArenaMasters\\view\\GameMenu.xaml",
+              "RelativeToolTip": "ArenaMasters\\view\\GameMenu.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-23T11:03:32.648Z",
+              "WhenOpened": "2024-05-29T11:58:21.766Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "App.config",
-              "DocumentMoniker": "C:\\Users\\javie\\Desktop\\DI_project - copia\\ArenaMasters\\App.config",
-              "RelativeDocumentMoniker": "ArenaMasters\\App.config",
-              "ToolTip": "C:\\Users\\javie\\Desktop\\DI_project - copia\\ArenaMasters\\App.config",
-              "RelativeToolTip": "ArenaMasters\\App.config",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-05-08T06:02:23.079Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Fight.g.i.cs",
-              "DocumentMoniker": "C:\\Users\\javie\\Desktop\\DI_project - copia\\ArenaMasters\\obj\\Debug\\net6.0-windows\\view\\Fight.g.i.cs",
-              "RelativeDocumentMoniker": "ArenaMasters\\obj\\Debug\\net6.0-windows\\view\\Fight.g.i.cs",
-              "ToolTip": "C:\\Users\\javie\\Desktop\\DI_project - copia\\ArenaMasters\\obj\\Debug\\net6.0-windows\\view\\Fight.g.i.cs",
-              "RelativeToolTip": "ArenaMasters\\obj\\Debug\\net6.0-windows\\view\\Fight.g.i.cs",
-              "ViewState": "AQIAAF4BAAAAAAAAAAArwGsBAACAAAAA",
+              "DocumentIndex": 4,
+              "Title": "Fight.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\javie\\Desktop\\Proyecto\\DI_project\\ArenaMasters\\view\\Fight.xaml.cs",
+              "RelativeDocumentMoniker": "ArenaMasters\\view\\Fight.xaml.cs",
+              "ToolTip": "C:\\Users\\javie\\Desktop\\Proyecto\\DI_project\\ArenaMasters\\view\\Fight.xaml.cs",
+              "RelativeToolTip": "ArenaMasters\\view\\Fight.xaml.cs",
+              "ViewState": "AQIAAGgBAAAAAAAAAAAjwO4BAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T13:02:57.356Z",
+              "WhenOpened": "2024-05-29T11:58:05.693Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "MoneyDungeon.xaml",
-              "DocumentMoniker": "C:\\Users\\javie\\Desktop\\DI_project - copia\\ArenaMasters\\view\\MoneyDungeon.xaml",
-              "RelativeDocumentMoniker": "ArenaMasters\\view\\MoneyDungeon.xaml",
-              "ToolTip": "C:\\Users\\javie\\Desktop\\DI_project - copia\\ArenaMasters\\view\\MoneyDungeon.xaml",
-              "RelativeToolTip": "ArenaMasters\\view\\MoneyDungeon.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-23T11:42:30.561Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\javie\\Desktop\\DI_project - copia\\ArenaMasters\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "ArenaMasters\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\javie\\Desktop\\DI_project - copia\\ArenaMasters\\MainWindow.xaml.cs",
-              "RelativeToolTip": "ArenaMasters\\MainWindow.xaml.cs",
-              "ViewState": "AQIAAJ8AAAAAAAAAAAAiwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T13:28:07.601Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 6,
               "Title": "Fight.xaml",
-              "DocumentMoniker": "C:\\Users\\javie\\Desktop\\DI_project - copia\\ArenaMasters\\view\\Fight.xaml",
+              "DocumentMoniker": "C:\\Users\\javie\\Desktop\\Proyecto\\DI_project\\ArenaMasters\\view\\Fight.xaml",
               "RelativeDocumentMoniker": "ArenaMasters\\view\\Fight.xaml",
-              "ToolTip": "C:\\Users\\javie\\Desktop\\DI_project - copia\\ArenaMasters\\view\\Fight.xaml",
+              "ToolTip": "C:\\Users\\javie\\Desktop\\Proyecto\\DI_project\\ArenaMasters\\view\\Fight.xaml",
               "RelativeToolTip": "ArenaMasters\\view\\Fight.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-08T07:43:51.154Z",
+              "WhenOpened": "2024-05-29T11:57:59.131Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Estilos.xaml",
-              "DocumentMoniker": "C:\\Users\\javie\\Desktop\\DI_project - copia\\ArenaMasters\\recursos\\Estilos.xaml",
-              "RelativeDocumentMoniker": "ArenaMasters\\recursos\\Estilos.xaml",
-              "ToolTip": "C:\\Users\\javie\\Desktop\\DI_project - copia\\ArenaMasters\\recursos\\Estilos.xaml",
-              "RelativeToolTip": "ArenaMasters\\recursos\\Estilos.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-19T15:15:25.574Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Game.cs",
-              "DocumentMoniker": "C:\\Users\\javie\\Desktop\\DI_project - copia\\ArenaMasters\\model\\Game.cs",
-              "RelativeDocumentMoniker": "ArenaMasters\\model\\Game.cs",
-              "ToolTip": "C:\\Users\\javie\\Desktop\\DI_project - copia\\ArenaMasters\\model\\Game.cs",
-              "RelativeToolTip": "ArenaMasters\\model\\Game.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-07T06:51:34.179Z"
             }
           ]
         }

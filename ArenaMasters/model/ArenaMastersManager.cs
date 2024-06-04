@@ -31,6 +31,7 @@ namespace ArenaMasters.model
         ObservableCollection<Shop> _shopInventory;
         ObservableCollection<Units> _Inventory;
         ObservableCollection<Units> _PlayerUnits;
+        ObservableCollection<Units> _UnitsSelected;
         ObservableCollection<Units> _CPUUnits;
         private ObservableCollection<Partida> _gameList;
         private int _id_User;
@@ -102,6 +103,7 @@ namespace ArenaMasters.model
                 OnPropertyChanged("PlayerUnits");
             }
         }
+        
         public ObservableCollection<Units> CPUUnits
         {
             get { return _CPUUnits; }
@@ -109,6 +111,15 @@ namespace ArenaMasters.model
             {
                 _CPUUnits = value;
                 OnPropertyChanged("CPUUnits");
+            }
+        }
+        public ObservableCollection<Units> UnitsSelected
+        {
+            get { return _UnitsSelected; }
+            set
+            {
+                _UnitsSelected = value;
+                OnPropertyChanged("UnitsSelected");
             }
         }
         //Constructor(es)
@@ -119,6 +130,7 @@ namespace ArenaMasters.model
             _Inventory = new ObservableCollection<Units>();
             _PlayerUnits = new ObservableCollection<Units>();
             _CPUUnits = new ObservableCollection<Units>();
+            _UnitsSelected = new ObservableCollection<Units>();
         }
         //Metodos (de Negocio)
 
@@ -491,6 +503,17 @@ namespace ArenaMasters.model
             }
         }
 
+        public void GetAllUnitsSelected(List<Units> unitsSelected)
+        {
+            UnitsSelected.Clear();
+            foreach(Units unit in unitsSelected)
+            {
+                UnitsSelected.Add(unit);
+            }
+            OnPropertyChanged("UnitsSelected");
+        }
+
+
         public int updateMoney(int idgame, int profit)
         {
             if (_ad.PA_UpdateMoney(idgame, profit) > 0)
@@ -572,6 +595,7 @@ namespace ArenaMasters.model
                 return 0;
             }
         }
+
         protected void OnPropertyChanged([CallerMemberName] string name = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));

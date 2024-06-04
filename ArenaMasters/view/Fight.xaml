@@ -25,7 +25,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <StackPanel x:Name="spEnemy" Grid.Column="1" VerticalAlignment="Center">
+            <StackPanel x:Name="spEnemy" Margin="0,170,0,0" Grid.Column="1" VerticalAlignment="Center">
 
                 <Grid>
                     
@@ -59,23 +59,25 @@
 
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" x:Name="spUnits" Margin="0,50,0,0" Grid.Row="1">
-                <Grid>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" x:Name="spUnits" Margin="0,150,0,0" Grid.Row="1">
+                <Grid Width="1400">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="320"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <StackPanel Grid.Column="0" Orientation="Vertical" Width="100">
-                        <TextBlock Text="Phase: "/>
-                        <TextBlock x:Name="phaseTxt"></TextBlock>
-                        <TextBlock Text="Last enemy skill used: "/>
-                        <TextBlock x:Name="lastEnemySkillUsed"></TextBlock>
-                        <TextBlock Text="Last user skill used: "/>
-                        <TextBlock x:Name="lastUserSkillUsed"></TextBlock>
-                    </StackPanel>
+                    <Border BorderBrush="Black" BorderThickness="2" Background="#E55D4821" HorizontalAlignment="Center" Height="250" Width="320">
+                        <StackPanel Grid.Column="0" Height="250" Background="#77564833" Orientation="Vertical" Margin="0,0,0,0">
+                            <TextBlock x:Name="phaseTxt" Text="Phase " FontSize="25" HorizontalAlignment="Center" Foreground="#FFC1B5A7"/>
+                            <TextBlock x:Name="logFightTxt" Text="Selecciona un ataque..." FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            
+                            <TextBlock x:Name="lastUserSkillUsed" FontSize="20" HorizontalAlignment="Center" Margin="0,40,0,0" Foreground="green" Height="50"/>
+
+                            <TextBlock x:Name="lastEnemySkillUsed" FontSize="20" HorizontalAlignment="Center" Margin="0,20,0,0" Foreground="red"/>
+                        </StackPanel>
+                    </Border>
                     <ItemsControl Grid.Column="1" ItemsSource="{Binding PlayerUnits}" HorizontalAlignment="Center">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>

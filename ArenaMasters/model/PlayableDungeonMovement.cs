@@ -71,6 +71,14 @@ namespace ArenaMasters
                     marginLeft = 1168;
                     marginTop = 465;
                     break;
+                case 5:
+                    marginLeft = 1197;
+                    marginTop = 465;
+                    break;
+                case 6:
+                    marginLeft = 112;
+                    marginTop = 357;
+                    break;
             }
         }
     }

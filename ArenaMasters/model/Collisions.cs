@@ -370,6 +370,36 @@ namespace ArenaMasters
                                             ""Top"": 693
                                         },
                                         {
+                                            ""Name"": ""enemigoImg1"",
+                                            ""Height"": 45,
+                                            ""Width"": 50,
+                                            ""Left"": 483,
+                                            ""Top"": 262 ,
+                                            ""Path"": ""/images/dragon.png""
+                                        },
+                                        {
+                                            ""Name"": ""enemigoColl1"",
+                                            ""Height"": 45,
+                                            ""Width"": 50,
+                                            ""Left"": 483,
+                                            ""Top"": 262 
+                                        },
+                                        {
+                                            ""Name"": ""enemigoImg2"",
+                                            ""Height"": 45,
+                                            ""Width"": 50,
+                                            ""Left"": 256,
+                                            ""Top"": 237 ,
+                                            ""Path"": ""/images/dragon.png""
+                                        },
+                                        {
+                                            ""Name"": ""enemigoColl2"",
+                                            ""Height"": 45,
+                                            ""Width"": 50,
+                                            ""Left"": 256,
+                                            ""Top"": 237 
+                                        },
+                                        {
                                             ""Name"": ""bedImg1"",
                                             ""Height"": 93,
                                             ""Width"": 109,
@@ -534,6 +564,36 @@ namespace ArenaMasters
                                            ""Left"": 18,
                                            ""Top"": 70
                                        },
+                                        {
+                                            ""Name"": ""enemigoImg1"",
+                                            ""Height"": 45,
+                                            ""Width"": 50,
+                                            ""Left"": 826,
+                                            ""Top"": 200 ,
+                                            ""Path"": ""/images/dragon.png""
+                                        },
+                                        {
+                                            ""Name"": ""enemigoColl1"",
+                                            ""Height"": 45,
+                                            ""Width"": 50,
+                                            ""Left"": 826,
+                                            ""Top"": 200 
+                                        },
+                                        {
+                                            ""Name"": ""enemigoImg2"",
+                                            ""Height"": 45,
+                                            ""Width"": 50,
+                                            ""Left"": 455,
+                                            ""Top"": 380 ,
+                                            ""Path"": ""/images/dragon.png""
+                                        },
+                                        {
+                                            ""Name"": ""enemigoColl2"",
+                                            ""Height"": 45,
+                                            ""Width"": 50,
+                                            ""Left"": 455,
+                                            ""Top"": 380 
+                                        },
                                        {
                                            ""Name"": ""bedImg1"",
                                            ""Height"": 93,
@@ -664,6 +724,36 @@ namespace ArenaMasters
                                            ""Left"": 486,
                                            ""Top"": 10
                                        },
+                                        {
+                                            ""Name"": ""enemigoImg1"",
+                                            ""Height"": 45,
+                                            ""Width"": 50,
+                                            ""Left"": 558,
+                                            ""Top"": 536 ,
+                                            ""Path"": ""/images/dragon.png""
+                                        },
+                                        {
+                                            ""Name"": ""enemigoColl1"",
+                                            ""Height"": 45,
+                                            ""Width"": 50,
+                                            ""Left"": 558,
+                                            ""Top"": 536 
+                                        },
+                                        {
+                                            ""Name"": ""enemigoImg2"",
+                                            ""Height"": 45,
+                                            ""Width"": 50,
+                                            ""Left"": 418,
+                                            ""Top"": 305 ,
+                                            ""Path"": ""/images/dragon.png""
+                                        },
+                                        {
+                                            ""Name"": ""enemigoColl2"",
+                                            ""Height"": 45,
+                                            ""Width"": 50,
+                                            ""Left"": 418,
+                                            ""Top"": 305 
+                                        },
                                        {
                                            ""Name"": ""bedCollision1"",
                                            ""Height"": 134,
@@ -786,6 +876,36 @@ namespace ArenaMasters
                                              ""Top"": 84
                                           },
                                           {
+                                             ""Name"": ""enemigoImg1"",
+                                             ""Height"": 45,
+                                             ""Width"": 50,
+                                             ""Left"": 878,
+                                             ""Top"": 401 ,
+                                             ""Path"": ""/images/dragon.png""
+                                          },
+                                          {
+                                             ""Name"": ""enemigoColl1"",
+                                             ""Height"": 45,
+                                             ""Width"": 50,
+                                             ""Left"": 878,
+                                             ""Top"": 401 
+                                          },
+                                          {
+                                             ""Name"": ""enemigoImg2"",
+                                             ""Height"": 45,
+                                             ""Width"": 50,
+                                             ""Left"": 444,
+                                             ""Top"": 401 ,
+                                             ""Path"": ""/images/dragon.png""
+                                          },
+                                          {
+                                             ""Name"": ""enemigoColl2"",
+                                             ""Height"": 45,
+                                             ""Width"": 50,
+                                             ""Left"": 444,
+                                             ""Top"": 401 
+                                          },
+                                          {
                                              ""Name"": ""bedImg1"",
                                              ""Height"": 93,
                                              ""Width"": 109,
@@ -843,6 +963,21 @@ namespace ArenaMasters
                                             ""Width"": 55,
                                             ""Left"": 33,
                                             ""Top"": 175
+                                        },
+                                        {
+                                            ""Name"": ""enemigoImg1"",
+                                            ""Height"": 45,
+                                            ""Width"": 50,
+                                            ""Left"": 1195,
+                                            ""Top"": 357 ,
+                                            ""Path"": ""/images/boss.png""
+                                        },
+                                        {
+                                            ""Name"": ""enemigoColl1"",
+                                            ""Height"": 45,
+                                            ""Width"": 50,
+                                            ""Left"": 1195,
+                                            ""Top"": 357 
                                         }
                                     ]
 

@@ -37,6 +37,7 @@ namespace ArenaMasters
         private List<Units> unitsSelected = new List<Units>();
         //Instancia de rectangulo para generar el pj
         public System.Windows.Shapes.Rectangle image = new System.Windows.Shapes.Rectangle();
+        ArenaMastersManager manager = new ArenaMastersManager();
 
         public MoneyDungeon(int level, Game _game, List<Units> _unitsSelected,bool boss)
         {
@@ -54,13 +55,13 @@ namespace ArenaMasters
             controller=mc;  
 
         }
+
         private void chargeGame(int level, Game _game, List<Units> _unitsSelected)
         {
             unitsSelected = _unitsSelected;
             personajeLeft = new ImageBrush();
             personajeRight = new ImageBrush();
             lvl = level;
-            
             pj = new PlayableDungeonMovement(lvl);
             paintImage();
             profit = Rewards(lvl);
@@ -69,6 +70,8 @@ namespace ArenaMasters
             timer = new System.Windows.Threading.DispatcherTimer();
             timer.Interval = TimeSpan.FromMilliseconds(390);
             timer.Tick += Timer_Tick;
+            manager.GetAllUnitsSelected(_unitsSelected);
+            DataContext = manager;
         }
 
         private void exitClick(object sender, RoutedEventArgs e)
@@ -130,6 +133,7 @@ namespace ArenaMasters
         }
 
 
+
         private bool CheckCollisions()
         {
             // Obtén el rectángulo del jugador
@@ -149,16 +153,28 @@ namespace ArenaMasters
                     {
                         if (jugadorRect.IntersectsWith(mapaRect))
                         {
-                            MessageBox.Show("Has recuperado vida");
-                            ChangeImageBed(1);
+                            if (HealUnits())
+                            {
+                                ChangeImageBed(1);
+                            }
+                            else
+                            {
+                                MessageBox.Show("No puedes recuperar vida");
+                            }
                         }
                     }
                     else if (rectangulo.Name == "bedCollision2")
                     {
                         if (jugadorRect.IntersectsWith(mapaRect))
                         {
-                            MessageBox.Show("Has recuperado vida");
-                            ChangeImageBed(2);
+                            if (HealUnits())
+                            {
+                                ChangeImageBed(2);
+                            }
+                            else
+                            {
+                                MessageBox.Show("No puedes recuperar vida");
+                            }
                         }
                     }
                     else if (rectangulo.Name == "finallyLvl")
@@ -167,12 +183,23 @@ namespace ArenaMasters
                         {
                             CheckFinally();
                         }
-                    }else if(rectangulo.Name == "enemigoColl1")
+                    }else if(rectangulo.Name == "enemigoColl1" || rectangulo.Name == "enemigoColl2")
                     {
                         if (jugadorRect.IntersectsWith(mapaRect))
                         {
-                            int enemy = 1;
+                            int enemy = 0;
+                            switch (rectangulo.Name)
+                            {
+                                case "enemigoColl1":
+                                    enemy = 1;
+                                    break;
+                                case "enemigoColl2":
+                                    enemy = 2;
+                                    break;
+                            }
+                            
                             CheckEnemy(/*lvl,*/ enemy);
+                            ChangeImageEnemy(enemy);
                         }
                     }
 
@@ -188,6 +215,29 @@ namespace ArenaMasters
             return false;
         }
 
+        private bool HealUnits()
+        {
+            bool heal = false;
+            foreach (Units units in unitsSelected)
+            {
+                if (units.Hp + 125 < units.MaxHp)
+                {
+                    if (units.Hp < 0)
+                    {
+                        units.Hp = 0;
+                    }
+                    units.Hp += 125;
+                    heal = true;
+                }
+                else if (units.Hp + 125 > units.MaxHp)
+                {
+                    continue;
+                }
+            }
+            manager.GetAllUnitsSelected(unitsSelected);
+            return heal;
+        }
+
         private void AgregarRectangulos(int lvl)
         {
             Collisions collisions = new Collisions();
@@ -199,7 +249,7 @@ namespace ArenaMasters
                 {
                     AgregarImagenCama(data.Name, data.Width, data.Height, data.Left, data.Top, data.Rotation);
                 }
-                else if (data.Name == "enemigoImg1")
+                else if (data.Name == "enemigoImg1" || data.Name == "enemigoImg2")
                 {
                     AgregarImagenEnemy(data.Name, data.Width, data.Height, data.Left, data.Top, data.Path);
                 }
@@ -334,29 +384,40 @@ namespace ArenaMasters
             Fight f = new Fight(1, game, unitsSelected);
             f.ShowDialog();
 
-            // La ventana actual vuelve a ser interactiva después de que la ventana modal se cierra
-
-            // Hay que hacer una lógica para saber si ha conseguido derrotar al enemigo o no y así hacer que se eliminen los rectangulos o no.
-            this.IsEnabled = true;
-            controller.switchDungeonMap();
-            this.Visibility = Visibility.Visible;
-            MessageBox.Show("Enemigo derrotado");
-
-            string collEnemy = $"enemigoColl{enemy}";
-            
-            List<UIElement> elementosAEliminar = new List<UIElement>();
-
-            foreach (UIElement element in container_pj.Children)
+            if(f.AllPlayerUnitsDead())
             {
-                if (element is Rectangle rectangle && rectangle.Name == collEnemy)
-                {
-                    elementosAEliminar.Add(rectangle);
-                }
+                MessageBox.Show("Has muerto");
+                GameMenu gameMenu = new GameMenu(game);
+                gameMenu.Show();
+                this.Close();
             }
-
-            foreach (UIElement elementoEliminar in elementosAEliminar)
+            else
             {
-                container_pj.Children.Remove(elementoEliminar);
+                manager.GetAllUnitsSelected(unitsSelected);
+                // La ventana actual vuelve a ser interactiva después de que la ventana modal se cierra
+
+                // Hay que hacer una lógica para saber si ha conseguido derrotar al enemigo o no y así hacer que se eliminen los rectangulos o no.
+                this.IsEnabled = true;
+                controller.switchDungeonMap();
+                this.Visibility = Visibility.Visible;
+                MessageBox.Show("Enemigo derrotado");
+
+                string collEnemy = $"enemigoColl{enemy}";
+
+                List<UIElement> elementosAEliminar = new List<UIElement>();
+
+                foreach (UIElement element in container_pj.Children)
+                {
+                    if (element is Rectangle rectangle && rectangle.Name == collEnemy)
+                    {
+                        elementosAEliminar.Add(rectangle);
+                    }
+                }
+
+                foreach (UIElement elementoEliminar in elementosAEliminar)
+                {
+                    container_pj.Children.Remove(elementoEliminar);
+                }
             }
 
         }
@@ -410,6 +471,29 @@ namespace ArenaMasters
                 }
             }
         }
+        private void ChangeImageEnemy(int enemy)
+        {
+            string enemyCollisionName = $"enemigoColl{enemy}";
+            string enemyRipName = $"enemyRip{enemy}";
+            string enemyImgName = $"enemigoImg{enemy}";
+
+            foreach (UIElement element in container_pj.Children)
+            {
+                if (element is Rectangle rectangle && rectangle.Name == enemyCollisionName)
+                {
+                    rectangle.Name = enemyRipName;
+                }
+                else if (element is Image image && image.Name == enemyImgName)
+                {
+                    if (image.Source != null)
+                    {
+                        image.Source = new BitmapImage(new Uri(@"pack://application:,,,/images/rip.png", UriKind.Absolute));
+                    }
+                }
+            }
+        }
+
+
 
         private void Timer_Tick(object sender, EventArgs e)
         {

@@ -34,7 +34,17 @@
             </StackPanel>
         </StackPanel>
         <Canvas x:Name="container_pj">
-            <!--<Image Height="45" Width="50" Source="/images/dragon.png" Canvas.Left="688" Canvas.Top="365" HorizontalAlignment="Center" VerticalAlignment="Top"/>-->
+            <ListBox x:Name="listBoxUnits" Height="150" Width="275" Margin="0,50,0,0" ItemsSource="{Binding UnitsSelected}" SelectionMode="Single" Background="#66FFFFFF" HorizontalContentAlignment="Center">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal" Width="260">
+                            <TextBlock Text="{Binding UnitName}" FontSize="22" Width="100"/>
+                            <ProgressBar Minimum="0" Maximum="{Binding MaxHp}" Value="{Binding Hp}" Width="150" Height="30" Background="Green" Margin="10,0,0,0" Style="{StaticResource CustomProgressBarStyle}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <!--<Image Height="45" Width="50" Source="/images/dragon.png" Canvas.Left="1195" Canvas.Top="357" HorizontalAlignment="Left" VerticalAlignment="Center"/>-->
         </Canvas>
     </Grid>
 

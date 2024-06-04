@@ -12,6 +12,7 @@
     <None Remove="images\back.png" />
     <None Remove="images\bedUnused.png" />
     <None Remove="images\bedUsed.png" />
+    <None Remove="images\boss.png" />
     <None Remove="images\BossStage.png" />
     <None Remove="images\castle.jpg" />
     <None Remove="images\cementerio.jpg" />
@@ -43,6 +44,7 @@
     <None Remove="images\PlayerMovementLeft.png" />
     <None Remove="images\PlayerMovementRight.png" />
     <None Remove="images\PlayerStatic.png" />
+    <None Remove="images\rip.png" />
     <None Remove="images\salir.png" />
     <None Remove="images\settings.png" />
     <None Remove="images\supportpj.png" />
@@ -65,6 +67,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="images\boss.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="images\controlpj.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -165,6 +170,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="images\PlayerStatic.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\rip.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="images\salir.png">

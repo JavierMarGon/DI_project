@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\javie\\Desktop\\Proyecto\\DI_project\\ArenaMasters\\ArenaMasters.csproj": {}
+    "C:\\Users\\franl\\OneDrive\\Escritorio\\proyectoDI\\DI_project\\ArenaMasters\\ArenaMasters.csproj": {}
   },
   "projects": {
-    "C:\\Users\\javie\\Desktop\\Proyecto\\DI_project\\ArenaMasters\\ArenaMasters.csproj": {
+    "C:\\Users\\franl\\OneDrive\\Escritorio\\proyectoDI\\DI_project\\ArenaMasters\\ArenaMasters.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\javie\\Desktop\\Proyecto\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
+        "projectUniqueName": "C:\\Users\\franl\\OneDrive\\Escritorio\\proyectoDI\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
         "projectName": "ArenaMasters",
-        "projectPath": "C:\\Users\\javie\\Desktop\\Proyecto\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
-        "packagesPath": "C:\\Users\\javie\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\javie\\Desktop\\Proyecto\\DI_project\\ArenaMasters\\obj\\",
+        "projectPath": "C:\\Users\\franl\\OneDrive\\Escritorio\\proyectoDI\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
+        "packagesPath": "C:\\Users\\franl\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\franl\\OneDrive\\Escritorio\\proyectoDI\\DI_project\\ArenaMasters\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\javie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\franl\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,11 +34,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -77,7 +72,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

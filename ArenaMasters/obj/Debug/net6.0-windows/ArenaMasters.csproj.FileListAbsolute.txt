@@ -2173,3 +2173,9 @@ C:\Users\javie\Desktop\Proyecto\DI_project\ArenaMasters\bin\Debug\net6.0-windows
 C:\Users\javie\Desktop\Proyecto\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\controlpj.png
 C:\Users\javie\Desktop\Proyecto\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\damagepj.png
 C:\Users\javie\Desktop\Proyecto\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\healerpj.png
+C:\Users\franl\OneDrive\Escritorio\proyectoDI\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\controlpj.png
+C:\Users\franl\OneDrive\Escritorio\proyectoDI\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\damagepj.png
+C:\Users\franl\OneDrive\Escritorio\proyectoDI\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\healerpj.png
+C:\Users\franl\OneDrive\Escritorio\proyectoDI\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\supportpj.png
+C:\Users\franl\OneDrive\Escritorio\proyectoDI\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\rip.png
+C:\Users\franl\OneDrive\Escritorio\proyectoDI\DI_project\ArenaMasters\bin\Debug\net6.0-windows\images\boss.png

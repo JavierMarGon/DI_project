@@ -54,7 +54,7 @@ namespace ArenaMasters
             }
             manager.CPUUnits = new ObservableCollection<Units>(generateEnemy(lvl));
             DataContext = manager;
-            phaseTxt.Text = phase.ToString();
+            phaseTxt.Text = "Phase " + phase.ToString();
             setKeyListener();
         }
         private void selectUnit(object sender, RoutedEventArgs e)
@@ -116,7 +116,7 @@ namespace ArenaMasters
                 }
 
                 selectSkillAction(playerUnitSelect, skillSelect, passives);
-                lastUserSkillUsed.Text = skillSelect.Name;
+                lastUserSkillUsed.Text = "Has usado " + skillSelect.Name;
                 resetPhase();
 
             }
@@ -193,7 +193,7 @@ namespace ArenaMasters
                 }
 
                 selectSkillAction(playerUnitSelect, skillSelect, passives);
-                lastUserSkillUsed.Text = skillSelect.Name;
+                lastUserSkillUsed.Text = "Has usado " + skillSelect.Name;
                 setKeyListener();
 
                 resetPhase();
@@ -382,7 +382,7 @@ namespace ArenaMasters
             }
 
             selectSkillAction(cpu,cpuSkill,pj);
-            lastEnemySkillUsed.Text=cpuSkill.Name;
+            lastEnemySkillUsed.Text = "El enemigo usó " + cpuSkill.Name;
         }
     
 
@@ -481,7 +481,7 @@ namespace ArenaMasters
                     if (value == 5)
                     {
                         selectSkillAction(playerUnitSelect, skillSelect, passives);
-                        lastUserSkillUsed.Text = skillSelect.Name;
+                        lastUserSkillUsed.Text = "Has usado " + skillSelect.Name;
 
                         resetPhase();
                     }
@@ -699,7 +699,31 @@ namespace ArenaMasters
                     }
                 }
             }
+            //Comprobar si quedan unidades con vida
+            if (AllPlayerUnitsDead())
+            {
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("siguen vivas");
+            }
+
         }
+
+        public bool AllPlayerUnitsDead()
+        {
+            foreach (Units unit in manager.PlayerUnits)
+            {
+                // Comprueba si la unidad está viva
+                if (unit.AliveComprobation())
+                {
+                    return false; // Si al menos una unidad está viva, retorna false
+                }
+            }
+            return true; // Si todas las unidades están muertas, retorna true
+        }
+
         private void Heal(Units Active, List<Units> Passives, Skills healSkill)
         {
             float baseValue;
@@ -879,7 +903,7 @@ namespace ArenaMasters
             if (phase < 4)
             {
                 phase++;
-                phaseTxt.Text = phase.ToString();
+                phaseTxt.Text = "Phase " + phase.ToString();
             }
         }
         private void priorPhase()
@@ -887,7 +911,7 @@ namespace ArenaMasters
             if (phase > 1)
             {
                 phase--;
-                phaseTxt.Text = phase.ToString();
+                phaseTxt.Text = "Phase " + phase.ToString();
             }           
         }
         private bool deadCPUUnitsComprobation()
@@ -933,7 +957,7 @@ namespace ArenaMasters
                 DataContext = manager;
                 playerUnitSelect = null;
                 phase = 1;
-                phaseTxt.Text = phase.ToString();
+                phaseTxt.Text = "Phase " + phase.ToString();
             }
             
             
@@ -975,6 +999,7 @@ namespace ArenaMasters
                     break;
             }
         }
+        
 
 
     }

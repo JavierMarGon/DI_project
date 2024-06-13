@@ -198,7 +198,7 @@ namespace ArenaMasters
                                     break;
                             }
                             
-                            CheckEnemy(/*lvl,*/ enemy);
+                            CheckEnemy(lvl, enemy);
                             ChangeImageEnemy(enemy);
                         }
                     }
@@ -377,17 +377,18 @@ namespace ArenaMasters
             }
         }
 
-        private void CheckEnemy(/*int lvl, */int enemy)
+        private void CheckEnemy(int lvl,int enemy)
         {
             this.IsEnabled = false;
             this.Visibility = Visibility.Hidden;
             controller.switchDungeonBattle();
-            Fight f = new Fight(1, game, unitsSelected);
+            Fight f = new Fight(lvl, game, unitsSelected);
             f.ShowDialog();
 
             if(f.AllPlayerUnitsDead())
             {
                 MessageBox.Show("Has muerto");
+                controller.stop();
                 GameMenu gameMenu = new GameMenu(game);
                 gameMenu.Show();
                 this.Close();
@@ -395,13 +396,11 @@ namespace ArenaMasters
             else
             {
                 manager.GetAllUnitsSelected(unitsSelected);
-                // La ventana actual vuelve a ser interactiva después de que la ventana modal se cierra
-
-                // Hay que hacer una lógica para saber si ha conseguido derrotar al enemigo o no y así hacer que se eliminen los rectangulos o no.
+                
                 this.IsEnabled = true;
                 controller.switchDungeonMap();
                 this.Visibility = Visibility.Visible;
-                MessageBox.Show("Enemigo derrotado");
+                
 
                 string collEnemy = $"enemigoColl{enemy}";
 
@@ -418,6 +417,18 @@ namespace ArenaMasters
                 foreach (UIElement elementoEliminar in elementosAEliminar)
                 {
                     container_pj.Children.Remove(elementoEliminar);
+                }
+                if (lvl == 6) 
+                {
+                    MessageBox.Show("Victoria");
+                    controller.stop();
+                    GameMenu gameMenu = new GameMenu(game);
+                    gameMenu.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Enemigo derrotado");
                 }
             }
 

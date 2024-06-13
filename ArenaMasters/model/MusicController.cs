@@ -113,31 +113,6 @@ namespace ArenaMasters.model
                 MessageBox.Show(ex.Message);
             }
         }
-        public async Task finalBossPhase2()
-        {
-            try
-            {
-
-                for (float i = 0.01f; i < 0.5; i += 0.01f)
-                {
-                    await Task.Delay(100);
-                    mediaBattle.Volume -= i;
-                }
-                mediaBattle.Close();
-                mediaBattle.Open(new Uri(tracksBattle[tracksBattle.Count()-1], UriKind.Relative));
-                mediaBattle.Volume = 0;
-                for (float i = 0.01f; i < 0.5; i += 0.01f)
-                {
-                    await Task.Delay(150);
-                    mediaBattle.Volume += i;
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
         public async Task switchDungeonBattle()
         {
             try
@@ -145,7 +120,7 @@ namespace ArenaMasters.model
 
                 for (float i = 0.01f; i < 0.5; i+=0.01f)
                 {
-                    await Task.Delay(100);
+                    await Task.Delay(150);
                     mediaPrincipal.Volume -= i;
                     mediaBattle.Volume += i;
                 }
@@ -164,7 +139,7 @@ namespace ArenaMasters.model
 
                 for (float i = 0.01f; i < 0.5; i += 0.01f)
                 {
-                    await Task.Delay(100);
+                    await Task.Delay(150);
                     mediaPrincipal.Volume += i;
                     mediaBattle.Volume -= i;
                 }

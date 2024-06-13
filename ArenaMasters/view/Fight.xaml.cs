@@ -207,6 +207,7 @@ namespace ArenaMasters
         private List<Units> generateEnemy(int lvl)
         {
             List<Units> cpuUnits = new List<Units>();
+            int auxLvl;
             Units generated;
             Random random = new Random();
             int rol = 0;
@@ -217,6 +218,11 @@ namespace ArenaMasters
             int eva = 0;
             List<Skills> skillset;
             int value = random.Next(3, 5);
+            auxLvl = lvl;
+            if (auxLvl > 4)
+            {
+                auxLvl = 4;
+            }
             for (int i = 0; i < value; i++)
             {
                 skillset = new List<Skills>();
@@ -231,7 +237,7 @@ namespace ArenaMasters
                     eva = 5 + (2 * lvl);
                     if (lvl >= 1)
                     {
-                        skillset.Add(manager.fetchOneSkills(lvl, 1));
+                        skillset.Add(manager.fetchOneSkills(auxLvl, 1));
                     }
                     if (lvl >= 2)
                     {
@@ -244,7 +250,8 @@ namespace ArenaMasters
 
                     if (lvl >= 4)
                     {
-                        skillset.Add(manager.fetchOneSkills(lvl, 1));
+
+                        skillset.Add(manager.fetchOneSkills(auxLvl, 1));
                     }
                 }
 
@@ -257,20 +264,20 @@ namespace ArenaMasters
                     eva = 4 + (1 * lvl);
                     if (lvl >= 1)
                     {
-                        skillset.Add(manager.fetchOneSkills(lvl, 1));
+                        skillset.Add(manager.fetchOneSkills(auxLvl, 1));
                     }
                     if (lvl >= 2)
                     {
-                        skillset.Add(manager.fetchOneSkills(2, 2));
+                        skillset.Add(manager.fetchOneSkills(1+(lvl%2), 3));
                     }
                     if (lvl >= 3)
                     {
-                        skillset.Add(manager.fetchOneSkills(3, 2));
+                        skillset.Add(manager.fetchOneSkills(1+(lvl % 2), 3));
                     }
 
                     if (lvl >= 4)
                     {
-                        skillset.Add(manager.fetchOneSkills(lvl, 1));
+                        skillset.Add(manager.fetchOneSkills(auxLvl, 1));
                     }
                 }
 
@@ -283,7 +290,7 @@ namespace ArenaMasters
                     eva = 7 + (2 * lvl);
                     if (lvl >= 1)
                     {
-                        skillset.Add(manager.fetchOneSkills(lvl, 1));
+                        skillset.Add(manager.fetchOneSkills(auxLvl, 1));
                     }
                     if (lvl >= 2)
                     {
@@ -296,7 +303,7 @@ namespace ArenaMasters
 
                     if (lvl >= 4)
                     {
-                        skillset.Add(manager.fetchOneSkills(lvl, 1));
+                        skillset.Add(manager.fetchOneSkills(auxLvl, 1));
                     }
                 }
 
@@ -309,7 +316,7 @@ namespace ArenaMasters
                     eva = 8 + (3 * lvl);
                     if (lvl >= 1)
                     {
-                        skillset.Add(manager.fetchOneSkills(lvl, 1));
+                        skillset.Add(manager.fetchOneSkills(auxLvl, 1));
                     }
                     if (lvl >= 2)
                     {
@@ -322,7 +329,7 @@ namespace ArenaMasters
 
                     if (lvl >= 4)
                     {
-                        skillset.Add(manager.fetchOneSkills(lvl, 1));
+                        skillset.Add(manager.fetchOneSkills(auxLvl, 1));
                     }
                 }
 
@@ -701,11 +708,9 @@ namespace ArenaMasters
             //Comprobar si quedan unidades con vida
             if (AllPlayerUnitsDead())
             {
+                MessageBox.Show("Has perdido");
+
                 this.Close();
-            }
-            else
-            {
-                MessageBox.Show("siguen vivas");
             }
 
         }

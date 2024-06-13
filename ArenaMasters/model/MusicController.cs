@@ -21,11 +21,11 @@ namespace ArenaMasters.model
             tracksMap.Add("music/MoneyDungeonMap.mp3"); 
             tracksMap.Add("music/FinalDungeonMapPhase1.mp3");
             tracksMap.Add("music/FinalDungeonMapPhase2.mp3");
-            tracksMap.Add("music/FinalDungeonMapFinal.mp3");
+            tracksMap.Add("music/FinalDungeonMapPhase3.mp3");
             tracksBattle.Add("music/MoneyDungeonBattle.mp3");
-            tracksBattle.Add("music/FinalDungeonBattle.mp3");
-            tracksBattle.Add("music/FinalDungeonBossFightPhase1.mp3");
-            tracksBattle.Add("music/FinalDungeonBossFightPhase2.mp3");
+            tracksBattle.Add("music/FinalDungeonBattlePhase1.mp3");
+            tracksBattle.Add("music/FinalDungeonBattlePhase2.mp3");
+            tracksBattle.Add("music/FinalDungeonBattlePhase3.mp3");
 
         }
         private void MediaPrincipal_Ended(object sender, EventArgs e)
@@ -70,37 +70,32 @@ namespace ArenaMasters.model
         }
         public async Task playDungeonMap(int lvl,bool type)
         {
-            int indexBattle=0;
-            int indexMap=0;
+            int index=0;
             try
             {
                 if (type)
                 {
-                    indexBattle = 1;
+                    index = 1;
                     if (lvl <= 2)
                     {
-                        indexMap = 1;
+                        index = 1;
                     }
                     else if (lvl <= 4)
                     {
-                        indexMap = 2;
+                        index = 2;
                     }
                     else if (lvl <= 5)
                     {
-                        indexMap = 3;
-                    }
-                    else
-                    {
-                        indexBattle = 2;
+                        index = 3;
                     }
                 }
                 
                 mediaBattle.Close();
-                mediaBattle.Open(new Uri(tracksBattle[indexBattle], UriKind.Relative));
+                mediaBattle.Open(new Uri(tracksBattle[index], UriKind.Relative));
                 mediaBattle.Volume = 0;
                 mediaBattle.Play();
                 mediaPrincipal.Close();
-                mediaPrincipal.Open(new Uri(tracksMap[indexMap], UriKind.Relative));
+                mediaPrincipal.Open(new Uri(tracksMap[index], UriKind.Relative));
                 mediaPrincipal.Volume = 0;
                 mediaPrincipal.Play();
                 for (float i = 0.01f; i < 0.5; i += 0.01f)

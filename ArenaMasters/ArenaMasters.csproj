@@ -52,11 +52,15 @@
     <None Remove="music\Cementerio.mp3" />
     <None Remove="music\Encrucijada.mp3" />
     <None Remove="music\FinalDungeonBattle.mp3" />
+    <None Remove="music\FinalDungeonBattlePhase1.mp3" />
+    <None Remove="music\FinalDungeonBattlePhase2.mp3" />
+    <None Remove="music\FinalDungeonBattlePhase3.mp3" />
     <None Remove="music\FinalDungeonBossFightPhase1.mp3" />
     <None Remove="music\FinalDungeonBossFightPhase2.mp3" />
     <None Remove="music\FinalDungeonMapFinal.mp3" />
     <None Remove="music\FinalDungeonMapPhase1.mp3" />
     <None Remove="music\FinalDungeonMapPhase2.mp3" />
+    <None Remove="music\FinalDungeonMapPhase3.mp3" />
     <None Remove="music\InicioSesion.mp3" />
     <None Remove="music\MoneyDungeonBattle.mp3" />
     <None Remove="music\MoneyDungeonMap.mp3" />
@@ -64,6 +68,12 @@
     <None Remove="music\sonido_mouseEnter.mp3" />
     <None Remove="music\Taberna.mp3" />
     <None Remove="persona.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="music\FinalDungeonBattlePhase1.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -193,22 +203,19 @@
     <Content Include="music\Encrucijada.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="music\FinalDungeonBattle.mp3">
+    <Content Include="music\FinalDungeonBattlePhase2.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="music\FinalDungeonBossFightPhase1.mp3">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="music\FinalDungeonBossFightPhase2.mp3">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="music\FinalDungeonMapFinal.mp3">
+    <Content Include="music\FinalDungeonBattlePhase3.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="music\FinalDungeonMapPhase1.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="music\FinalDungeonMapPhase2.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="music\FinalDungeonMapPhase3.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="music\InicioSesion.mp3">

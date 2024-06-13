@@ -222,7 +222,6 @@ namespace ArenaMasters
                 skillset = new List<Skills>();
                 skillset.Clear();
                 rol = random.Next(1, 5);
-                rol = 3;
                 if (rol == 1)
                 {
                     hp = 140 + (10 * lvl);

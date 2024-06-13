@@ -40,6 +40,7 @@ namespace ArenaMasters
             game = _game;
             namePj.Text = game.Name.ToString();
             currentMoney.Text = game.Money.ToString();
+            controller.stop();
             playSimpleSound();
             initializeUnits();
             DataContext = manager;
@@ -53,6 +54,7 @@ namespace ArenaMasters
             Beneficio(reward);
             namePj.Text = game.Name.ToString();
             currentMoney.Text = game.Money.ToString();
+            controller.stop();
             playSimpleSound();
             initializeUnits();
             DataContext = manager;
@@ -371,7 +373,7 @@ namespace ArenaMasters
                     unitsSelected.Add(unit);
                 }
                 controller.stop();
-                MoneyDungeon moneyDungeon = new MoneyDungeon(level, game, unitsSelected,true);
+                MoneyDungeon moneyDungeon = new MoneyDungeon(level, game, unitsSelected,false);
                 moneyDungeon.Show();
                 this.Close();
             }
@@ -379,6 +381,38 @@ namespace ArenaMasters
             {
                 MessageBox.Show("Please select at least one unit before proceeding.");
             }
+        }
+        private void finalDungeonShow(object sender, RoutedEventArgs e)
+        {
+            gridFinalSelectedUnits.Visibility = Visibility.Visible;
+            finalDungeonSelector.Visibility = Visibility.Visible;
+        }
+        private void SelectUnitsAndProceedEnding(object sender, RoutedEventArgs e)
+        {
+            if (listBoxFinalUnits.SelectedItems.Count > 0)
+            {
+                List<Units> unitsSelected = new List<Units>();
+                // Proceed to MoneyDungeon with the selected level and units
+                foreach (Units unit in listBoxFinalUnits.SelectedItems)
+                {
+                    unitsSelected.Add(unit);
+                }
+                controller.stop();
+                MoneyDungeon moneyDungeon = new MoneyDungeon(1, game, unitsSelected, true);
+                moneyDungeon.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Please select at least one unit before proceeding.");
+            }
+        }
+        private void BackSelectUnitsEnding(object sender, RoutedEventArgs e)
+        {
+            gridFinalSelectedUnits.Visibility = Visibility.Hidden;
+            finalDungeonSelector.Visibility = Visibility.Hidden;
+
+
         }
         public void habChange(int val)
         {
@@ -451,5 +485,7 @@ namespace ArenaMasters
             }
             
         }
+
+        
     }
 }

@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="Fight" Height="588" Width="1000"
         WindowState="Maximized"
+        ResizeMode="NoResize"
         >
     <Window.Resources>
         <ResourceDictionary>

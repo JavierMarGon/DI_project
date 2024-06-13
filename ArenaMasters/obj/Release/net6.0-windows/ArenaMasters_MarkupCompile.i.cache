@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\javie\Desktop\Proyecto\DI_project\ArenaMasters\obj\Release\net6.0-windows\
+C:\Users\JavierMG\Desktop\di\DI_project\ArenaMasters\obj\Release\net6.0-windows\
 ArenaMasters
 none
 false
 TRACE;RELEASE;NET;NET6_0;NETCOREAPP
-C:\Users\javie\Desktop\Proyecto\DI_project\ArenaMasters\App.xaml
+C:\Users\JavierMG\Desktop\di\DI_project\ArenaMasters\App.xaml
 5919096540
-51-549702344
+53-159425557
 19-887256410
-204-1416462806
+204-991608273
 MainWindow.xaml;recursos\Estilos.xaml;view\Fight.xaml;view\GameMenu.xaml;view\MoneyDungeon.xaml;
 
-False
+True
 

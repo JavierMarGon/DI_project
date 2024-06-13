@@ -87,29 +87,44 @@ namespace ArenaMasters
         }
         private void click_create_register(object sender, RoutedEventArgs e)
         {
-            if (reg_password.Password.ToString() == reg_password_check.Password.ToString()) {
-                if (manager.Register(reg_username.Text.ToString(),reg_password.Password.ToString()) == 1)
+            if (reg_username.Text.ToString() == "" || reg_password.Password.ToString() == "" || reg_password_check.Password.ToString() == "")
+            {
+                txtErrorReg.Visibility = Visibility.Visible;
+                limpiarCampos();
+            }
+            else
+            {
+                if (reg_password.Password.ToString() == reg_password_check.Password.ToString())
                 {
-                    menu_login.Visibility = Visibility.Visible;
-                    menu_register.Visibility = Visibility.Hidden;
+                    if (manager.Register(reg_username.Text.ToString(), reg_password.Password.ToString()) == 1)
+                    {
+                        menu_login.Visibility = Visibility.Visible;
+                        menu_register.Visibility = Visibility.Hidden;
+                        txtErrorReg.Visibility = Visibility.Hidden;
+                    }
                 }
             }
-            limpiarCampos();
         }
 
         private void click_login(object sender, RoutedEventArgs e)
         {
-            manager.id_User = manager.Login(tb_user.Text.ToString(), psw_user.Password.ToString());
-            if (manager.id_User > 0)
+            if(tb_user.Text.ToString() != "" || psw_user.Password.ToString() != "")
             {
-                if(manager.CountGames(manager.id_User) < 1)
+                manager.id_User = manager.Login(tb_user.Text.ToString(), psw_user.Password.ToString());
+                if (manager.id_User > 0)
                 {
-                    noGame(true);
+                    if (manager.CountGames(manager.id_User) < 1)
+                    {
+                        noGame(true);
+                    }
+                    manager.userName = tb_user.Text.ToString();
+                    menu_login.Visibility = Visibility.Collapsed;
+                    menu_user.Visibility = Visibility.Visible;
+                    txtErrorLog.Visibility = Visibility.Hidden;
+                    txtUsuarioLoadGame.Text = "Bienvenido " + manager.userName.ToString();
                 }
-                manager.userName = tb_user.Text.ToString();
-                menu_login.Visibility = Visibility.Collapsed;
-                menu_user.Visibility = Visibility.Visible;
             }
+            txtErrorLog.Visibility = Visibility.Visible;
             limpiarCampos();
 
         }
@@ -117,6 +132,7 @@ namespace ArenaMasters
         private void click_cerrarVentana(object sender, RoutedEventArgs e)
         {
             menu_login.Visibility = Visibility.Visible;
+            menu_register.Visibility = Visibility.Hidden;
             menu_register.Visibility = Visibility.Hidden;
             limpiarCampos();
         }

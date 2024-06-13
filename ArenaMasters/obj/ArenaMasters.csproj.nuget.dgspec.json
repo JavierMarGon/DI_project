@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\JavierMG\\Desktop\\di\\DI_project\\ArenaMasters\\ArenaMasters.csproj": {}
+    "C:\\Users\\franl\\OneDrive\\Escritorio\\proyectoDI\\DI_project_def\\DI_project\\ArenaMasters\\ArenaMasters.csproj": {}
   },
   "projects": {
-    "C:\\Users\\JavierMG\\Desktop\\di\\DI_project\\ArenaMasters\\ArenaMasters.csproj": {
+    "C:\\Users\\franl\\OneDrive\\Escritorio\\proyectoDI\\DI_project_def\\DI_project\\ArenaMasters\\ArenaMasters.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\JavierMG\\Desktop\\di\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
+        "projectUniqueName": "C:\\Users\\franl\\OneDrive\\Escritorio\\proyectoDI\\DI_project_def\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
         "projectName": "ArenaMasters",
-        "projectPath": "C:\\Users\\JavierMG\\Desktop\\di\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
-        "packagesPath": "C:\\Users\\JavierMG\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JavierMG\\Desktop\\di\\DI_project\\ArenaMasters\\obj\\",
+        "projectPath": "C:\\Users\\franl\\OneDrive\\Escritorio\\proyectoDI\\DI_project_def\\DI_project\\ArenaMasters\\ArenaMasters.csproj",
+        "packagesPath": "C:\\Users\\franl\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\franl\\OneDrive\\Escritorio\\proyectoDI\\DI_project_def\\DI_project\\ArenaMasters\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\JavierMG\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\franl\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,11 +34,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -69,24 +64,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.27, 6.0.27]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[6.0.27, 6.0.27]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.27, 6.0.27]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.27, 6.0.27]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -95,7 +72,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

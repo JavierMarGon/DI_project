@@ -64,6 +64,9 @@
             <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0">
                 <PasswordBox x:Name="psw_user" FontSize="25" Width="200" VerticalContentAlignment="Center" Background="#4CFFFFFF" Margin="0,10,10,0" Foreground="White"/>
             </StackPanel>
+            <StackPanel Grid.RowSpan="4" Grid.ColumnSpan="12" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,220,0,0">
+                <TextBlock Name="txtErrorLog" Text="Fallo al iniciar sesión" FontSize="25" Foreground="red" Visibility="Hidden"/>
+            </StackPanel>
 
             <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center">
                 <StackPanel Orientation="Horizontal">
@@ -108,6 +111,10 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
+            <StackPanel Grid.RowSpan="1" Grid.ColumnSpan="12" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20">
+                <TextBlock Name="txtUsuarioLoadGame" FontSize="25" Foreground="#FFD6BFBF" Visibility="Visible"/>
+            </StackPanel>
+
             <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Height="69" Width="274">
                 <Button x:Name="btnContinue" Style="{StaticResource btnMenuUsuario}" Content="Continuar" Click="click_continue" FontSize="20" Height="69" Width="274" Foreground="White"/>
             </StackPanel>
@@ -138,6 +145,9 @@
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0">
                 <Button Style="{StaticResource btnMenuCerrarVentana}" FontSize="40" Content="X" Height="70" Width="70" Background="#00000000" Click="click_cerrarVentana"/>
+            </StackPanel>
+            <StackPanel Grid.RowSpan="1" Grid.ColumnSpan="12" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20">
+                <TextBlock Name="txtErrorReg" Text="Rellena todos los campos" FontSize="25" Foreground="red" Visibility="Hidden"/>
             </StackPanel>
             <StackPanel Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="20">
                 <TextBlock Text="Usuario" FontSize="25" Foreground="#FFD6BFBF"/>

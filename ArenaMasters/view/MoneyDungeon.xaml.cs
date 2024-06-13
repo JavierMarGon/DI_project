@@ -231,6 +231,7 @@ namespace ArenaMasters
                 }
                 else if (units.Hp + 125 > units.MaxHp)
                 {
+                    units.Hp = units.MaxHp;
                     continue;
                 }
             }

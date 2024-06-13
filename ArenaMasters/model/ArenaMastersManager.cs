@@ -140,12 +140,10 @@ namespace ArenaMasters.model
             int id_user = _ad.PA_Login(usuario, pass);
             if (id_user > 0)
             {
-                MessageBox.Show("Bienvenid@ ", usuario);
                 return id_user;
             }
             else
             {
-                MessageBox.Show("Error de Login");
                 return -1;
             }
         }
@@ -155,12 +153,10 @@ namespace ArenaMasters.model
 
             if (_ad.PA_Register(nombre, pass) == 1)
             {
-                MessageBox.Show("Bienvenid@");
                 return 1;
             }
             else
             {
-                MessageBox.Show("Error de Login");
                 return -1;
             }
         }
